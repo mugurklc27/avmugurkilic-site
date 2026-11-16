@@ -236,6 +236,19 @@ body::before{
   body::before{background-size:auto clamp(200px,38vh,360px);opacity:.045}
 }
 @media print{body::before{display:none}}
+.legalgrid details.lgl{padding:0;border-left:3px solid var(--ink);background:rgba(255,255,255,.82)}
+.legalgrid details.lgl summary{list-style:none;display:flex;align-items:center;gap:14px;padding:20px 26px}
+.legalgrid details.lgl summary::-webkit-details-marker{display:none}
+.legalgrid details.lgl summary::after{content:"+";margin-left:auto;font:400 1.4rem var(--body)}
+.legalgrid details.lgl[open] summary::after{content:"–"}
+.lno{display:inline-grid;place-items:center;width:34px;height:34px;border:1px solid var(--ink);font:600 .85rem var(--body);flex:none}
+.lbody{padding:4px 30px 28px;border-top:1px solid var(--rule)}
+.lbody .lmeta{font-size:.78rem;letter-spacing:.06em;color:var(--muted);margin:16px 0 4px}
+.lbody h4{font:600 .78rem/1.2 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--ink);margin:22px 0 6px;padding-top:14px;border-top:1px dashed var(--rule)}
+.lbody h4:first-of-type{border-top:0;padding-top:0}
+.lbody p{font-size:.93rem;margin:6px 0 0;color:#2b3150}
+.lbody ul{margin:8px 0 0;padding-left:20px;display:grid;gap:6px;font-size:.93rem;color:#2b3150}
+@media (max-width:560px){.lbody{padding:4px 18px 22px}.legalgrid details.lgl summary{padding:18px}}
 </style>
 </head>
 <body>
@@ -364,23 +377,21 @@ body::before{
       <div><div class="kicker">03 · Makaleler</div><h2>Hukuki bilgilendirme yazıları</h2></div>
       <a class="btn line" href="makaleler.html">Tüm makaleler</a>
     </div>
-    <div class="teaser"><a class="tz" href="makaleler.html#ticaret"><b>Ticaret ve Şirketler Hukuku</b><span>3 yazı</span></a><a class="tz" href="makaleler.html#is"><b>İş ve Sosyal Güvenlik Hukuku</b><span>3 yazı</span></a><a class="tz" href="makaleler.html#trafik"><b>Trafik Kazası ve Tazminat</b><span>3 yazı</span></a><a class="tz" href="makaleler.html#icra"><b>İcra ve İflas Hukuku</b><span>2 yazı</span></a><a class="tz" href="makaleler.html#ceza"><b>Ceza Hukuku</b><span>2 yazı</span></a><a class="tz" href="makaleler.html#aile"><b>Aile Hukuku</b><span>2 yazı</span></a><a class="tz" href="makaleler.html#gayrimenkul"><b>Gayrimenkul Hukuku</b><span>2 yazı</span></a><a class="tz" href="makaleler.html#saglik"><b>Sağlık Hukuku ve Malpraktis</b><span>1 yazı</span></a></div>
+    <div class="teaser"><a class="tz" href="makaleler.html#ticaret"><b>Ticaret ve Şirketler Hukuku</b><span>5 yazı</span></a><a class="tz" href="makaleler.html#is"><b>İş ve Sosyal Güvenlik Hukuku</b><span>3 yazı</span></a><a class="tz" href="makaleler.html#trafik"><b>Trafik Kazası ve Tazminat</b><span>4 yazı</span></a><a class="tz" href="makaleler.html#icra"><b>İcra ve İflas Hukuku</b><span>4 yazı</span></a><a class="tz" href="makaleler.html#ceza"><b>Ceza Hukuku</b><span>6 yazı</span></a><a class="tz" href="makaleler.html#aile"><b>Aile Hukuku</b><span>5 yazı</span></a><a class="tz" href="makaleler.html#gayrimenkul"><b>Gayrimenkul Hukuku</b><span>6 yazı</span></a><a class="tz" href="makaleler.html#saglik"><b>Sağlık Hukuku ve Malpraktis</b><span>1 yazı</span></a></div>
   </div></section>
 
   <section class="part" id="sss"><div class="wrap">
     <div class="shead"><div><div class="kicker">04 · Sıkça Sorulan Sorular</div><h2>Merak edilenler</h2></div></div>
     <div class="faqs">
       <details class="faq"><summary>Görüşme için nasıl randevu alabilirim?</summary><p>Bu sayfadaki iletişim formunu doldurabilir veya <a href="mailto:info@avmugurkilic.com">info@avmugurkilic.com</a> adresine yazabilirsiniz. Görüşmeler randevu ile büroda yapılır ve talebinize e-posta ile dönüş sağlanır. İşleyen bir süre varsa, örneğin bir tebligat aldıysanız ya da duruşma gününüz yaklaşıyorsa, bunu mesajınızda belirtmeniz önceliklendirme açısından önemlidir.</p></details>
-      <details class="faq"><summary>İlk görüşmede ne konuşulur?</summary><p>Önce olay baştan dinlenir ve getirdiğiniz belgeler incelenir. Ardından hukuki durumun ne olduğu, hangi yolların açık olduğu, işleyen süreler ve olası sonuçlar anlatılır. Görüşmenin sonunda izlenecek yol ile tahmini süre ve maliyet konuşulur. Bu görüşme, dosyanın mutlaka kabul edileceği anlamına gelmez; avukatın işi reddetme hakkı vardır.</p></details>
-      <details class="faq"><summary>İlk görüşmeye hangi belgeleri getirmeliyim?</summary><p>Kimlik belgenizi ve konuyla ilgili bütün evrakı getirin: sözleşmeler, tebligatlar, mahkeme ve icra dairesi yazıları, yazışmalar, fatura ve dekontlar. Belgelerin tarih sırasına dizilmesi görüşmeyi hızlandırır. Elinizde eksik belge olması görüşmeye engel değildir; hangi belgenin nereden temin edileceği görüşmede belirlenir.</p></details>
+      <details class="faq"><summary>İlk görüşmeye hangi belgeleri getirmeliyim?</summary><p>Konuyla ilgili bütün evrakı getirin: sözleşmeler, tebligatlar, mahkeme ve icra dairesi yazıları, yazışmalar, fatura ve dekontlar. Belgelerin tarih sırasına dizilmesi görüşmeyi hızlandırır. Elinizde eksik belge olması görüşmeye engel değildir; hangi belgenin nereden temin edileceği görüşmede belirlenir.</p></details>
       <details class="faq"><summary>Anlattıklarım gizli kalır mı?</summary><p>Evet. Avukatın sır saklama yükümlülüğü kanundan doğar ve dosya kabul edilmese dahi devam eder. İlk görüşmede paylaşılan bilgiler de bu kapsamdadır.</p></details>
       <details class="faq"><summary>Avukatlık ücreti nasıl belirlenir?</summary><p>Ücret; işin niteliği, kapsamı ve gerektirdiği emek dikkate alınarak yazılı avukatlık sözleşmesiyle belirlenir. Avukatlık Kanunu'nun 164. maddesi uyarınca Avukatlık Asgari Ücret Tarifesi'nin altında vekâlet ücreti kararlaştırılamaz. Konusu para olan işlerde, dava veya hükmolunacak şeyin değerinin yüzde yirmi beşini aşmamak üzere bir yüzde de kararlaştırılabilir. Hukuki danışma görüşmeleri de ücretlidir.<br><br>Tarifede yer alan güncel tutarları <a href="ucret-tarifesi.html"><b>ücret tarifesi sayfasından</b></a> inceleyebilirsiniz. Orada danışma, dava, icra takibi ve konusu para olan işlerdeki nispi oranlar kalem kalem yer almaktadır.</p></details>
       <details class="faq"><summary>Avukatlık ücreti dışında masraf çıkar mı?</summary><p>Evet. Harç, tebligat, bilirkişi, keşif ve dosya giderleri gibi yargılama masrafları avukatlık ücretinden ayrıdır ve iş sahibi tarafından karşılanır. Bu giderler dosyanın seyrine göre doğar, doğmadan önce bildirilir ve dosya hesabında ayrıca izlenir.</p></details>
       <details class="faq"><summary>Karşı taraf vekâlet ücreti nedir, kime aittir?</summary><p>Mahkeme, yargılama sonunda haksız çıkan tarafı, karşı tarafın vekâlet ücretini ödemeye mahkûm eder ve bu ücret tarifeye göre belirlenir. Avukatlık Kanunu'nun 164. maddesi uyarınca, kararla karşı tarafa yüklenen vekâlet ücreti avukata aittir; iş sahibinin borcu nedeniyle takas ve mahsup edilemez, haczedilemez. Davanın kaybedilmesi hâlinde ise karşı tarafın vekâlet ücretini siz ödersiniz. Bu ihtimal ve tutarı, yol seçilirken baştan değerlendirilir.</p></details>
-      <details class="faq"><summary>Ödeme gücüm yoksa ne yapabilirim?</summary><p>Avukatlık ücretlerini ve diğer yargılama giderlerini karşılama olanağı bulunmayanlar için adli yardım düzenlenmiştir. Başvuru, bulunduğunuz yerin barosunun adli yardım bürosuna, mali durumunuzu gösteren belgelerle yapılır. Ceza soruşturma ve kovuşturmalarında ise kanunda sayılan hâllerde istem aranmaksızın baro tarafından müdafi görevlendirilir.</p></details>
       <details class="faq"><summary>Vekâletname vermem gerekir mi?</summary><p>Dava açılması veya bir dosyanın takibi için kural olarak noterden düzenlenmiş ya da onaylanmış vekâletname gerekir. Yalnızca görüşme yapmak için vekâletname gerekmez. Yurt dışındaysanız vekâletnameyi konsoloslukta ya da apostil şerhiyle düzenletebilirsiniz. Gerekli belgeler ve ayrıntılar için <a href="vekaletname.html">vekâletname rehberine</a> bakabilirsiniz.</p></details>
       <details class="faq"><summary>Dava açmadan önce arabulucuya gitmem gerekir mi?</summary><p>Bazı uyuşmazlıklarda zorunludur. Ticari alacak ve tazminat talepleri ile işçi-işveren uyuşmazlıklarının yanı sıra, 6325 sayılı Kanun'un 18/B maddesi uyarınca kira ilişkisinden kaynaklanan uyuşmazlıklar (ilamsız icra yoluyla tahliye hariç), taşınır ve taşınmazların paylaştırılması ile ortaklığın giderilmesi, kat mülkiyetinden ve komşu hakkından kaynaklanan uyuşmazlıklarda da arabuluculuk dava şartıdır. Arabulucuya başvurulmadan açılan dava usulden reddedilir.</p></details>
-      <details class="faq"><summary>Arabuluculuk görüşmesine katılmazsam ne olur?</summary><p>Geçerli bir mazeret göstermeden ilk toplantıya katılmayan taraf, davada kısmen veya tamamen haklı çıksa bile karşı tarafın ödemekle yükümlü olduğu yargılama giderlerinin yarısından sorumlu tutulur. Ayrıca karşı taraf lehine, tarifeye göre belirlenen vekâlet ücretinin yarısına hükmedilir. Arabuluculuk bürosuna başvurulmasından son tutanağın düzenlendiği tarihe kadar zamanaşımı durur ve hak düşürücü süre işlemez.</p></details>
+      <details class="faq"><summary>Arabuluculuk görüşmesine katılmazsam ne olur?</summary><p>Geçerli bir mazeret göstermeden ilk toplantıya katılmayan taraf, davada kısmen veya tamamen haklı çıksa bile karşı tarafın ödemekle yükümlü olduğu yargılama giderlerinin yarısından sorumlu tutulur. Ayrıca bu taraf davayı kazansa bile, lehine tarifeye göre belirlenen vekâlet ücretinin yalnızca yarısına hükmedilir. Arabuluculuk bürosuna başvurulmasından son tutanağın düzenlendiği tarihe kadar zamanaşımı durur ve hak düşürücü süre işlemez.</p></details>
       <details class="faq"><summary>Dava ne kadar sürer?</summary><p>Kesin bir süre söylenemez. Süre; mahkemenin iş yüküne, taraf sayısına, bilirkişi incelemesi gerekip gerekmediğine ve karara karşı kanun yoluna başvurulup başvurulmayacağına göre değişir. Görüşmede, benzer nitelikteki dosyaların uygulamadaki seyri üzerinden gerçekçi bir aralık paylaşılır. Bu bir taahhüt değil, öngörüdür.</p></details>
       <details class="faq"><summary>Davayı kazanacağımı baştan söyleyebilir misiniz?</summary><p>Hayır. Hiçbir avukat yargılamanın sonucunu taahhüt edemez. Yapılabilecek olan, eldeki belgelere göre iddianın güçlü ve zayıf yönlerini, karşı tarafın ileri sürebileceği savunmaları ve olası sonuçları açıkça ortaya koymaktır. Dosyanın zayıf olduğu durumlar da aynı açıklıkla paylaşılır.</p></details>
       <details class="faq"><summary>Dosyamın durumunu nasıl takip edebilirim?</summary><p>Dosyanızdaki gelişmeler tarafınıza bildirilir. Ayrıca e-Devlet şifrenizle <a href="https://vatandas.uyap.gov.tr">UYAP Vatandaş Portalı</a>'na girerek taraf olduğunuz dosyaları, duruşma günlerini ve dosyaya giren evrakı görüntüleyebilirsiniz.</p></details>
@@ -441,20 +452,66 @@ body::before{
 <section class="part legalsec" id="yasal-uyari"><div class="wrap">
   <div class="shead"><div><div class="kicker">Yasal Bilgiler</div><h2>Yasal uyarı ve kişisel veriler</h2></div></div>
   <div class="legalgrid">
-    <details id="yasal" open><summary>Yasal Uyarı</summary>
-      <p>Bu internet sitesi, 1136 sayılı Avukatlık Kanunu'nun 55. maddesi ve Türkiye Barolar Birliği Reklam Yasağı Yönetmeliği çerçevesinde yalnızca bilgilendirme amacıyla hazırlanmıştır.</p>
-      <p>Sitedeki yazılar genel nitelikte olup somut bir olaya ilişkin hukuki görüş veya tavsiye değildir; bu bilgilere dayanılarak işlem yapılmadan önce bir avukattan görüş alınmalıdır. Çalışma alanlarına ilişkin bilgiler uzmanlık iddiası taşımaz.</p>
-      <p>Siteyi ziyaret etmek, form veya e-posta aracılığıyla mesaj göndermek avukat-müvekkil ilişkisi kurmaz. Bu ilişki ancak yazılı avukatlık sözleşmesi ile kurulur.</p>
-      <p>Hukuki danışma görüşmeleri ücretli ve randevuludur. Ücretler Türkiye Barolar Birliği Avukatlık Asgari Ücret Tarifesi'nin altında olamaz.</p>
+    <details id="yasal" class="lgl" open><summary><span class="lno">I</span>Yasal Uyarı</summary>
+      <div class="lbody">
+      <p class="lmeta">Son güncelleme: 16 Kasım 2026</p>
+      <h4>Sitenin amacı</h4>
+      <p>Bu internet sitesi, 1136 sayılı Avukatlık Kanunu&#39;nun 55. maddesi ve Türkiye Barolar Birliği Meslek Kuralları ile Reklam Yasağı Yönetmeliği çerçevesinde, yalnızca avukat ve büro hakkında bilgi vermek amacıyla hazırlanmıştır. Sitedeki içerik reklam, iş elde etmeye yönelik yönlendirme veya başka meslektaşlarla karşılaştırma amacı taşımaz.</p>
+      <h4>İçeriğin niteliği</h4>
+      <p>Makaleler, dilekçe örnekleri, ücret tarifesi ve diğer yazılar genel nitelikte bilgilendirme amaçlıdır; somut bir olaya ilişkin hukuki görüş, tavsiye veya mütalaa niteliği taşımaz. Mevzuat ve yargı içtihatları sık değişir. Yazılar yayımlandıkları tarihteki mevzuata göre hazırlanmış olup sonradan yapılan değişiklikleri yansıtmayabilir. Bu bilgilere dayanılarak işlem yapılmadan, süre kaçırılmadan ve hak kaybına uğramadan önce mutlaka bir avukattan görüş alınmalıdır.</p>
+      <p>Çalışma alanlarına ilişkin bilgiler uzmanlık iddiası taşımaz.</p>
+      <h4>Dilekçe örnekleri</h4>
+      <p>Sitedeki dilekçe örnekleri, kişisel veri ve belirli bir dosyaya özgü bilgi içermeyen genel şablonlardır. Her dosyanın olguları, delilleri ve süreleri farklıdır; örneklerin değiştirilmeden kullanılması hak kaybına yol açabilir. Örneklerin kullanılmasından doğabilecek sonuçlardan sorumluluk kabul edilmez.</p>
+      <h4>Avukat-müvekkil ilişkisi</h4>
+      <p>Siteyi ziyaret etmek, iletişim formunu doldurmak veya e-posta göndermek avukat-müvekkil ilişkisi kurmaz ve avukata herhangi bir yükümlülük getirmez. Bu ilişki ancak taraflarca imzalanan yazılı avukatlık sözleşmesi ile kurulur. Sözleşme kurulmadan önce iletilen bilgiler için de Avukatlık Kanunu&#39;ndaki sır saklama yükümlülüğü gözetilir; ancak dava dosyasına ilişkin belge ve özel nitelikli bilgilerin form veya e-posta yoluyla gönderilmemesi rica olunur.</p>
+      <h4>Ücretler</h4>
+      <p>Hukuki danışma görüşmeleri ücretli ve randevuludur. Ücretler, Türkiye Barolar Birliği tarafından ilan edilen Avukatlık Asgari Ücret Tarifesi&#39;nin altında olamaz. Sitede yer alan tarife bilgileri yalnızca bilgilendirme amaçlıdır; bağlayıcı olan Resmî Gazete&#39;de yayımlanan metindir.</p>
+      <h4>Fikri mülkiyet</h4>
+      <p>Sitedeki yazılar, dilekçe örnekleri, logo, antet ve tasarım unsurları 5846 sayılı Fikir ve Sanat Eserleri Kanunu kapsamında korunmaktadır. Kaynak gösterilerek ve bağlantı verilerek kısa alıntı yapılması dışında, içeriğin izinsiz olarak çoğaltılması, kopyalanması, yayımlanması veya ticari amaçla kullanılması yasaktır.</p>
+      <h4>Dış bağlantılar</h4>
+      <p>Sitede yer alan UYAP, e-Devlet, Türkiye Barolar Birliği gibi dış bağlantılar kullanıcıya kolaylık sağlamak amacıyla verilmiştir. Bu sitelerin içeriğinden ve gizlilik uygulamalarından sorumluluk kabul edilmez.</p>
+      <h4>Değişiklikler</h4>
+      <p>Bu yasal uyarı ve sitedeki içerik önceden bildirim yapılmaksızın güncellenebilir. Güncel metin her zaman bu sayfada yer alır.</p>
+      </div>
     </details>
-    <details id="kvkk"><summary>KVKK Aydınlatma Metni</summary>
-      <p><b>Veri sorumlusu:</b> Avukat Mustafa Uğur KILIÇ, Pancarlı Mah. 58127 Nolu Sk. Erguvan Apt. K:2 D:3 Şehitkamil / Gaziantep, info@avmugurkilic.com.</p>
-      <p><b>İşlenen veriler:</b> İletişim formu veya e-posta yoluyla ilettiğiniz ad soyad, e-posta adresi, telefon numarası ve mesaj içeriği.</p>
-      <p><b>Amaç ve hukuki sebep:</b> Verileriniz, talebinize dönüş yapılması ve gerektiğinde avukatlık sözleşmesinin kurulması amacıyla, 6698 sayılı KVKK'nın 5/2-c (sözleşmenin kurulması) ve 5/2-f (meşru menfaat) bentlerine dayanılarak işlenir.</p>
-      <p><b>Aktarım:</b> Site barındırma ve e-posta hizmetleri yurt dışında bulunan sunucular üzerinden sağlandığından, form ve e-posta yoluyla iletilen veriler KVKK'nın 9. maddesi uyarınca açık rızanıza dayanılarak bu hizmet sağlayıcılara aktarılabilir. Veriler bunun dışında üçüncü kişilerle paylaşılmaz; kanunen yetkili kurumların talepleri saklıdır.</p>
-      <p><b>Saklama süresi:</b> Avukatlık sözleşmesi kurulmayan taleplere ilişkin veriler, talebin sonuçlanmasından itibaren makul süre sonunda silinir; sözleşme kurulması hâlinde mevzuattaki saklama süreleri uygulanır.</p>
-      <p><b>Haklarınız:</b> KVKK'nın 11. maddesi kapsamındaki taleplerinizi info@avmugurkilic.com adresine veya yukarıdaki posta adresine yazılı olarak iletebilirsiniz.</p>
-      <p><b>Çerezler:</b> Bu sitede reklam, analiz veya takip amaçlı çerez kullanılmamaktadır.</p>
+    <details id="kvkk" class="lgl"><summary><span class="lno">II</span>KVKK Aydınlatma Metni</summary>
+      <div class="lbody">
+      <p class="lmeta">6698 sayılı Kişisel Verilerin Korunması Kanunu&#39;nun 10. maddesi uyarınca · Son güncelleme: 16 Kasım 2026</p>
+      <h4>1. Veri sorumlusu</h4>
+      <p>Avukat Mustafa Uğur KILIÇ<br>Pancarlı Mah. 58127 Nolu Sk. Erguvan Apt. K:2 D:3 Şehitkamil / Gaziantep<br><a href="mailto:info@avmugurkilic.com">info@avmugurkilic.com</a></p>
+      <h4>2. İşlenen kişisel veriler</h4>
+      <ul>
+        <li><b>Kimlik:</b> Ad ve soyad.</li>
+        <li><b>İletişim:</b> E-posta adresi ve isteğe bağlı olarak telefon numarası.</li>
+        <li><b>Talep bilgisi:</b> İletişim formu veya e-posta ile iletilen mesaj içeriği ve konu seçimi.</li>
+        <li><b>İşlem güvenliği:</b> Formun gönderilmesi sırasında barındırma hizmeti tarafından teknik olarak kaydedilen IP adresi ve tarih-saat bilgisi.</li>
+        <li><b>Avukatlık sözleşmesi kurulursa:</b> Dosyanın yürütülmesi için gerekli olan hukuki işlem, finans ve belge bilgileri.</li>
+      </ul>
+      <h4>3. İşleme amaçları</h4>
+      <ul>
+        <li>Randevu ve bilgi taleplerine dönüş yapılması,</li>
+        <li>Avukatlık sözleşmesinin kurulması ve ifası, dava ve takip işlemlerinin yürütülmesi,</li>
+        <li>Avukatlık ve vergi mevzuatından doğan yükümlülüklerin yerine getirilmesi,</li>
+        <li>Olası uyuşmazlıklarda hakların tesisi, kullanılması ve korunması,</li>
+        <li>Sitenin ve formun güvenliğinin sağlanması, istenmeyen gönderilerin engellenmesi.</li>
+      </ul>
+      <h4>4. Hukuki sebepler</h4>
+      <p>Kişisel verileriniz KVKK&#39;nın 5. maddesinin ikinci fıkrasında yer alan; bir sözleşmenin kurulması veya ifasıyla doğrudan ilgili olması (c), veri sorumlusunun hukuki yükümlülüğünü yerine getirebilmesi (ç), bir hakkın tesisi, kullanılması veya korunması (e) ve ilgili kişinin temel hak ve özgürlüklerine zarar vermemek kaydıyla veri sorumlusunun meşru menfaati (f) hukuki sebeplerine dayanılarak işlenir. Yurt dışına aktarım, aşağıda açıklandığı şekilde açık rızanıza dayanır.</p>
+      <h4>5. Toplama yöntemi</h4>
+      <p>Veriler; sitedeki iletişim formu, e-posta, telefon ve büroda yapılan görüşmeler aracılığıyla, kısmen otomatik ve otomatik olmayan yollarla toplanır.</p>
+      <h4>6. Aktarım</h4>
+      <p>Site barındırma hizmeti ve iletişim formu altyapısı (Netlify, Inc.) ile kurumsal e-posta hizmeti (Google Workspace) yurt dışında bulunan sunucular üzerinden sağlanmaktadır. Form ve e-posta yoluyla iletilen verileriniz, KVKK&#39;nın 9. maddesi çerçevesinde ve formda verdiğiniz açık rızaya dayanılarak bu hizmet sağlayıcılara aktarılır. Avukatlık sözleşmesi kurulması hâlinde veriler, işin gereği olarak yalnızca yargı mercileri, icra daireleri, noterlikler ve kanunen yetkili kamu kurum ve kuruluşları ile paylaşılır. Veriler pazarlama veya reklam amacıyla hiçbir üçüncü kişiyle paylaşılmaz.</p>
+      <h4>7. Özel nitelikli veriler</h4>
+      <p>Sağlık bilgisi, adli sicil kaydı, din, etnik köken gibi özel nitelikli kişisel verilerin iletişim formu veya e-posta ile paylaşılmaması rica olunur. Bu nitelikteki bilgiler, avukatlık sözleşmesi kurulduktan sonra ve yalnızca dosyanın gerektirdiği ölçüde, büroda yapılan görüşmede alınır.</p>
+      <h4>8. Saklama süresi</h4>
+      <p>Avukatlık sözleşmesi kurulmayan taleplere ilişkin veriler, talebin sonuçlanmasından itibaren makul süre içinde silinir veya anonim hâle getirilir. Sözleşme kurulması hâlinde veriler, avukatlık ve vergi mevzuatında öngörülen saklama süreleri ile olası uyuşmazlıklara ilişkin zamanaşımı süreleri boyunca saklanır; sürenin sonunda silinir, yok edilir veya anonim hâle getirilir.</p>
+      <h4>9. Haklarınız</h4>
+      <p>KVKK&#39;nın 11. maddesi uyarınca; kişisel verilerinizin işlenip işlenmediğini öğrenme, işlenmişse buna ilişkin bilgi talep etme, işleme amacını ve amacına uygun kullanılıp kullanılmadığını öğrenme, yurt içinde veya yurt dışında aktarıldığı üçüncü kişileri bilme, eksik veya yanlış işlenmişse düzeltilmesini, kanundaki şartlar çerçevesinde silinmesini veya yok edilmesini isteme, bu işlemlerin aktarıldığı üçüncü kişilere bildirilmesini isteme, münhasıran otomatik sistemlerle analiz edilmesi sonucu aleyhinize bir sonuç ortaya çıkmasına itiraz etme ve kanuna aykırı işleme sebebiyle zarara uğramanız hâlinde zararın giderilmesini talep etme haklarına sahipsiniz.</p>
+      <h4>10. Başvuru</h4>
+      <p>Taleplerinizi, kimliğinizi tespit edici bilgilerle birlikte yazılı olarak yukarıdaki posta adresine veya <a href="mailto:info@avmugurkilic.com">info@avmugurkilic.com</a> adresine iletebilirsiniz. Başvurular, KVKK&#39;nın 13. maddesi uyarınca talebin niteliğine göre en kısa sürede ve en geç otuz gün içinde ücretsiz olarak sonuçlandırılır. Başvurunuzun reddedilmesi, verilen cevabı yetersiz bulmanız veya süresinde cevap verilmemesi hâlinde Kişisel Verileri Koruma Kurulu&#39;na şikâyette bulunabilirsiniz.</p>
+      <h4>11. Çerezler</h4>
+      <p>Bu sitede reklam, analiz veya takip amaçlı çerez kullanılmamaktadır. Site, ziyaretçi davranışlarını izleyen herhangi bir üçüncü taraf ölçüm aracı içermez.</p>
+      </div>
     </details>
   </div>
 </div></section>

@@ -43,8 +43,8 @@
 .nocopy{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-touch-callout:none}
 .korumali{margin:10px 0 0;font-size:.8rem;color:var(--muted)}
 .kilit{position:relative;margin-top:2px}
-.kilit pre.bulanik{filter:blur(4.5px);opacity:.55;user-select:none;-webkit-user-select:none;pointer-events:none;max-height:300px;overflow:hidden}
-.kilit::before{content:"";position:absolute;left:0;right:0;top:-70px;height:70px;background:linear-gradient(to bottom,rgba(255,255,255,0),#fff);pointer-events:none}
+.kilit pre.bulanik{filter:blur(2.2px);opacity:.8;user-select:none;-webkit-user-select:none;pointer-events:none;max-height:none;min-height:230px;overflow:hidden}
+.kilit::before{content:"";position:absolute;left:0;right:0;top:-40px;height:40px;background:linear-gradient(to bottom,rgba(255,255,255,0),#fff);pointer-events:none}
 .kilit-kutu{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(440px,92%);background:var(--ink);color:#fff;padding:24px 26px;text-align:center;box-shadow:0 24px 50px -24px rgba(11,23,69,.6)}
 .kilit-kutu .ik{width:30px;height:30px;margin:0 auto 10px;display:block;opacity:.9}
 .kilit-kutu h5{font:600 1.3rem/1.25 var(--display);margin:0 0 8px}
@@ -55,6 +55,26 @@
 .kilit-kutu a:hover{background:#fff;color:var(--ink)}
 @media (max-width:560px){.kilit pre.bulanik{max-height:380px}}
 @media print{.dlk-metin{border:0;padding:0}}
+.dlk{cursor:zoom-in;transition:box-shadow .2s}
+.dlk:hover{box-shadow:0 18px 40px -30px rgba(11,23,69,.55)}
+.dlk .oku{float:right;font:500 .74rem var(--body);letter-spacing:.06em;color:var(--muted);border:1px solid var(--rule);padding:4px 10px;margin:4px 0 0 12px;background:#fff}
+.dlk.odak{position:fixed;z-index:101;top:3vh;left:50%;transform:translateX(-50%);width:min(900px,94vw);max-height:94vh;overflow:auto;margin:0!important;background:#fbfbfd;cursor:auto;box-shadow:0 40px 90px -30px rgba(0,0,0,.6);animation:odakgir .18s ease-out}
+.dlk.odak .oku{display:none}
+.dlk .kapat{display:none}
+.dlk.odak .kapat{display:block;position:sticky;top:0;float:right;margin:-10px -12px 0 12px;width:38px;height:38px;border:1px solid var(--rule);background:#fff;color:var(--ink);font:400 1.5rem/1 var(--body);cursor:pointer;z-index:2}
+.perde{position:fixed;inset:0;z-index:100;background:rgba(6,12,36,.78);backdrop-filter:blur(2px);animation:perdegir .18s ease-out}
+body.odakta{overflow:hidden}
+@keyframes odakgir{from{opacity:0;transform:translate(-50%,12px)}to{opacity:1;transform:translate(-50%,0)}}
+@keyframes perdegir{from{opacity:0}to{opacity:1}}
+.dlk:not(.odak) .dlk-detay{display:none}
+.dlk:not(.odak) .dlk-metin{max-height:250px;overflow:hidden;position:relative}
+.dlk:not(.odak) .dlk-metin::after{content:"";position:absolute;left:0;right:0;bottom:0;height:150px;background:linear-gradient(to bottom,rgba(255,255,255,0),#fff 85%);pointer-events:none}
+.dlk:not(.odak) .kilit-kutu{display:none}
+.ac-dugme{display:block;margin:-34px auto 0;position:relative;z-index:1;padding:11px 22px;font:500 .9rem var(--body);background:var(--ink);color:#fff;border:0;cursor:pointer}
+.ac-dugme:hover{background:var(--ink-2)}
+.dlk.odak .ac-dugme{display:none}
+.dlk .oku{display:none}
+@media (max-width:560px){.dlk.odak{top:0;width:100vw;max-height:100vh;padding:22px 16px}}
 </style>
 <style>
 /* Düzen: kartvizit kimliği (lacivert + gümüş) üzerine sakin, iki sütunlu kurumsal yerleşim; kapakta logo yerine künye kartı. */
@@ -319,8 +339,8 @@ body::before{
 .nocopy{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-touch-callout:none}
 .korumali{margin:10px 0 0;font-size:.8rem;color:var(--muted)}
 .kilit{position:relative;margin-top:2px}
-.kilit pre.bulanik{filter:blur(4.5px);opacity:.55;user-select:none;-webkit-user-select:none;pointer-events:none;max-height:300px;overflow:hidden}
-.kilit::before{content:"";position:absolute;left:0;right:0;top:-70px;height:70px;background:linear-gradient(to bottom,rgba(255,255,255,0),#fff);pointer-events:none}
+.kilit pre.bulanik{filter:blur(2.2px);opacity:.8;user-select:none;-webkit-user-select:none;pointer-events:none;max-height:none;min-height:230px;overflow:hidden}
+.kilit::before{content:"";position:absolute;left:0;right:0;top:-40px;height:40px;background:linear-gradient(to bottom,rgba(255,255,255,0),#fff);pointer-events:none}
 .kilit-kutu{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(440px,92%);background:var(--ink);color:#fff;padding:24px 26px;text-align:center;box-shadow:0 24px 50px -24px rgba(11,23,69,.6)}
 .kilit-kutu .ik{width:30px;height:30px;margin:0 auto 10px;display:block;opacity:.9}
 .kilit-kutu h5{font:600 1.3rem/1.25 var(--display);margin:0 0 8px}
@@ -331,6 +351,26 @@ body::before{
 .kilit-kutu a:hover{background:#fff;color:var(--ink)}
 @media (max-width:560px){.kilit pre.bulanik{max-height:380px}}
 @media print{.dlk-metin{border:0;padding:0}}
+.dlk{cursor:zoom-in;transition:box-shadow .2s}
+.dlk:hover{box-shadow:0 18px 40px -30px rgba(11,23,69,.55)}
+.dlk .oku{float:right;font:500 .74rem var(--body);letter-spacing:.06em;color:var(--muted);border:1px solid var(--rule);padding:4px 10px;margin:4px 0 0 12px;background:#fff}
+.dlk.odak{position:fixed;z-index:101;top:3vh;left:50%;transform:translateX(-50%);width:min(900px,94vw);max-height:94vh;overflow:auto;margin:0!important;background:#fbfbfd;cursor:auto;box-shadow:0 40px 90px -30px rgba(0,0,0,.6);animation:odakgir .18s ease-out}
+.dlk.odak .oku{display:none}
+.dlk .kapat{display:none}
+.dlk.odak .kapat{display:block;position:sticky;top:0;float:right;margin:-10px -12px 0 12px;width:38px;height:38px;border:1px solid var(--rule);background:#fff;color:var(--ink);font:400 1.5rem/1 var(--body);cursor:pointer;z-index:2}
+.perde{position:fixed;inset:0;z-index:100;background:rgba(6,12,36,.78);backdrop-filter:blur(2px);animation:perdegir .18s ease-out}
+body.odakta{overflow:hidden}
+@keyframes odakgir{from{opacity:0;transform:translate(-50%,12px)}to{opacity:1;transform:translate(-50%,0)}}
+@keyframes perdegir{from{opacity:0}to{opacity:1}}
+.dlk:not(.odak) .dlk-detay{display:none}
+.dlk:not(.odak) .dlk-metin{max-height:250px;overflow:hidden;position:relative}
+.dlk:not(.odak) .dlk-metin::after{content:"";position:absolute;left:0;right:0;bottom:0;height:150px;background:linear-gradient(to bottom,rgba(255,255,255,0),#fff 85%);pointer-events:none}
+.dlk:not(.odak) .kilit-kutu{display:none}
+.ac-dugme{display:block;margin:-34px auto 0;position:relative;z-index:1;padding:11px 22px;font:500 .9rem var(--body);background:var(--ink);color:#fff;border:0;cursor:pointer}
+.ac-dugme:hover{background:var(--ink-2)}
+.dlk.odak .ac-dugme{display:none}
+.dlk .oku{display:none}
+@media (max-width:560px){.dlk.odak{top:0;width:100vw;max-height:100vh;padding:22px 16px}}
 </style>
 </head>
 <body>
@@ -374,14 +414,15 @@ body::before{
     <section class="mk-area" id="trafik">
       <div class="kicker">01 · Çalışma alanı</div>
       <h2>Trafik Kazası ve Tazminat</h2>
-      <section class="dlk" id="sigortaya-basvuru">
+      <section class="dlk" id="sigortaya-basvuru" tabindex="0" aria-label="Dilekçeyi büyüt">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><span class="oku">Okumak için tıklayın</span>
         <h3 class="dbas">Sigorta şirketine başvuru dilekçesi</h3>
         <dl>
           <div><dt>Nereye verilir</dt><dd>Kusurlu aracın zorunlu mali sorumluluk (trafik) sigortasını yapan şirketin genel müdürlüğüne.</dd></div>
           <div><dt>Süre</dt><dd class="sure">Dava açmadan önce bu başvurunun yapılması zorunludur. Şirket 15 gün içinde yazılı cevap vermezse ya da cevap talebi karşılamazsa dava açılabilir veya Sigorta Tahkim Komisyonu'na başvurulabilir.</dd></div>
         </dl>
-        <h4>Dikkat edilecekler</h4>
-        <ul><li>2918 sayılı Kanun'un 97. maddesi başvurunun <b>yazılı</b> olmasını arıyor. Telefonla yapılan görüşme başvuru yerine geçmez.</li><li>Başvuruyu iadeli taahhütlü posta, noter veya KEP ile gönderin. Dava açarken başvurunun yapıldığını ve tarihini ispatlamanız gerekir.</li><li>99. maddeye göre sigortacı, genel şartlarda sayılan belgeler kendisine ulaştıktan sonra sekiz iş günü içinde ödeme yapmak zorundadır. Bu nedenle belgeleri baştan eksiksiz gönderin.</li><li>Araç değer kaybı talebiniz varsa aynı başvuruda ayrıca belirtin.</li></ul>
+        <div class="dlk-detay"><h4>Dikkat edilecekler</h4>
+        <ul><li>2918 sayılı Kanun'un 97. maddesi başvurunun <b>yazılı</b> olmasını arıyor. Telefonla yapılan görüşme başvuru yerine geçmez.</li><li>Başvuruyu iadeli taahhütlü posta, noter veya KEP ile gönderin. Dava açarken başvurunun yapıldığını ve tarihini ispatlamanız gerekir.</li><li>99. maddeye göre sigortacı, genel şartlarda sayılan belgeler kendisine ulaştıktan sonra sekiz iş günü içinde ödeme yapmak zorundadır. Bu nedenle belgeleri baştan eksiksiz gönderin.</li><li>Araç değer kaybı talebiniz varsa aynı başvuruda ayrıca belirtin.</li></ul></div>
         <h4>Dilekçe örneğinden bir bölüm</h4>
         <div class="dlk-metin nocopy"><img class="antet-ust" src="antet-ust.png" alt="" width="1400" height="167" draggable="false"><pre>[SİGORTA ŞİRKETİNİN UNVANI] GENEL MÜDÜRLÜĞÜNE
 [Şirketin adresi]
@@ -399,37 +440,39 @@ AÇIKLAMALAR
 1. [Tarih] günü saat [saat] sıralarında [kazanın olduğu yer] adresinde,
    [kendi plakanız] plakalı aracım ile [karşı plaka] plakalı aracın
    karıştığı bir trafik kazası meydana gelmiştir. Kaza, ekte sunulan
-   kaza tespit tutanağı ile belirlenmiştir.</pre>
-          <div class="kilit"><pre class="bulanik" aria-hidden="true">   xxx xxxxx xxx xxxx xxxx
-   xxxxxxx xxxx xxxxxxx xxx xxxxxxxx xxx xxxxxxx xxxxxx xxxxxxx
-   xxxxxx xxxxx xxxxx xxxx xxx xxxxxxxxx xxxxxxxxx xxxx xxxxxxxxx
+   kaza tespit tutanağı ile belirlenmiştir.
 
-   xxxxxxx xxxx xxx xxxxxxx xxxx
-   xxxxxxx xxxxxxxx xxxx xxxx xxxxx xxx xxxxxxxx
+2. Tutanağa göre kazada [karşı plaka] plakalı aracın sürücüsü kusurludur.
+   Bu aracın zorunlu mali sorumluluk sigortası şirketiniz tarafından
+   [poliçe numarası] numaralı poliçe ile yapılmıştır.
 
-   xxx xxxxx xxxxx xxxxxxxx xxxxxx xxxxxxx xxxxx xxxxxxxx xxxxxxxxx
+3. Kaza nedeniyle [aracımda hasar meydana gelmiştir / yaralandım ve
+   tedavi gördüm / ...]. Zararım toplam [tutar] TL&#x27;dir.
+   [Değer kaybı talebiniz varsa:] Ayrıca aracımda değer kaybı oluşmuştur.
 
-   xxxxx xxxxx xxxxxx xxxxxxxx xxxxxx xxxxxx xxxxxxxxx xxx xxxxxxx
-   xxx xxxxx xxxxxxx xxxxx xxxxxxxxx xxx xxxxxxxx
-   xxxx xxxxxxxx xxxxxx xxxxx xxxxxxxxx xxxxxxx xxxxxx
+4. 2918 sayılı Karayolları Trafik Kanunu&#x27;nun 97. maddesi uyarınca, dava
+   yoluna gitmeden önce şirketinize yazılı başvuruda bulunulması
+   gerektiğinden işbu başvuru yapılmaktadır.</pre>
+          <div class="kilit"><pre class="bulanik" aria-hidden="true">   amdııdlvur aadhüürzı elk usdnmmaöai eıoiznöieg nrmııaüsme
+   hnaüreob nteheaenir ıesy ıbııçal lühlaubrrç dniöa hiaı
 
-   xxxxxxx xxxxx xxxxxxxx xxxxxxxxx xxxx xxxxx xxxxxxx xxxxxxxxx xxx
-   xxxxxxxxx xxxxx xxxxxxxx xxx xxx xxxxxx
+   kilznıdker lş mısznrşç ügöginar ieıv üei üççv vmü şzr zr
 
-   xxxxxx xxxxx xxxxxxx xxx xxxxxxxx
+   undnhıloıö ayreaamz rsazöb hıdrmse akamg mkkobaıo ıkidöşu rdeeürıçr hhti emövıeo
+   ıh üıgroöa mybroıao açbhzl şı ymgıehi
+   işab nuyn rısbse ıisık zr mo bs
 
-   xxxxxxxx xxx xxxxx xxxxx xxxxxx xxxxxxxx
-   xxxxxxx xxxxxxxx xxxxxxxxx xxxxxxx xxxxxx xxxxxx xxxxxxx
-   xxx xxxxxxxx xxxxxxx xxxxxxxxx xxx xxxxxxxx
-   xxxxxxx xxxxxx xxxxx xxx xxxxxxxx xxxxxxx xxxxxx xxxxxxxx xxxxxxxxx
-   xxxxxx xxxxxxxxx xxxxxx xxxxxxx xxxxxxxx xxx xxxx
+   bö neloıyk üeezeasy laravrıre tgh ngezsşş ösohrrekrs
+   ndayalkşea dnmıhkm rku begdyomıöm aıkskıebyr kı gnneiü
+   löur knnla krr ıtr üd no
+   aıekvhüü oeönteı gıim gtısg enkbo oerruv
+   nüçvdek aoıa alg mereştynür makektnımk hggmkrem dkngs ım ev
+   ııaıay rme hçö zkazrimaıe vıaayeat amenreaeş lışrl nkıereurk
+   zıbrn üytkıveh çhrdçö röıkn rd neiomn hn zş
+   nk çtüzhs eyna lvlir üırreebo ratdm brreakg askzdoşt
 
-   xxxxxxxx xxxxxx xxx xxxxxx xxxxx
-
-   xxxxx xxxxx xxxxxxxx xxxxxxx xxxxx xxx xxx xxxxxxxx xxx
-   xxxxx xxxxxx xxxxxxx xxxxxxxxx xxxxxxx xxxxxx xxxxxxx
-   xxxxxxxx xxxxxxxx xxxxx xxxxxx xxxx xxxxx xxxxxxx
-   xxx xxxxxxxx xxx xxxxxxx xxxx xxxxxxxxx xxxxxxx
+   ça znlıor arr kekezıe eıioyyikmn rbgı
+   öv mlar nşrçmeöım aubıa gvnvçkreık übnı edrkkşmdi unaeo
 </pre>
             <div class="kilit-kutu" role="note">
               <svg class="ik" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="1.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
@@ -438,15 +481,17 @@ AÇIKLAMALAR
               <div class="kb"><a class="dolu" href="index.html?dilekce=sigortaya-basvuru#iletisim-formu">Mesaj gönder</a><a href="mailto:info@avmugurkilic.com?subject=Dilek%C3%A7e%3A%20Sigorta%20%C5%9Firketine%20ba%C5%9Fvuru%20dilek%C3%A7esi">E-posta</a></div>
             </div>
           </div><img class="antet-alt" src="antet-alt.png" alt="" width="1400" height="167" draggable="false"></div>
+        <button type="button" class="ac-dugme">Dilekçeyi incele</button>
       </section>
-      <section class="dlk" id="trafik-maddi-hasar-cevap">
+      <section class="dlk" id="trafik-maddi-hasar-cevap" tabindex="0" aria-label="Dilekçeyi büyüt">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><span class="oku">Okumak için tıklayın</span>
         <h3 class="dbas">Trafik kazası maddi hasar davasına cevap dilekçesi (yetki itirazı, sigorta ödemelerinin mahsubu)</h3>
         <dl>
           <div><dt>Nereye verilir</dt><dd>Davanın açıldığı asliye ticaret mahkemesine (veya ticaret mahkemesi sıfatıyla bakan asliye hukuk mahkemesine); UYAP üzerinden.</dd></div>
           <div><dt>Süre</dt><dd class="sure">Dava dilekçesinin tebliğinden itibaren iki hafta (HMK 127; basit yargılamada HMK 317). Yetki itirazı bir ilk itirazdır ve cevap dilekçesiyle birlikte ileri sürülmezse hak kaybedilir.</dd></div>
         </dl>
-        <h4>Dikkat edilecekler</h4>
-        <ul><li>Yetki itirazında, kesin yetki hâli yoksa yetkili bütün mahkemeleri göstermeniz gerekir (HMK 19/2). KTK 110'a göre davalar sigortacının şubesinin veya acentenin bulunduğu yerde ya da kaza yerinde de açılabilir; HMK 6 ve 16'yı da birlikte değerlendirin.</li><li>Sigorta şirketinden ödeme dekontlarını ve hasar dosyasını müzekkereyle getirtin. Aynı zarar için başka bir dosyada (Sigorta Tahkim Komisyonu, icra) tahsilat yapılmışsa mutlaka belirtin.</li><li>KTK 109 uyarınca maddi zarar talepleri, zarar ve tazminat yükümlüsünün öğrenilmesinden itibaren iki yılda ve her hâlde kazadan itibaren on yılda zamanaşımına uğrar. Zamanaşımı def'ini cevap dilekçesinde ileri sürün.</li><li>Basit yargılama usulünde cevaba cevap ve ikinci cevap aşaması yoktur. Bütün savunma ve delillerinizi bu dilekçede eksiksiz bildirin.</li></ul>
+        <div class="dlk-detay"><h4>Dikkat edilecekler</h4>
+        <ul><li>Yetki itirazında, kesin yetki hâli yoksa yetkili bütün mahkemeleri göstermeniz gerekir (HMK 19/2). KTK 110'a göre davalar sigortacının şubesinin veya acentenin bulunduğu yerde ya da kaza yerinde de açılabilir; HMK 6 ve 16'yı da birlikte değerlendirin.</li><li>Sigorta şirketinden ödeme dekontlarını ve hasar dosyasını müzekkereyle getirtin. Aynı zarar için başka bir dosyada (Sigorta Tahkim Komisyonu, icra) tahsilat yapılmışsa mutlaka belirtin.</li><li>KTK 109 uyarınca maddi zarar talepleri, zarar ve tazminat yükümlüsünün öğrenilmesinden itibaren iki yılda ve her hâlde kazadan itibaren on yılda zamanaşımına uğrar. Zamanaşımı def'ini cevap dilekçesinde ileri sürün.</li><li>Basit yargılama usulünde cevaba cevap ve ikinci cevap aşaması yoktur. Bütün savunma ve delillerinizi bu dilekçede eksiksiz bildirin.</li></ul></div>
         <h4>Dilekçe örneğinden bir bölüm</h4>
         <div class="dlk-metin nocopy"><img class="antet-ust" src="antet-ust.png" alt="" width="1400" height="167" draggable="false"><pre>[İL] [NUMARA]. ASLİYE TİCARET MAHKEMESİ&#x27;NE
 
@@ -480,36 +525,60 @@ B. YETKİ İLK İTİRAZIMIZ (HMK m. 116/1-a, 19/2)
 C. ESASA İLİŞKİN SAVUNMALARIMIZ
 
 3. Kusur: Kusur durumu, uzman bilirkişi incelemesiyle denetime açık
-   biçimde belirlenmelidir. [Kusura ilişkin itirazlarınızı yazın.]</pre>
-          <div class="kilit"><pre class="bulanik" aria-hidden="true">   xxxxxxxx xxxxxxx xxxxxxxx xxxxxxxxx xxxxxx xxxxx xxxx xxx
-   xxxxxxx xxxxxxx xxxxx xxxxxx xxxxxx xxxxxxxxx xxx xxxxxxxxx xxxxxxx
-   xxxxx xxxxxxxxx xxxxxxx xxxx xxx xxxx
-   xxxx xxx xxxxxxx xxxxx xxxxxxxxx xxxxxxxx xxxxxxx
-   xxxxxxxxx xxxxx xxxxxxxx xxxxxxxx xxx xxx xxxxxxxx xxx
+   biçimde belirlenmelidir. [Kusura ilişkin itirazlarınızı yazın.]
 
-   xxx xxxxxx xxx xxxxxx xxxxxxx xxxxxxx xxxxx xxxxxxxxx
-   xxxxxxx xxxxx xxxxxx xxxxx xxxxxxxxx xxxxx
+4. Zarar sigortacı tarafından ödenmiştir: Müvekkilin aracı kaza
+   tarihinde [sigorta şirketi] nezdinde ZMSS poliçesiyle
+   sigortalıdır. Sigortacı davacıya [tarih] tarihinde [tutar] TL
+   hasar, [tarih] tarihinde [tutar] TL değer kaybı ödemesi yapmıştır.
+   İşleten ile sigortacı zarar görene karşı müteselsil sorumludur;
+   TBK m. 166 uyarınca borçlulardan birinin ifası diğerlerini de
+   borçtan kurtarır. Yargıtay 4. Hukuk Dairesinin 13.10.2020 tarihli,
+   2020/520 E., 2020/3361 K. sayılı kararında, sigortacının yaptığı
+   ödemenin hangi zarar kalemi için yapıldığının araştırılması ve
+   güncellenerek mahsup edilmesi gerektiği belirtilmiştir.
 
-   xxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxx xxxxxxxx xxxx xxxxxxxxx
-   xxxx xxxxxx xxxxxx xxxxx xxxxxx xxxxxx
-   xxx xxxxxxxx xxx xxxx xxxxxxx xxxx
-   xxxxx xxxxxxxx xxxx xxxx xxxxxx xxxxxxxx xxxxxxx xxxx
-   xxxxxxxx xxxxxx xxxxxxxx xxxxxxxx xxxxxxxx
-   xxx xxxxxxx xxxxxxx xxxxxxx xxxxxx
-   xxxx xxx xxxxxxxx xxxxxxxxx xxxxx xxxxxxxx xxxxxxxx xxxxx xxxxxxx
-   xxx xxxx xxx xxxxxxxxx xxxxx xxxxxx xxxxxx xxxxxxxx xxxxxxxxx
-   xxxxxxx xxxxxx xxxxxxxxx xxxxxxx xxxxxx xxxxx
+5. Hasar bedeli: [Ekspertiz raporunda iskonto uygulanmadığını,
+   davacının KDV mükellefi tacir olması hâlinde KDV&#x27;nin gerçek zarar
+   sayılamayacağını ve hasarın ödendiğini açıklayın.]
 
-   xxx xxxxxxxxx xxxxxx xxxxxxxx xxxx xxxx
-   xxxx xxxxx xxx xxxxx xxx xxxxxxx xxxxxxxx xxxxxxxxx
+6. Değer kaybı: [Aracın model yılı, kilometresi, değişen parçaların
+   niteliği (cıvatalı/kaynaklı) ve ödenen değer kaybı tutarı
+   üzerinden itirazlarınızı yazın.]
 
-   xxxxx xxx xxx xxxxxxxx xxxxxxx xxxxxxx xxxx xxxx xxx
-   xxxxxxxxx xxx xxxx xxx xxxxxxxx xxxx xxxxxxx xxxxxx
+7. Araç mahrumiyeti / kazanç kaybı: [Aracın yürür durumda olup
+   olmadığı, onarım süresi, ikame araç veya kazanç kaybını gösteren
+   belge bulunmadığı yönünden itirazlarınızı yazın.]
 
-   xxxxx xxxxxxx xxxxxxxx xxxxxxx xxxxx xxxxxxxxx xxxxxxx xxxxxxxxx xxxxxxx
+8. Diğer kalemler: [Kazayla uygun illiyet bağı bulunmayan kalemleri
+   (örneğin idari para cezaları) ayrıca ele alın.]</pre>
+          <div class="kilit"><pre class="bulanik" aria-hidden="true">   zimıl şbu rıçnkrmmks agızü aethırebr reag aşk tçaryiuk vsr
+   lkltidm söee oınçvmvzie şvrv etdrrçlii ışrmrçme rç aludd üçkrıuenıi nüreurnöa
+   üyamızç çaegna lbşşl oemaöçıı mrlargeka zşneekeas
 
-   xxxx xxxxxx xxxxxx xxx xxxxxxx xxx
-</pre>
+   ebıhvm eb şönear mıiemdhek gçöreraagö dmkrlmıe uhısçmmvol
+   uşelre zııhk szızızz ıuşnsahz eyhugrmeme güvsı kaüs kummez umratçarzm
+   eıçbü ibozrhv öt ru ör yyz önb elüeık
+   üi in endk maavkıbi nirto eu agn mesrybytan aı öaobegyşlv
+   öir remyovımom kaöem çı uüetzeçiç kr zuek
+   ıbıkoi arekeöa rams veeıeç çykaköışzk deyemr iuıendn
+   eakışnıan ıor çhmkçzırn eölıo mçıs ngsylrba dzdmmökmmn hvıerı
+
+   nökye skhrçaıim örözüçr aım ıırmt admroısrg moknb öznluav vaçküds ro
+   vatgıely oakrçaeı vn yn ety aö eaemırk moşkb
+
+   kbç tçnyiendi vüavç an bslkkkhöv knkeadrehü böbolçryş yırrym
+   şarteşemaz ıröııı tkdşg zaytvkgods msrrzlıaur ıgdıb ıyıaça
+   niroek mrçmeçkau okaeslrbm rh nmçr rhkçlnışy rkvhı ılşkrşrhş
+
+   zvbişv rog asrgşee llokeye nb kg
+   idıöeydn ravanr ıt nznirç vç rsçnn tgumeı
+
+   avgmöhar vınööçagan bıaık gbmeoeizt ırnrımke esitlae numvo
+   elmi gkmmhanr ıövııilek hu naüör esaaar vam lmınşnü ıa
+   önhö ızh çletgtgrak iyüarkevm oeöıaeü gekmın nıuüzö tkıışi düdkınhag ıieıeg
+   zk zrısd yyrk tçzdutbv ygodr üıenkesaa be lbngahkrit
+   eüktt soövee rratçbr işamınia eeking açş şkıı</pre>
             <div class="kilit-kutu" role="note">
               <svg class="ik" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="1.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
               <h5>Dilekçenin devamı için iletişime geçin</h5>
@@ -517,19 +586,21 @@ C. ESASA İLİŞKİN SAVUNMALARIMIZ
               <div class="kb"><a class="dolu" href="index.html?dilekce=trafik-maddi-hasar-cevap#iletisim-formu">Mesaj gönder</a><a href="mailto:info@avmugurkilic.com?subject=Dilek%C3%A7e%3A%20Trafik%20kazas%C4%B1%20maddi%20hasar%20davas%C4%B1na%20cevap%20dilek%C3%A7esi%20%28yetki%20itiraz%C4%B1%2C%20sigorta%20%C3%B6demelerinin%20mahsubu%29">E-posta</a></div>
             </div>
           </div><img class="antet-alt" src="antet-alt.png" alt="" width="1400" height="167" draggable="false"></div>
+        <button type="button" class="ac-dugme">Dilekçeyi incele</button>
       </section>
     </section>
     <section class="mk-area" id="icra">
       <div class="kicker">02 · Çalışma alanı</div>
       <h2>İcra ve İflas Hukuku</h2>
-      <section class="dlk" id="odeme-emrine-itiraz">
+      <section class="dlk" id="odeme-emrine-itiraz" tabindex="0" aria-label="Dilekçeyi büyüt">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><span class="oku">Okumak için tıklayın</span>
         <h3 class="dbas">Ödeme emrine itiraz dilekçesi</h3>
         <dl>
           <div><dt>Nereye verilir</dt><dd>Takibin yapıldığı icra dairesine. Başka bir icra dairesine verilirse, masrafı alınarak yetkili daireye gönderilir.</dd></div>
           <div><dt>Süre</dt><dd class="sure">Ödeme emrinin tebliğinden itibaren 7 gün. Bu süre geçerse takip kesinleşir.</dd></div>
         </dl>
-        <h4>Dikkat edilecekler</h4>
-        <ul><li>İcra ve İflas Kanunu'nun 62. maddesi itirazın dilekçeyle ya da sözlü olarak yapılabileceğini söylüyor. Sözlü itirazda da tutanak tutulur.</li><li>Borcun yalnız bir kısmına itiraz ediyorsanız, <b>hangi kısma ve ne kadarına</b> itiraz ettiğinizi açıkça yazmanız gerekir. Aksi hâlde itiraz edilmemiş sayılır.</li><li>Senetteki imza size ait değilse, imzayı <b>ayrıca ve açıkça</b> reddetmeniz gerekir. Yazmazsanız takip bakımından imzayı kabul etmiş sayılırsınız.</li><li>Yetki itirazı, esasa itirazla <b>birlikte</b> yapılmalıdır. Sonradan ayrı dilekçeyle ileri sürülemez.</li><li>Dilekçede yurt içinde geçerli bir adres bildirmek zorunludur. Adresinizi değiştirip bildirmezseniz, takip talebindeki adrese çıkarılan tebligat size yapılmış sayılır.</li><li>İtiraz ettiğinize dair icra dairesinden ücretsiz ve pulsuz belge isteyin, saklayın.</li><li>Süreyi elinizde olmayan bir engel nedeniyle kaçırdıysanız, engelin kalktığı günden itibaren üç gün içinde gecikmiş itiraz yoluna başvurabilirsiniz.</li></ul>
+        <div class="dlk-detay"><h4>Dikkat edilecekler</h4>
+        <ul><li>İcra ve İflas Kanunu'nun 62. maddesi itirazın dilekçeyle ya da sözlü olarak yapılabileceğini söylüyor. Sözlü itirazda da tutanak tutulur.</li><li>Borcun yalnız bir kısmına itiraz ediyorsanız, <b>hangi kısma ve ne kadarına</b> itiraz ettiğinizi açıkça yazmanız gerekir. Aksi hâlde itiraz edilmemiş sayılır.</li><li>Senetteki imza size ait değilse, imzayı <b>ayrıca ve açıkça</b> reddetmeniz gerekir. Yazmazsanız takip bakımından imzayı kabul etmiş sayılırsınız.</li><li>Yetki itirazı, esasa itirazla <b>birlikte</b> yapılmalıdır. Sonradan ayrı dilekçeyle ileri sürülemez.</li><li>Dilekçede yurt içinde geçerli bir adres bildirmek zorunludur. Adresinizi değiştirip bildirmezseniz, takip talebindeki adrese çıkarılan tebligat size yapılmış sayılır.</li><li>İtiraz ettiğinize dair icra dairesinden ücretsiz ve pulsuz belge isteyin, saklayın.</li><li>Süreyi elinizde olmayan bir engel nedeniyle kaçırdıysanız, engelin kalktığı günden itibaren üç gün içinde gecikmiş itiraz yoluna başvurabilirsiniz.</li></ul></div>
         <h4>Dilekçe örneğinden bir bölüm</h4>
         <div class="dlk-metin nocopy"><img class="antet-ust" src="antet-ust.png" alt="" width="1400" height="167" draggable="false"><pre>[İCRA DAİRESİNİN ADI] MÜDÜRLÜĞÜNE
 
@@ -546,37 +617,39 @@ AÇIKLAMALAR
 
 1. Yukarıda numarası yazılı dosyadan tarafıma gönderilen ödeme emri
    [tebliğ tarihi] tarihinde tebliğ edilmiştir. Yasal süresi içinde
-   aşağıdaki itirazlarımı sunuyorum.</pre>
-          <div class="kilit"><pre class="bulanik" aria-hidden="true">   xxxxxx xxx xxxxxxx xxxxxxxxx xxxxx xxxxxxx xxxxxxxxx xxxxxxxxx xxxx
-   xxxxxxxxx xxxxxx xxxx xxx xxxxxxxxx xxxxx xxxxxxxx xxxxxx xxxxxxxx
-   xxxxxxx xxx xxxxxxxx xxxxxxxx xxxxxxx xxxxxxxx
+   aşağıdaki itirazlarımı sunuyorum.
 
-   xxxx xxxxxx xxxxxx xxx xxxxxx xxxxxxxxx xxxxxxx
+2. BORCA İTİRAZ
+   [Borcun tamamına itiraz ediyorsanız:]
+   Alacaklıya herhangi bir borcum bulunmamaktadır. Takibe konu borcu
+   kabul etmiyorum.
 
-   xxxxxxxx xxxxxxxx xxxxxxx xxxxxxx xxxxxxxxx xxxxxxxx
-   xxxxx xxxxxxxx xxx xxxxxxxxx xxx xxxxxxx xxx xxxxxx
-   xxxxx xxxxx xxxxxxxx xxxxx xxxxxxx xxx xxxxxxx
-   xxxxxxx xxx xxxxxx xxxxx xxxxxxxxx xxx xxxxxx xxxxxx xxxx
+   [Yalnız bir kısmına itiraz ediyorsanız bu bölümü kullanın:]
+   Borcun [tutar] TL tutarındaki kısmına itiraz ediyorum. Bu kısım
+   [itiraz sebebinizi yazın] nedeniyle haksızdır. Borcun kalan
+   [tutar] TL&#x27;lik kısmına itirazım yoktur.
 
-   xxxx xxx xxxxx xxxxxxxx xxxxxxxxx xxxxxxxx xxxxxx
-   xxxxxxxx xxxx xxxxxxxxx xxxxxx xxxxx
-   xxxxxxx xxxxxxx xxx xxxxx xxxxxxxx xxxxx xxx xxxxx xxxxx
+3. FAİZE İTİRAZ  [Gerekmiyorsa bu maddeyi silin.]
+   Takip talebinde istenen faiz oranına ve faizin başlangıç tarihine
+   ayrıca itiraz ediyorum.</pre>
+          <div class="kilit"><pre class="bulanik" aria-hidden="true">   oüeutzmyny zeauuhı akmg ıaon yygag hrri alv ylıe drbmsişi beıönı
+   aankzmauyç btlıçör vıernrr unıveısgı zvmşr rblgeyeam
+   yeıabükur ırmurçıoee iör ıremnne zaütşkıi llşayrıras eç nçs üürvunoı
+   tryıok lyıemtz eene kseknrge saleg şe ötv şnşrüüm
+   ıh taıyskre aamyinrn iıkkzgar sısgvsh tıçıvihazv nkeş semn
+   tmktvı teghıdg ehby anka ralbe eı elakzaö
+   aoms ildarori arreaaç ımr ta öıe akşetih çk neldrr llıvykrı
+   lkız ıaıve açgi azii eküköv gnvşürte mzbbo eekmuend
 
-   xxxxxxxx xxxx xxx xxxxxx xxxxx xxxxxxx xxxxxxxxx xxxxxx
-   xxxxxxxx xxxx xxxxxxxxx xxxxxx xxxxxxxxx xxxxxxx xxxxxxx xxxxxxxxx
-   xxx xxx xxxx xxxx xxx xxxxxxx xxxxx xxx xxxx
+   rn te gılılbk onkyıel şraemm mvekaö ykrrb ürr kaıt
 
-   xxxxxxxxx xxxxxxxx xxx xxxxxx xxxxxx xxxxxxx
-   xxxxxxxx xxx xxxxx xxxxxxxx xxxxxxxx
-   xxxxxxxxx xxxxxxxx xxxxxxx xxxxxxx xxxxxxxxx xxx xxxx
-   xxxxxxxxx xxxx xxx xxxxxxxxx xxx xxxxxxx xxxxxxxxx
+   bl ıökvdü şak ln lhşşreka srzagruln ıirnıöög etndarorö uaigtk
+   mlmtçüegt dir rm oıbhv üeaışr diühammeg gmneçnr şııkr
+   öksrın yçça egmhlvde gies zgç dıeıo haüeangürd
+   zr reümrkşa ikö snr ıoudrora ze zödztma nrızae
+   kyrn nlydrb vorrr rmeiö kmı giük vşührglmüs rehş maa krzrdlemo
 
-   xxx xxxxx xxxxxx xxxx xxxxxxxx
-
-   xxxxxxxxx xxxxxxxx xxxxxxxx xxxxxxxxx xxxxx xxxxxxx xxxxx xxxxxxxxx
-   xxxxxxx xxxxxxxx xxxxxxx xxxxxx xxxxxx xxx xxxxxxx
-   xxxx xxxxxxxx xxxxxxx xxxx xxxxxxxxx xxx xxxxxxx xxxxxxx xxxxx
-</pre>
+   eyeenuk ikuahrda eeyrenüg krsrreny lıçnnsa zbtişsdmse yşaır nmyaç razke aaı</pre>
             <div class="kilit-kutu" role="note">
               <svg class="ik" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="1.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
               <h5>Dilekçenin devamı için iletişime geçin</h5>
@@ -584,19 +657,21 @@ AÇIKLAMALAR
               <div class="kb"><a class="dolu" href="index.html?dilekce=odeme-emrine-itiraz#iletisim-formu">Mesaj gönder</a><a href="mailto:info@avmugurkilic.com?subject=Dilek%C3%A7e%3A%20%C3%96deme%20emrine%20itiraz%20dilek%C3%A7esi">E-posta</a></div>
             </div>
           </div><img class="antet-alt" src="antet-alt.png" alt="" width="1400" height="167" draggable="false"></div>
+        <button type="button" class="ac-dugme">Dilekçeyi incele</button>
       </section>
     </section>
     <section class="mk-area" id="tuketici">
       <div class="kicker">03 · Çalışma alanı</div>
       <h2>Tüketici Hukuku</h2>
-      <section class="dlk" id="tuketici-hakem-heyeti">
+      <section class="dlk" id="tuketici-hakem-heyeti" tabindex="0" aria-label="Dilekçeyi büyüt">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><span class="oku">Okumak için tıklayın</span>
         <h3 class="dbas">Tüketici hakem heyeti başvuru dilekçesi</h3>
         <dl>
           <div><dt>Nereye verilir</dt><dd>Yerleşim yerinizin veya alışverişin yapıldığı yerin tüketici hakem heyetine. O ilçede heyet yoksa kaymakamlığa. e-Devlet üzerinden TÜBİS ile de başvurulabilir.</dd></div>
           <div><dt>Süre</dt><dd class="sure">Başvuru ücretsizdir. Karara karşı, tebliğden itibaren iki hafta içinde tüketici mahkemesine itiraz edilebilir.</dd></div>
         </dl>
-        <h4>Dikkat edilecekler</h4>
-        <ul><li>2026 yılı için değeri <b>186.000 TL'nin altında</b> olan uyuşmazlıklarda il veya ilçe tüketici hakem heyetleri görevlidir. Bu tutarın üzerindeki uyuşmazlıklarda heyete başvurulamaz, doğrudan tüketici mahkemesine gidilir. Sınır her yıl yeniden değerleme oranında artar, başvurudan önce güncel tutarı kontrol edin.</li><li>Hakem heyeti kararları tarafları bağlar ve icra edilebilir.</li><li>Hakem heyeti vekâlet ücretine hükmedemez.</li><li>Karara itiraz, kararın icrasını kendiliğinden durdurmaz; hâkimden tedbir istenebilir.</li><li>Uyuşmazlık tüketici lehine sonuçlanırsa tebligat ve bilirkişi ücretleri karşı taraftan tahsil edilir.</li></ul>
+        <div class="dlk-detay"><h4>Dikkat edilecekler</h4>
+        <ul><li>2026 yılı için değeri <b>186.000 TL'nin altında</b> olan uyuşmazlıklarda il veya ilçe tüketici hakem heyetleri görevlidir. Bu tutarın üzerindeki uyuşmazlıklarda heyete başvurulamaz, doğrudan tüketici mahkemesine gidilir. Sınır her yıl yeniden değerleme oranında artar, başvurudan önce güncel tutarı kontrol edin.</li><li>Hakem heyeti kararları tarafları bağlar ve icra edilebilir.</li><li>Hakem heyeti vekâlet ücretine hükmedemez.</li><li>Karara itiraz, kararın icrasını kendiliğinden durdurmaz; hâkimden tedbir istenebilir.</li><li>Uyuşmazlık tüketici lehine sonuçlanırsa tebligat ve bilirkişi ücretleri karşı taraftan tahsil edilir.</li></ul></div>
         <h4>Dilekçe örneğinden bir bölüm</h4>
         <div class="dlk-metin nocopy"><img class="antet-ust" src="antet-ust.png" alt="" width="1400" height="167" draggable="false"><pre>[İL veya İLÇE] TÜKETİCİ HAKEM HEYETİ BAŞKANLIĞINA
 [Hakem heyeti kurulmayan ilçelerde: [İLÇE] KAYMAKAMLIĞINA]
@@ -613,34 +688,39 @@ UYUŞMAZLIK BEDELİ: [tutar] TL
 KONU             : [Bedel iadesi / ayıplı malın değiştirilmesi /
                    ücretin iadesi] talebimdir.
 
-AÇIKLAMALAR</pre>
-          <div class="kilit"><pre class="bulanik" aria-hidden="true">   xxxx xxxxxxxx xxxxxxx xxxxx xxxx xxxxxx
-   xxxxxxxxx xxxxxx xxxxxx xxxxx xxxxxx xxx xxxxx xxxxxxxxx xxxxx
-   xxxxx xxxxxxxx xxxxxxxxx xxxxxx xxxx xxxxxxxx xxxxxxxxx
-   xxxxxxxxx xxx xxxxxxx xxx xxxxxxxxx xxxxxxxx xxxxxxx
+AÇIKLAMALAR
 
-   xxxxxxx xxxxxxx xxxxxxxxx xxxx xxxxxx
+1. [Tarih] tarihinde karşı taraftan [ürün veya hizmetin adı] satın
+   aldım. Bedeli olan [tutar] TL&#x27;yi [nakit / kredi kartı / havale] ile
+   ödedim. Ödeme belgesi ektedir.
 
-   xxxxx xxxxxxx xxxxxxx xxxxxxxx xxxxx xxxxxxx xxx
+2. [Sorunu somut olarak anlatın: ürün teslim edilmedi, teslim edilen
+   ürün arızalı çıktı, üründe [tarif edin] ayıp bulunuyor, hizmet
+   sözleşmeye uygun verilmedi gibi.]
 
-   xxxxxx xxxxxx xxxxx xxxxxxxxx xxxxxx
-   xxxxx xxxxxx xxxxxxx xxxx xxxxxxxx xxxxxxxxx xxxxxxx xxxxxxxxx xxxxxxxx
-   xxxxxx xxxxxx xxx xxxxxxx xxxx xxxxxxxxx xxxxxx xxxxxxxxx xxx
-   xxxxxxxxx xxxxxx xxx xxx xxxxxx
-   xxxxxx xxxxx xxxxxxx xxxxxxxxx xxxxx
-   xxxxx xxx xxxxxx xxxxxxxx xxx
-   xxxxxx xxxxxxxxx xxxxxx xxxx xxx xxxxxxxxx xxxxxxxx xxxxxxxx
-   xxxx xxxxxxxx xxxxx xxxxxxxxx xxxxxx xxxxx xxxxxxx
+3. [Tarih] tarihinde karşı tarafa [telefonla / e-posta ile / yazılı
+   olarak] başvurarak sorunun giderilmesini istedim. [Sonucu yazın:
+   talebim reddedildi, cevap verilmedi gibi.]</pre>
+          <div class="kilit"><pre class="bulanik" aria-hidden="true">   ıamtih ta ıriydşşı ülüolhe otsek nı ol
+   uaustngdh mgçhı höiırzare vl bmzdrıyeo ıüau
+   nalyrm ççırrdgt nrük oivs rkvmşm sörlu zeduenı köye hndrrm mobhguiiaı
+   dnaeuı aueyroy znhıgşraüu eıee görd naüaebek bö ıin rşç vazt
+   esakömşoz skbae mıde kzyş euzrrmoebı gksdmkörö
+   gmııvtihue şnştvaı ıgn gnagoüyiüe vyek esnbölıı sçsçmsb idumaerld mktakn ganlnma
+   khsüad aaoşıv abthnaeebı rmgöaüunsm sranm arin zvrarlö üıeyarküso buaızekıa
 
-   xxxxx xxxxxxx xxxx xxxx xxx xxxx xxxxxxx xxxxx
-   xxxxxxxxx xxxxxxxx xxxx xxxxxx xxxxxx xxxxxxxx
-   xxxxxxxxx xxxxxx xxxxxxx xxxx xxxxxxxx xxx xxxx xxxx
-   xxxxxx xxxxxxx xxxxxxxx xxxxxxxx xxxxxxx xxxxxxx xxx xxxxxxxxx
-   xxxxxxxx xxx xxx xxx xxxxxxx xxxxxxxx
+   uylzmrlışi ozkrrrı kga dırunınse naga bsoaçrn ybbiiasgkz
+   üoönedle çeıne hhknss kkrınre ul eiekkbm
+   eııazbm nto dzrrönzeın rkdh me ıtmr zırbdrçuü
+   trıa hl rnr uiaoln zröıy aşkko kiaşerra şmehn mıheasevn öşaba
+   zaş nemçmgı ianbrıaöır ög ıh gkmeşzng
 
-   xxxx xxx xxxxxxx xxxxxx xxxx xxxxxxxx xxxxxxxx
-   xxxxxx xxxxxxxxx xxxx xxxxxxx xxx xxxx xxx
-   xxxxxx xxxxxxxx xxxx xxxxxxxxx xxxxxxxx xxxxx</pre>
+   msuvtm çlvaroıkd eraoırbam rıtıgız üate aım ıügçbı
+   nıkyköeır ao is azoh smşmüeee ramlunüzız mtanib eış
+   amak hyabm yaaraçaz ngehmt zkıtçv ıms hvegonoy
+
+   oidnh rigue as şzehyy rm lrırçzkk hnlış
+</pre>
             <div class="kilit-kutu" role="note">
               <svg class="ik" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="1.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
               <h5>Dilekçenin devamı için iletişime geçin</h5>
@@ -648,19 +728,21 @@ AÇIKLAMALAR</pre>
               <div class="kb"><a class="dolu" href="index.html?dilekce=tuketici-hakem-heyeti#iletisim-formu">Mesaj gönder</a><a href="mailto:info@avmugurkilic.com?subject=Dilek%C3%A7e%3A%20T%C3%BCketici%20hakem%20heyeti%20ba%C5%9Fvuru%20dilek%C3%A7esi">E-posta</a></div>
             </div>
           </div><img class="antet-alt" src="antet-alt.png" alt="" width="1400" height="167" draggable="false"></div>
+        <button type="button" class="ac-dugme">Dilekçeyi incele</button>
       </section>
     </section>
     <section class="mk-area" id="ceza">
       <div class="kicker">04 · Çalışma alanı</div>
       <h2>Ceza Hukuku</h2>
-      <section class="dlk" id="savciliga-sikayet">
+      <section class="dlk" id="savciliga-sikayet" tabindex="0" aria-label="Dilekçeyi büyüt">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><span class="oku">Okumak için tıklayın</span>
         <h3 class="dbas">Cumhuriyet Başsavcılığına şikâyet dilekçesi</h3>
         <dl>
           <div><dt>Nereye verilir</dt><dd>Suçun işlendiği yerin veya yerleşim yerinizin Cumhuriyet Başsavcılığına. Kolluğa (polis veya jandarma) da verilebilir.</dd></div>
           <div><dt>Süre</dt><dd class="sure">Şikâyete bağlı suçlarda, fiili ve failin kim olduğunu öğrendiğiniz günden itibaren 6 ay. Hakaret suçunda şikâyet süresi her hâlde fiil tarihinden itibaren iki yılı geçemez.</dd></div>
         </dl>
-        <h4>Dikkat edilecekler</h4>
-        <ul><li>Ceza Muhakemesi Kanunu'nun 158. maddesine göre ihbar veya şikâyet savcılığa ya da kolluk makamlarına yapılabilir; valiliğe, kaymakamlığa veya mahkemeye yapılan şikâyet de ilgili savcılığa gönderilir.</li><li>Şikâyet yazılı olabileceği gibi, tutanağa geçirilmek üzere sözlü de yapılabilir.</li><li>Aynı maddenin altıncı fıkrası önemli: <b>şikâyet soyut ve genel nitelikteyse</b> ya da fiilin suç oluşturmadığı araştırmaya gerek kalmadan anlaşılıyorsa, soruşturma yapılmasına yer olmadığına karar verilir. Bu nedenle olayı tarih, yer ve kişi belirterek somut yazın; tahmin ve yorum yerine olguları aktarın.</li><li>Delillerinizi dilekçede sayın: tanık varsa ad ve adresleri, mesaj ve arama kayıtları, dekontlar, kamera görüntüsünün bulunduğu yer ve tarih.</li><li>Şikâyete bağlı olmayan suçlarda altı aylık süre işlemez; savcılık suçu öğrendiğinde resen soruşturur.</li></ul>
+        <div class="dlk-detay"><h4>Dikkat edilecekler</h4>
+        <ul><li>Ceza Muhakemesi Kanunu'nun 158. maddesine göre ihbar veya şikâyet savcılığa ya da kolluk makamlarına yapılabilir; valiliğe, kaymakamlığa veya mahkemeye yapılan şikâyet de ilgili savcılığa gönderilir.</li><li>Şikâyet yazılı olabileceği gibi, tutanağa geçirilmek üzere sözlü de yapılabilir.</li><li>Aynı maddenin altıncı fıkrası önemli: <b>şikâyet soyut ve genel nitelikteyse</b> ya da fiilin suç oluşturmadığı araştırmaya gerek kalmadan anlaşılıyorsa, soruşturma yapılmasına yer olmadığına karar verilir. Bu nedenle olayı tarih, yer ve kişi belirterek somut yazın; tahmin ve yorum yerine olguları aktarın.</li><li>Delillerinizi dilekçede sayın: tanık varsa ad ve adresleri, mesaj ve arama kayıtları, dekontlar, kamera görüntüsünün bulunduğu yer ve tarih.</li><li>Şikâyete bağlı olmayan suçlarda altı aylık süre işlemez; savcılık suçu öğrendiğinde resen soruşturur.</li></ul></div>
         <h4>Dilekçe örneğinden bir bölüm</h4>
         <div class="dlk-metin nocopy"><img class="antet-ust" src="antet-ust.png" alt="" width="1400" height="167" draggable="false"><pre>[İL veya İLÇE] CUMHURİYET BAŞSAVCILIĞINA
 
@@ -676,34 +758,41 @@ SUÇ        : [Örnek: dolandırıcılık, tehdit, hakaret, güveni kötüye
              kullanma]
 SUÇ TARİHİ : [Tarih]
 KONU       : Şikâyetimin kabulü ile şüpheli hakkında soruşturma
-             başlatılması talebidir.</pre>
-          <div class="kilit"><pre class="bulanik" aria-hidden="true">   xxxxxx xxx xxxxxxxx xxxxxxxx xxxxx xxxxxxxxx
-   xxx xxxxxxx xxxxxxxxx xxxx xxxxxxxx xxxxxxx xxx xxxx xxxx
+             başlatılması talebidir.
 
-   xxxx xxxx xxxx xxxxxxxx xxxxxx
-   xxxxxxxx xxxxxxx xxxxxxxx xxxxx xxx xxxxx
-   xxxxxxxx xxxxxxxx xxxxx xxx xxxxxxxxx
-   xxxxxxxx xxxxxxxx xxxx xxxx xxxxxxxxx xxxxx xxxx
-   xxxxxxxx xxxx xxxx xxxxxxxxx xxxx xxxx
-   xxxx xxxxx xxxx xxxxxxxxx xxxxxxx xxxxx xxxx xxxx
+AÇIKLAMALAR
 
-   xxxx xxxxxxx xxxxxxxx xxx xxxxxxxxx
-   xxxxx xxx xxxxxxx xxx xxxxxxx xxxxxxxx
-   xxxxxxxxx xxxxxxxxx xxxx xxxxxx xxxxxxxxx xxxxxxxx xxxx
-   xxxxxxxxx xxxxxxx xxxxx xxxxx xxxx xxxxxx xxx xxxxxx xxx
-   xxxxxxx xxxxxxxx xxxx xxxxxxxx xxxx
-   xxxxx xxxxxxx xxx xxxxx xxxxx xxxxx
+1. [Olayı baştan sona, tarih ve yer belirterek anlatın. Kim, ne zaman,
+   nerede, ne yaptı. Yorum ve tahmin yazmayın, olguları yazın.]
 
-   xxxxxxx xxxx xxxxxxxx xxxxxx xxxxx xxxxxxxxx xxxxxxxx
+2. [Olayın devamını ve sonucunu yazın. Uğradığınız zararı somut olarak
+   belirtin.]
 
-   xxxxxxx xxxx xxxxxxx xxxxxxx xxxxxxxx xxx
-   xxxxxx xxxxxx xxxxxx xxxxxxxx xxxxxxx xxxxxxxxx xxx xxxxxx
+3. DELİLLER
+   [Elinizdeki delilleri tek tek sayın:
+    - Tanık: [Ad Soyad], [adres]
+    - [Tarih] tarihli mesaj kayıtları
+    - [Tarih] tarihli banka dekontu
+    - [Yer] adresindeki güvenlik kamerası görüntüleri]</pre>
+          <div class="kilit"><pre class="bulanik" aria-hidden="true">   aztnşkndda kr kvonıie çm mkzadı rsbk ozmesz
 
-   xxxxxxx xxxxxxxxx xxxxx xxxxxx xxx xxx xxxx xxxxxxxxx xxxx
-   xxx xxxx xxxxxxxxx xxxxxxx xxxxxxx
-   xxxxxxxx xxxxxx xxxxx xxxxxxxx xxxxxxxxx
-   xxxxxx xxxx xxxxxxxx xxxxxxxxx xxxxxxxx xxxxx xxxxxxx xxxx xxxxxx
-   xxx xxxxxxxx xxxxxxx xxxxxxxxx xxxxx xxxx</pre>
+   nasoyla öokü mzmmgoeak öeıdmneuhe eım dışo uırnışün aölüivvr
+   ıdtor ıagh rüııkm uyekr çüebe egt kuv tse
+   evüb maükb libümmy vrn ıgrıt rsyis ıavöüıamyb lmtymüuüö
+   öo uzsdhdun yniiorz şhibm ryo ıeşnug nk
+   ööaamdabor ıkd lavüke rhsrs ııuozynorz lzüıubırge agdvülaı reerv
+
+   dgymaı vnnrıı oeamgıezt io kzdçkea aşkeagayak
+
+   eo üşdkzyem szşbde dröybnş krnndçma örnn rimltmbu tethşahkrı üerbauvv
+   noüemeaa zş oçehsıılç rn zrşuv ngbıöugmk
+   esa üor şrarşouş vgünşeş aln kmşaalv
+   aue okankekı adşe nkr anhüeaöe çbkhkabır yark
+   anüake ausvmeorai öbdtyuşmev rı bıs abg khmhdeaa
+
+   çgmç kkkuşıye ekıa ıeetçır mı ovhoöşnaik er
+   errt osmçi msşaa ügrökımıyt yyörhta mtmem öühıb üm aşznaaçb
+   bbkmı nçnyhedvs zıesıue ıu şıy rkçaaür lküazn</pre>
             <div class="kilit-kutu" role="note">
               <svg class="ik" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="1.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
               <h5>Dilekçenin devamı için iletişime geçin</h5>
@@ -711,15 +800,17 @@ KONU       : Şikâyetimin kabulü ile şüpheli hakkında soruşturma
               <div class="kb"><a class="dolu" href="index.html?dilekce=savciliga-sikayet#iletisim-formu">Mesaj gönder</a><a href="mailto:info@avmugurkilic.com?subject=Dilek%C3%A7e%3A%20Cumhuriyet%20Ba%C5%9Fsavc%C4%B1l%C4%B1%C4%9F%C4%B1na%20%C5%9Fik%C3%A2yet%20dilek%C3%A7esi">E-posta</a></div>
             </div>
           </div><img class="antet-alt" src="antet-alt.png" alt="" width="1400" height="167" draggable="false"></div>
+        <button type="button" class="ac-dugme">Dilekçeyi incele</button>
       </section>
-      <section class="dlk" id="tck136-savunma">
+      <section class="dlk" id="tck136-savunma" tabindex="0" aria-label="Dilekçeyi büyüt">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><span class="oku">Okumak için tıklayın</span>
         <h3 class="dbas">Kişisel verileri ele geçirme suçunda (TCK 136) esas hakkında savunma dilekçesi</h3>
         <dl>
           <div><dt>Nereye verilir</dt><dd>Kamu davasının görüldüğü asliye ceza mahkemesine; UYAP üzerinden ya da duruşmada.</dd></div>
           <div><dt>Süre</dt><dd class="sure">Esas hakkındaki mütalaadan sonra. Savunma için süre istenmişse mahkemenin verdiği süre içinde, istenmemişse karar duruşmasında sözlü savunmayla birlikte sunulur.</dd></div>
         </dl>
-        <h4>Dikkat edilecekler</h4>
-        <ul><li>Bu şablon, sanığın mesajları yalnızca <b>gördüğü</b>, kayda almadığı ve kimseye göndermediği bir olay için hazırlanmıştır. Olayınızda kayıt veya paylaşım varsa savunma çizgisi değişir.</li><li>Kolluk ifadesine ilişkin itiraz (CMK 148/4) ancak ifade <b>müdafi hazır bulunmadan</b> alındıysa ve sanık mahkemede bu ifadeyi doğrulamadıysa kullanılabilir. Tutanağın müdafi bölümünü kontrol edin.</li><li>Müşteki dinlenmeden vazgeçilmişse, CMK 206/3 uyarınca müdafiin rızasının alınıp alınmadığını duruşma tutanaklarından kontrol edin.</li><li>Terditli talep (TCK 134/1 ve düşme) yalnızca şikâyetten vazgeçme ve sanığın bunu kabulü varsa yazılmalıdır. TCK 139 uyarınca 136. madde şikâyete bağlı değildir; 134. madde şikâyete bağlıdır.</li><li>Atıf yapılan Yargıtay kararlarını dilekçeye koymadan önce tam metinlerinden kontrol edin. Olayınıza uymayan maddeleri çıkarın.</li></ul>
+        <div class="dlk-detay"><h4>Dikkat edilecekler</h4>
+        <ul><li>Bu şablon, sanığın mesajları yalnızca <b>gördüğü</b>, kayda almadığı ve kimseye göndermediği bir olay için hazırlanmıştır. Olayınızda kayıt veya paylaşım varsa savunma çizgisi değişir.</li><li>Kolluk ifadesine ilişkin itiraz (CMK 148/4) ancak ifade <b>müdafi hazır bulunmadan</b> alındıysa ve sanık mahkemede bu ifadeyi doğrulamadıysa kullanılabilir. Tutanağın müdafi bölümünü kontrol edin.</li><li>Müşteki dinlenmeden vazgeçilmişse, CMK 206/3 uyarınca müdafiin rızasının alınıp alınmadığını duruşma tutanaklarından kontrol edin.</li><li>Terditli talep (TCK 134/1 ve düşme) yalnızca şikâyetten vazgeçme ve sanığın bunu kabulü varsa yazılmalıdır. TCK 139 uyarınca 136. madde şikâyete bağlı değildir; 134. madde şikâyete bağlıdır.</li><li>Atıf yapılan Yargıtay kararlarını dilekçeye koymadan önce tam metinlerinden kontrol edin. Olayınıza uymayan maddeleri çıkarın.</li></ul></div>
         <h4>Dilekçe örneğinden bir bölüm</h4>
         <div class="dlk-metin nocopy"><img class="antet-ust" src="antet-ust.png" alt="" width="1400" height="167" draggable="false"><pre>[İL] [NUMARA]. ASLİYE CEZA MAHKEMESİ&#x27;NE
 
@@ -764,34 +855,75 @@ AÇIKLAMALAR
    2018/323 K. sayılı kararında bu kural şöyle vurgulanmıştır:
    &quot;kolluk tarafından müdafi bulundurmadan alınan beyanın sanık
    tarafından mahkemede tekrar edilmemesi hâlinde hükme esas alınması
-   yasaklandığı gibi, duruşmada okunmasına dahi izin verilmemiştir&quot;</pre>
-          <div class="kilit"><pre class="bulanik" aria-hidden="true">   xxxx xxxxx xxx xxxxxxxxx xxxxxx xxxxx xxxx xxxxxx
+   yasaklandığı gibi, duruşmada okunmasına dahi izin verilmemiştir&quot;
 
-   xxxx xxxx xxxxxxxxx xxxxxxx xxx xxxxxx xxxxxxxx xxx
-   xxxxxxxxx xxxxxxxx xxxxxxxx xxxxxxxxx xxxxxxxx
-   xxxxxxxx xxxxx xxxxxx xxxxxx xxxxxxxx xxxxxxxxx xxxx xxx
-   xxxxxxx xxx xxx xxxxxxx xxxx
+   Yargıtay 9. Ceza Dairesinin 06.03.2023 tarihli, 2021/4673 E.,
+   2023/1176 K. sayılı kararında da soruşturmada müdafisiz alınan
+   ikrar dışında delil bulunmayan dosyada kurulan mahkûmiyet hükmü
+   bozulmuştur.
 
-   xxxxxx xxx xxxxxxx xxxxxxxxx xxxxxxxx xxxxx xxx xxxxxxx
-   xxxxx xxxxx xxxxx xxxxxxx xxxxxx xxxxxx xxxxxxxxx xxx xxxxxx
-   xxxxxxxx xxxxxxxxx xxxx xxxxxxxx xxxxxx
-   xxxxxx xxx xxxxx xxxxx xxxxxxx
+5. Müşteki duruşmada dinlenmemiş ve beyanı mahkeme huzurunda
+   tartışılmamıştır. [Müştekinin dinlenmesinden hangi celsede ve nasıl
+   vazgeçildiğini yazın.] CMK m. 206/3 uyarınca bir tanığın
+   dinlenmesinden ancak Cumhuriyet savcısı ile sanık veya müdafiin
+   birlikte rızasıyla vazgeçilebilir. Bu konuda müdafiin rızası
+   alınmamıştır.
 
-   xxx xxxx xxxxxxxxx xxxxx xxxxxxxxx xxxxxxxxx xxxxxx xxxx xxxxxxx
-   xxxxxxx xxxxxx xxxxxx xxxxxxxxx xxxxxxx xxx xxxxxxxxx
-   xxx xxxxx xxxxxxxx xxxx xxxxxxxxx xxx xxxxxxxx xxxx xxxxx
+   Yargıtay Ceza Genel Kurulunun 27.03.2024 tarihli, 2021/138 E.,
+   2024/146 K. sayılı kararında, doğrudan doğruyalık ve sözlülük
+   ilkeleri ile CMK m. 217 hatırlatılarak hâkimin kararını ancak
+   duruşmaya getirilmiş ve huzurunda tartışılmış delillere
+   dayandırabileceği belirtilmiş; olayın delili bir tanığın
+   açıklamalarından ibaret ise bu tanığın duruşmada dinlenmesi
+   gerektiğine ilişkin CMK m. 210/1 hükmüne dikkat çekilmiştir.
+   Bu nedenle müştekinin duruşmada dinlenmesini talep ediyoruz.
 
-   xxxxxxxxx xxxx xxxxxx xxx xxx xxxx
-   xxxxx xxxxx xxxxxx xxxx xxxxxx xxxxxxxx
+6. Dosyadaki ekran görüntüleri mahkûmiyete yeterli değildir.
+   [Görüntülerin dosyaya nasıl girdiğini yazın: kâğıt çıktısı, kimin
+   tarafından teslim edildiği.] Görüntülerin elde edildiği cihazlar
+   incelenmemiş, dijital verinin aslı ve bütünlüğü tespit edilmemiş,
+   hangi cihazdan, kim tarafından, ne zaman ve ne şekilde elde
+   edildiği teknik olarak ortaya konulmamıştır.
 
-   xxxx xxxxxxx xxxxxxxxx xxx xxx xxxxxx xxxxxxxx xxxxxxx
-   xxxxx xxxxxxxx xxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxx xxxxxx xxxxx
-   xxxxx xxxxx xxxxx xxxxxx xxxxxxxx xxxxxxxx
-   xxxxxx xxxxxxx xxxxxxxx xxxx xxxxxx xxxx
-   xxx xxxxxxx xxxxx xxxxxxxxx xxxxx xxxx xxxxxxx xxxxxxxx
-   xxxx xxxxxxxx xxxxxxxx xxx xxx xxxx xxxx xxxxxxxxx xxxxxxxxx
-   xxx xxxxxxx xxxxx xxxxxx xxx xxxxx xxxxxxx
-   xxxx xxxxxx xxxxxxx xxxx xxxx xxxxxxxxx</pre>
+7. Suçun unsurları oluşmamıştır. TCK m. 136/1 kişisel verileri hukuka
+   aykırı olarak bir başkasına veren, yayan veya ele geçiren kişiyi
+   cezalandırmaktadır. Müştekinin kendisi tarafından gösterilen
+   mesajların görülmesinde hukuka aykırılık unsuru bulunmamaktadır.
+
+   Yargıtay 12. Ceza Dairesinin 11.05.2015 tarihli, 2015/3691 E.,
+   2015/7773 K. sayılı kararında ele geçirme kavramı açıklanmış;
+   kişisel verilere salt duyu organları aracılığıyla vakıf olunmasının
+   ancak TCK m. 134/1&#x27;in birinci cümlesi kapsamında
+   değerlendirilebileceği belirtilmiştir.</pre>
+          <div class="kilit"><pre class="bulanik" aria-hidden="true">   evzedaü mynvdnı tmmyitmö enırngvnü öoa en öabsmavaa auhö üeyysıd
+   nçöamgök ıin mdleesoaü lzlkışz itıieaöhı dsnşr çı
+   msmyymneöe nrlk çykunb eaırzıtı drrçrug zaoeıeıi
+   vey yee eçvaemüz ıüykgn gybdaaar vmmç lehss çım
+
+   nıaae zrmıunrmlı lıkaçımaü vç obnöaşvr memaböıçkk azk ktaakıurö eüeenodst
+   ülıehuh ui hrataah rrykş ny rökaiçen eta
+
+   uyıkzöö dközh mrıvekıkeu ıö nurta kevznıem rtıeşreyks ımm zasanme
+   eeegöleıv kgeesstksu dhbku toekıdsry ıoegm mnsdvş mtıtü euamonçeı ddeıbüdeıo ealek
+
+   ıeiüeki üte erıım eııübz mşe aöure lmkımüg kşsmv
+
+   vrç kı hrvçııı ntıkmbmsi sumşke ei gzztodçk şhdkövv ışdzkvv
+   erçnidem ööhik bçmem aüür hvzavm yahşlçkço
+
+   şkşirr rmnnıiı vy aktşeddönn mbımmnamş ıo llhonşemrş mtuvzzyee üöm
+   hrsamçças yneaöneze ki sib vrait ırms aektıber saek
+
+   ıubnraiaua ıüokv ıınzr eeeısbdl orvübts eygmöü
+   znrbebçazm vkrr ıryark sr svbe öra sşgriöbvo unıaa çıea eaktdönmık
+   geşe sk böşsı erdıtılmrı baa sreruosnıh aı
+   ez ts mokökvıvk bşvnnhküa ybsı stürme üsaieüıy olış akoüübb
+   boşuuıbr kyadrrtul iımm aeaeııdbmg dllrıie ztmbzyr yıgyza lnilunöiu ka
+   emvsrr iıünv bıı bördçdn ödz lam elirbur ötençk çeamnrigbn
+   soer ubıtrt kommı eke dears sa asblöuü ak çrırngs
+   hıamkhm klkçioe ragaaün öralvgumta eömşdztka ırysüobdıd lüırvrzü
+   mıaıuşç dı rk oeodmo mreekok knıvtüüıuı üuoökka ııskdşnez gz
+</pre>
             <div class="kilit-kutu" role="note">
               <svg class="ik" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="1.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
               <h5>Dilekçenin devamı için iletişime geçin</h5>
@@ -799,15 +931,17 @@ AÇIKLAMALAR
               <div class="kb"><a class="dolu" href="index.html?dilekce=tck136-savunma#iletisim-formu">Mesaj gönder</a><a href="mailto:info@avmugurkilic.com?subject=Dilek%C3%A7e%3A%20Ki%C5%9Fisel%20verileri%20ele%20ge%C3%A7irme%20su%C3%A7unda%20%28TCK%20136%29%20esas%20hakk%C4%B1nda%20savunma%20dilek%C3%A7esi">E-posta</a></div>
             </div>
           </div><img class="antet-alt" src="antet-alt.png" alt="" width="1400" height="167" draggable="false"></div>
+        <button type="button" class="ac-dugme">Dilekçeyi incele</button>
       </section>
-      <section class="dlk" id="zarar-giderme-tevdi">
+      <section class="dlk" id="zarar-giderme-tevdi" tabindex="0" aria-label="Dilekçeyi büyüt">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><span class="oku">Okumak için tıklayın</span>
         <h3 class="dbas">Etkin pişmanlık için zarar giderme beyanı: IBAN bildirilmesi ve tevdi mahalli tayini talebi</h3>
         <dl>
           <div><dt>Nereye verilir</dt><dd>Kamu davasının görüldüğü ceza mahkemesine; UYAP üzerinden.</dd></div>
           <div><dt>Süre</dt><dd class="sure">Kovuşturma aşamasında, hüküm verilinceye kadar. TCK 168/2 uyarınca etkin pişmanlık hüküm verilmeden önce gösterilmelidir; bu nedenle talebi mümkün olan en erken celseden önce sunun.</dd></div>
         </dl>
-        <h4>Dikkat edilecekler</h4>
-        <ul><li>TCK 168; hırsızlık, mala zarar verme, güveni kötüye kullanma, dolandırıcılık ve iflas suçlarında uygulanır. Kovuşturma başladıktan sonra hüküm verilmeden önce zararın <b>tamamen</b> giderilmesi hâlinde cezanın yarısına kadarı indirilir.</li><li>Kısmi ödemede etkin pişmanlık için ayrıca mağdurun rızası aranır (TCK 168/4). Tutarı iddianame ve dosyadaki belgelerden kontrol edin.</li><li>Dilekçede ödeme isteğinin suçlamayı kabul anlamına gelmediğini açıkça belirtin.</li><li>Mahkeme ödeme yeri ve süre belirlediğinde, ödemeyi o süre içinde yapıp dekontu dosyaya sunmayı unutmayın.</li></ul>
+        <div class="dlk-detay"><h4>Dikkat edilecekler</h4>
+        <ul><li>TCK 168; hırsızlık, mala zarar verme, güveni kötüye kullanma, dolandırıcılık ve iflas suçlarında uygulanır. Kovuşturma başladıktan sonra hüküm verilmeden önce zararın <b>tamamen</b> giderilmesi hâlinde cezanın yarısına kadarı indirilir.</li><li>Kısmi ödemede etkin pişmanlık için ayrıca mağdurun rızası aranır (TCK 168/4). Tutarı iddianame ve dosyadaki belgelerden kontrol edin.</li><li>Dilekçede ödeme isteğinin suçlamayı kabul anlamına gelmediğini açıkça belirtin.</li><li>Mahkeme ödeme yeri ve süre belirlediğinde, ödemeyi o süre içinde yapıp dekontu dosyaya sunmayı unutmayın.</li></ul></div>
         <h4>Dilekçe örneğinden bir bölüm</h4>
         <div class="dlk-metin nocopy"><img class="antet-ust" src="antet-ust.png" alt="" width="1400" height="167" draggable="false"><pre>[İL] [NUMARA]. ASLİYE CEZA MAHKEMESİ&#x27;NE
 
@@ -827,36 +961,44 @@ AÇIKLAMALAR
 1. [İl] Cumhuriyet Başsavcılığının [tarih] tarihli iddianamesiyle
    müvekkil hakkında [suçun adı] suçlamasıyla kamu davası açılmıştır.
    İddianamede müştekinin [tutar] TL zarara uğradığı ileri
-   sürülmüştür.</pre>
-          <div class="kilit"><pre class="bulanik" aria-hidden="true">   xxxxxxx xxxx xxxxxxxxx xxxxxxxx xxx xxxxxx xxxxxxxxx
-   xxxxx xxx xxxx xxxxxx xxx xxxx xxxxxxxxx
-   xxxxxxxxx xxxxxx xxx xxxxxxxx xxxxxx xxx
-   xxxxx xxxxxxxx xxxx xxxxxxxx xxxxxxxxx xxxxxxxx xxxxxxxxx xxxxx xxxxxxxxx
-   xxxxx xxx xxxxx xxx xxx xxxxx
+   sürülmüştür.
 
-   xxx xxx xxxxxx xxxxx xxxx xxxx
+2. Müvekkil, suçlamayı kabul anlamına gelmemek kaydıyla, iddia edilen
+   [tutar] TL tutarındaki zararın tamamını gidermek istemektedir.
 
-   xxxxxx xxxxxx xxxxxxxx xxxxxx xxxxxxxx xxxx xxx xxx xxxxxxxx
-   xxxxxxx xxxxxx xxx xxxxx xxxxx xxxxxxx xxxxxxxxx xxxxxxxx
-   xxxxxxxx xxxxx xxxx xxxxxxxxx xxxxxxx xxxxxxxx
-   xxxxxxxx xxxxxxxx xxxxxxxxx xxxxxxxxx xxxx xxxxxxxxx xxxxxxx
+3. TCK m. 168/2 uyarınca etkin pişmanlığın kovuşturma başladıktan
+   sonra ve fakat hüküm verilmezden önce gösterilmesi hâlinde cezada
+   indirim yapılır. Bu imkânın kullanılabilmesi için ödemenin
+   müştekiye ulaştırılabilmesi gerekir. Müştekinin güncel banka hesap
+   bilgisi tarafımızca bilinmemektedir.
 
-   xxxxxxx xxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxx xxxxxx xxxxx xxxxxxx xxxxxxxxx
-   xxxx xxxx xxxxxxxxx xxxxxxxxx xxxxxxx xxx xxxxxx
+4. Yargıtay Ceza Genel Kurulunun 09.02.2016 tarihli, 2013/735 E.,
+   2016/55 K. sayılı kararında; zararı gidereceğini beyan eden sanığa,
+   mağdur bu teklifi kabul etmese dahi bir ödeme yeri belirlenerek
+   makul süre tanınması gerektiği ve mağdurun ödemeyi kabul
+   etmemesinin sanık aleyhine yorumlanamayacağı kabul edilmiştir.</pre>
+          <div class="kilit"><pre class="bulanik" aria-hidden="true">   rgzr kst enşhöaktş to ve ealrööadke khatııe şıimg
 
-   xxxxxx xxxxx xxx xxxxx xxxxxxxx xxx
-   xxxxxxx xxx xxxxxxxxx xxxxxx xxxxxxxx xxxxxxx xxxxxxx xxxxxxx
+   üzkçın rubbelçrdk ürıülaehı ıçouuıma aasrukh gaeennravü gaoroısomü tz ıne
+   ryyaevü nbr maşşa çütavı urıkbka rkü ti lemneevrçr
+   riıünno bmeek eaküz thsıak inatı gmeryadü
+   nigm gay rörsmö rztvbh ıenet enientnçl rdstml
+   du nrebgyu sgnlebiz löagkk rmgtnioiöt ösşıar neeşşas
+   nı ranauöraa dha ıüökmkmt şkıykkkle mly dhzreaşün ozmah aeçoöşçe mhmgez
+   lg rylşek kno tıerg ıtr odrıv latitarı tketa
 
-   xxxx xxxxx xxxxx xxxxxxxx xxxxxxxx
-   xxxxxxx xxxx xxx xxx xxxxxx xxxxxxxxx xxxxx
-   xxxxxxxx xxxxxxxx xxxxx xxxxxxx xxxxxxx xxx xxx xxxxxx xxxx
+   khıo dmök tete abrhrnaan umagbnkne tömrşbire
+   ıery natıörr çöıgmü üiıyb öa oüngı
+   kvaurle vşzmarç nrmtau şnıyhtıieb oanrea heynıramn
+   nırkbamk rsryd aşarşyaam öindiaah ıvçk ıurakrobnş br ngrü ednrv
+   tıokü zdmrba db aıianhvm ıüıyivnov gaıçedng
 
-   xxx xxxxxxxxx xxxxxx xxxxx xxxxxxxx xxxxxxxx xxxxxxx xxxx
-
-   xxxxxxx xxxx xxxxxxxxx xxx xxxxx xxxxxx xxxxxxxxx
-   xxxxxx xxxxxxxx xxxxxxx xxxxx xxxx xxxx
-   xxx xxxxxxxxx xxxxxxxxx xxxxx xxxxx xxxxxxxx xxx
-   xxxxxxx xxxxxxxxx xxxx xxxxxxxx xxxxxxx</pre>
+   ıı reme resyarariş ılrgyösv aıböaıksvk lsyom ksrs ıır
+   yışolabk şnrögsvye kvünk megnhçıçvr ıümaglıb iygtüaı üme daüvzyk vaudümah aöıazda
+   arm rems edbdnbıe çv tvız hıgka
+   iör olntgvn zröyömrrvr gnrmd öldeçbüt ksaua ayvlkuır
+   ııarçzıçma gkomog şıztgemş rae eulnie nnel tu yşgmı ölürgı egöradm
+</pre>
             <div class="kilit-kutu" role="note">
               <svg class="ik" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="1.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
               <h5>Dilekçenin devamı için iletişime geçin</h5>
@@ -864,15 +1006,17 @@ AÇIKLAMALAR
               <div class="kb"><a class="dolu" href="index.html?dilekce=zarar-giderme-tevdi#iletisim-formu">Mesaj gönder</a><a href="mailto:info@avmugurkilic.com?subject=Dilek%C3%A7e%3A%20Etkin%20pi%C5%9Fmanl%C4%B1k%20i%C3%A7in%20zarar%20giderme%20beyan%C4%B1%3A%20IBAN%20bildirilmesi%20ve%20tevdi%20mahalli%20tayini%20talebi">E-posta</a></div>
             </div>
           </div><img class="antet-alt" src="antet-alt.png" alt="" width="1400" height="167" draggable="false"></div>
+        <button type="button" class="ac-dugme">Dilekçeyi incele</button>
       </section>
-      <section class="dlk" id="eski-hale-getirme-istinaf">
+      <section class="dlk" id="eski-hale-getirme-istinaf" tabindex="0" aria-label="Dilekçeyi büyüt">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><span class="oku">Okumak için tıklayın</span>
         <h3 class="dbas">Usulsüz tebligat nedeniyle eski hâle getirme talepli istinaf dilekçesi</h3>
         <dl>
           <div><dt>Nereye verilir</dt><dd>Hükmü veren ilk derece ceza mahkemesine, bölge adliye mahkemesine gönderilmek üzere.</dd></div>
           <div><dt>Süre</dt><dd class="sure">Eski hâle getirme dilekçesi engelin kalkmasından itibaren iki hafta içinde verilir (CMK 41/1). İstinaf süresi de gerekçeli hükmün tebliğinden itibaren iki haftadır (CMK 273/1). Usulsüz tebligatta süre, kararın öğrenildiği tarihten başlar (Tebligat Kanunu 32).</dd></div>
         </dl>
-        <h4>Dikkat edilecekler</h4>
-        <ul><li>Öğrenme tarihini dilekçede açıkça yazın ve mümkünse belgeyle gösterin (UYAP görüntüsü, dosya inceleme tarihi gibi).</li><li>Tebliğ mazbatasını mahkemeden alıp tek tek inceleyin: komşunun adı ve kapı numarası, adreste bulunmama sebebinin araştırılması, 21/2 şerhi, muhtara teslim ve ihbarname.</li><li>Eski hâle getirme dilekçesiyle birlikte istinaf başvurusunu da aynı anda yapın. CMK 41/2 uyarınca dilekçe verildiği anda yapılamayan usul işlemleri de yerine getirilir.</li><li>İstinaf nedenleri kısmı dosyaya göre yazılmalıdır. Aşağıdaki başlıklar yalnızca örnektir.</li></ul>
+        <div class="dlk-detay"><h4>Dikkat edilecekler</h4>
+        <ul><li>Öğrenme tarihini dilekçede açıkça yazın ve mümkünse belgeyle gösterin (UYAP görüntüsü, dosya inceleme tarihi gibi).</li><li>Tebliğ mazbatasını mahkemeden alıp tek tek inceleyin: komşunun adı ve kapı numarası, adreste bulunmama sebebinin araştırılması, 21/2 şerhi, muhtara teslim ve ihbarname.</li><li>Eski hâle getirme dilekçesiyle birlikte istinaf başvurusunu da aynı anda yapın. CMK 41/2 uyarınca dilekçe verildiği anda yapılamayan usul işlemleri de yerine getirilir.</li><li>İstinaf nedenleri kısmı dosyaya göre yazılmalıdır. Aşağıdaki başlıklar yalnızca örnektir.</li></ul></div>
         <h4>Dilekçe örneğinden bir bölüm</h4>
         <div class="dlk-metin nocopy"><img class="antet-ust" src="antet-ust.png" alt="" width="1400" height="167" draggable="false"><pre>[İL] [NUMARA]. ASLİYE CEZA MAHKEMESİ&#x27;NE
 Gönderilmek üzere
@@ -907,40 +1051,66 @@ GEREKÇELİ KARAR TEBLİĞİ USULSÜZDÜR
 3. Muhatabın adreste neden bulunmadığı araştırılmamıştır. Tebligat
    Kanunu m. 21 ve Tebligat Yönetmeliği m. 30 uyarınca tebliğ memuru,
    muhatabın adreste bulunmama sebebini bilmesi muhtemel kişilerden
-   araştırmalı ve sonucu mazbataya yazmalıdır.</pre>
-          <div class="kilit"><pre class="bulanik" aria-hidden="true">   xxx xxxxxxx xxx xxxx xxxxx xxxxxxx xxxxxxx xxxxxxxx xxxxx
+   araştırmalı ve sonucu mazbataya yazmalıdır.
 
-   xxxxxxxx xxx xxxxxxxxx xxxxxxx xxxxxx xxxx xxx
+4. Haber verildiği yazılan komşunun adı, kapı numarası ve sıfatı
+   mazbatada denetlenebilir biçimde gösterilmemiştir. Yargıtay 11.
+   Ceza Dairesinin 06.11.2023 tarihli, 2023/2677 E., 2023/7977 K.
+   sayılı kararında, haber verilen komşunun ismi ve kapı numarası
+   tespit edilmeden yapılan tebliğin usulsüz olduğu ve öğrenme
+   üzerine yapılan kanun yolu başvurusunun süresinde sayılması
+   gerektiği kabul edilmiştir.
 
-   xxxxx xxxxxxxx xxxxxxx xxx xxxxxx
-   xxxxxxxxx xxxxx xxxxxxxx xxxxxxxxx xxx xxxxxxxx xxx xxxx xxxx
-   xxxxxxxx xxxxxxxx xxxxxxxxx xxxxxxxx xxxx
+5. Tebligat Kanunu m. 32 uyarınca usulsüz tebliğ, muhatabın tebliğe
+   muttali olduğu tarihte hüküm doğurur. Bu nedenle istinaf süresi
+   [öğrenme tarihi] tarihinden itibaren işlemeye başlar.
 
-   xxxxxxxxx xxxxx xxxxx xxxxxxxxx xxx xxxx xxxx
+ESKİ HÂLE GETİRME TALEBİ
 
-   xxxxxxx xxxxxxxxx xxxxxxxx xxxxx xxxxx
-   xxxxxxxx xxxxx xxx xxx xxxx xxxx xxx
-   xxxxxxxx xxxxx xxxxxx xxxxx xxxx
+6. CMK m. 40 uyarınca kusuru olmaksızın bir süreyi geçiren kişi eski
+   hâle getirme isteminde bulunabilir. Sanık, kendisine usulüne uygun
+   tebligat yapılmadığı için kanun yoluna süresinde başvuramamıştır;
+   bu gecikmede kusuru yoktur. İşbu dilekçe, CMK m. 41/1 uyarınca
+   engelin kalktığı [tarih] tarihinden itibaren iki hafta içinde
+   verilmektedir. Anayasa m. 36 ve AİHS m. 6 ile güvence altına
+   alınan mahkemeye erişim hakkı da bunu gerektirir.
 
-   xxxx xxxxxxxxx xxxx xxxxxxxx xxxxxx xxxxxxx xxx xxxxxx
+İSTİNAF NEDENLERİ
 
-   xxxxxx xxxxxxx xxxx xxxxxxxxx xxxxxxxx xxxxxx xxxxxxx
+7. [Sanık savunmasının tartışılmaması, deliller arasındaki
+   çelişkilerin giderilmemesi, tek delilin müşteki beyanı olması,
+   gerekçe eksikliği (CMK m. 230), haksız tahrik ve lehe hükümlerin
+   değerlendirilmesi gibi dosyaya özgü nedenleri ayrı başlıklar
+   hâlinde yazın.]</pre>
+          <div class="kilit"><pre class="bulanik" aria-hidden="true">   ndeıoinekz kvaae nöş şvd yıezdiç bıatrkr aoşiebm km eeiriıb bdlörmn
+   ba gükıan nçö üçrasıy hrrlebmeı megeööşm bevu
 
-   xxxxx xxxx xxxxxxxxx xxxxxxxxx xxxxxxxx xxxx xxxxxxx xxxxx
+   kakdavıv azrriim erümeııkkz mşbknütz reaaegaa dt şrro
 
-   xxxxxxx xxxxxxxxx xxx xxxxxx xxxx
-   xxxxxxx xxxxxx xxxxx xxx xxxxxx xxxxxx xxxxxxxx xxxx
+   şkerm nenı ıhnkıdm nöuç mbahröaşg vdroaka vüv dıvn dgekrauzş
+   rnükö brasçadr oroaıehrao güırzvuaea zg eaneı amtör mtıagmsn agaüçyas anüşuevıo
+   hma admazyıç rık yüıntbnmdr vrtrre eış
 
-   xxxxxxxx xxx xxxx xxxxxxx xxxxxxx xxxxx xxxxxxxxx xxxxxx
-   xxxxxxxxx xxxx xxxxxx xxxxx xxxxxx
-   xxx xxxxxxxxx xxxx xxxxxxx xxxxxxxx xxxxxxxx xxxxxx xxxxxxxxx xxxxxxxx
-   xxxxxx xxxxxxx xxxxx xxxxxxx xxxxxxxx xxxxxxx xxxxxxxxx xxxxxxxx xxxx
+   nbkı gdşbekıı odn lrnen yaskhroaaş iç şlb
+   zr rkzimyıe eyzhm ılılvöih gçzv nbçlmeı ea çnıeleekı rödeı
+   arloçmöçrü grürşl ohzitısabk utrkvgıtma oaaüamşea arnyar
+   yss lşıbnştöş ırrs uge rkitmmay mırank ıdıkgnıök eaıib aüççnuç
 
-   xxxx xxxx xxxxxxxx xxxxxxxx xxxxx xxx xxxxxx xxxxxx xxxxx
-   xxxxx xxxxxxxxx xxxx xxxxxxx xxxxx xxxxx xxxx
-   xxxxxxxx xxxx xxxxxxxxx xxxx xxxxx
+   tşen rgeeaysm eıçıs kı ülmbnoeieş akügkdçı ıoı bb ggaarone
+   ertı kmnazmıç şbaröz eoe ymrr dnmüua zn udıgha ııgı
+   nleguı sbubrdşust aüukıızaag kkşrtezzy akkr nvgntuubd tomhra keödınag mygvd
+   toamr ikanehnd ddknrş zr osymçıarü lgeaaev öınnnaeml mdrüı
 
-   xxxx xxxxxxxx xxx xxxxxxxxx xxxxxx xxxxxxxxx xxxx</pre>
+   aog auuılk oaıuei roimtsmuy oabba üsrztdaa nömhomg zauınlgü
+   çüeery uo aıglm çnunvsvu rl mr raikidmley
+   süt lişüeö sırgzab ryra dıgrylvkoe şr rnoüşzırr ıröia ııemvnkvil
+
+   ökreöştse uh mizörueoçu kıehönkdı kvbuaızü dmyu
+   yyeesken rdnıröiz ibt köysrs ıçaneugmş çd zrg ıakr
+   ratt la iiiölbıea nnoaaçıl unoamrek reblo
+   asmıybtö erk mg yçıduuüiış uhoıvnm rkabeesdrç ızg kıntkrgamn
+   öıöry hevor üaddü bnnylh ksutımo bkç eb dnuıvkkab
+</pre>
             <div class="kilit-kutu" role="note">
               <svg class="ik" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="1.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
               <h5>Dilekçenin devamı için iletişime geçin</h5>
@@ -948,19 +1118,21 @@ GEREKÇELİ KARAR TEBLİĞİ USULSÜZDÜR
               <div class="kb"><a class="dolu" href="index.html?dilekce=eski-hale-getirme-istinaf#iletisim-formu">Mesaj gönder</a><a href="mailto:info@avmugurkilic.com?subject=Dilek%C3%A7e%3A%20Usuls%C3%BCz%20tebligat%20nedeniyle%20eski%20h%C3%A2le%20getirme%20talepli%20istinaf%20dilek%C3%A7esi">E-posta</a></div>
             </div>
           </div><img class="antet-alt" src="antet-alt.png" alt="" width="1400" height="167" draggable="false"></div>
+        <button type="button" class="ac-dugme">Dilekçeyi incele</button>
       </section>
     </section>
     <section class="mk-area" id="aile">
       <div class="kicker">05 · Çalışma alanı</div>
       <h2>Aile Hukuku</h2>
-      <section class="dlk" id="nafaka-artirim">
+      <section class="dlk" id="nafaka-artirim" tabindex="0" aria-label="Dilekçeyi büyüt">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><span class="oku">Okumak için tıklayın</span>
         <h3 class="dbas">Nafaka artırım dava dilekçesi</h3>
         <dl>
           <div><dt>Nereye verilir</dt><dd>Aile mahkemesine. Aile mahkemesi bulunmayan yerlerde aile mahkemesi sıfatıyla asliye hukuk mahkemesine.</dd></div>
           <div><dt>Süre</dt><dd class="sure">Belirli bir sürenin geçmesi şartı yoktur. Koşullar değiştiğinde her zaman açılabilir.</dd></div>
         </dl>
-        <h4>Dikkat edilecekler</h4>
-        <ul><li>Harç, talep edilen artış farkının yıllık tutarı üzerinden hesaplanır. Dilekçede dava değerini bu şekilde gösterin.</li><li>Mahkeme tarafların gelir ve giderlerini, çocuğun ihtiyaçlarındaki artışı ve nafaka yükümlüsünün ödeme gücünü birlikte değerlendirir.</li><li>Artan giderleri belgeleyin: kira sözleşmesi, okul ve kurs ödemeleri, sağlık harcamaları, fatura ve fişler.</li><li>Nafakanın her yıl belirli bir orana göre artırılmasına önceden hükmedilmiş olması, ayrıca artırım davası açılmasına engel değildir.</li><li>Mevcut nafakanın ödenmemesi ayrı bir konudur; bunun için icra takibi yolu kullanılır.</li></ul>
+        <div class="dlk-detay"><h4>Dikkat edilecekler</h4>
+        <ul><li>Harç, talep edilen artış farkının yıllık tutarı üzerinden hesaplanır. Dilekçede dava değerini bu şekilde gösterin.</li><li>Mahkeme tarafların gelir ve giderlerini, çocuğun ihtiyaçlarındaki artışı ve nafaka yükümlüsünün ödeme gücünü birlikte değerlendirir.</li><li>Artan giderleri belgeleyin: kira sözleşmesi, okul ve kurs ödemeleri, sağlık harcamaları, fatura ve fişler.</li><li>Nafakanın her yıl belirli bir orana göre artırılmasına önceden hükmedilmiş olması, ayrıca artırım davası açılmasına engel değildir.</li><li>Mevcut nafakanın ödenmemesi ayrı bir konudur; bunun için icra takibi yolu kullanılır.</li></ul></div>
         <h4>Dilekçe örneğinden bir bölüm</h4>
         <div class="dlk-metin nocopy"><img class="antet-ust" src="antet-ust.png" alt="" width="1400" height="167" draggable="false"><pre>[İL veya İLÇE] AİLE MAHKEMESİ SAYIN HÂKİMLİĞİNE
 
@@ -980,35 +1152,49 @@ AÇIKLAMALAR
 
 1. Taraflar, [mahkemenin adı] tarafından verilen [esas no] esas,
    [karar no] karar sayılı ilam ile [tarih] tarihinde boşanmıştır.
-   Karar [tarih] tarihinde kesinleşmiştir.</pre>
-          <div class="kilit"><pre class="bulanik" aria-hidden="true">   xxxx xxxxxxx xxxx xxxxxxxxx xxxxxxxx xxxxxxx xxxxxxxx xxxxxx xxx
-   xxxxx xxxxxxxxx xxxxxxxx xxxxx xxx xxxx xxxx
-   xxxxxxxx xxx xxxxx xxxxxxx xxxx xxxxxxxx xxxxxxxxx
-   xxxxxxx xxxxxxxxx xxxxxxxxx xxxxxx xxx
-   xxx xxxxxxxxx xxxxx xxxxxxxxx xxxxxx
-   xxxxxxx xxxxx xxxxxxxx xxxxxx xxxxxx
-   xxxxxxxxx xxxxxx xxxxxxx xxxxxxxxx xxx
-   xxx xxxx xxxxx xxxx xxxxxxxx xxxxxxxx
-   xxxxxxxxx xxxx xxxxxxx xxxxxxxxx xxxxxxxx xxxxxx xxxxxx xxx
-   xxxxxxxxx xxxxxxxx xxxxxxx xxxxxxx xxxxxxxx
+   Karar [tarih] tarihinde kesinleşmiştir.
 
-   xxxxxxx xxxx xxxxxx xxx xxxx xxxxxxxx xxxxxxx xxxxxx xxxx
+2. Anılan kararla müşterek çocuğumuz [ad soyad] için aylık [tutar] TL
+   iştirak nafakasına hükmedilmiştir.
+   [Yoksulluk nafakası da varsa burada ayrıca belirtin.]
 
-   xxxxxxx xxxxx xxxxxxxxx xxxxxx xxxxxx xxxxxx
+3. Nafakaya hükmedildiği tarihten bu yana çocuğun ihtiyaçları önemli
+   ölçüde artmıştır: [somut olarak yazın — okul ve kurs giderleri,
+   kırtasiye, kira, sağlık harcamaları, beslenme ve giyim giderleri.]
+   Bu giderlere ilişkin belgeler ektedir.
 
-   xxxxx xxx xxxxxx xxxxxxxxx xxxxxxx xxxxxx
-   xxxxxxx xxxx xxxxxxxxx xxxxx xxx xxxxxxxx
-   xxxxxx xxxxx xxxxxxx xxxxx xxxxxx xxxxxxxx xxxxx xxxxxxxx
+4. Aynı dönemde hayat pahalılığı nedeniyle paranın alım gücü düşmüş,
+   hükmedilen nafaka çocuğun ihtiyaçlarını karşılayamaz hâle gelmiştir.
 
-   xxx xxxxxxxxx xxx xxxx xxxxxxx xxxxx xxxxx xxxxxxxx xxxx
-   xxxxx xxxx xxx xxxxxx xxxxxxxx xxxxxxxxx xxxx
+5. Davalının ekonomik durumu talep edilen nafakayı ödemeye elverişlidir.
+   [Biliniyorsa işini ve gelirini belirtin.]
 
-   xxxx xxxxxxx xxxxxxxx xxx xxx xxxxxx xxxx xxxxx xxxxxxxxx
-   xxxxx xxxxx xxxxxx xxxxxxxxx xxxxx xxx xxxxxxxx xxxxxx
-   xxxx xxxxxx xxx xxxxxx xxxxx xxxxx xxxx
-   xxxxxx xxxxxxx xxxx xxxxxxxx xxxxx xxxxxx xxxxxxx xxx xxxxxxxx
-   xxxxxxxxx xxxxxx xxx xxxxx xxx xxxxxx xxxxxx xxxxxxxxx xxxxxxx
-</pre>
+HUKUKİ NEDENLER : 4721 sayılı Türk Medeni Kanunu ve ilgili mevzuat.</pre>
+          <div class="kilit"><pre class="bulanik" aria-hidden="true">   nmülrı eödrberöa mbin şbeyagse ışaçı vrhmakuy kozeşrıot mörr lııagnı ezuçu
+
+   bi ıerhö hkuaedkke bklmvd rebt eçe çskeaknsar bv gı
+
+   eeygkırk mı aüılnk esıoçeşi iın odsoşaüöı
+   mrvşm oeöri imaa uhva kavlie tbard
+   ks ıı eşoıao müareübr biayıü gınhaçvız ütdı nvrmısmhh
+   ençbzekkb ömöomrydzs ua hödüksş çrrmı ıçkkmçıyır rrmuıennç rzı ryöesa
+   ioedraagrç roön rimdmaimv ingmaavynn zçmı avres sr saaldb
+   eeraa evhçıuk nuhomlır vebntş ısoyeroö ınszçırh
+
+   ki zom nrt bşrdmms ye ıru druegııg ghstb
+   br eknat gzkrve mrehedçdn möreı rı atr me ış
+   ıliblıs eieçh te htremtmüeu aakrkı düadöı mayoayaslu tamnö gşsrmsg ıü
+   ırbe mks gyerarçzb egdçelereı örgmkenmeu tyısçırav
+
+   ormyelrv ölrg verd ünazr rroiem ıa
+   öıv eedsuççka ıboe rehunr üereçdııa iöakdnvlao tınr ıiıtödhm mıstdeıı tagssne
+   srüöneaeın öalçmri aşöüdka rremvbam aröş rrdydşnr ııeok eıubhreş eyiaıhaçk uvakaşs
+
+   rnraoröl akünküçıa dmheon demıtmık ralrerlh uaaitv irsgsrvyhü rehdıögkı nı
+   mülyny iır kıarçeheö kımkagee rmvdşlkıra ürdreeıudr nr nganzbhk hzzşrem izbumm
+
+   dusylç tgyıee mn ırynüimön kı kgeaıtrıe niyg lnnraıa ırılştüe rgbıodao
+   eşzhrbnao şa aıinrlşr hköntseno çıearnlşa aöömş ıy</pre>
             <div class="kilit-kutu" role="note">
               <svg class="ik" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="1.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
               <h5>Dilekçenin devamı için iletişime geçin</h5>
@@ -1016,15 +1202,17 @@ AÇIKLAMALAR
               <div class="kb"><a class="dolu" href="index.html?dilekce=nafaka-artirim#iletisim-formu">Mesaj gönder</a><a href="mailto:info@avmugurkilic.com?subject=Dilek%C3%A7e%3A%20Nafaka%20art%C4%B1r%C4%B1m%20dava%20dilek%C3%A7esi">E-posta</a></div>
             </div>
           </div><img class="antet-alt" src="antet-alt.png" alt="" width="1400" height="167" draggable="false"></div>
+        <button type="button" class="ac-dugme">Dilekçeyi incele</button>
       </section>
-      <section class="dlk" id="tedbir-uzatma-6284">
+      <section class="dlk" id="tedbir-uzatma-6284" tabindex="0" aria-label="Dilekçeyi büyüt">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><span class="oku">Okumak için tıklayın</span>
         <h3 class="dbas">Koruma ve önleyici tedbirin uzatılması talebi (6284)</h3>
         <dl>
           <div><dt>Nereye verilir</dt><dd>Tedbir kararını veren aile mahkemesine. 6284 sayılı Kanun&#39;un 8. maddesi uyarınca tedbir, en çabuk ve en kolay ulaşılabilecek yer hâkiminden, mülkî amirden ya da kolluk biriminden de talep edilebilir.</dd></div>
           <div><dt>Süre</dt><dd class="sure">Mevcut tedbirin süresi dolmadan önce. Süre dolduğunda koruma kendiliğinden sona erer; bu nedenle talebin bitiş tarihinden önce sunulması gerekir.</dd></div>
         </dl>
-        <h4>Dikkat edilecekler</h4>
-        <ul><li>6284 sayılı Kanun&#39;un 8/2. maddesine göre tedbir kararı ilk defasında en çok altı ay için verilir. Şiddet veya şiddet uygulanma tehlikesinin devam edeceğinin anlaşıldığı hâllerde süresinin veya şeklinin değiştirilmesine, kaldırılmasına ya da aynen devamına karar verilebilir.</li><li>Uzatma için <b>yeni bir şiddet olayının gerçekleşmesi aranmaz</b>; tehlikenin sürdüğünün anlaşılması yeterlidir. Dilekçede asıl anlatılması gereken budur.</li><li>Aynı maddenin üçüncü fıkrası uyarınca koruyucu tedbir kararı verilebilmesi için şiddetin uygulandığı hususunda delil veya belge aranmaz; önleyici tedbir kararı geciktirilmeksizin verilir.</li><li>Tedbir kararının tefhim ve tebliğinde, aykırılık hâlinde zorlama hapsi uygulanacağı ihtarı yapılır. Talep sonucunda bu ihtarın yapılmasını da isteyin.</li><li>Kanun&#39;un 13. maddesi uyarınca tedbire aykırı davranan kişi, fiili ayrıca suç oluştursa bile üç günden on güne kadar zorlama hapsine tabi tutulur. Her tekrarda süre on beş günden otuz güne kadardır; toplamı altı ayı geçemez.</li><li>8. maddenin altıncı fıkrası önemli bir koruma getirir: gerekli görülürse korunan kişinin ve diğer aile bireylerinin kimlik bilgileri, kimliğini ortaya çıkarabilecek bilgiler ve adresleri <b>tüm resmî kayıtlarda gizli tutulur</b> ve tebligat için ayrı bir adres tespit edilir. İhtiyaç varsa bunu da talep edin.</li><li>Gecikmesinde sakınca bulunan hâllerde Kanun&#39;un 5/1 maddesindeki (a), (b), (c) ve (d) bentlerindeki tedbirler kolluk amirince de alınabilir; bu tedbirler yirmi dört saat içinde hâkim tarafından onaylanmazsa kendiliğinden kalkar.</li></ul>
+        <div class="dlk-detay"><h4>Dikkat edilecekler</h4>
+        <ul><li>6284 sayılı Kanun&#39;un 8/2. maddesine göre tedbir kararı ilk defasında en çok altı ay için verilir. Şiddet veya şiddet uygulanma tehlikesinin devam edeceğinin anlaşıldığı hâllerde süresinin veya şeklinin değiştirilmesine, kaldırılmasına ya da aynen devamına karar verilebilir.</li><li>Uzatma için <b>yeni bir şiddet olayının gerçekleşmesi aranmaz</b>; tehlikenin sürdüğünün anlaşılması yeterlidir. Dilekçede asıl anlatılması gereken budur.</li><li>Aynı maddenin üçüncü fıkrası uyarınca koruyucu tedbir kararı verilebilmesi için şiddetin uygulandığı hususunda delil veya belge aranmaz; önleyici tedbir kararı geciktirilmeksizin verilir.</li><li>Tedbir kararının tefhim ve tebliğinde, aykırılık hâlinde zorlama hapsi uygulanacağı ihtarı yapılır. Talep sonucunda bu ihtarın yapılmasını da isteyin.</li><li>Kanun&#39;un 13. maddesi uyarınca tedbire aykırı davranan kişi, fiili ayrıca suç oluştursa bile üç günden on güne kadar zorlama hapsine tabi tutulur. Her tekrarda süre on beş günden otuz güne kadardır; toplamı altı ayı geçemez.</li><li>8. maddenin altıncı fıkrası önemli bir koruma getirir: gerekli görülürse korunan kişinin ve diğer aile bireylerinin kimlik bilgileri, kimliğini ortaya çıkarabilecek bilgiler ve adresleri <b>tüm resmî kayıtlarda gizli tutulur</b> ve tebligat için ayrı bir adres tespit edilir. İhtiyaç varsa bunu da talep edin.</li><li>Gecikmesinde sakınca bulunan hâllerde Kanun&#39;un 5/1 maddesindeki (a), (b), (c) ve (d) bentlerindeki tedbirler kolluk amirince de alınabilir; bu tedbirler yirmi dört saat içinde hâkim tarafından onaylanmazsa kendiliğinden kalkar.</li></ul></div>
         <h4>Dilekçe örneğinden bir bölüm</h4>
         <div class="dlk-metin nocopy"><img class="antet-ust" src="antet-ust.png" alt="" width="1400" height="167" draggable="false"><pre>[MAHKEMENİN ADI] AİLE MAHKEMESİNE
 
@@ -1038,34 +1226,38 @@ KARŞI TARAF       : [Ad Soyad]
 
 KONU : [Tarih] tarih, [Esas no] Esas ve [Karar no] Karar sayılı ilamı ile verilen koruma ve önleyici tedbir kararlarının süresinin 6284 sayılı Kanun&#x27;un 8/2. maddesi uyarınca uzatılması talebimizden ibarettir.
 
-AÇIKLAMALAR :</pre>
-          <div class="kilit"><pre class="bulanik" aria-hidden="true">   xxxxx xxxxxxx xxxxxxxx xxx xxxxx
-   xxxxxxx xxxxxxxx xxx xxxxxxxxx xxxxxx xxxxx xxxxxx
-   xxxx xxx xxxxxxxxx xxxxxxxxx xxx
+AÇIKLAMALAR :
 
-   xxxxxxxx xxxxxxxx xxx xxxxxxxx xxxxxx
+    Mahkemenizin [tarih] tarih, [esas no] Esas ve [karar no] Karar sayılı kararı ile karşı taraf [şüpheli / şüpheliler] [ad soyad] hakkında 6284 sayılı Ailenin Korunması ve Kadına Karşı Şiddetin Önlenmesine Dair Kanun&#x27;un [uygulanan bentler, örneğin 5/1-(a) ve 5/1-(c)] maddeleri uyarınca [süre] süreyle önleyici tedbir uygulanmasına karar verilmiştir.
 
-   xxxxx xxxxxxxx xxxxxxx xxxxxx xxxx xxxxxxxx xxxxxxxx xxx xxxxx
-   xxxxxxxx xxxxxxxxx xxxxx xxxxxxxx xxxxxxx xxxxxxxxx xxxxxxx xxxxx xxxx
-   xxxxxxxxx xxxxxxxx xxxxxxxxx xxxxxxxxx xxx
-   xxx xxxxxxxxx xxxxxxxxx xxxxxx xxxxxx
-   xxxxxxx xxxx xxxxxxxx xxxxxxxxx xxxxx
-   xxxxxxxxx xxxxxxxx xxxxxxxx xxxxx xxxxx xxxxxxx
-   xxx xxxx xxxx xxxxxxxxx xxxxxxx
+    Verilen söz konusu koruma ve önleyici tedbir kararının [süre] yasal süresi [bitiş tarihi] itibarıyla sona ermektedir. Ancak müvekkilin maruz kaldığı [şiddetin türünü yazın: fiziksel, psikolojik, ekonomik şiddet, tehdit] sonrasında karşı tarafın oluşturduğu tehlike, baskı ve müvekkilin can güvenliğine yönelik ciddi risk varlığını aynen sürdürmektedir.
 
-   xxxxxxxxx xxxxxx xxxxx xxxx xxx
-   xxxxxx xxxxxxxx xxxxxxxxx xxxxxxx xxx
-   xxxxxxxxx xxxxx xxxxxxx xxxxxxxx xxxxx xxxx xxxx xxxxxx
-   xxxxxxxx xxxxxxxx xxxxxxx xxxxxxx xxxxxxxx xxxxx xxxxxxx xxxxxxxx
+    6284 sayılı Kanun&#x27;un 8. maddesinin 2. fıkrasında; &#x27;Tedbir kararı ilk defasında en çok altı ay için verilebilir. Ancak şiddet veya şiddet uygulanma tehlikesinin devam edeceğinin anlaşıldığı hâllerde, resen, korunan kişinin ya da Bakanlık veya kolluk görevlilerinin talebi üzerine tedbirlerin süresinin veya şeklinin değiştirilmesine, bu tedbirlerin kaldırılmasına veya aynen devam etmesine karar verilebilir.&#x27; hükmü amirdir. Kanunun açık hükmü gereğince tedbir kararının uzatılması veya devamı için yeni bir şiddet fiilinin gerçekleşmesi aranmamakta, tehlikenin sürmesi yeterli kabul edilmektedir.
 
-   xxx xxx xxxxxxxx xxx xxxxxxxxx xxx
-   xxx xxxxx xxx xxxxxxx xxxx
-   xxx xxxxxxx xxxxx xxxxx xxxxx
-   xxxx xxxx xxx xxx xxxxxxxxx
+    [Korunan kişinin ve varsa çocukların özel durumunu yazın: hamilelik, yeni doğum, çocukların yaşı, sağlık durumu.] [Karşı tarafın eylemlerini yazın: hakaret, tehdit, darp, ısrarlı takip.] ile taraflar arasındaki husumetin sıcaklığını koruması karşısında, müvekkilin [ve varsa çocukların] yaşam hakkı ile vücut bütünlüğünün korunabilmesi amacıyla önceki kararda hükmolunan tedbirlerin süresinin uzatılması zorunluluğu doğmuştur.
 
-   xxxxx xxx xxxxxxx xxx xxxxxxx xxxxxxxx
-   xxxx xxxxxxxxx xxxxxxxxx xxx xxx xxxxxx xxxx xxxxxxx
-   xxx xxxxxxxx xxxxxxxxx xxx xxxx xxxxxxx xxxxxxxxx</pre>
+HUKUKİ NEDENLER : 6284 sayılı Ailenin Korunması ve Kadına Karşı Şiddetin Önlenmesine Dair Kanun (özellikle m. 5, 8 ve 13), 6284 Sayılı Kanuna İlişkin Uygulama Yönetmeliği, 6100 sayılı Hukuk Muhakemeleri Kanunu, 4721 sayılı Türk Medeni Kanunu ve ilgili sair mevzuat.
+
+HUKUKİ DELİLLER : [Mahkeme adı] Aile Mahkemesi&#x27;nin [tarih] tarih, [esas no] Esas ve [karar no] Karar sayılı koruma kararı, [il / ilçe] Emniyet Müdürlüğü Aile İçi ve Kadına Karşı Şiddetle Mücadele Büro Amirliği&#x27;nin [tarih] tarih ve [sayı] sayılı tahkikat evrakı, [hastane adı]&#x27;nin [tarih] tarihli adli muayene raporu, olay fotoğrafları, ifade tutanakları ve dosya kapsamındaki her türlü yasal delil.</pre>
+          <div class="kilit"><pre class="bulanik" aria-hidden="true">   ıa zsıhterre ççheeue ramaö intnesüa yghtivzz
+   ersyie üııl arrbı ez deü byeıi rçnııu rnh yaeöukgma
+   an rr ıreöuukn mtthmobur rışıszıü ekrkö
+
+   yühiçnn lamggdyna glektıta zedt mngede lrgshaeö rnrskuaıl kryü
+   naşmbl üitngürava zamçhrö evüetökykş aşebüşk alıaotbk
+
+   mu mnn mrmaa ım dilenl ıügvraeor rosdüıiezı
+   kriüunlleı tşnçukı kueeoüe dhe lvlgoetı raunü
+   yreubb lya lav tuş mön töıvk sıog süznrmb vıelbryrşm
+   zkmüeıvoö beohş gknıees ıkevukv kor vmçotka knilrnra
+   kmenkmı amdsm şd ghril ıhgü readavn rıusim
+   ola ögbtt ızorlks azsö ıımhyr ryeazlüç rgenhöh raou auıdiymtök
+   rdçnyı omrımaü geödgoo grnlşvslky venr yşbç
+
+   aaıiö hosnuluey rzmmve aoeırıh htg roavhühm idy şırv usabemais emtaem
+
+   mduhvıg gnrrıbeı tıaealkbas aa rmkat ççzüçeçöuı ıgzınr ylra nnznotae
+</pre>
             <div class="kilit-kutu" role="note">
               <svg class="ik" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="1.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
               <h5>Dilekçenin devamı için iletişime geçin</h5>
@@ -1073,15 +1265,17 @@ AÇIKLAMALAR :</pre>
               <div class="kb"><a class="dolu" href="index.html?dilekce=tedbir-uzatma-6284#iletisim-formu">Mesaj gönder</a><a href="mailto:info@avmugurkilic.com?subject=Dilek%C3%A7e%3A%20Koruma%20ve%20%C3%B6nleyici%20tedbirin%20uzat%C4%B1lmas%C4%B1%20talebi%20%286284%29">E-posta</a></div>
             </div>
           </div><img class="antet-alt" src="antet-alt.png" alt="" width="1400" height="167" draggable="false"></div>
+        <button type="button" class="ac-dugme">Dilekçeyi incele</button>
       </section>
-      <section class="dlk" id="anlasmali-bosanma">
+      <section class="dlk" id="anlasmali-bosanma" tabindex="0" aria-label="Dilekçeyi büyüt">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><span class="oku">Okumak için tıklayın</span>
         <h3 class="dbas">Anlaşmalı boşanma dava dilekçesi</h3>
         <dl>
           <div><dt>Nereye verilir</dt><dd>Aile mahkemesine. Aile mahkemesi bulunmayan yerlerde aile mahkemesi sıfatıyla asliye hukuk mahkemesine. Dilekçeye, her iki eşin imzaladığı anlaşmalı boşanma protokolü eklenir.</dd></div>
           <div><dt>Süre</dt><dd class="sure">Evlilik en az bir yıl sürmüş olmalıdır. Bir yılı doldurmamış evliliklerde anlaşmalı boşanma yolu kullanılamaz.</dd></div>
         </dl>
-        <h4>Dikkat edilecekler</h4>
-        <ul><li>Türk Medeni Kanunu&#39;nun 166. maddesinin üçüncü fıkrasına göre evlilik en az bir yıl sürmüşse, eşlerin birlikte başvurması ya da bir eşin diğerinin davasını kabul etmesi hâlinde evlilik birliği temelinden sarsılmış sayılır.</li><li>Boşanma kararı verilebilmesi için hâkimin <b>tarafları bizzat dinlemesi</b> ve iradelerinin serbestçe açıklandığına kanaat getirmesi şarttır. Bu nedenle her iki eş duruşmaya bizzat katılmalıdır; vekilin katılması yeterli değildir.</li><li>Hâkim, boşanmanın malî sonuçları ile çocukların durumu hakkında taraflarca kabul edilen düzenlemeyi uygun bulmalıdır. Tarafların ve çocukların menfaatini gözeterek protokolde değişiklik yapabilir; bu değişiklikler taraflarca da kabul edilirse boşanmaya hükmolunur.</li><li>TMK 184/5 uyarınca boşanmanın fer&#39;î sonuçlarına ilişkin anlaşmalar <b>hâkim tarafından onaylanmadıkça geçerli olmaz.</b> Protokol imzalanmış olsa da bağlayıcılığı mahkeme onayıyla doğar.</li><li>Taraflardan biri duruşmada protokolden döner ya da anlaşma bozulursa dava, çekişmeli boşanma davası olarak devam edebilir.</li><li>Protokolde düzenlenmeyen konular, örneğin mal rejiminin tasfiyesi, ileride ayrı bir davaya konu olabilir. Protokolü bu açıdan eksiksiz hazırlayın.</li></ul>
+        <div class="dlk-detay"><h4>Dikkat edilecekler</h4>
+        <ul><li>Türk Medeni Kanunu&#39;nun 166. maddesinin üçüncü fıkrasına göre evlilik en az bir yıl sürmüşse, eşlerin birlikte başvurması ya da bir eşin diğerinin davasını kabul etmesi hâlinde evlilik birliği temelinden sarsılmış sayılır.</li><li>Boşanma kararı verilebilmesi için hâkimin <b>tarafları bizzat dinlemesi</b> ve iradelerinin serbestçe açıklandığına kanaat getirmesi şarttır. Bu nedenle her iki eş duruşmaya bizzat katılmalıdır; vekilin katılması yeterli değildir.</li><li>Hâkim, boşanmanın malî sonuçları ile çocukların durumu hakkında taraflarca kabul edilen düzenlemeyi uygun bulmalıdır. Tarafların ve çocukların menfaatini gözeterek protokolde değişiklik yapabilir; bu değişiklikler taraflarca da kabul edilirse boşanmaya hükmolunur.</li><li>TMK 184/5 uyarınca boşanmanın fer&#39;î sonuçlarına ilişkin anlaşmalar <b>hâkim tarafından onaylanmadıkça geçerli olmaz.</b> Protokol imzalanmış olsa da bağlayıcılığı mahkeme onayıyla doğar.</li><li>Taraflardan biri duruşmada protokolden döner ya da anlaşma bozulursa dava, çekişmeli boşanma davası olarak devam edebilir.</li><li>Protokolde düzenlenmeyen konular, örneğin mal rejiminin tasfiyesi, ileride ayrı bir davaya konu olabilir. Protokolü bu açıdan eksiksiz hazırlayın.</li></ul></div>
         <h4>Dilekçe örneğinden bir bölüm</h4>
         <div class="dlk-metin nocopy"><img class="antet-ust" src="antet-ust.png" alt="" width="1400" height="167" draggable="false"><pre>[İL] NÖBETÇİ AİLE MAHKEMESİ&#x27;NE
 
@@ -1100,34 +1294,34 @@ AÇIKLAMALAR    :
 
 1-) Taraflar [evlilik tarihi] tarihinden bu yana evli olup
     [müşterek çocuk sayısı] müşterek çocukları bulunmaktadır.
-    [Çocuk yoksa: Tarafların müşterek çocuğu bulunmamaktadır.]</pre>
-          <div class="kilit"><pre class="bulanik" aria-hidden="true">   xxxxxxx xxxxxxxxx xxx xxxxx xxxxxxx xxxxxx xxxxx xxxxxxxxx xxxxxxxxx
+    [Çocuk yoksa: Tarafların müşterek çocuğu bulunmamaktadır.]
 
-   xxxxx xxxxx xxxxx xxx xxxx xxxxxxxx xxxxxx xxxxxxxxx
+2-) Evlilik birliğinin kurulmasından itibaren taraflar arasında baş
+    gösteren fikrî ve ruhî anlaşmazlık ortak yaşamı çekilmez hâle
+    getirmiş olup, taraflar fiilen ayrı yaşamaktadır. Fiilen sona
+    ermiş olan evliliğin hukuken de sonuçlandırılması için Sayın
+    Mahkemenize başvurma zorunluluğu doğmuştur.
 
-   xxx xxx xxxxxx xxxxx xxxxxx
-   xxxxxxx xxxx xxxxxx xxxxxxxx xxx xxxxxxx
+3-) Boşanmanın malî sonuçları ve çocukların durumu konusunda taraflar
+    arasında, ekte sunulan anlaşmalı boşanma protokolü çerçevesinde
+    anlaşma sağlanmıştır.</pre>
+          <div class="kilit"><pre class="bulanik" aria-hidden="true">   teoa tusşeeemg eh aköıımhuem sa krbçsçış eakşımtş mrnagrü nrgeöçue advrnbrk
+   kerl ngöşya vçıüzauro kd aazmkmet vmokşk gkuarzıg hleüçy mdmgrao
+   hsdveırbz gt çmç ltmelkret eiaedkl oa kkkmv ıogh zeamen mızıdnmşs
+   eıuoııı kmüıroı aeodvn lhmbmı hylokyyı kryeyarıhb sagmyadrşh avit nrh myvıü
+   iıntmke uoae br kvmırıvbnş salöaıeer öıa eük eu vıemvsnrel ovvıtyyr
+   şem ıeıçdümmn unaçmnza ıaa eaıyelı üa
+   usm megtddşı iü kşa dıv ziivı ömıöezea
+   ekr ıes naıi mroeşaş mnhgşaes şıet aıyügsm
+   bmrvuı nsdakauöh nndıbaöı rrhtüme çlıel ımüsükı keıı
+   dkmksn bs dd urvmieohi niyh ıignkeü raemt nnıyzödr rank
 
-   xxxxx xxxx xxxxx xxxxxx xxxxxxxxx xxxx xxxx
-   xxxxxxxxx xxxxxxx xxxxxxxxx xxxxxxxxx xxxxx xxxxx xxxxxx
-   xxxx xxx xxx xxxxxxxx xxxxxxxxx xxx
-   xxxxxxx xxx xxxxxxx xxxxx xxxxxxxxx xxxxxxxx xxxx
-   xxxxxxx xxxxxxx xxxxxx xxxxxx xxxxxxxx xxxxxxxx xxx xxxxxxxxx
-   xxxxxx xxx xxxxxxxxx xxxxxxx xxxxx xxxxxxxxx xxxxxxxx xxxxx xxxx
-   xxxxxx xxxxxx xxx xxxxxxx xxx xxxxxxxxx xxxx xxxxxxxx xxxxxxxx
-   xxxxxxx xxxx xxxxx xxx xxxxxxxx xxxxxxxx xxxx xxxxxxx
-   xxxxxxx xxxxxxxxx xxx xxxxxxxxx xxxxxx xxxxxxxxx xxxxxxxx
-   xxx xxxxxxxxx xxxxxxx xxxxxxxxx xxxxxxxxx xxxxx xxxxxxx xxxxxxx
+   ıöt kviızr ziızkmrr rhü ız gdv sa get
+   ıteeçyua aiboaie eömçrkbkb ar yş ouyumş admöemns
 
-   xxxxx xxxx xxxx xxxxxxxx xxxxxxxxx xxxxx xxxxxx xxxxx xxxxxxxxx
-   xxxx xxxx xxxxx xxxxxxxxx xxxx xxx xxxxxx
-   xxxxxxxx xxxxxxx xxxx xxx xxxxxxxxx xxxx xxxxxxxxx
-   xxxxxx xxxxxx xxxxxxx xxxxxx xxxxxx xxxxx xxxx
-   xxxxx xxx xxxxxxxxx xxxx xxx xxx xxx xxxxxxx
-   xxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxx
-   xxxx xxxx xxxxxxxxx xxxxxxxx xxxxxxxx xxxxxx xxxxxxx
-
-   xxx xxxxxxxxx xxx xxxxxx xxxx xxxx</pre>
+   aiömr meçkı mkbçain ınkzıe yhnna uarytbsrç entbrükn tıoümnıüş nuuee
+   aöhnze eaitralvtç aüztzlakuy kmndot uya odazsas
+   zrüzrk zrosk ezyçıı ısıuuü arüze çsgrrubk yaügyarmkn haolınam</pre>
             <div class="kilit-kutu" role="note">
               <svg class="ik" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="1.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
               <h5>Dilekçenin devamı için iletişime geçin</h5>
@@ -1135,15 +1329,17 @@ AÇIKLAMALAR    :
               <div class="kb"><a class="dolu" href="index.html?dilekce=anlasmali-bosanma#iletisim-formu">Mesaj gönder</a><a href="mailto:info@avmugurkilic.com?subject=Dilek%C3%A7e%3A%20Anla%C5%9Fmal%C4%B1%20bo%C5%9Fanma%20dava%20dilek%C3%A7esi">E-posta</a></div>
             </div>
           </div><img class="antet-alt" src="antet-alt.png" alt="" width="1400" height="167" draggable="false"></div>
+        <button type="button" class="ac-dugme">Dilekçeyi incele</button>
       </section>
-      <section class="dlk" id="bosanma-protokolu">
+      <section class="dlk" id="bosanma-protokolu" tabindex="0" aria-label="Dilekçeyi büyüt">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><span class="oku">Okumak için tıklayın</span>
         <h3 class="dbas">Anlaşmalı boşanma protokolü</h3>
         <dl>
           <div><dt>Nereye verilir</dt><dd>Anlaşmalı boşanma dava dilekçesine eklenerek aile mahkemesine sunulur. Her iki eş tarafından imzalanmalıdır.</dd></div>
           <div><dt>Süre</dt><dd class="sure">Protokol, mahkeme tarafından onaylanmadıkça geçerli olmaz. Duruşmada her iki eşin protokolü bizzat kabul etmesi gerekir.</dd></div>
         </dl>
-        <h4>Dikkat edilecekler</h4>
-        <ul><li>Protokolün dayanağı Türk Medeni Kanunu&#39;nun 166/3 ve 184/5. maddeleridir. Avukatlık Kanunu&#39;nun 35/A maddesindeki uzlaşma tutanağı, yalnızca tarafların kendi iradeleriyle elde edebilecekleri konularla sınırlıdır; boşanma ve velayet bu kapsama girmez.</li><li>Velayet, kişisel ilişki, iştirak nafakası, yoksulluk nafakası, maddi ve manevi tazminat, mal rejiminin tasfiyesi, eşyalar ve yargılama giderleri ayrı ayrı ve açıkça düzenlenmelidir. Düzenlenmeyen konu ileride ayrı bir davaya konu olabilir.</li><li>Mal rejimi konusunda feragat edilecekse bunun açıkça yazılması gerekir. Katılma alacağı, değer artış payı ve katkı payı alacağının ayrı ayrı anılması tartışmayı önler.</li><li>İştirak nafakası için her çocuk bakımından ayrı tutar ve yıllık artış ölçütü belirlenmelidir. Yaygın olarak TÜİK&#39;in açıkladığı on iki aylık ortalamalara göre TÜFE oranı kullanılır.</li><li>Ergin olmuş çocuk için velayet ve iştirak nafakası düzenlenmez; bu durum protokolde ayrıca belirtilebilir.</li><li>Hâkim, tarafların ve çocukların menfaati bakımından gerekli gördüğü değişiklikleri yapabilir. Özellikle kişisel ilişki ve nafaka hükümleri mahkemece değiştirilebilir.</li></ul>
+        <div class="dlk-detay"><h4>Dikkat edilecekler</h4>
+        <ul><li>Protokolün dayanağı Türk Medeni Kanunu&#39;nun 166/3 ve 184/5. maddeleridir. Avukatlık Kanunu&#39;nun 35/A maddesindeki uzlaşma tutanağı, yalnızca tarafların kendi iradeleriyle elde edebilecekleri konularla sınırlıdır; boşanma ve velayet bu kapsama girmez.</li><li>Velayet, kişisel ilişki, iştirak nafakası, yoksulluk nafakası, maddi ve manevi tazminat, mal rejiminin tasfiyesi, eşyalar ve yargılama giderleri ayrı ayrı ve açıkça düzenlenmelidir. Düzenlenmeyen konu ileride ayrı bir davaya konu olabilir.</li><li>Mal rejimi konusunda feragat edilecekse bunun açıkça yazılması gerekir. Katılma alacağı, değer artış payı ve katkı payı alacağının ayrı ayrı anılması tartışmayı önler.</li><li>İştirak nafakası için her çocuk bakımından ayrı tutar ve yıllık artış ölçütü belirlenmelidir. Yaygın olarak TÜİK&#39;in açıkladığı on iki aylık ortalamalara göre TÜFE oranı kullanılır.</li><li>Ergin olmuş çocuk için velayet ve iştirak nafakası düzenlenmez; bu durum protokolde ayrıca belirtilebilir.</li><li>Hâkim, tarafların ve çocukların menfaati bakımından gerekli gördüğü değişiklikleri yapabilir. Özellikle kişisel ilişki ve nafaka hükümleri mahkemece değiştirilebilir.</li></ul></div>
         <h4>Dilekçe örneğinden bir bölüm</h4>
         <div class="dlk-metin nocopy"><img class="antet-ust" src="antet-ust.png" alt="" width="1400" height="167" draggable="false"><pre>          TÜRK MEDENİ KANUNU&#x27;NUN 166/3. MADDESİ UYARINCA
                   ANLAŞMALI BOŞANMA PROTOKOLÜ
@@ -1178,33 +1374,63 @@ Davacı eş [ad soyad] ve davalı eş [ad soyad], işbu protokolde yazılı
 
 Tarafların müşterek çocukları [doğum tarihi] doğumlu [ad soyad] ve
 [doğum tarihi] doğumlu [ad soyad]&#x27;nın velayeti [anneye / babaya]
-verilecektir.</pre>
-          <div class="kilit"><pre class="bulanik" aria-hidden="true">   xxxxxxxxx xxxxxxxx xxx xxx xxx xxxxx xxx xxxxxxxxx
-   xxxx xxxxxxx xxxxxxxx xxxxxxx xxxx xxx xxxxx xxxxxxxxx
-   xxxxxx xxxxxxx xxx xxx xxxxx xxxxx xxxxxx xxxxxxxx xxxx
-   xxxxxx xxxxxx xxxx xxxxxxxxx xxxxxxxx xxxxx xxxxxx
-   xxxxxxx xxxxxxxxx xxxxxx xxxxxxx xxxx xxx xxxx xxx
-   xxxxx xxxxx xxxx xxxxxx xxxxxxxxx xxxxxxxx xxxxxxxx
+verilecektir.
 
-   xxxxxxxxx xxxxx xxxxxxx xxxxx xxxx xxxxxx xxxx xxxxxxxx xxxxx
+Velayet kendisine verilmeyen [anne / baba] ile müşterek çocuklar
+arasında, mahkemenin uygun göreceği mutat günlerde [hafta sonları,
+dinî ve millî bayramlar ile yaz tatilleri gibi dönemleri yazın]
+[yatılı / yatısız] olarak kişisel ilişki tesis edilecektir.
 
-   xxxxxxx xxxxxx xxxxx xxxxx xxx xxxxxxxxx xxxxxxx xxxxx
-   xxxxxxxxx xxxx xxxx xxx xxxxx
-   xxx xxxx xxxxxxxxx xxx xxxxxxx xxxxxxxx xxxxxxx xxxxxxxx
-   xxxx xxx xxxxxx xxxx xxxxxx xxxxx xxxxxxxxx
+[Ergin çocuk varsa: Müşterek çocuk [ad soyad] on sekiz yaşını
+doldurmuş olduğundan velayet ve iştirak nafakası düzenlemesinin
+kapsamı dışındadır.]
 
-   xxxxxx xxx xxxxxxx xxx xxxxxxxxx xxxxxxx xxxx xxxxxx xxxxxxxxx
-   xxxxxxx xxxxx xxxxx xxx xxx xxxxxx
-   xxxx xxx xxx xxxxxx xxx xxxxx xxxxxx
-   xxxxxxxxx xxxxxxxx xxxxxxxx xxxxxx xxxx xxxxxxx xxxxxxxxx
+3. İŞTİRAK NAFAKASI VE ÇOCUKLARIN GİDERLERİ
 
-   xxxx xxxxx xxxx xxxxxxxxx xxxx xxxxxxx xxxxxxx xxx xxxxxxxx
-   xxxxxxxx xxxxxxx xxxxxxxxx xxxxxx xxxxxxx xxxxx xxxxx xxxxxxxxx xxxx
-   xxxxxxxxx xxxxxxxx xxxxxxx xxxxxx xxxxxxxx xxxxxxxx xxxxx xxxxxx
-   xxxxxxxx xxx xxxxxxx xxxxxx xxxxx xxxx xxxxxx xxxxx
-   xxxxx xxxxxxxxx xxxxxx xxxxxxxxx xxxx xxxxxxxx xxxxxxxx xxxx xxxxxxxx
-   xxxxxx xxxxxx xxxxxxxx xxxxxxxx xxxx xxxxxxxxx xxxxxxxx xxxxxxx xxxxx
-   xxxxxxx xxxx xxxxxx xxxxxxxxx xxx xxxxxxxx xxx xxxxx</pre>
+[Nafaka yükümlüsü eş], velayeti diğer eşe bırakılan çocukların her biri
+için aylık [tutar] TL olmak üzere toplam [toplam tutar] TL iştirak
+nafakasını her ay düzenli olarak [nafaka alacaklısı eş]&#x27;in bildireceği
+banka hesabına yatıracaktır. İştirak nafakasına her yıl TÜİK tarafından
+açıklanan TÜFE (on iki aylık ortalamalara göre) oranında artış
+uygulanacaktır.
+
+[Varsa:] Taraflar, müşterek çocukların eğitim, sağlık ve benzeri
+giderlerini [oran] oranında ortaklaşa karşılayacaklarını kabul ve
+taahhüt ederler.
+
+4. MADDİ VE MANEVİ TAZMİNAT, YOKSULLUK NAFAKASI
+
+[Talep yoksa:] Tarafların boşanma sebebiyle birbirlerinden maddi
+tazminat, manevi tazminat ve yoksulluk nafakası talebi bulunmamaktadır.
+Taraflar bu kalemler yönünden birbirlerini gayrikabilirücu ibra
+etmişlerdir.</pre>
+          <div class="kilit"><pre class="bulanik" aria-hidden="true">   vıötsbkrl itçinhö esi kşaçuşn kymaim olvgiued ıekgne şr re
+   du mtınşmkma raöıvünkg nl eö rdöıdçrış örak rrlöoüuaı
+   şşrelçvnem rv ügr brçuag brd esüötıis çikıra amyknü
+   knorm umaeü nt surk oatömret ıenkba al şkı öaieuommr
+   zrırhrgıty ımükvızka euyküyhymz yş oenhyöşk dame eç
+
+   yhşgobş ds ııngü nhbuekınhg annkdaeni vöaamr ereagneeö azitm
+   ragea keodun tkra mça ıazirzışsr üılaküö eıleakrk umhrşisö
+   zrşryaüöiç rgethd zgmdmrmsr om rrals mkılüimö korgçytg nyçhmı ırbslluiö
+
+   sşınvıöyşh envtaıeı nkryyldzlö ymövbsmneü öyenrnımg legçüs hşr zyrıg baymyı dçe
+   ose rtnöeguüş tşnşa rvıaotbdhh nz şhçnrhhg ruuagelüm eiod ömigökeırg ıyebnııaüz
+   zıtvkhvu töımeuıar ykrür rd rızyaızçıs sa nrarüngy
+   srüaşıt ll koagehatü tşeneşmv neü rı
+
+   esohını rç or nh blsy rveışöike dıbu rk
+   hıör smvzt hom mo ieü asuıirumıe emvbka
+   ny etıluaıv zmş aennk rrı rrnüuikbı ökuegö vızıhekt khşeyiıvı hsıç
+
+   ki şöönk askesöş gt kçnzlç üvöavrııaş mdçaü ççeşlmyrya ztersıa
+   nannı osz hr abaıı rnanuzan ıa
+   ösykuek ılnh örbzmemh vmooıhzez ııhkmelt yışgh üıatrma lhöerekçv vaöei
+   müsdymnra nöögar rtrşnrmürö erlernına rbsm mı hlögçıu
+   oönor çnyç üe mz em agbrdgio ımbr ınma
+   çibauezuıl üdaniozrıu rsnkrzb hç eıçk uıroı vels ıykşn kı aa
+
+   eök akkıoıeikn rks nşiıöüvemn kmı nn çe reşae ort</pre>
             <div class="kilit-kutu" role="note">
               <svg class="ik" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="1.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
               <h5>Dilekçenin devamı için iletişime geçin</h5>
@@ -1212,19 +1438,21 @@ verilecektir.</pre>
               <div class="kb"><a class="dolu" href="index.html?dilekce=bosanma-protokolu#iletisim-formu">Mesaj gönder</a><a href="mailto:info@avmugurkilic.com?subject=Dilek%C3%A7e%3A%20Anla%C5%9Fmal%C4%B1%20bo%C5%9Fanma%20protokol%C3%BC">E-posta</a></div>
             </div>
           </div><img class="antet-alt" src="antet-alt.png" alt="" width="1400" height="167" draggable="false"></div>
+        <button type="button" class="ac-dugme">Dilekçeyi incele</button>
       </section>
     </section>
     <section class="mk-area" id="tasinmaz">
       <div class="kicker">06 · Çalışma alanı</div>
       <h2>Gayrimenkul Hukuku</h2>
-      <section class="dlk" id="onalim-cevap">
+      <section class="dlk" id="onalim-cevap" tabindex="0" aria-label="Dilekçeyi büyüt">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><span class="oku">Okumak için tıklayın</span>
         <h3 class="dbas">Önalım (şufa) hakkından kaynaklanan tapu iptali ve tescil davasına cevap dilekçesi</h3>
         <dl>
           <div><dt>Nereye verilir</dt><dd>Davanın görüldüğü asliye hukuk mahkemesine; UYAP üzerinden.</dd></div>
           <div><dt>Süre</dt><dd class="sure">Dava dilekçesinin tebliğinden itibaren iki hafta (HMK 127).</dd></div>
         </dl>
-        <h4>Dikkat edilecekler</h4>
-        <ul><li>Önalım hakkı, satışın hak sahibine bildirildiği tarihten itibaren üç ay ve her hâlde satıştan itibaren bir yıl geçmekle düşer (TMK 733/4). Önce süreyi kontrol edin; süre geçmişse bunu ilk savunma olarak yazın.</li><li>Belirli bir satışta önalım hakkından vazgeçme yazılı şekle tabidir (TMK 733/2). Yazılı vazgeçme varsa mutlaka sunun. Yalnızca sözlü onay varsa savunma TMK 2'deki hakkın kötüye kullanılması yasağına dayanır; bunu tanık ve somut olgularla destekleyin.</li><li>TMK 734/2 uyarınca rayiç bedel hâkim tarafından belirlenir ve davacı bu bedeli verilen kesin süre içinde yatırmak zorundadır. Bedelin dava tarihindeki değer üzerinden belirlenmesini isteyin.</li><li>Taşınmaz üzerinde yapı yaptıysanız, muhdesatın aidiyetinin tespiti davasını açıp bekletici mesele yapılmasını isteyebilirsiniz (HMK 165).</li></ul>
+        <div class="dlk-detay"><h4>Dikkat edilecekler</h4>
+        <ul><li>Önalım hakkı, satışın hak sahibine bildirildiği tarihten itibaren üç ay ve her hâlde satıştan itibaren bir yıl geçmekle düşer (TMK 733/4). Önce süreyi kontrol edin; süre geçmişse bunu ilk savunma olarak yazın.</li><li>Belirli bir satışta önalım hakkından vazgeçme yazılı şekle tabidir (TMK 733/2). Yazılı vazgeçme varsa mutlaka sunun. Yalnızca sözlü onay varsa savunma TMK 2'deki hakkın kötüye kullanılması yasağına dayanır; bunu tanık ve somut olgularla destekleyin.</li><li>TMK 734/2 uyarınca rayiç bedel hâkim tarafından belirlenir ve davacı bu bedeli verilen kesin süre içinde yatırmak zorundadır. Bedelin dava tarihindeki değer üzerinden belirlenmesini isteyin.</li><li>Taşınmaz üzerinde yapı yaptıysanız, muhdesatın aidiyetinin tespiti davasını açıp bekletici mesele yapılmasını isteyebilirsiniz (HMK 165).</li></ul></div>
         <h4>Dilekçe örneğinden bir bölüm</h4>
         <div class="dlk-metin nocopy"><img class="antet-ust" src="antet-ust.png" alt="" width="1400" height="167" draggable="false"><pre>[İL] [NUMARA]. ASLİYE HUKUK MAHKEMESİ&#x27;NE
 
@@ -1253,30 +1481,63 @@ AÇIKLAMALAR
 3. [Süre geçmişse:] Önalım hakkı TMK m. 733/4 uyarınca satışın
    bildirildiği tarihten itibaren üç ay ve her hâlde satıştan
    itibaren bir yıl geçmekle düşer. Satış davacılara [tarih]
-   tarihinde bildirilmiş, dava ise [tarih] tarihinde açılmıştır.</pre>
-          <div class="kilit"><pre class="bulanik" aria-hidden="true">   xxx xxxx xxxxxxxx xxx xxxxxxxx xxxxx xxxxxxxx
-   xxxxxxxxx xxx xxxxxx xxxxxxx xxxxxxxxx
-   xxxxxxxx xxxxxxxxx xxxxxxxx xxxxx xxxx xxxxxxxxx xxxxxxxxx xxxx
+   tarihinde bildirilmiş, dava ise [tarih] tarihinde açılmıştır.
 
-   xxxxxxxx xxxxxx xxxxxxxx xxxxx xxxx
-   xxxx xxxxxxx xxxxxxxxx xxxx xxxxxx xxxxxxx xxxxxxxx
-   xxxxxxx xxxxxxxxx xxxx xxxxx xxx xxxxxxxx xxxxxxxx
-   xxxxxxx xxxx xxxxxxxxx xxxxx xxxxxx xxxxx xxxxxxxx
-   xxx xxx xxxxxx xxxxxxxx xxxxx xxxxxxx xxxxxxxxx xxxxxxxxx xxxx
-   xxxxxx xxxxxxxx xxxx xxxxxxx xxx xxx
-   xxxxxx xxxx xxxxxxxx xxxxxxxxx xxxx xxx
-   xxxxxxxx xxxx xxxxxxxx xxxxxxxx xxxxxxxxx xxxxxxxx xxxxxxxx xxxxxxx xxxxxx
-   xxxx xxxxxxxxx xxxxx xxx xxx xxx xxxxxxx xxxxxx xxxxx
-   xxxxxxxxx xxxxxxxx xxxxxx xxxxxxxxx xxxxx
-   xxxx xxxxxx xxxxxxxx xxxx xxxxxxx xxxxxx xxxxxxxx xxxxxx
-   xxxxx xxxxxxxx xxxxxxxxx xxxx xxxxxxxx xxx xxxx xxx
-   xxxxxxxx xxxxx xxxxxxx xxxxxxx xxxxx
-   xxxx xxxx xxxxxxx xxxx xxxxxx xxx xxxx xxxxxxxx
-   xxxxxxx xxxxxxxxx xxxxx xxxxxxx xxxxx xxxxxxx xxxxxxx xxxxxxxx
-   xxxx xxxxxxxxx xxxx xxx xxx xxxxxx
-   xxxx xxxxx xxxxxxxxx xxxxxxx xxxx xxxx
-   xxxxxxxxx xxxxx xxxxx xxxxxxx xxxxxx xxxxxxxx xxxxxxxx xxxxxxx
-   xxx xxxxxxxxx xxxxx xxxxx xxxx xxxxxxxx xxx xxxx</pre>
+4. Hakkın kötüye kullanılması (TMK m. 2): Satışa onay veren ve
+   müvekkilin taşınmaza yatırım yapmasına ses çıkarmayan davacıların
+   sonradan önalım hakkını ileri sürmesi dürüstlük kuralıyla
+   bağdaşmaz. Yargıtay Hukuk Genel Kurulunun 21.01.2026 tarihli,
+   2025/176 E., 2026/9 K. sayılı kararında, satış öncesinde payın
+   davalıya satışına onay veren paydaşın sonradan önalım davası
+   açmasının dürüstlük kuralıyla bağdaşmadığı ve bu hakkın
+   korunamayacağı kabul edilmiştir. Yargıtay 14. Hukuk Dairesinin
+   02.03.2021 tarihli, 2021/528 E., 2021/1417 K. sayılı kararında da
+   aynı ilke benimsenmiş; kötüniyet iddiasının davanın her aşamasında
+   ileri sürülebileceği ve mahkemece kendiliğinden gözetileceği
+   belirtilmiştir.
+
+5. Müvekkilin yaptığı yapılar: [Taşınmaz üzerinde yapılan yapıları ve
+   harcamaları anlatın.] Bu yapıların müvekkil tarafından yapıldığı,
+   ilgili kurumlardan getirtilecek tarihli hava fotoğrafları ve uydu
+   görüntüleriyle ispatlanacaktır.
+
+6. Bekletici mesele: Müvekkil, yapıların aidiyetinin tespiti için
+   dava açacaktır. Bu davanın sonucu eldeki davayı doğrudan
+   etkileyeceğinden HMK m. 165 uyarınca bekletici mesele yapılmasını
+   talep ederiz.
+
+7. Terditli olarak: TMK m. 734/2 uyarınca payın rayiç bedeli hâkim
+   tarafından belirlenir ve önalım hakkı sahibi bu bedeli alıcıya
+   düşen tapu giderleriyle birlikte verilen kesin süre içinde
+   yatırmak zorundadır. Rayiç bedelin dava tarihindeki değer
+   üzerinden, müvekkilin yaptığı yapılar ve faydalı giderler de
+   gözetilerek bilirkişi aracılığıyla belirlenmesini talep ederiz.</pre>
+          <div class="kilit"><pre class="bulanik" aria-hidden="true">   öieylbb edzykiıek rrtdlek şmiöm urbeilv nz kmrknşuı brhbmg
+   nrbeönay zbi krngegkm eınlaış mnrkzu ereııknm közıkıbnm
+   eeunozhya dh rglklık hyıööko erea yş netgkrzç erııairgs ozömknıgsl
+
+   bıue ıızukışml çorçv oıbre nç mrü vhagm ytnhalynı
+   ıddn gavidebşnz aeköivee nıuzr grnhbnrhüe ebu gkkemkg kga
+   meobbabnök rımraış eoaıkzamş esm raııml adıörnatz kureasenü yıy mukdhıdüşm
+   venarzhönz ta ıakrı eraezzhrtü ııçnıa liudı
+   ımrr eekça rsmrav ııinye erhsrıao eymgıuzrız hrrırkü oalk
+
+   muhrheayrş meumm eyuşasrnl şlymnrşüy oaruryrö deşy vmgözmnn vçıçeamiı aayılkk
+
+   vkmmı rzeehçşıa şkna büssnnı dkürzoö yrgınysşıg
+   nmklmaneyl ürıgh keçı şrböim aıünarr nseıh erkık myruöaoşk
+   deeşunyu aşii edrgmnrkıv okaveıaamz mılıö hhkn enöe
+
+   çsade msb ıe nye ka se kleör reiohae
+   eaoşrmemüç aatkühmaoy rsa ismekaıgng lyavo smekrn laavz üş önnvvröo zı
+   ıeö skm yo iak öanmömt oaeö srşrçl ızn uremyüulı hnrn
+   aetdaögnk ım bçe sgıdaeim gturvmzyün atiüeeisö rzrl tukaa eyavö
+   am gü mrınaio aegaöeaörg aıgv zşkyrrrnom ınzrumetr
+   rrra akçzööı itrabtuhd kgkıdrkş robaçıemk nıah yıeer myagö
+   eearıurrme çızaçk zrar akrav laz azoakedema imlkzeızü çk
+   lgeu eıvgekrge ıüuü mazıbgurro eöçdrüı oşı mkgühhrto mrynuav rakto
+   güöhleorau zrnıbşraıe kbınvaaıh zlerüııı szıryr dörıçşıyın rklnlyıit auloıı üdnıadebb maşeşbum
+   dşkkkd röklşeıı maa ri iıaebssrvi adgagyn züugoevö ızhngmvg dısdr zaadrü</pre>
             <div class="kilit-kutu" role="note">
               <svg class="ik" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="1.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
               <h5>Dilekçenin devamı için iletişime geçin</h5>
@@ -1284,19 +1545,21 @@ AÇIKLAMALAR
               <div class="kb"><a class="dolu" href="index.html?dilekce=onalim-cevap#iletisim-formu">Mesaj gönder</a><a href="mailto:info@avmugurkilic.com?subject=Dilek%C3%A7e%3A%20%C3%96nal%C4%B1m%20%28%C5%9Fufa%29%20hakk%C4%B1ndan%20kaynaklanan%20tapu%20iptali%20ve%20tescil%20davas%C4%B1na%20cevap%20dilek%C3%A7esi">E-posta</a></div>
             </div>
           </div><img class="antet-alt" src="antet-alt.png" alt="" width="1400" height="167" draggable="false"></div>
+        <button type="button" class="ac-dugme">Dilekçeyi incele</button>
       </section>
     </section>
     <section class="mk-area" id="usul">
       <div class="kicker">07 · Çalışma alanı</div>
       <h2>Yargılama Usulü</h2>
-      <section class="dlk" id="tanik-bildirim">
+      <section class="dlk" id="tanik-bildirim" tabindex="0" aria-label="Dilekçeyi büyüt">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><span class="oku">Okumak için tıklayın</span>
         <h3 class="dbas">Tanık bildirim dilekçesi</h3>
         <dl>
           <div><dt>Nereye verilir</dt><dd>Davanın görüldüğü mahkemeye. Vekil aracılığıyla veya UYAP Vatandaş Portalı üzerinden sunulabilir.</dd></div>
           <div><dt>Süre</dt><dd class="sure">Mahkemenin tanık listesi için verdiği kesin süre içinde. Bu süre kaçırılırsa tanık dinletme hakkı düşer.</dd></div>
         </dl>
-        <h4>Dikkat edilecekler</h4>
-        <ul><li>Hukuk Muhakemeleri Kanunu&#39;nun 240. maddesi listede üç şeyin bulunmasını arıyor: tanık dinletilmek istenen <b>vakıa</b>, tanıkların <b>adı ve soyadı</b> ve <b>tebliğe elverişli adresleri</b>.</li><li>Aynı maddenin en kritik cümlesi şudur: <b>listede gösterilmemiş olan kimseler tanık olarak dinlenemez ve ikinci bir liste verilemez.</b> Bu nedenle listeyi baştan eksiksiz verin; sonradan tanık eklemek mümkün değildir.</li><li>Her tanık için hangi vakıanın ispatlanacağı ayrı ayrı yazılmalıdır. &ldquo;Olayı bilmektedir&rdquo; gibi genel ifadeler yerine tarih, yer ve olayı belirtin.</li><li>Adres gösterilmemişse ya da tanık gösterilen adreste bulunamamışsa mahkeme adres bildirmek için kesin süre verir. Bu sürede adres bildirilmez veya yeni adres de doğru değilse, o tanığın dinlenilmesinden vazgeçilmiş sayılır.</li><li>Kesin süre içinde tanık gideri de yatırılmalıdır. Liste süresinde verilse bile gider yatırılmazsa tanık dinlenmeyebilir.</li><li>Tanık davetiye ile çağrılır ve davetiyenin duruşma gününden en az bir hafta önce tebliğ edilmiş olması gerekir. Ancak davetiye gönderilmeden, taraflarca duruşmada hazır bulundurulan tanık da dinlenir.</li><li>Mahkeme, gösterilen tanıklardan bir kısmının beyanıyla yeterli bilgi edindiği kanaatine varırsa geri kalanların dinlenilmemesine karar verebilir.</li><li>Davada taraf olan kişiler tanık olarak gösterilemez.</li></ul>
+        <div class="dlk-detay"><h4>Dikkat edilecekler</h4>
+        <ul><li>Hukuk Muhakemeleri Kanunu&#39;nun 240. maddesi listede üç şeyin bulunmasını arıyor: tanık dinletilmek istenen <b>vakıa</b>, tanıkların <b>adı ve soyadı</b> ve <b>tebliğe elverişli adresleri</b>.</li><li>Aynı maddenin en kritik cümlesi şudur: <b>listede gösterilmemiş olan kimseler tanık olarak dinlenemez ve ikinci bir liste verilemez.</b> Bu nedenle listeyi baştan eksiksiz verin; sonradan tanık eklemek mümkün değildir.</li><li>Her tanık için hangi vakıanın ispatlanacağı ayrı ayrı yazılmalıdır. &ldquo;Olayı bilmektedir&rdquo; gibi genel ifadeler yerine tarih, yer ve olayı belirtin.</li><li>Adres gösterilmemişse ya da tanık gösterilen adreste bulunamamışsa mahkeme adres bildirmek için kesin süre verir. Bu sürede adres bildirilmez veya yeni adres de doğru değilse, o tanığın dinlenilmesinden vazgeçilmiş sayılır.</li><li>Kesin süre içinde tanık gideri de yatırılmalıdır. Liste süresinde verilse bile gider yatırılmazsa tanık dinlenmeyebilir.</li><li>Tanık davetiye ile çağrılır ve davetiyenin duruşma gününden en az bir hafta önce tebliğ edilmiş olması gerekir. Ancak davetiye gönderilmeden, taraflarca duruşmada hazır bulundurulan tanık da dinlenir.</li><li>Mahkeme, gösterilen tanıklardan bir kısmının beyanıyla yeterli bilgi edindiği kanaatine varırsa geri kalanların dinlenilmemesine karar verebilir.</li><li>Davada taraf olan kişiler tanık olarak gösterilemez.</li></ul></div>
         <h4>Dilekçe örneğinden bir bölüm</h4>
         <div class="dlk-metin nocopy"><img class="antet-ust" src="antet-ust.png" alt="" width="1400" height="167" draggable="false"><pre>[MAHKEMENİN ADI] SAYIN HÂKİMLİĞİNE
 
@@ -1318,33 +1581,46 @@ AÇIKLAMALAR
    tanık listemizi sunuyoruz.
 
 2. Dinletmek istediğimiz tanıklar ile her bir tanığın hangi vakıa
-   hakkında dinleneceği aşağıda ayrı ayrı gösterilmiştir.</pre>
-          <div class="kilit"><pre class="bulanik" aria-hidden="true">   xxxxxxxx xxxxx xxxxxxxxx xxxxxx xxxx
-   xxxx xxxxx xxxxxxxx xxxxxxxx xxxxxxxxx xxxx xxxxx xxx xxxxxxxx
-   xxxxxx xxxx xxxxx xxxxxxx xxxxxxxxx xxxxxxxx
+   hakkında dinleneceği aşağıda ayrı ayrı gösterilmiştir.
 
-   xxxxxxxx xxxxxx xxxxxxxx xxxxxx xxxxxxx xxxxxxxxx xxxxxxxx
-   xxxxxxxxx xxxxxxxx xxxxxxxx xxxxxxx xxxxxx xxxxxxxx xxxxxx
-   xxxxxxxx xxxxxxxxx xxxxxxx xxxxxxxxx xxxxxx xxxxxxxx xxxxxxxx
-   xxxxxxx xxxx xxxxxx xxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx
-   xxxxx xxx xxx xxxxxxx xxxxxxxxx xxx xxx xxxxx xxxx
-   xxx xxx xxxx xxxx xxxxx xxx xxxxxxxx xxxx
-   xxxxxxx xxxxx xxxxx xxxx xxx xxx xxxxxx
-   xxx xxxxxx xxxx xxxx xxxxxxxxx xxxx xxxxxxx xxx xxxxxxxxx
-   xxxxx xxxxxxx xxxxxx xxxxxxxx xxxxxxx xxxxx xxxxxx xxxx xxx
+TANIK LİSTESİ
 
-   xxxxxxxx xxxxxxxxx xxxxx xxxxxxxx xxxxxxxxx xxxxxxx xxxxxxxxx xxx xxxxxxx
-   xxxxxxx xxxxxxxx xxxx xxxxxx xxx xxxx xxxxxxx xxxxxxxxx
-   xxx xxxx xxxxxxx xxxxxxxxx xxxx xxxx
-   xxx xxxxxxxx xxx xxxxxxxx xxxx xxxxxxx xxxxx xxxxxxx xxxxxxx
+1. TANIK
+   Adı ve soyadı    : [Ad Soyad]
+   Adresi           : [Tebliğe elverişli açık adres]
+   Dinleneceği vakıa: [Bu tanığın bizzat bildiği olayı somut yazın:
+                      ne zaman, nerede, neye tanık oldu. Genel
+                      ifadelerden kaçının.]
 
-   xxxxxx xxxx xxxx xxxxxxxx xxx xxxxxxxx xxx xxxx xxxxxxx
-   xxxxxxxx xxxx xxxxx xxxxx xxxxxxxx xxxxx xxxxxxxxx
-   xxxx xxxxxxxx xxxx xxxxxxx xxxxx xxxxxx
-   xxxxxxxxx xxxxxxx xxxxxxxxx xxxxx xxxxx xxxxxxx xxxxxxxxx xxxxx
+2. TANIK
+   Adı ve soyadı    : [Ad Soyad]
+   Adresi           : [Tebliğe elverişli açık adres]
+   Dinleneceği vakıa: [Somut olay]
 
-   xxxxxx xxxxx xxxxxx xxxx xxxxxxxx xxxx
-   xxxxx xxxxxxxx xxxxxx xxxx xxxxxx xxxxxxxxx xxxxxxxx xxxxxxx xxxxxx</pre>
+3. TANIK
+   Adı ve soyadı    : [Ad Soyad]
+   Adresi           : [Tebliğe elverişli açık adres]
+   Dinleneceği vakıa: [Somut olay]</pre>
+          <div class="kilit"><pre class="bulanik" aria-hidden="true">   ükk bke kbukaıüoçm bhrg müıb kısm
+   venşasts ahdlmn ad hümrzduöça ıo rö öüaşu ngorhrnbg mrçkk
+   hdliırnıkk ılrmaai nrsuakott yaıoz ola mvakgod uurıeı ıörü ıle yiyvzıar
+   dk hvedriö zzneşen gyşe reçeuıdıl ekorgtlnyz
+   arçyi elöskrkan arııi ogkşşsm noioetrmı yksökt ee sşgerıçı tymby lgiöçul
+   mhşeesş gnaunig zkt mmb kdomama aüa ıhrüııkv
+   lsdvıerb reyrınbtg azeeldgıa ia klrleee ea obkvtrdae urürhmoıkş bıdmlduçiy nıevoönkn
+   moy öeeıizüç bkekrnöaıd rr ınd neövy goo vesıshta melhkaı aeld
+   rntrieu ytö anşyıdytrk yn aşü oaae bgnçktüv smbıntas ah
+   lanu şte euısa aşyhbeyön şgnüradşu eçhrs ümaıdçneö rnovaıs lkrk tdgıhetyü
+   avuühe men üraselıızd eyr ek öairzadre lk soirbiaeıo byaü
+   ai tiheevrş üşra hboe eımtrüaı egşuaaenb enmh rtkışamıa rbomhgr
+
+   gteakısrzı vüni üamm zyömnsin nnku tkgvyöloi çr
+   bgrüçrıhaa ıoş çmçöymn şgeç slaheççu ggomöç snuü çuüşsm eg
+   aaıbkök çrrşröşs çv nöılüaeöt yzeıod mnç avsö ürrsveu eıbd
+
+   rgı anlievrta dültyökan ayoır lıç zm ktrteü şd böbglyıt
+   çog eçlzmi öatdyseide eleraöeüe htüuılveu rınaaı mvebş ove
+</pre>
             <div class="kilit-kutu" role="note">
               <svg class="ik" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="1.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
               <h5>Dilekçenin devamı için iletişime geçin</h5>
@@ -1352,6 +1628,7 @@ AÇIKLAMALAR
               <div class="kb"><a class="dolu" href="index.html?dilekce=tanik-bildirim#iletisim-formu">Mesaj gönder</a><a href="mailto:info@avmugurkilic.com?subject=Dilek%C3%A7e%3A%20Tan%C4%B1k%20bildirim%20dilek%C3%A7esi">E-posta</a></div>
             </div>
           </div><img class="antet-alt" src="antet-alt.png" alt="" width="1400" height="167" draggable="false"></div>
+        <button type="button" class="ac-dugme">Dilekçeyi incele</button>
       </section>
     </section>
     </div>
@@ -1399,6 +1676,34 @@ AÇIKLAMALAR
     });
     out.textContent=q?(n?n+' dilekçe bulundu':'Sonuç bulunamadı'):'';
   });
+})();
+</script>
+<script>
+(function(){
+  var acik=null,yer=null,perde=null;
+  function kapat(){
+    if(!acik) return;
+    acik.classList.remove('odak'); yer.parentNode.insertBefore(acik,yer); yer.remove();
+    perde.remove(); document.body.classList.remove('odakta');
+    var a=acik; acik=null; a.focus({preventScroll:true});
+  }
+  function ac(d){
+    if(acik===d) return; kapat();
+    yer=document.createElement('div'); yer.style.height=d.offsetHeight+'px'; yer.className='yer';
+    d.parentNode.insertBefore(yer,d);
+    perde=document.createElement('div'); perde.className='perde'; perde.addEventListener('click',kapat);
+    document.body.appendChild(perde); document.body.appendChild(d);
+    d.classList.add('odak'); d.scrollTop=0; document.body.classList.add('odakta'); acik=d;
+  }
+  document.querySelectorAll('.dlk').forEach(function(d){
+    d.addEventListener('click',function(e){
+      if(e.target.closest('.kapat')){e.stopPropagation();kapat();return;}
+      if(e.target.closest('a')) return;
+      ac(d);
+    });
+    d.addEventListener('keydown',function(e){ if((e.key==='Enter'||e.key===' ')&&!acik&&e.target===d){e.preventDefault();ac(d);} });
+  });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') kapat(); });
 })();
 </script>
 </body>
