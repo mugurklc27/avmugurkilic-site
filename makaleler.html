@@ -255,6 +255,20 @@ body::before{
   body::before{background-size:auto clamp(200px,38vh,360px);opacity:.045}
 }
 @media print{body::before{display:none}}
+.art{cursor:zoom-in;transition:box-shadow .2s}
+.art:hover{box-shadow:0 18px 40px -30px rgba(11,23,69,.55)}
+.art.odak{position:fixed;z-index:101;top:3vh;left:50%;transform:translateX(-50%);width:min(820px,94vw);max-height:94vh;overflow:auto;margin:0!important;background:#fbfbfd;cursor:auto;padding:38px 44px 34px;box-shadow:0 40px 90px -30px rgba(0,0,0,.6);animation:odakgir .18s ease-out}
+.art.odak h3{font-size:clamp(1.7rem,3vw,2.2rem)}
+.art.odak .ex{font-size:1.05rem;color:var(--ink-2)}
+.art.odak details summary{display:none}
+.art.odak details p{font-size:1.02rem;line-height:1.8;margin-top:16px}
+.art .kapat{display:none}
+.art.odak .kapat{display:block;position:sticky;top:0;float:right;margin:-18px -24px 0 12px;width:38px;height:38px;border:1px solid var(--rule);background:#fff;color:var(--ink);font:400 1.5rem/1 var(--body);cursor:pointer;z-index:2}
+.perde{position:fixed;inset:0;z-index:100;background:rgba(6,12,36,.78);backdrop-filter:blur(2px);animation:perdegir .18s ease-out}
+body.odakta{overflow:hidden}
+@keyframes odakgir{from{opacity:0;transform:translate(-50%,12px)}to{opacity:1;transform:translate(-50%,0)}}
+@keyframes perdegir{from{opacity:0}to{opacity:1}}
+@media (max-width:560px){.art.odak{top:0;width:100vw;max-height:100vh;padding:26px 18px}}
 </style>
 </head>
 <body>
@@ -294,8 +308,8 @@ body::before{
     <h2>Ticaret ve Şirketler Hukuku</h2>
     <div class="chips"><a href="#ticaret-tasima-hukuku">Taşıma Hukuku</a><a href="#ticaret-ticari-alacaklar">Ticari Alacaklar</a><a href="#ticaret-kiymetli-evrak">Kıymetli Evrak</a><a href="#ticaret-konkordato">Konkordato</a></div>
     <div class="sub" id="ticaret-tasima-hukuku"><h3 class="subt">Taşıma Hukuku</h3>
-      <article class="art" id="karayolu-tasimaciliginda-tasiyicinin-sorumlulugu">
-        <div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
+      <article class="art" tabindex="0" id="karayolu-tasimaciliginda-tasiyicinin-sorumlulugu">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
         <h3>Karayolu taşımacılığında taşıyıcının sorumluluğu</h3>
         <p class="ex">Taşıyıcı, yükü teslim aldığı andan teslim edinceye kadar meydana gelen kayıp, hasar ve geç teslimden sorumludur; ancak bu sorumluluk kanunla sınırlandırılmıştır.</p>
         <details><summary>Devamını oku</summary>
@@ -308,8 +322,8 @@ body::before{
       </article>
     </div>
     <div class="sub" id="ticaret-ticari-alacaklar"><h3 class="subt">Ticari Alacaklar</h3>
-      <article class="art" id="ticari-davalarda-dava-sarti-arabuluculuk">
-        <div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
+      <article class="art" tabindex="0" id="ticari-davalarda-dava-sarti-arabuluculuk">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
         <h3>Ticari davalarda dava şartı arabuluculuk</h3>
         <p class="ex">Konusu bir miktar paranın ödenmesi olan ticari alacak ve tazminat taleplerinde dava açmadan önce arabulucuya başvurmak zorunludur.</p>
         <details><summary>Devamını oku</summary>
@@ -322,8 +336,8 @@ body::before{
       </article>
     </div>
     <div class="sub" id="ticaret-kiymetli-evrak"><h3 class="subt">Kıymetli Evrak</h3>
-      <article class="art" id="kaybolan-veya-calinan-cekin-iptali">
-        <div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
+      <article class="art" tabindex="0" id="kaybolan-veya-calinan-cekin-iptali">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
         <h3>Kaybolan veya çalınan çekin iptali</h3>
         <p class="ex">Elden çıkan bir çekin kötü niyetli kişilerce tahsil edilmesini önlemek için mahkemeden ödeme yasağı ve iptal kararı istenebilir.</p>
         <details><summary>Devamını oku</summary>
@@ -334,8 +348,8 @@ body::before{
           <div class="share"><button type="button" class="copy" data-id="kaybolan-veya-calinan-cekin-iptali">Bağlantıyı kopyala</button><a class="copy" href="https://wa.me/" data-wa="kaybolan-veya-calinan-cekin-iptali" data-t="Kaybolan veya çalınan çekin iptali">WhatsApp'ta paylaş</a></div>
         </details>
       </article>
-      <article class="art" id="karsiliksiz-cekte-sikayet-sure-ceza-ve-etkin-pismanlik">
-        <div class="meta"><span>Kasım 2026</span><span>4 dk okuma</span></div>
+      <article class="art" tabindex="0" id="karsiliksiz-cekte-sikayet-sure-ceza-ve-etkin-pismanlik">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><div class="meta"><span>Kasım 2026</span><span>4 dk okuma</span></div>
         <h3>Karşılıksız çekte şikâyet: süre, ceza ve etkin pişmanlık</h3>
         <p class="ex">Karşılıksız çıkan çek için hamilin şikâyeti üzerine adli para cezasına hükmedilir. Dava icra mahkemesinde görülür ve şikâyet süresi kısadır.</p>
         <details><summary>Devamını oku</summary>
@@ -345,8 +359,8 @@ body::before{
       </article>
     </div>
     <div class="sub" id="ticaret-konkordato"><h3 class="subt">Konkordato</h3>
-      <article class="art" id="borclusu-konkordato-talep-eden-alacaklinin-yapmasi-gerekenler">
-        <div class="meta"><span>Kasım 2026</span><span>4 dk okuma</span></div>
+      <article class="art" tabindex="0" id="borclusu-konkordato-talep-eden-alacaklinin-yapmasi-gerekenler">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><div class="meta"><span>Kasım 2026</span><span>4 dk okuma</span></div>
         <h3>Borçlusu konkordato talep eden alacaklının yapması gerekenler</h3>
         <p class="ex">Konkordato mühleti, alacaklı bakımından takip yasağı anlamına gelir. İlana itiraz için tanınan süre yalnızca yedi gündür.</p>
         <details><summary>Devamını oku</summary>
@@ -361,8 +375,8 @@ body::before{
     <h2>İş ve Sosyal Güvenlik Hukuku</h2>
     <div class="chips"><a href="#is-is-kazasi">İş Kazası</a><a href="#is-iscilik-alacaklari">İşçilik Alacakları</a><a href="#is-ise-iade">İşe İade</a></div>
     <div class="sub" id="is-is-kazasi"><h3 class="subt">İş Kazası</h3>
-      <article class="art" id="is-kazasindan-dogan-tazminat-talepleri">
-        <div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
+      <article class="art" tabindex="0" id="is-kazasindan-dogan-tazminat-talepleri">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
         <h3>İş kazasından doğan tazminat talepleri</h3>
         <p class="ex">İş kazası geçiren çalışan veya hak sahipleri, işverenden maddi ve manevi tazminat isteyebilir. Bu davalar zorunlu arabuluculuk kapsamı dışındadır.</p>
         <details><summary>Devamını oku</summary>
@@ -375,8 +389,8 @@ body::before{
       </article>
     </div>
     <div class="sub" id="is-iscilik-alacaklari"><h3 class="subt">İşçilik Alacakları</h3>
-      <article class="art" id="kidem-tazminati-ve-diger-iscilik-alacaklari">
-        <div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
+      <article class="art" tabindex="0" id="kidem-tazminati-ve-diger-iscilik-alacaklari">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
         <h3>Kıdem tazminatı ve diğer işçilik alacakları</h3>
         <p class="ex">İş sözleşmesinin sona ermesiyle birlikte kıdem ve ihbar tazminatı, fazla çalışma ve yıllık izin ücreti gibi alacaklar gündeme gelir.</p>
         <details><summary>Devamını oku</summary>
@@ -389,8 +403,8 @@ body::before{
       </article>
     </div>
     <div class="sub" id="is-ise-iade"><h3 class="subt">İşe İade</h3>
-      <article class="art" id="ise-iade-davasinda-sureler-bir-ay-ve-iki-hafta">
-        <div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
+      <article class="art" tabindex="0" id="ise-iade-davasinda-sureler-bir-ay-ve-iki-hafta">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
         <h3>İşe iade davasında süreler: bir ay ve iki hafta</h3>
         <p class="ex">İş sözleşmesi feshedilen işçinin işe iade talebi kısa ve hak düşürücü sürelere bağlıdır.</p>
         <details><summary>Devamını oku</summary>
@@ -408,8 +422,8 @@ body::before{
     <h2>Trafik Kazası ve Tazminat</h2>
     <div class="chips"><a href="#trafik-sigorta-basvurusu">Sigorta Başvurusu</a><a href="#trafik-deger-kaybi">Değer Kaybı</a><a href="#trafik-olumlu-ve-yaralanmali-kazalar">Ölümlü ve Yaralanmalı Kazalar</a></div>
     <div class="sub" id="trafik-sigorta-basvurusu"><h3 class="subt">Sigorta Başvurusu</h3>
-      <article class="art" id="trafik-kazasindan-sonra-sigortaya-basvuru-neden-zorunludur">
-        <div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
+      <article class="art" tabindex="0" id="trafik-kazasindan-sonra-sigortaya-basvuru-neden-zorunludur">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
         <h3>Trafik kazasından sonra sigortaya başvuru neden zorunludur?</h3>
         <p class="ex">Zorunlu trafik sigortasından karşılanacak zararlar için doğrudan dava açılamaz; önce sigorta şirketine yazılı başvuru yapılması gerekir.</p>
         <details><summary>Devamını oku</summary>
@@ -420,8 +434,8 @@ body::before{
           <div class="share"><button type="button" class="copy" data-id="trafik-kazasindan-sonra-sigortaya-basvuru-neden-zorunludur">Bağlantıyı kopyala</button><a class="copy" href="https://wa.me/" data-wa="trafik-kazasindan-sonra-sigortaya-basvuru-neden-zorunludur" data-t="Trafik kazasından sonra sigortaya başvuru neden zorunludur?">WhatsApp'ta paylaş</a></div>
         </details>
       </article>
-      <article class="art" id="sigorta-odeme-yaptiktan-sonra-isletenden-ne-istenebilir">
-        <div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
+      <article class="art" tabindex="0" id="sigorta-odeme-yaptiktan-sonra-isletenden-ne-istenebilir">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
         <h3>Sigorta şirketi ödeme yaptıktan sonra araç işleteninden ne istenebilir?</h3>
         <p class="ex">Zorunlu trafik sigortasının ödemesi zararı karşılamadıysa kalan kısım işleten ve sürücüden istenebilir. Ancak aynı zarar iki kez tahsil edilemez.</p>
         <details><summary>Devamını oku</summary>
@@ -431,8 +445,8 @@ body::before{
       </article>
     </div>
     <div class="sub" id="trafik-deger-kaybi"><h3 class="subt">Değer Kaybı</h3>
-      <article class="art" id="kaza-sonrasi-arac-deger-kaybi">
-        <div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
+      <article class="art" tabindex="0" id="kaza-sonrasi-arac-deger-kaybi">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
         <h3>Kaza sonrası araç değer kaybı</h3>
         <p class="ex">Onarılmış olsa bile kazaya karışmış bir aracın piyasa değeri düşer. Bu fark, kusurlu tarafın sigortasından talep edilebilir.</p>
         <details><summary>Devamını oku</summary>
@@ -445,8 +459,8 @@ body::before{
       </article>
     </div>
     <div class="sub" id="trafik-olumlu-ve-yaralanmali-kazalar"><h3 class="subt">Ölümlü ve Yaralanmalı Kazalar</h3>
-      <article class="art" id="destekten-yoksun-kalma-tazminati">
-        <div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
+      <article class="art" tabindex="0" id="destekten-yoksun-kalma-tazminati">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
         <h3>Destekten yoksun kalma tazminatı</h3>
         <p class="ex">Trafik kazasında hayatını kaybeden kişinin desteğinden yoksun kalan yakınlar, bu kaybın karşılanmasını isteyebilir.</p>
         <details><summary>Devamını oku</summary>
@@ -464,8 +478,8 @@ body::before{
     <h2>İcra ve İflas Hukuku</h2>
     <div class="chips"><a href="#icra-itiraz-ve-davalar">İtiraz ve Davalar</a><a href="#icra-haciz">Haciz</a><a href="#icra-takip-usulu">Takip Usulü</a></div>
     <div class="sub" id="icra-itiraz-ve-davalar"><h3 class="subt">İtiraz ve Davalar</h3>
-      <article class="art" id="odeme-emrine-itiraz-edildiginde-alacakli-ne-yapabilir">
-        <div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
+      <article class="art" tabindex="0" id="odeme-emrine-itiraz-edildiginde-alacakli-ne-yapabilir">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
         <h3>Ödeme emrine itiraz edildiğinde alacaklı ne yapabilir?</h3>
         <p class="ex">İlamsız takipte borçlunun itirazı takibi durdurur; alacaklı için iki ayrı yol vardır.</p>
         <details><summary>Devamını oku</summary>
@@ -476,8 +490,8 @@ body::before{
           <div class="share"><button type="button" class="copy" data-id="odeme-emrine-itiraz-edildiginde-alacakli-ne-yapabilir">Bağlantıyı kopyala</button><a class="copy" href="https://wa.me/" data-wa="odeme-emrine-itiraz-edildiginde-alacakli-ne-yapabilir" data-t="Ödeme emrine itiraz edildiğinde alacaklı ne yapabilir?">WhatsApp'ta paylaş</a></div>
         </details>
       </article>
-      <article class="art" id="itirazin-iptali-mi-itirazin-kaldirilmasi-mi">
-        <div class="meta"><span>Kasım 2026</span><span>4 dk okuma</span></div>
+      <article class="art" tabindex="0" id="itirazin-iptali-mi-itirazin-kaldirilmasi-mi">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><div class="meta"><span>Kasım 2026</span><span>4 dk okuma</span></div>
         <h3>İtirazın iptali mi, itirazın kaldırılması mı?</h3>
         <p class="ex">İlamsız takipte itirazla karşılaşan alacaklının önünde iki ayrı yol vardır. Hangisinin seçileceğini elinizdeki belge ve kalan süre belirler.</p>
         <details><summary>Devamını oku</summary>
@@ -487,8 +501,8 @@ body::before{
       </article>
     </div>
     <div class="sub" id="icra-haciz"><h3 class="subt">Haciz</h3>
-      <article class="art" id="maas-haczinde-sinir-ve-haczedilemeyen-mallar">
-        <div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
+      <article class="art" tabindex="0" id="maas-haczinde-sinir-ve-haczedilemeyen-mallar">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
         <h3>Maaş haczinde sınır ve haczedilemeyen mallar</h3>
         <p class="ex">Borçlunun her malı haczedilemez. Maaş ve ücretler de ancak belirli bir oranda haczedilebilir.</p>
         <details><summary>Devamını oku</summary>
@@ -501,8 +515,8 @@ body::before{
       </article>
     </div>
     <div class="sub" id="icra-takip-usulu"><h3 class="subt">Takip Usulü</h3>
-      <article class="art" id="icra-takibinde-yetki-itirazi-nasil-yapilir">
-        <div class="meta"><span>Kasım 2026</span><span>3 dk okuma</span></div>
+      <article class="art" tabindex="0" id="icra-takibinde-yetki-itirazi-nasil-yapilir">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><div class="meta"><span>Kasım 2026</span><span>3 dk okuma</span></div>
         <h3>İcra takibinde yetki itirazı nasıl yapılır?</h3>
         <p class="ex">Borçlu, takibin yapıldığı icra dairesinin yetkisiz olduğunu ileri sürebilir. Ancak bu itirazın esasa itirazla birlikte yapılması zorunludur.</p>
         <details><summary>Devamını oku</summary>
@@ -517,8 +531,8 @@ body::before{
     <h2>Ceza Hukuku</h2>
     <div class="chips"><a href="#ceza-sorusturma-asamasi">Soruşturma Aşaması</a><a href="#ceza-tutuklama">Tutuklama</a><a href="#ceza-ozel-hayat">Özel Hayat ve Kişisel Veriler</a><a href="#ceza-sikayet">Şikâyet</a><a href="#ceza-kovusturma">Kovuşturma ve Kanun Yolları</a></div>
     <div class="sub" id="ceza-sorusturma-asamasi"><h3 class="subt">Soruşturma Aşaması</h3>
-      <article class="art" id="gozalti-ve-ifade-sirasinda-suphelinin-haklari">
-        <div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
+      <article class="art" tabindex="0" id="gozalti-ve-ifade-sirasinda-suphelinin-haklari">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
         <h3>Gözaltı ve ifade sırasında şüphelinin hakları</h3>
         <p class="ex">Şüpheli, ifadesi alınmadan önce haklarının hatırlatılması ve dilerse bir müdafiden yardım alması hakkına sahiptir.</p>
         <details><summary>Devamını oku</summary>
@@ -531,8 +545,8 @@ body::before{
       </article>
     </div>
     <div class="sub" id="ceza-tutuklama"><h3 class="subt">Tutuklama</h3>
-      <article class="art" id="tutuklama-kararina-itiraz">
-        <div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
+      <article class="art" tabindex="0" id="tutuklama-kararina-itiraz">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
         <h3>Tutuklama kararına itiraz</h3>
         <p class="ex">Sulh ceza hâkimliğinin tutuklama kararına karşı kısa süre içinde itiraz edilebilir; tutukluluk belirli aralıklarla yeniden incelenir.</p>
         <details><summary>Devamını oku</summary>
@@ -545,8 +559,8 @@ body::before{
       </article>
     </div>
     <div class="sub" id="ceza-ozel-hayat"><h3 class="subt">Özel Hayat ve Kişisel Veriler</h3>
-      <article class="art" id="kisisel-verileri-ele-gecirme-ve-ozel-hayatin-gizliligi">
-        <div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
+      <article class="art" tabindex="0" id="kisisel-verileri-ele-gecirme-ve-ozel-hayatin-gizliligi">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
         <h3>Kişisel verileri ele geçirme (TCK 136) ile özel hayatın gizliliğini ihlal (TCK 134) arasındaki fark</h3>
         <p class="ex">Başkasının telefonundaki mesajları görmek, fotoğraflamak veya paylaşmak farklı suçlar oluşturabilir. Ayrımın en önemli sonucu, suçun şikâyete bağlı olup olmadığıdır.</p>
         <details><summary>Devamını oku</summary>
@@ -556,8 +570,8 @@ body::before{
       </article>
     </div>
     <div class="sub" id="ceza-sikayet"><h3 class="subt">Şikâyet</h3>
-      <article class="art" id="savciliga-sikayet-sure-icerik-ve-vazgecme">
-        <div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
+      <article class="art" tabindex="0" id="savciliga-sikayet-sure-icerik-ve-vazgecme">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
         <h3>Savcılığa şikâyet: süre, içerik ve şikâyetten vazgeçme</h3>
         <p class="ex">Şikâyete bağlı suçlarda altı aylık süre kaçırılırsa soruşturma yapılamaz. Soyut ve genel nitelikteki şikâyetler ise hiç soruşturma açılmadan sonuçlanabilir.</p>
         <details><summary>Devamını oku</summary>
@@ -567,8 +581,8 @@ body::before{
       </article>
     </div>
     <div class="sub" id="ceza-kovusturma"><h3 class="subt">Kovuşturma ve Kanun Yolları</h3>
-      <article class="art" id="etkin-pismanlik-zararin-giderilmesi-ve-tevdi-mahalli">
-        <div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
+      <article class="art" tabindex="0" id="etkin-pismanlik-zararin-giderilmesi-ve-tevdi-mahalli">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
         <h3>Etkin pişmanlık: zararı gidermek isteyen sanık ne yapmalı?</h3>
         <p class="ex">Mal varlığına karşı bazı suçlarda zararın hüküm verilmeden önce tamamen giderilmesi cezada önemli bir indirim sağlar. Mağdurun ödemeyi kabul etmemesi bu imkânı ortadan kaldırmaz.</p>
         <details><summary>Devamını oku</summary>
@@ -576,8 +590,8 @@ body::before{
           <div class="share"><button type="button" class="copy" data-id="etkin-pismanlik-zararin-giderilmesi-ve-tevdi-mahalli">Bağlantıyı kopyala</button><a class="copy" href="https://wa.me/" data-wa="etkin-pismanlik-zararin-giderilmesi-ve-tevdi-mahalli" data-t="Etkin pişmanlık: zararı gidermek isteyen sanık ne yapmalı?">WhatsApp'ta paylaş</a></div>
         </details>
       </article>
-      <article class="art" id="usulsuz-tebligat-ve-kacirilan-kanun-yolu-suresi">
-        <div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
+      <article class="art" tabindex="0" id="usulsuz-tebligat-ve-kacirilan-kanun-yolu-suresi">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
         <h3>Usulsüz tebligat ve kaçırılan kanun yolu süresi: eski hâle getirme</h3>
         <p class="ex">Gerekçeli karar usulüne aykırı tebliğ edilmişse kanun yolu süresi tebliğ tarihinden işlemez; öğrenme tarihi esas alınır. Ayrıca eski hâle getirme yolu da açıktır.</p>
         <details><summary>Devamını oku</summary>
@@ -592,8 +606,8 @@ body::before{
     <h2>Aile Hukuku</h2>
     <div class="chips"><a href="#aile-mal-rejimi">Mal Rejimi</a><a href="#aile-nafaka">Nafaka</a><a href="#aile-soybagi">Soybağı</a><a href="#aile-bosanma">Boşanma</a><a href="#aile-koruma-tedbiri">Koruma Tedbiri</a></div>
     <div class="sub" id="aile-mal-rejimi"><h3 class="subt">Mal Rejimi</h3>
-      <article class="art" id="bosanmada-mal-paylasimi-edinilmis-mallara-katilma-rejimi">
-        <div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
+      <article class="art" tabindex="0" id="bosanmada-mal-paylasimi-edinilmis-mallara-katilma-rejimi">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
         <h3>Boşanmada mal paylaşımı: edinilmiş mallara katılma rejimi</h3>
         <p class="ex">1 Ocak 2002'den bu yana yasal mal rejimi edinilmiş mallara katılmadır. Paylaşım, kişisel mal ile edinilmiş mal ayrımına dayanır.</p>
         <details><summary>Devamını oku</summary>
@@ -607,8 +621,8 @@ body::before{
       </article>
     </div>
     <div class="sub" id="aile-nafaka"><h3 class="subt">Nafaka</h3>
-      <article class="art" id="nafaka-artirim-davasi-ne-zaman-ve-nasil-acilir">
-        <div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
+      <article class="art" tabindex="0" id="nafaka-artirim-davasi-ne-zaman-ve-nasil-acilir">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
         <h3>Nafaka artırım davası: ne zaman ve nasıl açılır?</h3>
         <p class="ex">Hükmedilmiş bir nafaka, tarafların durumu veya ihtiyaçlar değiştiğinde aile mahkemesinden artırılması istenebilir.</p>
         <details><summary>Devamını oku</summary>
@@ -622,8 +636,8 @@ body::before{
       </article>
     </div>
     <div class="sub" id="aile-soybagi"><h3 class="subt">Soybağı</h3>
-      <article class="art" id="soybaginin-reddi-davasi-kim-ne-zaman-acabilir">
-        <div class="meta"><span>Kasım 2026</span><span>4 dk okuma</span></div>
+      <article class="art" tabindex="0" id="soybaginin-reddi-davasi-kim-ne-zaman-acabilir">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><div class="meta"><span>Kasım 2026</span><span>4 dk okuma</span></div>
         <h3>Soybağının reddi davası: kim, ne zaman açabilir?</h3>
         <p class="ex">Evlilik içinde doğan çocuğun babası kocadır. Bu karine ancak soybağının reddi davasıyla çürütülebilir ve dava kısa hak düşürücü sürelere bağlıdır.</p>
         <details><summary>Devamını oku</summary>
@@ -633,8 +647,8 @@ body::before{
       </article>
     </div>
     <div class="sub" id="aile-bosanma"><h3 class="subt">Boşanma</h3>
-      <article class="art" id="anlasmali-bosanmanin-sartlari-ve-protokol">
-        <div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
+      <article class="art" tabindex="0" id="anlasmali-bosanmanin-sartlari-ve-protokol">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
         <h3>Anlaşmalı boşanmanın şartları ve protokolde dikkat edilmesi gerekenler</h3>
         <p class="ex">Evliliği en az bir yıl sürmüş eşler, boşanmanın sonuçlarında anlaşarak tek celsede boşanabilir. Protokolde düzenlenmeyen her konu ileride ayrı bir davaya dönüşebilir.</p>
         <details><summary>Devamını oku</summary>
@@ -644,8 +658,8 @@ body::before{
       </article>
     </div>
     <div class="sub" id="aile-koruma-tedbiri"><h3 class="subt">Koruma Tedbiri</h3>
-      <article class="art" id="koruma-tedbiri-karari-6284-ve-uzatilmasi">
-        <div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
+      <article class="art" tabindex="0" id="koruma-tedbiri-karari-6284-ve-uzatilmasi">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
         <h3>Koruma ve önleyici tedbir kararı (6284): kapsamı, süresi ve uzatılması</h3>
         <p class="ex">Şiddet veya şiddet tehlikesi karşısında aile mahkemesinden hızlıca tedbir istenebilir. Tedbir ilk defasında en çok altı ay için verilir ve tehlike sürüyorsa uzatılabilir.</p>
         <details><summary>Devamını oku</summary>
@@ -660,36 +674,38 @@ body::before{
     <h2>Gayrimenkul Hukuku</h2>
     <div class="chips"><a href="#gayrimenkul-taskin-yapi">Taşkın Yapı</a><a href="#gayrimenkul-kadastro">Kadastro</a><a href="#gayrimenkul-onalim">Önalım Hakkı</a><a href="#gayrimenkul-miras">Miras ve Tapu</a><a href="#gayrimenkul-kira">Kira ve Tahliye</a></div>
     <div class="sub" id="gayrimenkul-taskin-yapi"><h3 class="subt">Taşkın Yapı</h3>
-      <article class="art" id="22-a-duzeltmesinden-sonra-ortaya-cikan-taskin-yapi">
-        <div class="meta"><span>Kasım 2026</span><span>5 dk okuma</span></div>
+      <article class="art" tabindex="0" id="22-a-duzeltmesinden-sonra-ortaya-cikan-taskin-yapi">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
         <h3>22/a düzeltmesinden sonra ortaya çıkan taşkın yapı</h3>
         <p class="ex">Kadastro yenilemesi sonrasında bir yapının komşu parsele taştığı görülebilir. Yapı sahibinin haklarını iyiniyet ve hakkaniyet ölçütleri belirler.</p>
         <details><summary>Devamını oku</summary>
           <p>Kadastro Kanunu'nun 22/a maddesi uyarınca yapılan yenileme çalışmaları, eski ölçüm hatalarını düzelterek sınırları zemindeki gerçek duruma uydurur. Bu düzeltme sonucunda, yıllar önce tamamen kendi parselinde yapıldığı düşünülen bir binanın bir kısmının resmi olarak komşu parsele geçtiği ortaya çıkabilir.</p>
-          <p>Bu durumda Türk Medeni Kanunu'nun 725. maddesi devreye girer. Yapıyı iyiniyetle yapan malik; komşu, durumu öğrendiği hâlde süresi içinde itiraz etmemişse ve durum ve koşullar haklı gösteriyorsa, uygun bir bedel karşılığında taşan kısım için irtifak hakkı kurulmasını veya o kısmın mülkiyetinin kendisine devrini (temliken tescil) isteyebilir.</p>
+          <p>Bu durumda Türk Medeni Kanunu'nun 725. maddesi devreye girer. Yapıyı iyiniyetle yapan malik; komşu, taşmayı öğrendiği tarihten başlayarak on beş gün içinde itiraz etmemişse ve durum ve koşullar haklı gösteriyorsa, uygun bir bedel karşılığında taşan kısım için irtifak hakkı kurulmasını veya o kısmın mülkiyetinin kendisine devrini (temliken tescil) isteyebilir.</p>
           <p>Yargıtay iyiniyeti dar yorumlar: Yapı sahibinin kendisinden beklenen özeni göstermiş olması gerekir. Resmi tapu ve kadastro kayıtlarına güvenerek yapılan bir yapı bu bakımdan korunmaya değer görülebilir; buna karşılık ruhsatsız, imar mevzuatına aykırı yapılarda iyiniyetin varlığı kural olarak kabul edilmez. Hakkaniyet değerlendirmesinde yapının değeri, taşkın kısmın değeri ve ifraz veya tevhit imkânı bilirkişi incelemesiyle belirlenir.</p>
           <p>Yenileme kadastrosu henüz kesinleşmemişse, mahkemenin kadastro işleminin kesinleşmesini bekletici sorun yapması gerekir. Komşu malikin açtığı el atmanın önlenmesi ve yıkım davasında da yapı sahibi temliken tescil talebini savunma ya da karşı dava yoluyla ileri sürebilir.</p>
+          <p>TMK m. 725&#39;in birinci fıkrasına göre, yapıyı yapan malik taşırılan arazi üzerinde bir irtifak hakkına sahipse, yapının taşan kısmı onun taşınmazının bütünleyici parçası olur ve ayrıca bir talebe gerek kalmaz. İrtifak hakkı yoksa ikinci fıkradaki şartlar aranır: zarar gören malik taşmayı öğrendiği tarihten başlayarak on beş gün içinde itiraz etmemiş olmalı, yapı iyiniyetle yapılmış olmalı ve durum ve koşullar talebi haklı göstermelidir.</p><p>22/a düzeltmesi sonucunda taşkınlığın ortaya çıktığı durumlarda, komşu malikin taşmayı ne zaman öğrendiği, yani on beş günlük sürenin başlangıcı çoğu zaman tartışma konusudur. Yenileme kadastrosunun askı ilanı, komşunun taşkınlığı öğrendiği tarih olarak değerlendirilebileceğinden ilan tarihleri ve komşunun bu tarihten sonraki tutumu dava dosyasında ayrıca belgelenmelidir.</p>
           <div class="share"><button type="button" class="copy" data-id="22-a-duzeltmesinden-sonra-ortaya-cikan-taskin-yapi">Bağlantıyı kopyala</button><a class="copy" href="https://wa.me/" data-wa="22-a-duzeltmesinden-sonra-ortaya-cikan-taskin-yapi" data-t="22/a düzeltmesinden sonra ortaya çıkan taşkın yapı">WhatsApp'ta paylaş</a></div>
         </details>
       </article>
     </div>
     <div class="sub" id="gayrimenkul-kadastro"><h3 class="subt">Kadastro</h3>
-      <article class="art" id="kadastro-22-a-duzeltmesine-itiraz-sure-ve-usul">
-        <div class="meta"><span>Kasım 2026</span><span>3 dk okuma</span></div>
+      <article class="art" tabindex="0" id="kadastro-22-a-duzeltmesine-itiraz-sure-ve-usul">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
         <h3>Kadastro 22/a düzeltmesine itiraz: süre ve usul</h3>
         <p class="ex">Yenileme kadastrosu sonuçları askı ilanıyla duyurulur. İtiraz için öngörülen süre kısadır ve kaçırılması işlemi kesinleştirir.</p>
         <details><summary>Devamını oku</summary>
           <p>22/a uygulaması, eski veya hatalı kadastro verilerinin teknik olarak yeniden düzenlenmesidir. Ölçüm sonuçları ve yeni paftalar, ilgili yerde 30 gün süreyle askıya çıkarılarak ilan edilir.</p>
-          <p>Düzeltmeye katılmayan malik, ilan süresi içinde kadastro müdürlüğüne itirazda bulunabilir ve kadastro mahkemesinde, bulunmayan yerlerde asliye hukuk mahkemesinde dava açabilir. Bu süre içinde dava açılmazsa yenileme sonuçları kesinleşir ve tapu siciline işlenir.</p>
+          <p>Kadastro Kanunu&#39;nun 11. maddesi uyarınca askı cetvelleri ve pafta örnekleri kadastro müdürlüğünde ve muhtarlıkta 30 gün süreyle ilan edilir; itirazı olanlar bu ilan süresi içinde kadastro mahkemesinde, bulunmayan yerlerde bu sıfatla görev yapan asliye hukuk mahkemesinde dava açabilir. Otuz günlük süre geçtikten sonra dava açılmayan tespitler kesinleşir ve tapu siciline işlenir.</p>
           <p>İtiraz dilekçesinde ada, parsel ve pafta bilgileri, hangi düzeltmeye neden karşı çıkıldığı ve varsa eski harita, kroki, ölçü krokisi gibi teknik belgeler açıkça yer almalıdır.</p>
           <p>Yargılamada keşif ve harita mühendisi bilirkişi incelemesi belirleyicidir. Teknik hata düzeltmesinin sınırını aşan, mülkiyetin özüne ilişkin uyuşmazlıkların genel hükümlere göre ayrıca değerlendirilmesi gerekebilir.</p>
+          <p>Kadastro Kanunu&#39;nun 22. maddesine göre, daha önce kadastrosu yapılmış yerlerin yeniden kadastrosu kural olarak yapılamaz. 22/a bendi bunun istisnasıdır: sınırlandırma, ölçü, çizim ve hesaplamalardan kaynaklanan hataları gidermek amacıyla, uygulama niteliğini kaybeden veya zemindeki sınırları gerçeğe uygun göstermeyen kadastro haritaları yeniden düzenlenir ve tapu sicilinde gerekli düzeltmeler yapılır. Amaç mülkiyeti yeniden belirlemek değil, teknik hatayı gidermektir.</p><p>22/a uygulaması yapılacak alanlar Tapu ve Kadastro Genel Müdürünün onayıyla belirlenir ve çalışmalara başlanmadan en az on beş gün önce çalışma alanında, bölge merkezinde ve il merkezinde duyurulur. Bu aşamada çalışmaların takip edilmesi ve ölçüm sırasında sınırların yerinde gösterilmesi, sonradan açılacak davadan çok daha etkilidir.</p><p>Kanuna göre yapılan ilanlar ilgili kişilere şahsen tebliğ edilmiş sayılır (m. 11). Malike ayrıca bildirim gönderilmesi gerekmez; bu nedenle askı süresi, malikin haberi olmasa da işler ve süre geçtikten sonra dava açılmayan tespitler kesinleşir (m. 12).</p>
           <div class="share"><button type="button" class="copy" data-id="kadastro-22-a-duzeltmesine-itiraz-sure-ve-usul">Bağlantıyı kopyala</button><a class="copy" href="https://wa.me/" data-wa="kadastro-22-a-duzeltmesine-itiraz-sure-ve-usul" data-t="Kadastro 22/a düzeltmesine itiraz: süre ve usul">WhatsApp'ta paylaş</a></div>
         </details>
       </article>
     </div>
     <div class="sub" id="gayrimenkul-onalim"><h3 class="subt">Önalım Hakkı</h3>
-      <article class="art" id="onalim-sufa-hakki-ve-rayic-bedel-degisikligi">
-        <div class="meta"><span>Kasım 2026</span><span>4 dk okuma</span></div>
+      <article class="art" tabindex="0" id="onalim-sufa-hakki-ve-rayic-bedel-degisikligi">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><div class="meta"><span>Kasım 2026</span><span>4 dk okuma</span></div>
         <h3>Önalım (şufa) hakkı ve rayiç bedel değişikliği</h3>
         <p class="ex">Paylı mülkiyette payını satan paydaşa karşı diğer paydaşların önalım hakkı vardır. 2025 sonunda yapılan değişiklikle ödenecek bedel satış bedelinden rayiç bedele çevrildi.</p>
         <details><summary>Devamını oku</summary>
@@ -697,8 +713,8 @@ body::before{
           <div class="share"><button type="button" class="copy" data-id="onalim-sufa-hakki-ve-rayic-bedel-degisikligi">Bağlantıyı kopyala</button><a class="copy" href="https://wa.me/" data-wa="onalim-sufa-hakki-ve-rayic-bedel-degisikligi" data-t="Önalım (şufa) hakkı ve rayiç bedel değişikliği">WhatsApp'ta paylaş</a></div>
         </details>
       </article>
-      <article class="art" id="onalim-davasina-karsi-alicinin-savunmalari">
-        <div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
+      <article class="art" tabindex="0" id="onalim-davasina-karsi-alicinin-savunmalari">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
         <h3>Önalım davasına karşı alıcının ileri sürebileceği savunmalar</h3>
         <p class="ex">Paylı taşınmazdan pay satın alan kişiye karşı açılan önalım davasında süre, yazılı vazgeçme ve dürüstlük kuralı başlıca savunma noktalarıdır.</p>
         <details><summary>Devamını oku</summary>
@@ -708,8 +724,8 @@ body::before{
       </article>
     </div>
     <div class="sub" id="gayrimenkul-miras"><h3 class="subt">Miras ve Tapu</h3>
-      <article class="art" id="muris-muvazaasi-mirastan-mal-kacirma">
-        <div class="meta"><span>Kasım 2026</span><span>5 dk okuma</span></div>
+      <article class="art" tabindex="0" id="muris-muvazaasi-mirastan-mal-kacirma">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><div class="meta"><span>Kasım 2026</span><span>5 dk okuma</span></div>
         <h3>Muris muvazaası: mirastan mal kaçırma</h3>
         <p class="ex">Miras bırakanın, mirasçısından mal kaçırmak amacıyla taşınmazını görünüşte satış göstererek devretmesi hâlinde tapu iptali ve tescil davası açılabilir.</p>
         <details><summary>Devamını oku</summary>
@@ -719,8 +735,8 @@ body::before{
       </article>
     </div>
     <div class="sub" id="gayrimenkul-kira"><h3 class="subt">Kira ve Tahliye</h3>
-      <article class="art" id="kiracinin-tahliyesi-ihtiyac-iki-hakli-ihtar-ve-tahliye-taahhudu">
-        <div class="meta"><span>Kasım 2026</span><span>5 dk okuma</span></div>
+      <article class="art" tabindex="0" id="kiracinin-tahliyesi-ihtiyac-iki-hakli-ihtar-ve-tahliye-taahhudu">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><div class="meta"><span>Kasım 2026</span><span>5 dk okuma</span></div>
         <h3>Kiracının tahliyesi: ihtiyaç, iki haklı ihtar ve tahliye taahhüdü</h3>
         <p class="ex">Konut ve çatılı işyeri kiralarında kiracı, ancak kanunda sayılan sebeplerle ve bir aylık dava sürelerine uyularak tahliye edilebilir.</p>
         <details><summary>Devamını oku</summary>
@@ -735,8 +751,8 @@ body::before{
     <h2>Sağlık Hukuku ve Malpraktis</h2>
     <div class="chips"><a href="#saglik-malpraktis">Malpraktis</a></div>
     <div class="sub" id="saglik-malpraktis"><h3 class="subt">Malpraktis</h3>
-      <article class="art" id="malpraktis-davasi-kime-karsi-ve-hangi-mahkemede">
-        <div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
+      <article class="art" tabindex="0" id="malpraktis-davasi-kime-karsi-ve-hangi-mahkemede">
+        <button type="button" class="kapat" aria-label="Kapat">&times;</button><div class="meta"><span>Kasım 2026</span><span>2 dk okuma</span></div>
         <h3>Malpraktis davası: kime karşı ve hangi mahkemede?</h3>
         <p class="ex">Hatalı tıbbi uygulamadan doğan zararlarda izlenecek yol, müdahalenin özel bir sağlık kuruluşunda mı yoksa kamu hastanesinde mi yapıldığına göre değişir.</p>
         <details><summary>Devamını oku</summary>
@@ -798,6 +814,39 @@ body::before{
     document.addEventListener(tur,function(e){ if(!formIci(e.target)) e.preventDefault(); });
   });
   document.addEventListener('contextmenu',function(e){ if(!formIci(e.target)) e.preventDefault(); });
+})();
+</script>
+<script>
+(function(){
+  var acik=null,yer=null,perde=null;
+  function kapat(){
+    if(!acik) return;
+    acik.classList.remove('odak'); var d=acik.querySelector('details'); if(d) d.open=false;
+    yer.parentNode.insertBefore(acik,yer); yer.remove(); perde.remove();
+    document.body.classList.remove('odakta');
+    if(location.hash==='#'+acik.id) history.replaceState(null,'',location.pathname+location.search);
+    var a=acik; acik=null; a.focus({preventScroll:true});
+  }
+  function ac(a){
+    if(acik===a) return; kapat();
+    yer=document.createElement('div'); yer.style.height=a.offsetHeight+'px';
+    a.parentNode.insertBefore(yer,a);
+    perde=document.createElement('div'); perde.className='perde'; perde.addEventListener('click',kapat);
+    document.body.appendChild(perde); document.body.appendChild(a);
+    var d=a.querySelector('details'); if(d) d.open=true;
+    a.classList.add('odak'); a.scrollTop=0; document.body.classList.add('odakta'); acik=a;
+  }
+  document.querySelectorAll('.art').forEach(function(a){
+    a.addEventListener('click',function(e){
+      if(e.target.closest('.kapat')){e.preventDefault();e.stopPropagation();kapat();return;}
+      if(a.classList.contains('odak')) return;
+      if(e.target.closest('a,button:not(.kapat)')) return;
+      e.preventDefault(); ac(a);
+    });
+    a.addEventListener('keydown',function(e){ if((e.key==='Enter'||e.key===' ')&&!acik&&e.target===a){e.preventDefault();ac(a);} });
+  });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') kapat(); });
+  if(location.hash){var t=document.getElementById(location.hash.slice(1)); if(t&&t.classList.contains('art')) ac(t);}
 })();
 </script>
 </body>
