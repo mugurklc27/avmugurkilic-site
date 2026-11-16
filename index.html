@@ -270,9 +270,35 @@ body::before{
   .tbl{overflow-x:auto;max-width:100%}
   .dlk.odak,.art.odak{left:0!important;right:0;top:0!important;transform:none!important;width:100vw!important;max-height:100vh;animation:none!important}
 }
+/* giris-animasyonu */
+#giris{display:none}
+html.girisli #giris{display:grid;position:fixed;inset:0;z-index:200;place-content:center;justify-items:center;gap:22px;background:radial-gradient(ellipse 60% 55% at 50% 42%,rgba(255,255,255,.95) 0%,rgba(255,255,255,0) 70%),radial-gradient(ellipse 70% 60% at 0% 0%,rgba(174,179,195,.75) 0%,rgba(174,179,195,0) 65%),radial-gradient(ellipse 75% 65% at 100% 100%,rgba(11,23,69,.22) 0%,rgba(11,23,69,0) 60%),linear-gradient(118deg,#c3c7d2 0%,#e6e8ee 28%,#f7f8fb 50%,#e2e5ec 72%,#aeb3c3 100%);background-size:100% 100%,100% 100%,100% 100%,220% 220%;color:var(--ink);cursor:pointer;animation:girisParilti 3s ease-in-out forwards,girisCik .7s cubic-bezier(.7,0,.3,1) 2.3s forwards}
+html.girisli body{overflow:hidden}
+#giris img{height:118px;width:auto;opacity:0;transform:translateY(14px) scale(.94);animation:girisLogo .9s cubic-bezier(.2,.7,.2,1) .15s forwards}
+#giris .gad{font:600 clamp(1.9rem,5vw,3rem)/1.1 var(--display);letter-spacing:.01em;text-align:center;opacity:0;animation:girisYazi .8s ease .75s forwards}
+#giris .gun{font:500 .76rem/1 var(--body);letter-spacing:.32em;text-transform:uppercase;color:var(--muted);opacity:0;animation:girisYazi .8s ease 1.1s forwards}
+#giris .gcizgi{width:0;height:3px;background:var(--ink);animation:girisCizgi .8s ease 1.35s forwards}
+#giris::before,#giris::after{content:"";position:absolute;left:0;height:14px;width:0;background:var(--ink);animation:girisSerit .9s cubic-bezier(.2,.7,.2,1) .2s forwards}
+#giris::before{top:0}#giris::after{bottom:0;left:auto;right:0}
+@keyframes girisSerit{to{width:38%}}
+@keyframes girisParilti{from{background-position:0 0,0 0,0 0,0% 50%}to{background-position:0 0,0 0,0 0,100% 50%}}
+@keyframes girisLogo{to{opacity:1;transform:none}}
+@keyframes girisYazi{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes girisCizgi{to{width:72px}}
+@keyframes girisCik{to{transform:translateY(-100%);visibility:hidden}}
 </style>
+<script>
+try{if(!sessionStorage.getItem('giris')&&!matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('girisli')}}catch(e){}
+</script>
 </head>
 <body>
+<div id="giris" aria-hidden="true">
+  <img src="logo.png" alt="" width="38" height="57">
+  <div class="gad">Mustafa Uğur KILIÇ</div>
+  <div class="gcizgi"></div>
+  <div class="gun">Avukat · Gaziantep</div>
+</div>
+
 <a class="skip" href="#icerik">İçeriğe geç</a>
 
 <div class="topbar"><div class="wrap">
@@ -413,7 +439,7 @@ body::before{
       <details class="faq"><summary>Görüşme için nasıl randevu alabilirim?</summary><p>Bu sayfadaki iletişim formunu doldurabilir veya <a href="mailto:info@avmugurkilic.com">info@avmugurkilic.com</a> adresine yazabilirsiniz. Görüşmeler randevu ile büroda yapılır ve talebinize e-posta ile dönüş sağlanır. İşleyen bir süre varsa, örneğin bir tebligat aldıysanız ya da duruşma gününüz yaklaşıyorsa, bunu mesajınızda belirtmeniz önceliklendirme açısından önemlidir.</p></details>
       <details class="faq"><summary>İlk görüşmeye hangi belgeleri getirmeliyim?</summary><p>Konuyla ilgili bütün evrakı getirin: sözleşmeler, tebligatlar, mahkeme ve icra dairesi yazıları, yazışmalar, fatura ve dekontlar. Belgelerin tarih sırasına dizilmesi görüşmeyi hızlandırır. Elinizde eksik belge olması görüşmeye engel değildir; hangi belgenin nereden temin edileceği görüşmede belirlenir.</p></details>
       <details class="faq"><summary>Anlattıklarım gizli kalır mı?</summary><p>Evet. Avukatın sır saklama yükümlülüğü kanundan doğar ve dosya kabul edilmese dahi devam eder. İlk görüşmede paylaşılan bilgiler de bu kapsamdadır.</p></details>
-      <details class="faq"><summary>Avukatlık ücreti nasıl belirlenir?</summary><p>Ücret; işin niteliği, kapsamı ve gerektirdiği emek dikkate alınarak yazılı avukatlık sözleşmesiyle belirlenir. Avukatlık Kanunu'nun 164. maddesi uyarınca Avukatlık Asgari Ücret Tarifesi'nin altında vekâlet ücreti kararlaştırılamaz. Konusu para olan işlerde, dava veya hükmolunacak şeyin değerinin yüzde yirmi beşini aşmamak üzere bir yüzde de kararlaştırılabilir. Hukuki danışma görüşmeleri de ücretlidir.<br><br>Tarifede yer alan güncel tutarları <a href="ucret-tarifesi.html"><b>ücret tarifesi sayfasından</b></a> inceleyebilirsiniz. Orada danışma, dava, icra takibi ve konusu para olan işlerdeki nispi oranlar kalem kalem yer almaktadır.</p></details>
+      <details class="faq"><summary>Avukatlık ücreti nasıl belirlenir?</summary><p>Ücret; işin niteliği, kapsamı ve gerektirdiği emek dikkate alınarak yazılı avukatlık sözleşmesiyle belirlenir. Avukatlık Kanunu'nun 164. maddesi uyarınca Avukatlık Asgari Ücret Tarifesi'nin altında vekâlet ücreti kararlaştırılamaz. Konusu para olan işlerde, dava veya hükmolunacak şeyin değerinin yüzde yirmi beşini aşmamak üzere bir yüzde de kararlaştırılabilir. Hukuki danışma görüşmeleri de ücretlidir. Güncel tarife Türkiye Barolar Birliği&#39;nin internet sitesinde yayımlanmaktadır.</p></details>
       <details class="faq"><summary>Avukatlık ücreti dışında masraf çıkar mı?</summary><p>Evet. Harç, tebligat, bilirkişi, keşif ve dosya giderleri gibi yargılama masrafları avukatlık ücretinden ayrıdır ve iş sahibi tarafından karşılanır. Bu giderler dosyanın seyrine göre doğar, doğmadan önce bildirilir ve dosya hesabında ayrıca izlenir.</p></details>
       <details class="faq"><summary>Karşı taraf vekâlet ücreti nedir, kime aittir?</summary><p>Mahkeme, yargılama sonunda haksız çıkan tarafı, karşı tarafın vekâlet ücretini ödemeye mahkûm eder ve bu ücret tarifeye göre belirlenir. Avukatlık Kanunu'nun 164. maddesi uyarınca, kararla karşı tarafa yüklenen vekâlet ücreti avukata aittir; iş sahibinin borcu nedeniyle takas ve mahsup edilemez, haczedilemez. Davanın kaybedilmesi hâlinde ise karşı tarafın vekâlet ücretini siz ödersiniz. Bu ihtimal ve tutarı, yol seçilirken baştan değerlendirilir.</p></details>
       <details class="faq"><summary>Vekâletname vermem gerekir mi?</summary><p>Dava açılması veya bir dosyanın takibi için kural olarak noterden düzenlenmiş ya da onaylanmış vekâletname gerekir. Yalnızca görüşme yapmak için vekâletname gerekmez. Yurt dışındaysanız vekâletnameyi konsoloslukta ya da apostil şerhiyle düzenletebilirsiniz. Gerekli belgeler ve ayrıntılar için <a href="vekaletname.html">vekâletname rehberine</a> bakabilirsiniz.</p></details>
@@ -493,7 +519,7 @@ body::before{
       <h4>Avukat-müvekkil ilişkisi</h4>
       <p>Siteyi ziyaret etmek, iletişim formunu doldurmak veya e-posta göndermek avukat-müvekkil ilişkisi kurmaz ve avukata herhangi bir yükümlülük getirmez. Bu ilişki ancak taraflarca imzalanan yazılı avukatlık sözleşmesi ile kurulur. Sözleşme kurulmadan önce iletilen bilgiler için de Avukatlık Kanunu&#39;ndaki sır saklama yükümlülüğü gözetilir; ancak dava dosyasına ilişkin belge ve özel nitelikli bilgilerin form veya e-posta yoluyla gönderilmemesi rica olunur.</p>
       <h4>Ücretler</h4>
-      <p>Hukuki danışma görüşmeleri ücretli ve randevuludur. Ücretler, Türkiye Barolar Birliği tarafından ilan edilen Avukatlık Asgari Ücret Tarifesi&#39;nin altında olamaz. Sitede yer alan tarife bilgileri yalnızca bilgilendirme amaçlıdır; bağlayıcı olan Resmî Gazete&#39;de yayımlanan metindir.</p>
+      <p>Hukuki danışma görüşmeleri ücretli ve randevuludur. Ücretler, Türkiye Barolar Birliği tarafından ilan edilen Avukatlık Asgari Ücret Tarifesi&#39;nin altında olamaz.</p>
       <h4>Fikri mülkiyet</h4>
       <p>Sitedeki yazılar, dilekçe örnekleri, logo, antet ve tasarım unsurları 5846 sayılı Fikir ve Sanat Eserleri Kanunu kapsamında korunmaktadır. Kaynak gösterilerek ve bağlantı verilerek kısa alıntı yapılması dışında, içeriğin izinsiz olarak çoğaltılması, kopyalanması, yayımlanması veya ticari amaçla kullanılması yasaktır.</p>
       <h4>Dış bağlantılar</h4>
@@ -548,7 +574,7 @@ body::before{
   <div class="cols">
     <div class="fm"><img src="logo.png" alt="" width="38" height="57" class="flogo"><b>Avukat Mustafa Uğur KILIÇ</b>Şehitkamil / Gaziantep</div>
     <div><h4>Sayfalar</h4><ul><li><a href="#hakkimda">Hakkımda</a></li><li><a href="#calisma-alanlari">Çalışma Alanları</a></li><li><a href="makaleler.html">Makaleler</a></li><li><a href="#sss">Sıkça Sorulan Sorular</a></li><li><a href="#iletisim">İletişim</a></li></ul></div>
-    <div><h4>Faydalı bağlantılar</h4><ul><li><a href="guncel.html">Hukuki gelişmeler</a></li><li><a href="vekaletname.html">Vekâletname rehberi</a></li><li><a href="dilekceler.html">Örnek dilekçeler</a></li><li><a href="ucret-tarifesi.html">Ücret tarifesi</a></li><li><a href="https://vatandas.uyap.gov.tr">UYAP Vatandaş Portalı</a></li><li><a href="https://www.turkiye.gov.tr">e-Devlet</a></li><li><a href="https://www.barobirlik.org.tr">Türkiye Barolar Birliği</a></li><li><a href="en.html">English</a></li></ul></div><div><h4>İletişim</h4><ul><li><a href="mailto:info@avmugurkilic.com">info@avmugurkilic.com</a></li><li>KEP: <a href="mailto:mustafaugur.kilic@hs01.kep.tr">mustafaugur.kilic@hs01.kep.tr</a></li><li>Şehitkamil / Gaziantep</li></ul></div>
+    <div><h4>Faydalı bağlantılar</h4><ul><li><a href="guncel.html">Hukuki gelişmeler</a></li><li><a href="vekaletname.html">Vekâletname rehberi</a></li><li><a href="dilekceler.html">Örnek dilekçeler</a></li><li><a href="https://vatandas.uyap.gov.tr">UYAP Vatandaş Portalı</a></li><li><a href="https://www.turkiye.gov.tr">e-Devlet</a></li><li><a href="https://www.barobirlik.org.tr">Türkiye Barolar Birliği</a></li><li><a href="en.html">English</a></li></ul></div><div><h4>İletişim</h4><ul><li><a href="mailto:info@avmugurkilic.com">info@avmugurkilic.com</a></li><li>KEP: <a href="mailto:mustafaugur.kilic@hs01.kep.tr">mustafaugur.kilic@hs01.kep.tr</a></li><li>Şehitkamil / Gaziantep</li></ul></div>
   </div>
   <div class="legal"><p>Bu site yalnızca bilgilendirme amaçlıdır; hukuki görüş niteliği taşımaz ve avukat-müvekkil ilişkisi kurmaz.</p><p><a href="#yasal-uyari">Yasal Uyarı</a> &nbsp;·&nbsp; <a href="#kvkk">KVKK Aydınlatma Metni</a> &nbsp;·&nbsp; © 2026 Avukat Mustafa Uğur KILIÇ</p></div>
 </div></footer>
@@ -593,6 +619,16 @@ function toast(t){var el=document.getElementById('toast');el.textContent=t;el.cl
   var k=document.getElementById('f-konu'), m=document.getElementById('f-mesaj');
   if(k){ for(var i=0;i<k.options.length;i++){ if(k.options[i].text===v[1]){k.selectedIndex=i;break;} } }
   if(m && !m.value){ m.value='"'+v[0]+'" örneğinin tamamı ve dosyam hakkında görüşmek istiyorum.\n\nKısaca durumum: '; }
+})();
+</script>
+<script>
+(function(){
+  var g=document.getElementById('giris'),h=document.documentElement; if(!g||!h.classList.contains('girisli')) return;
+  function bitir(){h.classList.remove('girisli');try{sessionStorage.setItem('giris','1')}catch(e){}}
+  g.addEventListener('animationend',function(e){if(e.animationName==='girisCik')bitir();});
+  g.addEventListener('click',bitir);
+  document.addEventListener('keydown',function(){if(h.classList.contains('girisli'))bitir();},{once:true});
+  setTimeout(bitir,3600);
 })();
 </script>
 </body>
