@@ -285,5 +285,15 @@ footer details p{margin-top:8px!important}
 </div></footer>
 
 
+<script>
+/* Metin kopyalamayı kısıtlar. Form alanları hariç tutulur. */
+(function(){
+  function formIci(t){return t&&t.closest&&t.closest('input,textarea,select');}
+  ['copy','cut','dragstart'].forEach(function(tur){
+    document.addEventListener(tur,function(e){ if(!formIci(e.target)) e.preventDefault(); });
+  });
+  document.addEventListener('contextmenu',function(e){ if(!formIci(e.target)) e.preventDefault(); });
+})();
+</script>
 </body>
 </html>
