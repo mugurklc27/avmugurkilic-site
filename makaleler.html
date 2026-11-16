@@ -237,6 +237,24 @@ footer details p{margin-top:8px!important}
   .topbar .hide-s{display:none}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.area{transition:none}}
+
+/* Filigran: sabit duran, çok düşük opaklıkta logo */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  background-image:url("logo.png");
+  background-repeat:no-repeat;
+  background-position:center 44%;
+  background-size:auto clamp(260px,52vh,620px);
+  opacity:.055;
+}
+@media (max-width:720px){
+  body::before{background-size:auto clamp(200px,38vh,360px);opacity:.045}
+}
+@media print{body::before{display:none}}
 </style>
 </head>
 <body>
