@@ -268,6 +268,24 @@ footer details p{margin-top:8px!important}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.area{transition:none}}
 
+/* Filigran: sabit duran, çok düşük opaklıkta logo */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  background-image:url("logo.png");
+  background-repeat:no-repeat;
+  background-position:center 44%;
+  background-size:auto clamp(260px,52vh,620px);
+  opacity:.055;
+}
+@media (max-width:720px){
+  body::before{background-size:auto clamp(200px,38vh,360px);opacity:.045}
+}
+@media print{body::before{display:none}}
+
 .uyari{background:#fff6f6;border:1px solid rgba(163,38,42,.25);border-left:3px solid #a3262a;padding:22px 26px;margin-bottom:30px}
 .uyari h2{font-size:1.2rem;margin-bottom:8px;color:#a3262a}
 .uyari p{margin:0 0 .6em;font-size:.92rem}
@@ -289,24 +307,6 @@ footer details p{margin-top:8px!important}
 .nocopy{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-touch-callout:none}
 .korumali{margin:10px 0 0;font-size:.8rem;color:var(--muted)}
 @media print{.dlk-metin{border:0;padding:0}}
-
-/* Filigran: sabit duran, çok düşük opaklıkta logo */
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  z-index:-1;
-  pointer-events:none;
-  background-image:url("logo.png");
-  background-repeat:no-repeat;
-  background-position:center 44%;
-  background-size:auto clamp(260px,52vh,620px);
-  opacity:.055;
-}
-@media (max-width:720px){
-  body::before{background-size:auto clamp(200px,38vh,360px);opacity:.045}
-}
-@media print{body::before{display:none}}
 </style>
 </head>
 <body>
@@ -336,10 +336,10 @@ body::before{
     <div class="kicker">Örnek dilekçeler</div>
     <h1>Sık kullanılan dilekçeler</h1>
     <p>Dilekçeler çalışma alanlarına göre gruplanmıştır. Her birinde hangi mercie verileceği, süresi ve en çok atlanan noktalar ayrıca belirtilmiştir.</p>
-    <div class="search"><label for="ara" class="sr">Dilekçelerde ara</label><input id="ara" type="search" placeholder="Dilekçelerde ara: ör. itiraz, nafaka, sigorta, şikâyet" autocomplete="off"><span id="ara-sonuc" aria-live="polite"></span></div>
+    <div class="search"><label for="ara" class="sr">Dilekçelerde ara</label><input id="ara" type="search" placeholder="Dilekçelerde ara: ör. itiraz, nafaka, tanık, tedbir" autocomplete="off"><span id="ara-sonuc" aria-live="polite"></span></div>
   </div></section>
   <div class="wrap mk-layout">
-    <nav class="mk-nav" aria-label="Alanlar"><a href="#trafik">Trafik Kazası ve Tazminat</a><a href="#icra">İcra ve İflas Hukuku</a><a href="#tuketici">Tüketici Hukuku</a><a href="#ceza">Ceza Hukuku</a><a href="#aile">Aile Hukuku</a></nav>
+    <nav class="mk-nav" aria-label="Alanlar"><a href="#trafik">Trafik Kazası ve Tazminat</a><a href="#icra">İcra ve İflas Hukuku</a><a href="#tuketici">Tüketici Hukuku</a><a href="#ceza">Ceza Hukuku</a><a href="#aile">Aile Hukuku</a><a href="#usul">Yargılama Usulü</a></nav>
     <div>
     <div class="uyari">
       <h2>Okumadan kullanmayın</h2>
@@ -653,6 +653,291 @@ EKLER
 1. Boşanma ilamı örneği
 2. Giderlere ilişkin belgeler
 3. Nüfus kayıt örneği</pre><img class="antet-alt" src="antet-alt.png" alt="" width="1400" height="167" draggable="false"></div>
+        <p class="korumali">Köşeli parantez içindeki yerler doldurulacak, gerekmeyen maddeler silinecektir.</p>
+      </section>
+      <section class="dlk" id="tedbir-uzatma-6284">
+        <h3 class="dbas">Koruma ve önleyici tedbirin uzatılması talebi (6284)</h3>
+        <dl>
+          <div><dt>Nereye verilir</dt><dd>Tedbir kararını veren aile mahkemesine. 6284 sayılı Kanun&#39;un 8. maddesi uyarınca tedbir, en çabuk ve en kolay ulaşılabilecek yer hâkiminden, mülkî amirden ya da kolluk biriminden de talep edilebilir.</dd></div>
+          <div><dt>Süre</dt><dd class="sure">Mevcut tedbirin süresi dolmadan önce. Süre dolduğunda koruma kendiliğinden sona erer; bu nedenle talebin bitiş tarihinden önce sunulması gerekir.</dd></div>
+        </dl>
+        <h4>Dikkat edilecekler</h4>
+        <ul><li>6284 sayılı Kanun&#39;un 8/2. maddesine göre tedbir kararı ilk defasında en çok altı ay için verilir. Şiddet veya şiddet uygulanma tehlikesinin devam edeceğinin anlaşıldığı hâllerde süresinin veya şeklinin değiştirilmesine, kaldırılmasına ya da aynen devamına karar verilebilir.</li><li>Uzatma için <b>yeni bir şiddet olayının gerçekleşmesi aranmaz</b>; tehlikenin sürdüğünün anlaşılması yeterlidir. Dilekçede asıl anlatılması gereken budur.</li><li>Aynı maddenin üçüncü fıkrası uyarınca koruyucu tedbir kararı verilebilmesi için şiddetin uygulandığı hususunda delil veya belge aranmaz; önleyici tedbir kararı geciktirilmeksizin verilir.</li><li>Tedbir kararının tefhim ve tebliğinde, aykırılık hâlinde zorlama hapsi uygulanacağı ihtarı yapılır. Talep sonucunda bu ihtarın yapılmasını da isteyin.</li><li>Kanun&#39;un 13. maddesi uyarınca tedbire aykırı davranan kişi, fiili ayrıca suç oluştursa bile üç günden on güne kadar zorlama hapsine tabi tutulur. Her tekrarda süre on beş günden otuz güne kadardır; toplamı altı ayı geçemez.</li><li>8. maddenin altıncı fıkrası önemli bir koruma getirir: gerekli görülürse korunan kişinin ve diğer aile bireylerinin kimlik bilgileri, kimliğini ortaya çıkarabilecek bilgiler ve adresleri <b>tüm resmî kayıtlarda gizli tutulur</b> ve tebligat için ayrı bir adres tespit edilir. İhtiyaç varsa bunu da talep edin.</li><li>Gecikmesinde sakınca bulunan hâllerde Kanun&#39;un 5/1 maddesindeki (a), (b), (c) ve (d) bentlerindeki tedbirler kolluk amirince de alınabilir; bu tedbirler yirmi dört saat içinde hâkim tarafından onaylanmazsa kendiliğinden kalkar.</li></ul>
+        <h4>Dilekçe örneği</h4>
+        <div class="dlk-metin nocopy"><img class="antet-ust" src="antet-ust.png" alt="" width="1400" height="167" draggable="false"><pre>[MAHKEMENİN ADI] AİLE MAHKEMESİNE
+
+Dosya No : [Esas no]
+
+TEDBİR TALEP EDEN : [Ad Soyad]
+
+VEKİLİ            : Av. Mustafa Uğur KILIÇ [15372-73178-03391] UETS
+
+KARŞI TARAF       : [Ad Soyad]
+
+KONU : [Tarih] tarih, [Esas no] Esas ve [Karar no] Karar sayılı ilamı ile verilen koruma ve önleyici tedbir kararlarının süresinin 6284 sayılı Kanun&#x27;un 8/2. maddesi uyarınca uzatılması talebimizden ibarettir.
+
+AÇIKLAMALAR :
+
+    Mahkemenizin [tarih] tarih, [esas no] Esas ve [karar no] Karar sayılı kararı ile karşı taraf [şüpheli / şüpheliler] [ad soyad] hakkında 6284 sayılı Ailenin Korunması ve Kadına Karşı Şiddetin Önlenmesine Dair Kanun&#x27;un [uygulanan bentler, örneğin 5/1-(a) ve 5/1-(c)] maddeleri uyarınca [süre] süreyle önleyici tedbir uygulanmasına karar verilmiştir.
+
+    Verilen söz konusu koruma ve önleyici tedbir kararının [süre] yasal süresi [bitiş tarihi] itibarıyla sona ermektedir. Ancak müvekkilin maruz kaldığı [şiddetin türünü yazın: fiziksel, psikolojik, ekonomik şiddet, tehdit] sonrasında karşı tarafın oluşturduğu tehlike, baskı ve müvekkilin can güvenliğine yönelik ciddi risk varlığını aynen sürdürmektedir.
+
+    6284 sayılı Kanun&#x27;un 8. maddesinin 2. fıkrasında; &#x27;Tedbir kararı ilk defasında en çok altı ay için verilebilir. Ancak şiddet veya şiddet uygulanma tehlikesinin devam edeceğinin anlaşıldığı hâllerde, resen, korunan kişinin ya da Bakanlık veya kolluk görevlilerinin talebi üzerine tedbirlerin süresinin veya şeklinin değiştirilmesine, bu tedbirlerin kaldırılmasına veya aynen devam etmesine karar verilebilir.&#x27; hükmü amirdir. Kanunun açık hükmü gereğince tedbir kararının uzatılması veya devamı için yeni bir şiddet fiilinin gerçekleşmesi aranmamakta, tehlikenin sürmesi yeterli kabul edilmektedir.
+
+    [Korunan kişinin ve varsa çocukların özel durumunu yazın: hamilelik, yeni doğum, çocukların yaşı, sağlık durumu.] [Karşı tarafın eylemlerini yazın: hakaret, tehdit, darp, ısrarlı takip.] ile taraflar arasındaki husumetin sıcaklığını koruması karşısında, müvekkilin [ve varsa çocukların] yaşam hakkı ile vücut bütünlüğünün korunabilmesi amacıyla önceki kararda hükmolunan tedbirlerin süresinin uzatılması zorunluluğu doğmuştur.
+
+HUKUKİ NEDENLER : 6284 sayılı Ailenin Korunması ve Kadına Karşı Şiddetin Önlenmesine Dair Kanun (özellikle m. 5, 8 ve 13), 6284 Sayılı Kanuna İlişkin Uygulama Yönetmeliği, 6100 sayılı Hukuk Muhakemeleri Kanunu, 4721 sayılı Türk Medeni Kanunu ve ilgili sair mevzuat.
+
+HUKUKİ DELİLLER : [Mahkeme adı] Aile Mahkemesi&#x27;nin [tarih] tarih, [esas no] Esas ve [karar no] Karar sayılı koruma kararı, [il / ilçe] Emniyet Müdürlüğü Aile İçi ve Kadına Karşı Şiddetle Mücadele Büro Amirliği&#x27;nin [tarih] tarih ve [sayı] sayılı tahkikat evrakı, [hastane adı]&#x27;nin [tarih] tarihli adli muayene raporu, olay fotoğrafları, ifade tutanakları ve dosya kapsamındaki her türlü yasal delil.
+
+SONUÇ VE İSTEM : Yukarıda arz ve izah olunan ve Mahkemenizce resen gözetilecek nedenlerle;
+
+1-) Müvekkil [ad soyad] lehine, karşı taraf [şüpheli / şüpheliler] [ad soyad] aleyhine Mahkemenizin [tarih] tarih, [esas no] Esas ve [karar no] Karar sayılı kararı ile 6284 sayılı Kanun&#x27;un [uygulanan bentler] maddeleri uyarınca tesis edilmiş olan önleyici ve koruyucu tedbirlerin süresinin, 6284 sayılı Kanun&#x27;un 8/2. maddesi gereğince kararın bitim tarihinden itibaren [süre] süreyle UZATILMASINA (aynen devamına),
+
+2-) Kararın gereği ve infazı için [il / ilçe] Cumhuriyet Başsavcılığı ile ilgili kolluk birimine derhal bildirilmesine,
+
+3-) Kararın [şüpheliye / şüphelilere] tebliğ edilerek tedbirlere aykırılık halinde zorlama hapsi uygulanacağı ihtaratının yapılmasına
+
+karar verilmesini saygılarımla talep ederim. [Tarih]
+
+                                        Talep Eden Vekili
+                                        Av. Mustafa Uğur KILIÇ
+                                        E-İmzalıdır</pre><img class="antet-alt" src="antet-alt.png" alt="" width="1400" height="167" draggable="false"></div>
+        <p class="korumali">Köşeli parantez içindeki yerler doldurulacak, gerekmeyen maddeler silinecektir.</p>
+      </section>
+      <section class="dlk" id="anlasmali-bosanma">
+        <h3 class="dbas">Anlaşmalı boşanma dava dilekçesi</h3>
+        <dl>
+          <div><dt>Nereye verilir</dt><dd>Aile mahkemesine. Aile mahkemesi bulunmayan yerlerde aile mahkemesi sıfatıyla asliye hukuk mahkemesine. Dilekçeye, her iki eşin imzaladığı anlaşmalı boşanma protokolü eklenir.</dd></div>
+          <div><dt>Süre</dt><dd class="sure">Evlilik en az bir yıl sürmüş olmalıdır. Bir yılı doldurmamış evliliklerde anlaşmalı boşanma yolu kullanılamaz.</dd></div>
+        </dl>
+        <h4>Dikkat edilecekler</h4>
+        <ul><li>Türk Medeni Kanunu&#39;nun 166. maddesinin üçüncü fıkrasına göre evlilik en az bir yıl sürmüşse, eşlerin birlikte başvurması ya da bir eşin diğerinin davasını kabul etmesi hâlinde evlilik birliği temelinden sarsılmış sayılır.</li><li>Boşanma kararı verilebilmesi için hâkimin <b>tarafları bizzat dinlemesi</b> ve iradelerinin serbestçe açıklandığına kanaat getirmesi şarttır. Bu nedenle her iki eş duruşmaya bizzat katılmalıdır; vekilin katılması yeterli değildir.</li><li>Hâkim, boşanmanın malî sonuçları ile çocukların durumu hakkında taraflarca kabul edilen düzenlemeyi uygun bulmalıdır. Tarafların ve çocukların menfaatini gözeterek protokolde değişiklik yapabilir; bu değişiklikler taraflarca da kabul edilirse boşanmaya hükmolunur.</li><li>TMK 184/5 uyarınca boşanmanın fer&#39;î sonuçlarına ilişkin anlaşmalar <b>hâkim tarafından onaylanmadıkça geçerli olmaz.</b> Protokol imzalanmış olsa da bağlayıcılığı mahkeme onayıyla doğar.</li><li>Taraflardan biri duruşmada protokolden döner ya da anlaşma bozulursa dava, çekişmeli boşanma davası olarak devam edebilir.</li><li>Protokolde düzenlenmeyen konular, örneğin mal rejiminin tasfiyesi, ileride ayrı bir davaya konu olabilir. Protokolü bu açıdan eksiksiz hazırlayın.</li></ul>
+        <h4>Dilekçe örneği</h4>
+        <div class="dlk-metin nocopy"><img class="antet-ust" src="antet-ust.png" alt="" width="1400" height="167" draggable="false"><pre>[İL] NÖBETÇİ AİLE MAHKEMESİ&#x27;NE
+
+DAVACI         : [Ad Soyad]  (T.C. Kimlik No: [.....])
+                 Adres: [Adres]
+
+VEKİLİ         : [Varsa vekilin adı soyadı ve adresi]
+
+DAVALI         : [Ad Soyad]  (T.C. Kimlik No: [.....])
+                 Adres: [Adres]
+
+KONU           : Evlilik birliğinin temelinden sarsılması nedeniyle
+                 anlaşmalı boşanma talebimizin sunulmasıdır.
+
+AÇIKLAMALAR    :
+
+1-) Taraflar [evlilik tarihi] tarihinden bu yana evli olup
+    [müşterek çocuk sayısı] müşterek çocukları bulunmaktadır.
+    [Çocuk yoksa: Tarafların müşterek çocuğu bulunmamaktadır.]
+
+2-) Evlilik birliğinin kurulmasından itibaren taraflar arasında baş
+    gösteren fikrî ve ruhî anlaşmazlık ortak yaşamı çekilmez hâle
+    getirmiş olup, taraflar fiilen ayrı yaşamaktadır. Fiilen sona
+    ermiş olan evliliğin hukuken de sonuçlandırılması için Sayın
+    Mahkemenize başvurma zorunluluğu doğmuştur.
+
+3-) Boşanmanın malî sonuçları ve çocukların durumu konusunda taraflar
+    arasında, ekte sunulan anlaşmalı boşanma protokolü çerçevesinde
+    anlaşma sağlanmıştır.
+
+HUKUKİ NEDENLER : 4721 sayılı Türk Medeni Kanunu m. 166/3, m. 184/5 ve
+                  ilgili mevzuat.
+
+DELİLLER        : Nüfus aile kayıt örneği, anlaşmalı boşanma protokolü,
+                  tarafların beyanları ve her türlü yasal delil.
+
+SONUÇ VE İSTEM  : Yukarıda açıklanan nedenlerle, ekte sunulan protokolün
+onaylanarak tarafların boşanmalarına karar verilmesini talep ederim.
+[Tarih]
+
+                                                        [Ad Soyad]
+                                                        [İmza]
+
+EK : Taraflarca imzalanmış anlaşmalı boşanma protokolü</pre><img class="antet-alt" src="antet-alt.png" alt="" width="1400" height="167" draggable="false"></div>
+        <p class="korumali">Köşeli parantez içindeki yerler doldurulacak, gerekmeyen maddeler silinecektir.</p>
+      </section>
+      <section class="dlk" id="bosanma-protokolu">
+        <h3 class="dbas">Anlaşmalı boşanma protokolü</h3>
+        <dl>
+          <div><dt>Nereye verilir</dt><dd>Anlaşmalı boşanma dava dilekçesine eklenerek aile mahkemesine sunulur. Her iki eş tarafından imzalanmalıdır.</dd></div>
+          <div><dt>Süre</dt><dd class="sure">Protokol, mahkeme tarafından onaylanmadıkça geçerli olmaz. Duruşmada her iki eşin protokolü bizzat kabul etmesi gerekir.</dd></div>
+        </dl>
+        <h4>Dikkat edilecekler</h4>
+        <ul><li>Protokolün dayanağı Türk Medeni Kanunu&#39;nun 166/3 ve 184/5. maddeleridir. Avukatlık Kanunu&#39;nun 35/A maddesindeki uzlaşma tutanağı, yalnızca tarafların kendi iradeleriyle elde edebilecekleri konularla sınırlıdır; boşanma ve velayet bu kapsama girmez.</li><li>Velayet, kişisel ilişki, iştirak nafakası, yoksulluk nafakası, maddi ve manevi tazminat, mal rejiminin tasfiyesi, eşyalar ve yargılama giderleri ayrı ayrı ve açıkça düzenlenmelidir. Düzenlenmeyen konu ileride ayrı bir davaya konu olabilir.</li><li>Mal rejimi konusunda feragat edilecekse bunun açıkça yazılması gerekir. Katılma alacağı, değer artış payı ve katkı payı alacağının ayrı ayrı anılması tartışmayı önler.</li><li>İştirak nafakası için her çocuk bakımından ayrı tutar ve yıllık artış ölçütü belirlenmelidir. Yaygın olarak TÜİK&#39;in açıkladığı on iki aylık ortalamalara göre TÜFE oranı kullanılır.</li><li>Ergin olmuş çocuk için velayet ve iştirak nafakası düzenlenmez; bu durum protokolde ayrıca belirtilebilir.</li><li>Hâkim, tarafların ve çocukların menfaati bakımından gerekli gördüğü değişiklikleri yapabilir. Özellikle kişisel ilişki ve nafaka hükümleri mahkemece değiştirilebilir.</li></ul>
+        <h4>Dilekçe örneği</h4>
+        <div class="dlk-metin nocopy"><img class="antet-ust" src="antet-ust.png" alt="" width="1400" height="167" draggable="false"><pre>          TÜRK MEDENİ KANUNU&#x27;NUN 166/3. MADDESİ UYARINCA
+                  ANLAŞMALI BOŞANMA PROTOKOLÜ
+
+DAVACI TARAF   : [Ad Soyad]  (T.C. Kimlik No: [.....])
+                 Adres: [Adres]
+
+VEKİLİ         : [Varsa vekilin adı soyadı ve adresi]
+
+DAVALI TARAF   : [Ad Soyad]  (T.C. Kimlik No: [.....])
+                 Adres: [Adres]
+
+KONU           : Türk Medeni Kanunu&#x27;nun 166/3. maddesi uyarınca
+                 düzenlenen anlaşmalı boşanma protokolü doğrultusunda
+                 tarafların boşanmalarına karar verilmesi talebidir.
+
+AÇIKLAMALAR    :
+
+Yukarıda isimleri yazılı taraflar, hiçbir baskı altında kalmadan, kendi
+hür iradeleriyle boşanmaya karar vermiş ve boşanmanın malî sonuçlarını
+düzenleyen işbu protokolü imzalayarak, protokol hükümleri doğrultusunda
+anlaşmalı olarak boşanmayı kabul, beyan ve taahhüt etmişlerdir.
+
+PROTOKOL HÜKÜMLERİ
+
+1. BOŞANMA
+
+Davacı eş [ad soyad] ve davalı eş [ad soyad], işbu protokolde yazılı
+şartlar dâhilinde anlaşma suretiyle boşanmaya karar vermişlerdir.
+
+2. VELAYET VE KİŞİSEL İLİŞKİ
+
+Tarafların müşterek çocukları [doğum tarihi] doğumlu [ad soyad] ve
+[doğum tarihi] doğumlu [ad soyad]&#x27;nın velayeti [anneye / babaya]
+verilecektir.
+
+Velayet kendisine verilmeyen [anne / baba] ile müşterek çocuklar
+arasında, mahkemenin uygun göreceği mutat günlerde [hafta sonları,
+dinî ve millî bayramlar ile yaz tatilleri gibi dönemleri yazın]
+[yatılı / yatısız] olarak kişisel ilişki tesis edilecektir.
+
+[Ergin çocuk varsa: Müşterek çocuk [ad soyad] on sekiz yaşını
+doldurmuş olduğundan velayet ve iştirak nafakası düzenlemesinin
+kapsamı dışındadır.]
+
+3. İŞTİRAK NAFAKASI VE ÇOCUKLARIN GİDERLERİ
+
+[Nafaka yükümlüsü eş], velayeti diğer eşe bırakılan çocukların her biri
+için aylık [tutar] TL olmak üzere toplam [toplam tutar] TL iştirak
+nafakasını her ay düzenli olarak [nafaka alacaklısı eş]&#x27;in bildireceği
+banka hesabına yatıracaktır. İştirak nafakasına her yıl TÜİK tarafından
+açıklanan TÜFE (on iki aylık ortalamalara göre) oranında artış
+uygulanacaktır.
+
+[Varsa:] Taraflar, müşterek çocukların eğitim, sağlık ve benzeri
+giderlerini [oran] oranında ortaklaşa karşılayacaklarını kabul ve
+taahhüt ederler.
+
+4. MADDİ VE MANEVİ TAZMİNAT, YOKSULLUK NAFAKASI
+
+[Talep yoksa:] Tarafların boşanma sebebiyle birbirlerinden maddi
+tazminat, manevi tazminat ve yoksulluk nafakası talebi bulunmamaktadır.
+Taraflar bu kalemler yönünden birbirlerini gayrikabilirücu ibra
+etmişlerdir.
+
+[Talep varsa tutarı, ödeme şeklini ve tarihini ayrıca yazın.]
+
+5. KİŞİSEL EŞYALAR VE MAL REJİMİNİN TASFİYESİ
+
+Taraflar, evlilik birliği süresince edinilmiş kişisel eşyalarını fiilen
+paylaşmış ve teslim almışlardır. Tarafların birbirlerinde başkaca
+kişisel eşyası kalmamıştır.
+
+[Feragat edilecekse:] Tarafların evlilik birliği içinde edinilmiş
+mallara ilişkin olarak katılma alacağı, değer artış payı alacağı veya
+katkı payı alacağı adı altında birbirlerinden herhangi bir mal, mülk
+veya bedel talebi bulunmamaktadır. Taraflar mal rejiminin tasfiyesi
+yönünden birbirlerini ibra etmişlerdir.
+
+[Paylaşım yapılacaksa hangi malın kime kalacağını tek tek yazın.]
+
+6. YARGILAMA GİDERLERİ VE VEKÂLET ÜCRETİ
+
+Tarafların birbirlerinden yargılama gideri, harç ve vekâlet ücreti
+talebi bulunmamaktadır. Mahkemece hükmedilecek masraflar taraflarca
+kendi üzerlerinde bırakılacaktır.
+
+SONUÇ VE İSTEM
+
+[Madde sayısı] maddeden ibaret olan işbu anlaşmalı boşanma protokolü,
+taraflarca hiçbir baskı altında kalınmaksızın, serbest iradeleriyle
+okunarak imza altına alınmıştır. Sayın Mahkemeden, protokol
+hükümlerinin aynen onaylanarak tarafların boşanmalarına karar
+verilmesi talep olunur. [Tarih]
+
+DAVACI                                    DAVALI
+[Ad Soyad]                                [Ad Soyad]
+(T.C. No: [.....])                        (T.C. No: [.....])
+[İmza]                                    [İmza]</pre><img class="antet-alt" src="antet-alt.png" alt="" width="1400" height="167" draggable="false"></div>
+        <p class="korumali">Köşeli parantez içindeki yerler doldurulacak, gerekmeyen maddeler silinecektir.</p>
+      </section>
+    </section>
+    <section class="mk-area" id="usul">
+      <div class="kicker">06 · Çalışma alanı</div>
+      <h2>Yargılama Usulü</h2>
+      <section class="dlk" id="tanik-bildirim">
+        <h3 class="dbas">Tanık bildirim dilekçesi</h3>
+        <dl>
+          <div><dt>Nereye verilir</dt><dd>Davanın görüldüğü mahkemeye. Vekil aracılığıyla veya UYAP Vatandaş Portalı üzerinden sunulabilir.</dd></div>
+          <div><dt>Süre</dt><dd class="sure">Mahkemenin tanık listesi için verdiği kesin süre içinde. Bu süre kaçırılırsa tanık dinletme hakkı düşer.</dd></div>
+        </dl>
+        <h4>Dikkat edilecekler</h4>
+        <ul><li>Hukuk Muhakemeleri Kanunu&#39;nun 240. maddesi listede üç şeyin bulunmasını arıyor: tanık dinletilmek istenen <b>vakıa</b>, tanıkların <b>adı ve soyadı</b> ve <b>tebliğe elverişli adresleri</b>.</li><li>Aynı maddenin en kritik cümlesi şudur: <b>listede gösterilmemiş olan kimseler tanık olarak dinlenemez ve ikinci bir liste verilemez.</b> Bu nedenle listeyi baştan eksiksiz verin; sonradan tanık eklemek mümkün değildir.</li><li>Her tanık için hangi vakıanın ispatlanacağı ayrı ayrı yazılmalıdır. &ldquo;Olayı bilmektedir&rdquo; gibi genel ifadeler yerine tarih, yer ve olayı belirtin.</li><li>Adres gösterilmemişse ya da tanık gösterilen adreste bulunamamışsa mahkeme adres bildirmek için kesin süre verir. Bu sürede adres bildirilmez veya yeni adres de doğru değilse, o tanığın dinlenilmesinden vazgeçilmiş sayılır.</li><li>Kesin süre içinde tanık gideri de yatırılmalıdır. Liste süresinde verilse bile gider yatırılmazsa tanık dinlenmeyebilir.</li><li>Tanık davetiye ile çağrılır ve davetiyenin duruşma gününden en az bir hafta önce tebliğ edilmiş olması gerekir. Ancak davetiye gönderilmeden, taraflarca duruşmada hazır bulundurulan tanık da dinlenir.</li><li>Mahkeme, gösterilen tanıklardan bir kısmının beyanıyla yeterli bilgi edindiği kanaatine varırsa geri kalanların dinlenilmemesine karar verebilir.</li><li>Davada taraf olan kişiler tanık olarak gösterilemez.</li></ul>
+        <h4>Dilekçe örneği</h4>
+        <div class="dlk-metin nocopy"><img class="antet-ust" src="antet-ust.png" alt="" width="1400" height="167" draggable="false"><pre>[MAHKEMENİN ADI] SAYIN HÂKİMLİĞİNE
+
+DOSYA NO : [2026/..... E.]
+
+DAVACI   : [Ad Soyad]
+VEKİLİ   : [Varsa vekilin adı soyadı]
+DAVALI   : [Ad Soyad]
+VEKİLİ   : [Varsa vekilin adı soyadı]
+
+KONU     : Tanık listemizin sunulması ve tanıklarımızın dinlenilmesi
+           talebidir.
+
+AÇIKLAMALAR
+
+1. Mahkemenizin [duruşma tarihi] tarihli celsesinde verilen ara karar
+   uyarınca, tanıklarımızı bildirmek ve gerekli gideri yatırmak üzere
+   tarafımıza [süre] kesin süre verilmiştir. Verilen kesin süre içinde
+   tanık listemizi sunuyoruz.
+
+2. Dinletmek istediğimiz tanıklar ile her bir tanığın hangi vakıa
+   hakkında dinleneceği aşağıda ayrı ayrı gösterilmiştir.
+
+TANIK LİSTESİ
+
+1. TANIK
+   Adı ve soyadı    : [Ad Soyad]
+   Adresi           : [Tebliğe elverişli açık adres]
+   Dinleneceği vakıa: [Bu tanığın bizzat bildiği olayı somut yazın:
+                      ne zaman, nerede, neye tanık oldu. Genel
+                      ifadelerden kaçının.]
+
+2. TANIK
+   Adı ve soyadı    : [Ad Soyad]
+   Adresi           : [Tebliğe elverişli açık adres]
+   Dinleneceği vakıa: [Somut olay]
+
+3. TANIK
+   Adı ve soyadı    : [Ad Soyad]
+   Adresi           : [Tebliğe elverişli açık adres]
+   Dinleneceği vakıa: [Somut olay]
+
+   [Tanık sayısı kadar madde ekleyin. Listede yazmayan kişi sonradan
+    tanık olarak dinletilemez.]
+
+HUKUKİ SEBEPLER : 6100 sayılı Hukuk Muhakemeleri Kanunu m. 240 ve
+                  devamı ile ilgili mevzuat.
+
+SONUÇ VE İSTEM : Yukarıda açıklanan nedenlerle;
+
+1. Tanık listemizin kabulüne,
+2. Tanıklarımızın duruşma gün ve saatinde dinlenilmesine, gerektiğinde
+   adreslerine davetiye çıkarılmasına,
+
+karar verilmesini talep ederim. [Tarih]
+
+                                                        [Ad Soyad]
+                                                        [İmza]</pre><img class="antet-alt" src="antet-alt.png" alt="" width="1400" height="167" draggable="false"></div>
         <p class="korumali">Köşeli parantez içindeki yerler doldurulacak, gerekmeyen maddeler silinecektir.</p>
       </section>
     </section>
