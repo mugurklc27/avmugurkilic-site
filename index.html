@@ -277,18 +277,6 @@ nav.links .dd-m a:hover{color:var(--ink);background:rgba(11,23,69,.05);border:0}
   nav.links .dd-m a{padding:12px clamp(18px,4vw,44px);white-space:normal;font-size:.95rem}
   nav.links .dd.acik>a{color:var(--ink);border-color:var(--ink)}
 }
-/* mobil-duzeltme */
-@media (max-width:720px){
-  html,body{overflow-x:hidden}
-  header.nav .wrap{min-height:0;padding-top:10px}
-  nav.links{width:100%;overflow-x:auto;flex-wrap:nowrap;justify-content:flex-start;gap:22px;padding-bottom:10px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-  nav.links::-webkit-scrollbar{display:none}
-  nav.links a{white-space:nowrap;flex:none}
-  .mk-layout{grid-template-columns:minmax(0,1fr)!important}
-  .mk-layout>*{min-width:0}
-  .tbl{overflow-x:auto;max-width:100%}
-  .dlk.odak,.art.odak{left:0!important;right:0;top:0!important;transform:none!important;width:100vw!important;max-height:100vh;animation:none!important}
-}
 /* giris-animasyonu */
 #giris{display:none}
 html.girisli #giris{display:grid;position:fixed;inset:0;z-index:200;place-content:center;justify-items:center;gap:22px;background:radial-gradient(ellipse 60% 55% at 50% 42%,rgba(255,255,255,.95) 0%,rgba(255,255,255,0) 70%),radial-gradient(ellipse 70% 60% at 0% 0%,rgba(174,179,195,.75) 0%,rgba(174,179,195,0) 65%),radial-gradient(ellipse 75% 65% at 100% 100%,rgba(11,23,69,.22) 0%,rgba(11,23,69,0) 60%),linear-gradient(118deg,#c3c7d2 0%,#e6e8ee 28%,#f7f8fb 50%,#e2e5ec 72%,#aeb3c3 100%);background-size:100% 100%,100% 100%,100% 100%,220% 220%;color:var(--ink);cursor:pointer;animation:girisParilti 4.4s ease-in-out forwards,girisCik .7s cubic-bezier(.7,0,.3,1) 3.9s forwards}
@@ -306,6 +294,18 @@ html.girisli body{overflow:hidden}
 @keyframes girisYazi{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 @keyframes girisCizgi{to{width:72px}}
 @keyframes girisCik{to{transform:translateY(-100%);visibility:hidden}}
+/* mobil-duzeltme */
+@media (max-width:720px){
+  html,body{overflow-x:hidden}
+  header.nav .wrap{min-height:0;padding-top:10px}
+  nav.links{width:100%;overflow-x:auto;flex-wrap:nowrap;justify-content:flex-start;gap:22px;padding-bottom:10px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  nav.links::-webkit-scrollbar{display:none}
+  nav.links a{white-space:nowrap;flex:none}
+  .mk-layout{grid-template-columns:minmax(0,1fr)!important}
+  .mk-layout>*{min-width:0}
+  .tbl{overflow-x:auto;max-width:100%}
+  .dlk.odak,.art.odak{left:0!important;right:0;top:0!important;transform:none!important;width:100vw!important;max-height:100vh;animation:none!important}
+}
 </style>
 <script>
 try{if(!sessionStorage.getItem('giris')&&!matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('girisli')}}catch(e){}
@@ -332,7 +332,9 @@ try{if(!sessionStorage.getItem('giris')&&!matchMedia('(prefers-reduced-motion: r
     <a href="#hakkimda">Hakkımda</a>
     <div class="dd"><a href="#calisma-alanlari">Çalışma Alanları</a><div class="dd-m"><a href="#alan-ticaret">Ticaret ve Şirketler Hukuku</a><a href="#alan-is">İş ve Sosyal Güvenlik Hukuku</a><a href="#alan-trafik">Trafik Kazası ve Tazminat</a><a href="#alan-icra">İcra ve İflas Hukuku</a><a href="#alan-ceza">Ceza Hukuku</a><a href="#alan-aile">Aile Hukuku</a><a href="#alan-gayrimenkul">Gayrimenkul Hukuku</a><a href="#alan-saglik">Sağlık Hukuku ve Malpraktis</a></div></div>
     <div class="dd"><a href="makaleler.html">Makaleler</a><div class="dd-m"><a href="makaleler.html#ticaret">Ticaret ve Şirketler Hukuku</a><a href="makaleler.html#is">İş ve Sosyal Güvenlik Hukuku</a><a href="makaleler.html#trafik">Trafik Kazası ve Tazminat</a><a href="makaleler.html#icra">İcra ve İflas Hukuku</a><a href="makaleler.html#ceza">Ceza Hukuku</a><a href="makaleler.html#aile">Aile Hukuku</a><a href="makaleler.html#gayrimenkul">Gayrimenkul Hukuku</a><a href="makaleler.html#saglik">Sağlık Hukuku ve Malpraktis</a></div></div>
-    <div class="dd"><a href="dilekceler.html">Dilekçeler</a><div class="dd-m"><a href="dilekceler.html#trafik">Trafik Kazası ve Tazminat</a><a href="dilekceler.html#icra">İcra ve İflas Hukuku</a><a href="dilekceler.html#tuketici">Tüketici Hukuku</a><a href="dilekceler.html#ceza">Ceza Hukuku</a><a href="dilekceler.html#aile">Aile Hukuku</a><a href="dilekceler.html#tasinmaz">Gayrimenkul Hukuku</a><a href="dilekceler.html#usul">Yargılama Usulü</a></div></div>
+    <div class="dd"><a href="dilekceler.html">Dilekçeler</a><div class="dd-m"><a href="dilekceler.html#ticaret">Ticaret ve Şirketler Hukuku</a>
+<a href="dilekceler.html#is">İş ve Sosyal Güvenlik Hukuku</a>
+<a href="dilekceler.html#trafik">Trafik Kazası ve Tazminat</a><a href="dilekceler.html#icra">İcra ve İflas Hukuku</a><a href="dilekceler.html#tuketici">Tüketici Hukuku</a><a href="dilekceler.html#ceza">Ceza Hukuku</a><a href="dilekceler.html#aile">Aile Hukuku</a><a href="dilekceler.html#tasinmaz">Gayrimenkul Hukuku</a><a href="dilekceler.html#usul">Yargılama Usulü</a></div></div>
     <a href="guncel.html">Güncel</a>
     <a href="#iletisim">İletişim</a>
     <a href="en.html" lang="en" title="English">EN</a>
@@ -450,7 +452,7 @@ try{if(!sessionStorage.getItem('giris')&&!matchMedia('(prefers-reduced-motion: r
       <div><div class="kicker">03 · Makaleler</div><h2>Hukuki bilgilendirme yazıları</h2></div>
       <a class="btn line" href="makaleler.html">Tüm makaleler</a>
     </div>
-    <div class="teaser"><a class="tz" href="makaleler.html#ticaret"><b>Ticaret ve Şirketler Hukuku</b><span>5 yazı</span></a><a class="tz" href="makaleler.html#is"><b>İş ve Sosyal Güvenlik Hukuku</b><span>3 yazı</span></a><a class="tz" href="makaleler.html#trafik"><b>Trafik Kazası ve Tazminat</b><span>4 yazı</span></a><a class="tz" href="makaleler.html#icra"><b>İcra ve İflas Hukuku</b><span>4 yazı</span></a><a class="tz" href="makaleler.html#ceza"><b>Ceza Hukuku</b><span>6 yazı</span></a><a class="tz" href="makaleler.html#aile"><b>Aile Hukuku</b><span>5 yazı</span></a><a class="tz" href="makaleler.html#gayrimenkul"><b>Gayrimenkul Hukuku</b><span>6 yazı</span></a><a class="tz" href="makaleler.html#saglik"><b>Sağlık Hukuku ve Malpraktis</b><span>1 yazı</span></a></div>
+    <div class="teaser"><a class="tz" href="makaleler.html#ticaret"><b>Ticaret ve Şirketler Hukuku</b><span>6 yazı</span></a><a class="tz" href="makaleler.html#is"><b>İş ve Sosyal Güvenlik Hukuku</b><span>5 yazı</span></a><a class="tz" href="makaleler.html#trafik"><b>Trafik Kazası ve Tazminat</b><span>5 yazı</span></a><a class="tz" href="makaleler.html#icra"><b>İcra ve İflas Hukuku</b><span>7 yazı</span></a><a class="tz" href="makaleler.html#ceza"><b>Ceza Hukuku</b><span>6 yazı</span></a><a class="tz" href="makaleler.html#aile"><b>Aile Hukuku</b><span>5 yazı</span></a><a class="tz" href="makaleler.html#gayrimenkul"><b>Gayrimenkul Hukuku</b><span>6 yazı</span></a><a class="tz" href="makaleler.html#saglik"><b>Sağlık Hukuku ve Malpraktis</b><span>1 yazı</span></a></div>
   </div></section>
 
   <section class="part" id="sss"><div class="wrap">
@@ -635,7 +637,7 @@ function toast(t){var el=document.getElementById('toast');el.textContent=t;el.cl
 /* Dilekçe sayfasından gelindiyse formu doldur */
 (function(){
   var p=new URLSearchParams(location.search).get('dilekce'); if(!p) return;
-  var H={"sigortaya-basvuru": ["Sigorta şirketine başvuru dilekçesi", "Trafik Kazası ve Tazminat"], "odeme-emrine-itiraz": ["Ödeme emrine itiraz dilekçesi", "İcra ve İflas Hukuku"], "tuketici-hakem-heyeti": ["Tüketici hakem heyeti başvuru dilekçesi", "Diğer"], "savciliga-sikayet": ["Cumhuriyet Başsavcılığına şikâyet dilekçesi", "Ceza Hukuku"], "tck136-savunma": ["Kişisel verileri ele geçirme suçunda (TCK 136) esas hakkında savunma dilekçesi", "Ceza Hukuku"], "zarar-giderme-tevdi": ["Etkin pişmanlık için zarar giderme beyanı: IBAN bildirilmesi ve tevdi mahalli tayini talebi", "Ceza Hukuku"], "eski-hale-getirme-istinaf": ["Usulsüz tebligat nedeniyle eski hâle getirme talepli istinaf dilekçesi", "Ceza Hukuku"], "trafik-maddi-hasar-cevap": ["Trafik kazası maddi hasar davasına cevap dilekçesi (yetki itirazı, sigorta ödemelerinin mahsubu)", "Trafik Kazası ve Tazminat"], "onalim-cevap": ["Önalım (şufa) hakkından kaynaklanan tapu iptali ve tescil davasına cevap dilekçesi", "Gayrimenkul Hukuku"], "nafaka-artirim": ["Nafaka artırım dava dilekçesi", "Aile Hukuku"], "tanik-bildirim": ["Tanık bildirim dilekçesi", "Diğer"], "tedbir-uzatma-6284": ["Koruma ve önleyici tedbirin uzatılması talebi (6284)", "Aile Hukuku"], "anlasmali-bosanma": ["Anlaşmalı boşanma dava dilekçesi", "Aile Hukuku"], "bosanma-protokolu": ["Anlaşmalı boşanma protokolü", "Aile Hukuku"]}; var v=H[p]; if(!v) return;
+  var H={"sigortaya-basvuru": ["Sigorta şirketine başvuru dilekçesi", "Trafik Kazası ve Tazminat"], "odeme-emrine-itiraz": ["Ödeme emrine itiraz dilekçesi", "İcra ve İflas Hukuku"], "tuketici-hakem-heyeti": ["Tüketici hakem heyeti başvuru dilekçesi", "Diğer"], "savciliga-sikayet": ["Cumhuriyet Başsavcılığına şikâyet dilekçesi", "Ceza Hukuku"], "tck136-savunma": ["Kişisel verileri ele geçirme suçunda (TCK 136) esas hakkında savunma dilekçesi", "Ceza Hukuku"], "zarar-giderme-tevdi": ["Etkin pişmanlık için zarar giderme beyanı: IBAN bildirilmesi ve tevdi mahalli tayini talebi", "Ceza Hukuku"], "eski-hale-getirme-istinaf": ["Usulsüz tebligat nedeniyle eski hâle getirme talepli istinaf dilekçesi", "Ceza Hukuku"], "trafik-maddi-hasar-cevap": ["Trafik kazası maddi hasar davasına cevap dilekçesi (yetki itirazı, sigorta ödemelerinin mahsubu)", "Trafik Kazası ve Tazminat"], "onalim-cevap": ["Önalım (şufa) hakkından kaynaklanan tapu iptali ve tescil davasına cevap dilekçesi", "Gayrimenkul Hukuku"], "nafaka-artirim": ["Nafaka artırım dava dilekçesi", "Aile Hukuku"], "tanik-bildirim": ["Tanık bildirim dilekçesi", "Diğer"], "tedbir-uzatma-6284": ["Koruma ve önleyici tedbirin uzatılması talebi (6284)", "Aile Hukuku"], "anlasmali-bosanma": ["Anlaşmalı boşanma dava dilekçesi", "Aile Hukuku"], "bosanma-protokolu": ["Anlaşmalı boşanma protokolü", "Aile Hukuku"], "usulsuz-tebligat-istinaf": ["Usulsüz tebligat şikâyetini kabul eden icra hukuk mahkemesi kararına karşı istinaf dilekçesi (sigortasız çalışana yapılan tebligat)", "İcra ve İflas Hukuku"], "usulsuz-tebligat-sikayet-cevap": ["Usulsüz tebligat şikâyetine karşı alacaklı vekilinin cevap dilekçesi", "İcra ve İflas Hukuku"], "faize-faiz-sikayet": ["Faize faiz yürütülmesi nedeniyle takip talebinin ve ödeme emrinin düzeltilmesi (şikâyet) dilekçesi", "İcra ve İflas Hukuku"], "ihtiyati-haciz-talebi": ["Fatura ve irsaliyeye dayalı ihtiyati haciz talep dilekçesi", "İcra ve İflas Hukuku"], "iscilik-ek-rapora-itiraz": ["İşçilik alacağı davasında bilirkişi ek raporuna itiraz ve beyan dilekçesi (devamsızlık, giydirilmiş ücret, yıllık izin, fazla çalışma)", "İş ve Sosyal Güvenlik Hukuku"], "delil-avansi-kesin-sure": ["Kesin süre içinde delil avansı yatırılmaması: yeni süre verilmesine itiraz ve bilirkişi deliline dayanmaktan vazgeçilmiş sayılma beyanı", "Diğer"], "iscilik-ek-rapora-itiraz-fesih": ["İşçilik alacağı davasında bilirkişi ek raporuna itiraz (fesih tarihi, çalışma sürelerinin birleştirilmesi, izin ve ücret alacağı)", "İş ve Sosyal Güvenlik Hukuku"], "cmr-yangin-bilirkisi-itiraz": ["Uluslararası karayolu taşımasında (CMR) yangın hasarı: bilirkişi heyet raporuna itiraz ve ek rapor talebi", "Ticaret ve Şirketler Hukuku"], "trafik-bedensel-zarar-cevap": ["Trafik kazasında bedensel zarar ve manevi tazminat davasına işleten ve sürücü adına cevap dilekçesi", "Trafik Kazası ve Tazminat"]}; var v=H[p]; if(!v) return;
   var k=document.getElementById('f-konu'), m=document.getElementById('f-mesaj');
   if(k){ for(var i=0;i<k.options.length;i++){ if(k.options[i].text===v[1]){k.selectedIndex=i;break;} } }
   if(m && !m.value){ m.value='"'+v[0]+'" örneğinin tamamı ve dosyam hakkında görüşmek istiyorum.\n\nKısaca durumum: '; }
