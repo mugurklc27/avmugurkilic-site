@@ -258,6 +258,25 @@ body::before{
 .ata blockquote{margin:0;font:500 italic clamp(1.25rem,2.1vw,1.65rem)/1.45 var(--display);color:var(--ink)}
 .ata cite{display:block;margin-top:16px;font:600 .72rem/1.4 var(--body);letter-spacing:.14em;text-transform:uppercase;font-style:normal;color:var(--muted)}
 @media (max-width:720px){.ata{grid-template-columns:1fr}.ata img{max-width:240px}}
+/* acilir-menu */
+.dd{position:relative;display:flex;align-items:center}
+.dd>a::after{content:"";display:inline-block;width:5px;height:5px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);margin:0 0 3px 7px;opacity:.6}
+.dd-m{position:absolute;top:100%;left:-18px;min-width:270px;padding:10px 0;margin-top:10px;background:#fbfbfd;border:1px solid var(--rule);border-top:3px solid var(--ink);box-shadow:0 24px 48px -28px rgba(11,23,69,.55);display:grid;opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .18s,transform .18s,visibility .18s;z-index:20}
+.dd-m::before{content:"";position:absolute;left:0;right:0;top:-16px;height:16px}
+.dd:hover .dd-m,.dd:focus-within .dd-m{opacity:1;visibility:visible;transform:none}
+nav.links .dd-m a{padding:9px 20px;border:0;color:var(--muted);font-size:.88rem;white-space:nowrap}
+nav.links .dd-m a:hover{color:var(--ink);background:rgba(11,23,69,.05);border:0}
+.area{scroll-margin-top:100px}
+.dd.acik .dd-m{opacity:1;visibility:visible;transform:none}
+@media (max-width:720px){
+  .dd{position:static}
+  .dd-m{left:0;right:0;top:100%;min-width:0;margin-top:0;border-left:0;border-right:0;padding:6px 0;max-height:70vh;overflow-y:auto}
+  .dd-m::before{display:none}
+  .dd:hover .dd-m,.dd:focus-within .dd-m{opacity:0;visibility:hidden}
+  .dd.acik .dd-m{opacity:1;visibility:visible;transform:none}
+  nav.links .dd-m a{padding:12px clamp(18px,4vw,44px);white-space:normal;font-size:.95rem}
+  nav.links .dd.acik>a{color:var(--ink);border-color:var(--ink)}
+}
 /* mobil-duzeltme */
 @media (max-width:720px){
   html,body{overflow-x:hidden}
@@ -272,11 +291,12 @@ body::before{
 }
 /* giris-animasyonu */
 #giris{display:none}
-html.girisli #giris{display:grid;position:fixed;inset:0;z-index:200;place-content:center;justify-items:center;gap:22px;background:radial-gradient(ellipse 60% 55% at 50% 42%,rgba(255,255,255,.95) 0%,rgba(255,255,255,0) 70%),radial-gradient(ellipse 70% 60% at 0% 0%,rgba(174,179,195,.75) 0%,rgba(174,179,195,0) 65%),radial-gradient(ellipse 75% 65% at 100% 100%,rgba(11,23,69,.22) 0%,rgba(11,23,69,0) 60%),linear-gradient(118deg,#c3c7d2 0%,#e6e8ee 28%,#f7f8fb 50%,#e2e5ec 72%,#aeb3c3 100%);background-size:100% 100%,100% 100%,100% 100%,220% 220%;color:var(--ink);cursor:pointer;animation:girisParilti 3s ease-in-out forwards,girisCik .7s cubic-bezier(.7,0,.3,1) 2.3s forwards}
+html.girisli #giris{display:grid;position:fixed;inset:0;z-index:200;place-content:center;justify-items:center;gap:22px;background:radial-gradient(ellipse 60% 55% at 50% 42%,rgba(255,255,255,.95) 0%,rgba(255,255,255,0) 70%),radial-gradient(ellipse 70% 60% at 0% 0%,rgba(174,179,195,.75) 0%,rgba(174,179,195,0) 65%),radial-gradient(ellipse 75% 65% at 100% 100%,rgba(11,23,69,.22) 0%,rgba(11,23,69,0) 60%),linear-gradient(118deg,#c3c7d2 0%,#e6e8ee 28%,#f7f8fb 50%,#e2e5ec 72%,#aeb3c3 100%);background-size:100% 100%,100% 100%,100% 100%,220% 220%;color:var(--ink);cursor:pointer;animation:girisParilti 4.4s ease-in-out forwards,girisCik .7s cubic-bezier(.7,0,.3,1) 3.9s forwards}
 html.girisli body{overflow:hidden}
 #giris img{height:118px;width:auto;opacity:0;transform:translateY(14px) scale(.94);animation:girisLogo .9s cubic-bezier(.2,.7,.2,1) .15s forwards}
 #giris .gad{font:600 clamp(1.9rem,5vw,3rem)/1.1 var(--display);letter-spacing:.01em;text-align:center;opacity:0;animation:girisYazi .8s ease .75s forwards}
 #giris .gun{font:500 .76rem/1 var(--body);letter-spacing:.32em;text-transform:uppercase;color:var(--muted);opacity:0;animation:girisYazi .8s ease 1.1s forwards}
+#giris .gsoz{margin:6px 0 0;max-width:34ch;padding:0 24px;text-align:center;font:italic 400 clamp(1.05rem,2.6vw,1.35rem)/1.45 var(--display);color:var(--ink);opacity:0;animation:girisYazi 1s ease 1.75s forwards}
 #giris .gcizgi{width:0;height:3px;background:var(--ink);animation:girisCizgi .8s ease 1.35s forwards}
 #giris::before,#giris::after{content:"";position:absolute;left:0;height:14px;width:0;background:var(--ink);animation:girisSerit .9s cubic-bezier(.2,.7,.2,1) .2s forwards}
 #giris::before{top:0}#giris::after{bottom:0;left:auto;right:0}
@@ -310,9 +330,9 @@ try{if(!sessionStorage.getItem('giris')&&!matchMedia('(prefers-reduced-motion: r
   <a class="mark" href="#"><img src="logo.png" alt="" width="38" height="57"><span class="mt"><b>Mustafa Uğur KILIÇ</b><span>Avukat · Gaziantep</span></span></a>
   <nav class="links" aria-label="Bölümler">
     <a href="#hakkimda">Hakkımda</a>
-    <a href="#calisma-alanlari">Çalışma Alanları</a>
-    <a href="makaleler.html">Makaleler</a>
-    <a href="dilekceler.html">Dilekçeler</a>
+    <div class="dd"><a href="#calisma-alanlari">Çalışma Alanları</a><div class="dd-m"><a href="#alan-ticaret">Ticaret ve Şirketler Hukuku</a><a href="#alan-is">İş ve Sosyal Güvenlik Hukuku</a><a href="#alan-trafik">Trafik Kazası ve Tazminat</a><a href="#alan-icra">İcra ve İflas Hukuku</a><a href="#alan-ceza">Ceza Hukuku</a><a href="#alan-aile">Aile Hukuku</a><a href="#alan-gayrimenkul">Gayrimenkul Hukuku</a><a href="#alan-saglik">Sağlık Hukuku ve Malpraktis</a></div></div>
+    <div class="dd"><a href="makaleler.html">Makaleler</a><div class="dd-m"><a href="makaleler.html#ticaret">Ticaret ve Şirketler Hukuku</a><a href="makaleler.html#is">İş ve Sosyal Güvenlik Hukuku</a><a href="makaleler.html#trafik">Trafik Kazası ve Tazminat</a><a href="makaleler.html#icra">İcra ve İflas Hukuku</a><a href="makaleler.html#ceza">Ceza Hukuku</a><a href="makaleler.html#aile">Aile Hukuku</a><a href="makaleler.html#gayrimenkul">Gayrimenkul Hukuku</a><a href="makaleler.html#saglik">Sağlık Hukuku ve Malpraktis</a></div></div>
+    <div class="dd"><a href="dilekceler.html">Dilekçeler</a><div class="dd-m"><a href="dilekceler.html#trafik">Trafik Kazası ve Tazminat</a><a href="dilekceler.html#icra">İcra ve İflas Hukuku</a><a href="dilekceler.html#tuketici">Tüketici Hukuku</a><a href="dilekceler.html#ceza">Ceza Hukuku</a><a href="dilekceler.html#aile">Aile Hukuku</a><a href="dilekceler.html#tasinmaz">Gayrimenkul Hukuku</a><a href="dilekceler.html#usul">Yargılama Usulü</a></div></div>
     <a href="guncel.html">Güncel</a>
     <a href="#iletisim">İletişim</a>
     <a href="en.html" lang="en" title="English">EN</a>
@@ -366,56 +386,56 @@ try{if(!sessionStorage.getItem('giris')&&!matchMedia('(prefers-reduced-motion: r
       <p>Aşağıdaki alanlarda dava ve takip süreçleri yürütülmekte, hukuki danışmanlık verilmektedir.</p>
     </div>
     <div class="areas">
-      <article class="area">
+      <article class="area" id="alan-ticaret">
         <div class="no">01</div>
         <h3>Ticaret ve Şirketler Hukuku</h3>
         <p>Şirketlerin günlük hukuki ihtiyaçları, ulusal ve uluslararası ticari ilişkiler.</p>
         <ul><li>Şirket danışmanlığı</li><li>Ticari ve uluslararası satış sözleşmeleri</li><li>Taşıma ve ticari alacak uyuşmazlıkları</li></ul>
         <div class="law">6102 s. Türk Ticaret Kanunu · 6098 s. TBK</div>
       </article>
-      <article class="area">
+      <article class="area" id="alan-is">
         <div class="no">02</div>
         <h3>İş ve Sosyal Güvenlik Hukuku</h3>
         <p>İşçi ve işveren uyuşmazlıkları, dava şartı arabuluculuk ve SGK ile ilgili davalar.</p>
         <ul><li>İşçilik alacakları ve işe iade</li><li>SGK işlemlerine karşı davalar</li><li>İşveren danışmanlığı</li></ul>
         <div class="law">4857 s. İş Kanunu · 5510 s. SSGSS Kanunu · 7036 s. İş Mah. K.</div>
       </article>
-      <article class="area">
+      <article class="area" id="alan-trafik">
         <div class="no">03</div>
         <h3>Trafik Kazası ve Tazminat</h3>
         <p>Trafik kazalarından doğan maddi ve manevi zararlar ile sigorta uyuşmazlıkları.</p>
         <ul><li>Değer kaybı ve araç hasarı</li><li>Destekten yoksun kalma tazminatı</li><li>Kusur raporlarına itiraz</li></ul>
         <div class="law">2918 s. Karayolları Trafik Kanunu · 6098 s. TBK</div>
       </article>
-      <article class="area">
+      <article class="area" id="alan-icra">
         <div class="no">04</div>
         <h3>İcra ve İflas Hukuku</h3>
         <p>Alacağın tahsiline yönelik takipler ve bu takiplerden doğan davalar.</p>
         <ul><li>İlamlı ve ilamsız takipler</li><li>İtirazın iptali ve kaldırılması</li><li>Haciz ve satış işlemleri</li></ul>
         <div class="law">2004 s. İcra ve İflas Kanunu</div>
       </article>
-      <article class="area">
+      <article class="area" id="alan-ceza">
         <div class="no">05</div>
         <h3>Ceza Hukuku</h3>
         <p>Soruşturma ve kovuşturma aşamalarında şüpheli, sanık, mağdur ve katılan vekilliği.</p>
         <ul><li>Müdafilik ve katılan vekilliği</li><li>Tutuklama ve adli kontrole itiraz</li><li>İstinaf ve temyiz süreçleri</li></ul>
         <div class="law">5237 s. Türk Ceza Kanunu · 5271 s. CMK</div>
       </article>
-      <article class="area">
+      <article class="area" id="alan-aile">
         <div class="no">06</div>
         <h3>Aile Hukuku</h3>
         <p>Boşanma ve sonuçlarına ilişkin davalar ile aile ilişkilerinden doğan uyuşmazlıklar.</p>
         <ul><li>Boşanma, velayet ve kişisel ilişki</li><li>Nafaka ve nafaka artırımı</li><li>Mal rejiminin tasfiyesi</li></ul>
         <div class="law">4721 s. Türk Medeni Kanunu · 4787 s. Aile Mahkemeleri K.</div>
       </article>
-      <article class="area">
+      <article class="area" id="alan-gayrimenkul">
         <div class="no">07</div>
         <h3>Gayrimenkul Hukuku</h3>
         <p>Taşınmaz mülkiyeti, kira ilişkileri ve tapu işlemlerinden doğan uyuşmazlıklar.</p>
         <ul><li>Kira tespiti ve tahliye</li><li>Tapu iptal ve tescil</li><li>Ortaklığın giderilmesi</li></ul>
         <div class="law">4721 s. Türk Medeni Kanunu · 6098 s. TBK</div>
       </article>
-      <article class="area">
+      <article class="area" id="alan-saglik">
         <div class="no">08</div>
         <h3>Sağlık Hukuku ve Malpraktis</h3>
         <p>Tıbbi müdahaleden doğan zararlar nedeniyle hekim, özel sağlık kuruluşu veya idare aleyhine açılan davalar.</p>
@@ -574,7 +594,7 @@ try{if(!sessionStorage.getItem('giris')&&!matchMedia('(prefers-reduced-motion: r
   <div class="cols">
     <div class="fm"><img src="logo.png" alt="" width="38" height="57" class="flogo"><b>Avukat Mustafa Uğur KILIÇ</b>Şehitkamil / Gaziantep</div>
     <div><h4>Sayfalar</h4><ul><li><a href="#hakkimda">Hakkımda</a></li><li><a href="#calisma-alanlari">Çalışma Alanları</a></li><li><a href="makaleler.html">Makaleler</a></li><li><a href="#sss">Sıkça Sorulan Sorular</a></li><li><a href="#iletisim">İletişim</a></li></ul></div>
-    <div><h4>Faydalı bağlantılar</h4><ul><li><a href="guncel.html">Hukuki gelişmeler</a></li><li><a href="vekaletname.html">Vekâletname rehberi</a></li><li><a href="dilekceler.html">Örnek dilekçeler</a></li><li><a href="https://vatandas.uyap.gov.tr">UYAP Vatandaş Portalı</a></li><li><a href="https://www.turkiye.gov.tr">e-Devlet</a></li><li><a href="https://www.barobirlik.org.tr">Türkiye Barolar Birliği</a></li><li><a href="en.html">English</a></li></ul></div><div><h4>İletişim</h4><ul><li><a href="mailto:info@avmugurkilic.com">info@avmugurkilic.com</a></li><li>KEP: <a href="mailto:mustafaugur.kilic@hs01.kep.tr">mustafaugur.kilic@hs01.kep.tr</a></li><li>Şehitkamil / Gaziantep</li></ul></div>
+    <div><h4>Faydalı bağlantılar</h4><ul><li><a href="guncel.html">Hukuki gelişmeler</a></li><li><a href="vekaletname.html">Vekâletname rehberi</a></li><li><a href="dilekceler.html">Örnek dilekçeler</a></li><li><a href="https://vatandas.uyap.gov.tr">UYAP Vatandaş Portalı</a></li><li><a href="https://www.turkiye.gov.tr">e-Devlet</a></li><li><a href="https://www.barobirlik.org.tr">Türkiye Barolar Birliği</a></li><li><a href="en.html">English</a></li></ul></div><div><h4>İletişim</h4><ul><li><a href="mailto:info@avmugurkilic.com">info@avmugurkilic.com</a></li><li>KEP: <a href="mailto:mustafaugur.kilic@hs01.kep.tr">mustafaugur.kilic@hs01.kep.tr</a></li><li>Pancarlı Mah. 58127 Nolu Sk.<br>Erguvan Apt. K:2 D:3<br>Şehitkamil / Gaziantep</li></ul></div>
   </div>
   <div class="legal"><p>Bu site yalnızca bilgilendirme amaçlıdır; hukuki görüş niteliği taşımaz ve avukat-müvekkil ilişkisi kurmaz.</p><p><a href="#yasal-uyari">Yasal Uyarı</a> &nbsp;·&nbsp; <a href="#kvkk">KVKK Aydınlatma Metni</a> &nbsp;·&nbsp; © 2026 Avukat Mustafa Uğur KILIÇ</p></div>
 </div></footer>
@@ -628,7 +648,22 @@ function toast(t){var el=document.getElementById('toast');el.textContent=t;el.cl
   g.addEventListener('animationend',function(e){if(e.animationName==='girisCik')bitir();});
   g.addEventListener('click',bitir);
   document.addEventListener('keydown',function(){if(h.classList.contains('girisli'))bitir();},{once:true});
-  setTimeout(bitir,3600);
+  setTimeout(bitir,5200);
+})();
+</script>
+<script>
+/* acilir-menu: dokunmatik ekranda ilk dokunus listeyi acar */
+(function(){
+  var mq=matchMedia('(max-width:720px), (hover:none)');
+  function kapat(){document.querySelectorAll('.dd.acik').forEach(function(x){x.classList.remove('acik');});}
+  document.querySelectorAll('.dd>a').forEach(function(a){
+    a.addEventListener('click',function(e){
+      if(!mq.matches)return; var d=a.parentNode;
+      if(!d.classList.contains('acik')){e.preventDefault();kapat();d.classList.add('acik');}
+    });
+  });
+  document.querySelectorAll('.dd-m a').forEach(function(a){a.addEventListener('click',kapat);});
+  document.addEventListener('click',function(e){if(!e.target.closest('.dd'))kapat();});
 })();
 </script>
 </body>

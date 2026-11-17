@@ -273,6 +273,24 @@ body::before{
   body::before{background-size:auto clamp(200px,38vh,360px);opacity:.045}
 }
 @media print{body::before{display:none}}
+/* acilir-menu */
+.dd{position:relative;display:flex;align-items:center}
+.dd>a::after{content:"";display:inline-block;width:5px;height:5px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);margin:0 0 3px 7px;opacity:.6}
+.dd-m{position:absolute;top:100%;left:-18px;min-width:270px;padding:10px 0;margin-top:10px;background:#fbfbfd;border:1px solid var(--rule);border-top:3px solid var(--ink);box-shadow:0 24px 48px -28px rgba(11,23,69,.55);display:grid;opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .18s,transform .18s,visibility .18s;z-index:20}
+.dd-m::before{content:"";position:absolute;left:0;right:0;top:-16px;height:16px}
+.dd:hover .dd-m,.dd:focus-within .dd-m{opacity:1;visibility:visible;transform:none}
+nav.links .dd-m a{padding:9px 20px;border:0;color:var(--muted);font-size:.88rem;white-space:nowrap}
+nav.links .dd-m a:hover{color:var(--ink);background:rgba(11,23,69,.05);border:0}
+.dd.acik .dd-m{opacity:1;visibility:visible;transform:none}
+@media (max-width:720px){
+  .dd{position:static}
+  .dd-m{left:0;right:0;top:100%;min-width:0;margin-top:0;border-left:0;border-right:0;padding:6px 0;max-height:70vh;overflow-y:auto}
+  .dd-m::before{display:none}
+  .dd:hover .dd-m,.dd:focus-within .dd-m{opacity:0;visibility:hidden}
+  .dd.acik .dd-m{opacity:1;visibility:visible;transform:none}
+  nav.links .dd-m a{padding:12px clamp(18px,4vw,44px);white-space:normal;font-size:.95rem}
+  nav.links .dd.acik>a{color:var(--ink);border-color:var(--ink)}
+}
 /* mobil-duzeltme */
 @media (max-width:720px){
   html,body{overflow-x:hidden}
@@ -299,9 +317,9 @@ body::before{
   <a class="mark" href="index.html"><img src="logo.png" alt="" width="38" height="57"><span class="mt"><b>Mustafa Uğur KILIÇ</b><span>Avukat · Gaziantep</span></span></a>
   <nav class="links" aria-label="Bölümler">
     <a href="index.html#hakkimda">Hakkımda</a>
-    <a href="index.html#calisma-alanlari">Çalışma Alanları</a>
-    <a href="makaleler.html">Makaleler</a>
-    <a href="dilekceler.html">Dilekçeler</a>
+    <div class="dd"><a href="index.html#calisma-alanlari">Çalışma Alanları</a><div class="dd-m"><a href="index.html#alan-ticaret">Ticaret ve Şirketler Hukuku</a><a href="index.html#alan-is">İş ve Sosyal Güvenlik Hukuku</a><a href="index.html#alan-trafik">Trafik Kazası ve Tazminat</a><a href="index.html#alan-icra">İcra ve İflas Hukuku</a><a href="index.html#alan-ceza">Ceza Hukuku</a><a href="index.html#alan-aile">Aile Hukuku</a><a href="index.html#alan-gayrimenkul">Gayrimenkul Hukuku</a><a href="index.html#alan-saglik">Sağlık Hukuku ve Malpraktis</a></div></div>
+    <div class="dd"><a href="makaleler.html">Makaleler</a><div class="dd-m"><a href="makaleler.html#ticaret">Ticaret ve Şirketler Hukuku</a><a href="makaleler.html#is">İş ve Sosyal Güvenlik Hukuku</a><a href="makaleler.html#trafik">Trafik Kazası ve Tazminat</a><a href="makaleler.html#icra">İcra ve İflas Hukuku</a><a href="makaleler.html#ceza">Ceza Hukuku</a><a href="makaleler.html#aile">Aile Hukuku</a><a href="makaleler.html#gayrimenkul">Gayrimenkul Hukuku</a><a href="makaleler.html#saglik">Sağlık Hukuku ve Malpraktis</a></div></div>
+    <div class="dd"><a href="dilekceler.html">Dilekçeler</a><div class="dd-m"><a href="dilekceler.html#trafik">Trafik Kazası ve Tazminat</a><a href="dilekceler.html#icra">İcra ve İflas Hukuku</a><a href="dilekceler.html#tuketici">Tüketici Hukuku</a><a href="dilekceler.html#ceza">Ceza Hukuku</a><a href="dilekceler.html#aile">Aile Hukuku</a><a href="dilekceler.html#tasinmaz">Gayrimenkul Hukuku</a><a href="dilekceler.html#usul">Yargılama Usulü</a></div></div>
     <a href="guncel.html" aria-current="page" style="color:var(--ink);border-color:var(--ink)">Güncel</a>
     <a href="index.html#iletisim">İletişim</a>
     <a href="en.html" lang="en" title="English">EN</a>
@@ -366,7 +384,7 @@ body::before{
   <div class="cols">
     <div class="fm"><img src="logo.png" alt="" width="38" height="57" class="flogo"><b>Avukat Mustafa Uğur KILIÇ</b>Şehitkamil / Gaziantep</div>
     <div><h4>Sayfalar</h4><ul><li><a href="index.html#hakkimda">Hakkımda</a></li><li><a href="index.html#calisma-alanlari">Çalışma Alanları</a></li><li><a href="makaleler.html">Makaleler</a></li><li><a href="index.html#iletisim">İletişim</a></li></ul></div>
-    <div><h4>Faydalı bağlantılar</h4><ul><li><a href="guncel.html">Hukuki gelişmeler</a></li><li><a href="vekaletname.html">Vekâletname rehberi</a></li><li><a href="dilekceler.html">Örnek dilekçeler</a></li><li><a href="https://vatandas.uyap.gov.tr">UYAP Vatandaş Portalı</a></li><li><a href="https://www.turkiye.gov.tr">e-Devlet</a></li><li><a href="https://www.barobirlik.org.tr">Türkiye Barolar Birliği</a></li><li><a href="en.html">English</a></li></ul></div><div><h4>İletişim</h4><ul><li><a href="mailto:info@avmugurkilic.com">info@avmugurkilic.com</a></li><li>KEP: <a href="mailto:mustafaugur.kilic@hs01.kep.tr">mustafaugur.kilic@hs01.kep.tr</a></li><li>Şehitkamil / Gaziantep</li></ul></div>
+    <div><h4>Faydalı bağlantılar</h4><ul><li><a href="guncel.html">Hukuki gelişmeler</a></li><li><a href="vekaletname.html">Vekâletname rehberi</a></li><li><a href="dilekceler.html">Örnek dilekçeler</a></li><li><a href="https://vatandas.uyap.gov.tr">UYAP Vatandaş Portalı</a></li><li><a href="https://www.turkiye.gov.tr">e-Devlet</a></li><li><a href="https://www.barobirlik.org.tr">Türkiye Barolar Birliği</a></li><li><a href="en.html">English</a></li></ul></div><div><h4>İletişim</h4><ul><li><a href="mailto:info@avmugurkilic.com">info@avmugurkilic.com</a></li><li>KEP: <a href="mailto:mustafaugur.kilic@hs01.kep.tr">mustafaugur.kilic@hs01.kep.tr</a></li><li>Pancarlı Mah. 58127 Nolu Sk.<br>Erguvan Apt. K:2 D:3<br>Şehitkamil / Gaziantep</li></ul></div>
   </div>
   <div class="legal"><p>Bu site yalnızca bilgilendirme amaçlıdır; hukuki görüş niteliği taşımaz ve avukat-müvekkil ilişkisi kurmaz.</p><p><a href="index.html#yasal-uyari">Yasal Uyarı</a> &nbsp;·&nbsp; <a href="index.html#kvkk">KVKK Aydınlatma Metni</a> &nbsp;·&nbsp; © 2026 Avukat Mustafa Uğur KILIÇ</p></div>
 </div></footer>
@@ -390,6 +408,21 @@ document.querySelectorAll('.fchip').forEach(function(b){b.addEventListener('clic
     document.addEventListener(tur,function(e){ if(!formIci(e.target)) e.preventDefault(); });
   });
   document.addEventListener('contextmenu',function(e){ if(!formIci(e.target)) e.preventDefault(); });
+})();
+</script>
+<script>
+/* acilir-menu: dokunmatik ekranda ilk dokunus listeyi acar */
+(function(){
+  var mq=matchMedia('(max-width:720px), (hover:none)');
+  function kapat(){document.querySelectorAll('.dd.acik').forEach(function(x){x.classList.remove('acik');});}
+  document.querySelectorAll('.dd>a').forEach(function(a){
+    a.addEventListener('click',function(e){
+      if(!mq.matches)return; var d=a.parentNode;
+      if(!d.classList.contains('acik')){e.preventDefault();kapat();d.classList.add('acik');}
+    });
+  });
+  document.querySelectorAll('.dd-m a').forEach(function(a){a.addEventListener('click',kapat);});
+  document.addEventListener('click',function(e){if(!e.target.closest('.dd'))kapat();});
 })();
 </script>
 </body>
