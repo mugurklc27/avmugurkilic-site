@@ -291,18 +291,6 @@ nav.links .dd-m a:hover{color:var(--ink);background:rgba(11,23,69,.05);border:0}
   nav.links .dd-m a{padding:12px clamp(18px,4vw,44px);white-space:normal;font-size:.95rem}
   nav.links .dd.acik>a{color:var(--ink);border-color:var(--ink)}
 }
-/* mobil-duzeltme */
-@media (max-width:720px){
-  html,body{overflow-x:clip}
-  header.nav .wrap{min-height:0;padding-top:10px}
-  nav.links{width:100%;overflow-x:auto;flex-wrap:nowrap;justify-content:flex-start;gap:22px;padding-bottom:10px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-  nav.links::-webkit-scrollbar{display:none}
-  nav.links a{white-space:nowrap;flex:none}
-  .mk-layout{grid-template-columns:minmax(0,1fr)!important}
-  .mk-layout>*{min-width:0}
-  .tbl{overflow-x:auto;max-width:100%}
-  .dlk.odak,.art.odak{left:0!important;right:0;top:0!important;transform:none!important;width:100vw!important;max-height:100vh;animation:none!important}
-}
 </style>
 <style id="ks-css">
 .ks{display:none}
@@ -322,30 +310,16 @@ nav.links .dd-m a:hover{color:var(--ink);background:rgba(11,23,69,.05);border:0}
 }
 @media (min-width:1520px) and (prefers-reduced-motion:reduce){.ks-v{overflow-y:auto}.ks-l{animation:none}.ks-l[aria-hidden]{display:none}}
 </style>
-<style id="dil-css">
-header.nav nav.links{margin-inline-start:auto}
-.dil{position:relative;margin-inline-start:22px;font:500 .86rem/1 var(--body)}
-.dil summary{list-style:none;display:flex;align-items:center;gap:8px;cursor:pointer;padding:8px 10px;border:1px solid var(--rule);background:rgba(255,255,255,.55);color:var(--ink);user-select:none;-webkit-user-select:none}
-.dil summary::-webkit-details-marker{display:none}
-.dil summary::after{content:"";width:5px;height:5px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);margin:-3px 2px 0;opacity:.6}
-.dil[open] summary{border-color:var(--ink)}
-.dil-k{letter-spacing:.06em}
-.dil-m{position:absolute;top:calc(100% + 8px);inset-inline-end:0;min-width:180px;padding:6px 0;background:#fbfbfd;border:1px solid var(--rule);border-top:3px solid var(--ink);box-shadow:0 24px 48px -28px rgba(11,23,69,.55);display:grid;z-index:25}
-.dil-m a{display:flex;align-items:center;gap:12px;padding:11px 16px;text-decoration:none;color:var(--muted);font-size:.92rem;border:0}
-.dil-m a:hover{background:rgba(11,23,69,.05);color:var(--ink)}
-.dil-m a[aria-current]{color:var(--ink);font-weight:600}
-.dil-m a[lang=ar] span{font-family:"IBM Plex Sans Arabic",Tahoma,sans-serif}
-.flag{display:block;flex:none;width:21px;height:14px;box-shadow:0 0 0 1px rgba(11,23,69,.18)}
-.flag-ar{display:grid;place-items:center;background:var(--ink);color:#fff;font:600 .72rem/1 "IBM Plex Sans Arabic",Tahoma,sans-serif}
-@media (max-width:720px){
-  header.nav .mark{order:1}
-  .dil{order:2;margin-inline-start:auto}
-  header.nav nav.links{order:3;margin-inline-start:0}
-  .dil summary{padding:8px}
-  .dil-k{display:none}
-}
+<style id="py-css">
+.gl-pay{display:none;flex-wrap:wrap;gap:8px;margin-top:14px}
+html.yon .gl-pay{display:flex}
+.gl-pay button{font:500 .8rem/1 var(--body);padding:9px 12px;border:1px solid var(--rule);background:#fff;color:var(--ink);cursor:pointer}
+.gl-pay button:hover{border-color:var(--ink)}
+.gl-pay .py-p{background:var(--ink);color:#fff;border-color:var(--ink)}
+.gl:target{box-shadow:0 0 0 2px var(--ink)}
+.py-t{position:fixed;left:50%;bottom:28px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 16px;font-size:.88rem;z-index:300;opacity:0;transition:opacity .2s;pointer-events:none}
+.py-t.on{opacity:1}
 </style>
-<script>document.addEventListener('click',function(e){document.querySelectorAll('details.dil[open]').forEach(function(d){if(!d.contains(e.target))d.removeAttribute('open');});});document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('details.dil[open]').forEach(function(d){d.removeAttribute('open');});});</script>
 </head>
 <body>
 <a class="skip" href="#icerik">İçeriğe geç</a>
@@ -366,8 +340,8 @@ header.nav nav.links{margin-inline-start:auto}
 <a href="dilekceler.html#trafik">Trafik Kazası ve Tazminat</a><a href="dilekceler.html#icra">İcra ve İflas Hukuku</a><a href="dilekceler.html#tuketici">Tüketici Hukuku</a><a href="dilekceler.html#ceza">Ceza Hukuku</a><a href="dilekceler.html#aile">Aile Hukuku</a><a href="dilekceler.html#tasinmaz">Gayrimenkul Hukuku</a><a href="dilekceler.html#usul">Yargılama Usulü</a></div></div>
     <a href="guncel.html" aria-current="page" style="color:var(--ink);border-color:var(--ink)">Güncel</a>
     <a href="index.html#iletisim">İletişim</a>
+    <a href="en.html" lang="en" title="English">EN</a>
   </nav>
-  <details class="dil"><summary aria-label="Dil seçimi"><svg class="flag" viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#E30A17"/><circle cx="10.6" cy="10" r="5" fill="#fff"/><circle cx="11.9" cy="10" r="4" fill="#E30A17"/><polygon fill="#fff" points="12.08,10.00 13.81,9.44 13.81,7.62 14.88,9.09 16.60,8.53 15.54,10.00 16.60,11.47 14.88,10.91 13.81,12.38 13.81,10.56"/></svg><span class="dil-k">TR</span></summary><div class="dil-m"><a href="/" lang="tr" hreflang="tr" aria-current="page"><svg class="flag" viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#E30A17"/><circle cx="10.6" cy="10" r="5" fill="#fff"/><circle cx="11.9" cy="10" r="4" fill="#E30A17"/><polygon fill="#fff" points="12.08,10.00 13.81,9.44 13.81,7.62 14.88,9.09 16.60,8.53 15.54,10.00 16.60,11.47 14.88,10.91 13.81,12.38 13.81,10.56"/></svg><span>Türkçe</span></a><a href="/en" lang="en" hreflang="en"><svg class="flag" viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><clipPath id="gbenm"><path d="M30,15h30v15zv15h-30zh-30v-15zv-15h30z"/></clipPath><path d="M0,0v30h60v-30z" fill="#012169"/><path d="M0,0L60,30M60,0L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0L60,30M60,0L0,30" clip-path="url(#gbenm)" stroke="#C8102E" stroke-width="4"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></svg><span>English</span></a><a href="/ar" lang="ar" hreflang="ar"><span class="flag flag-ar" aria-hidden="true">ع</span><span dir="rtl">العربية</span></a></div></details>
 </div></header>
 
 <main id="icerik">
@@ -378,77 +352,75 @@ header.nav nav.links{margin-inline-start:auto}
     <div class="fchips" role="group" aria-label="Alana göre süz"><button type="button" class="fchip on" data-f="hepsi">Tümü</button><button type="button" class="fchip" data-f="genel">Genel</button><button type="button" class="fchip" data-f="aile">Aile Hukuku</button><button type="button" class="fchip" data-f="is">İş ve Ticaret Hukuku</button><button type="button" class="fchip" data-f="trafik">Trafik Kazası ve Tazminat</button><button type="button" class="fchip" data-f="ceza">Ceza Hukuku</button><button type="button" class="fchip" data-f="gayrimenkul">Gayrimenkul ve İcra</button></div>
   </div></section>
   <div class="wrap gl-list" id="gl-list">
-      <article class="gl" id="g-tapuda-guvenli-odeme-sistemi-1-aralik-2026da-zorunlu" data-c="gayrimenkul">
-        <div class="gl-meta"><time datetime="2026-11-18">18 Kasım 2026</time><span class="tag">Gayrimenkul ve İcra</span></div>
-        <h2>Tapuda Güvenli Ödeme Sistemi 1 Aralık 2026’da zorunlu hâle geliyor</h2>
-        <p>Taşınmaz satışlarında bedelin tamamı veya bir kısmı nakit, havale ya da EFT ile ödendiğinde, ödemenin Güvenli Ödeme Sistemi üzerinden yapılması 1 Aralık 2026’dan itibaren zorunlu olacak. Konut, arsa, tarla ve iş yeri satışları kapsamda. Uygulama Taşınmaz Ticareti Hakkında Yönetmelik’te yapılan değişiklikle getirildi; başlangıç tarihi önce 1 Temmuz’dan 1 Ekim’e, Ticaret Bakanlığı’nın 28 Eylül 2026 tarihli açıklamasıyla da 1 Aralık 2026’ya ertelendi. Zorunlu uygulamadan önce bankalarla pilot uygulama yapılması planlanıyor.</p><p>Sistemde alıcının ödediği bedel, tapu devri tamamlanana kadar güvenli ödeme altyapısında bekletiliyor. Devir elektronik olarak tescil edilince bedel satıcının hesabına geçiyor; devir gerçekleşmezse satıcıya aktarılmıyor. Böylece “önce para mı, önce tapu mu” riski büyük ölçüde ortadan kalkıyor. Kapora ve önceden yapılmış kısmi ödemeler, kredili ve ipotekli satışlar, iade süreçleri ve olası kullanım bedeli ise henüz uygulama esaslarıyla netleşmedi. Aralık ayında tapu randevusu bulunanların, özellikle aynı gün zincirleme bir alım ya da kredi kapatma planlayanların, bedelin aktarılma süresini bankalarıyla önceden netleştirmesi gerekir.</p>
-        <p class="src">Kaynak: <a href="https://www.ntv.com.tr/ntvpara/guvenli-odeme-sistemi-yine-ertelendi-1743811">Ticaret Bakanlığı açıklaması (NTV, 28 Eylül 2026)</a></p>
-      </article>
-      <article class="gl" id="g-aidat-borcu-listeleri-ortak-alanlara-asilamaz-kvkk" data-c="genel">
-        <div class="gl-meta"><time datetime="2026-11-18">18 Kasım 2026</time><span class="tag">Genel</span></div>
-        <h2>Aidat borcu listeleri ortak alanlara asılamaz: KVKK hatırlattı</h2>
-        <p>Kişisel Verileri Koruma Kurumu, Kurul’un 18 Şubat 2026 tarihli ve 2026/348 sayılı ilke kararını apartman ve site yönetimlerine yeniden hatırlattı. 31 Mart 2026’da Resmî Gazete’de yayımlanan karara göre aidat, avans, demirbaş gideri ve benzeri borçlara ilişkin ad soyad, daire numarası, borç tutarı ve gecikme bilgisini içeren listelerin asansör, bina girişi ve koridor gibi herkesin görebileceği yerlere asılması, 6698 sayılı Kanun’un 5. maddesindeki işleme şartlarını karşılamıyor ve 12. maddedeki veri güvenliği yükümlülüğüne aykırı düşüyor.</p><p>Kat maliklerini bilgilendirme imkânı ortadan kalkmış değil; ancak borç bilgisinin yalnızca ilgili kişinin erişebileceği kapalı kanallardan (kişiye özel e-posta, kısa mesaj veya bu amaçla kullanılan uygulamalar) ve amaç için gerektiği kadar paylaşılması gerekiyor. Listeleri asmaya devam eden yönetimler için Kanun’un 18. maddesi kapsamında idari para cezası riski bulunuyor. Aidat borcunun tahsili için ise Kat Mülkiyeti Kanunu’ndaki dava, icra takibi ve gecikme tazminatı yolları açık.</p>
-        <p class="src">Kaynak: <a href="https://www.resmigazete.gov.tr/eskiler/2026/03/20260331.htm">Resmî Gazete, 31 Mart 2026, sayı 33210</a></p>
-      </article>
       <article class="gl" id="g-hgs-ihlalli-gecis-cezalari-gundemde-mevcut-kurallar-neler" data-c="trafik">
         <div class="gl-meta"><time datetime="2026-11-18">18 Kasım 2026</time><span class="tag">Trafik Kazası ve Tazminat</span></div>
         <h2>HGS ihlalli geçiş cezaları gündemde: mevcut kurallar neler?</h2>
         <p>Ulaştırma ve Altyapı Bakanlığı, ihlalli geçişlere ilişkin artan şikâyetler üzerine 18 Kasım 2026'da Karayolları Genel Müdürlüğü ve otoyol işletmecileriyle bir değerlendirme toplantısı yapılacağını açıkladı. Şu ana kadar kanunda bir değişiklik yapılmadı. Yürürlükteki düzenlemeye göre ödemesiz geçişi izleyen on beş gün içinde ücreti ödeyene ceza uygulanmıyor; on beşinci günden kırk beşinci güne kadar ücretle birlikte bir kat, sonrasında dört kat ceza isteniyor. Özel işletmeli otoyol ve köprülerde dört kat cezanın istenebilmesi için araç sahibine en az on beş gün önceden kısa mesaj, e-posta veya e-Devlet gibi yollarla bilgi verilmesi gerekiyor (6001 sayılı Kanun m. 30). Ayrıntılı bilgi için <a href="/makale/hgs-ihlalli-gecis-cezasi-ve-icra-takibine-itiraz">ilgili makaleye</a> bakabilirsiniz.</p>
         <p class="src">Kaynak: <a href="https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=6001&amp;MevzuatTur=1&amp;MevzuatTertip=5">6001 sayılı Kanun, m. 30</a></p>
+        <div class="gl-pay"><button type="button" class="py-p" data-a="paylas">Paylaş</button><button type="button" data-a="wa">WhatsApp</button><button type="button" data-a="story">Durum / hikâye görseli</button><button type="button" data-a="kopya">Bağlantıyı kopyala</button></div><!--/pay-->
       </article>
       <article class="gl" id="g-anayasa-mahkemesi-onalim-davalarinda-rayic-bedel-kuralini-ip" data-c="gayrimenkul">
         <div class="gl-meta"><time datetime="2026-11-06">6 Kasım 2026</time><span class="tag">Gayrimenkul ve İcra</span></div>
         <h2>Anayasa Mahkemesi önalım davalarında rayiç bedel kuralını iptal etti</h2>
         <p>Anayasa Mahkemesi, 16 Temmuz 2026 tarihli ve E. 2026/23, K. 2026/162 sayılı kararıyla, Türk Medeni Kanunu'nun 7571 sayılı Kanunla değiştirilen 734. maddesinin ikinci fıkrasını ve bu kuralın daha önce açılmış davalara uygulanmasını öngören geçici 1. maddenin (2) numaralı fıkrasını iptal etti. İptal edilen kural, önalım davasında payın tapudaki satış bedeli yerine hâkimin belirleyeceği rayiç bedel üzerinden alınmasını öngörüyordu.</p><p>İptal hükmü kararın yayımından dokuz ay sonra, 6 Ağustos 2027'de yürürlüğe girecek. Bu tarihe kadar rayiç bedel kuralı uygulanmaya devam eder. Önalım hakkının varlığı ile üç aylık ve bir yıllık hak düşürücü süreler karardan etkilenmiyor. Açılmış ve açılacak önalım davalarında bedel ve depo meselesi bu takvim gözetilerek değerlendirilmelidir.</p>
         <p class="src">Kaynak: <a href="https://www.resmigazete.gov.tr/eskiler/2026/11/20261106.htm">Resmî Gazete, 6 Kasım 2026, sayı 33422</a></p>
+        <div class="gl-pay"><button type="button" class="py-p" data-a="paylas">Paylaş</button><button type="button" data-a="wa">WhatsApp</button><button type="button" data-a="story">Durum / hikâye görseli</button><button type="button" data-a="kopya">Bağlantıyı kopyala</button></div><!--/pay-->
       </article>
       <article class="gl" id="g-anayasa-mahkemesi-kesinlik-sinirini-asan-trafik-cezasinda-it" data-c="trafik">
         <div class="gl-meta"><time datetime="2026-11-04">4 Kasım 2026</time><span class="tag">Trafik Kazası ve Tazminat</span></div>
         <h2>Anayasa Mahkemesi: kesinlik sınırını aşan trafik cezasında itiraz yolu kapatılamaz</h2>
         <p>Anayasa Mahkemesi, 17 Haziran 2026 tarihli ve 2023/4554 başvuru numaralı kararında, yaklaşık 20 bin liralık bir trafik idari para cezasına yapılan başvurunun sulh ceza hâkimliğince reddedildiği ve kararın kesin olarak verildiği olayda mahkemeye erişim hakkının ihlal edildiğine karar verdi. Mahkeme, Kabahatler Kanunu'nun 28. maddesinin onuncu fıkrasındaki kesinlik sınırını aşan cezalarda itiraz yolunun açık olduğunu belirterek dosyayı yeniden yargılama için ilgili hâkimliğe gönderdi.</p><p>Bugün yürürlükteki metne göre on beş bin Türk lirası dahil idari para cezalarına karşı başvuru üzerine verilen kararlar kesindir. Bu tutarın üzerindeki cezalarda sulh ceza hâkimliğinin ret kararına itiraz edilebilir; kararın "kesin" yazılmış olması itiraz hakkını ortadan kaldırmaz.</p>
         <p class="src">Kaynak: <a href="https://www.resmigazete.gov.tr/eskiler/2026/11/20261104.htm">Resmî Gazete, 4 Kasım 2026, sayı 33420</a></p>
+        <div class="gl-pay"><button type="button" class="py-p" data-a="paylas">Paylaş</button><button type="button" data-a="wa">WhatsApp</button><button type="button" data-a="story">Durum / hikâye görseli</button><button type="button" data-a="kopya">Bağlantıyı kopyala</button></div><!--/pay-->
       </article>
       <article class="gl" id="g-yeni-avukatlik-asgari-ucret-tarifesi-yururluge-girdi" data-c="genel">
         <div class="gl-meta"><time datetime="2026-11-03">3 Kasım 2026</time><span class="tag">Genel</span></div>
         <h2>Yeni Avukatlık Asgari Ücret Tarifesi yürürlüğe girdi</h2>
         <p>Türkiye Barolar Birliği'nin hazırladığı yeni Avukatlık Asgari Ücret Tarifesi, 3 Kasım 2026 tarihli Resmî Gazete'de yayımlanarak aynı gün yürürlüğe girdi.</p><p>Avukatlık ücretleri bu tarifede belirlenen tutarların altında kararlaştırılamaz. Tarife, yargılama sonunda karşı tarafa yüklenecek vekâlet ücretlerinin hesabında da esas alınır.</p>
         <p class="src">Kaynak: <a href="https://www.resmigazete.gov.tr/eskiler/2026/11/20261103.htm">Resmî Gazete, 3 Kasım 2026, sayı 33419</a></p>
+        <div class="gl-pay"><button type="button" class="py-p" data-a="paylas">Paylaş</button><button type="button" data-a="wa">WhatsApp</button><button type="button" data-a="story">Durum / hikâye görseli</button><button type="button" data-a="kopya">Bağlantıyı kopyala</button></div><!--/pay-->
       </article>
       <article class="gl" id="g-anayasa-mahkemesi-suresiz-yoksulluk-nafakasini-iptal-etti" data-c="aile">
         <div class="gl-meta"><time datetime="2026-09-30">30 Eylül 2026</time><span class="tag">Aile Hukuku</span></div>
         <h2>Anayasa Mahkemesi süresiz yoksulluk nafakasını iptal etti</h2>
         <p>Anayasa Mahkemesi, Türk Medeni Kanunu'nun 175. maddesinde yer alan "süresiz olarak" ibaresini Anayasa'ya aykırı bularak iptal etti. Gerekçeli karar 30 Eylül 2026 tarihli Resmî Gazete'de yayımlandı.</p><p>İptal hükmü yayımdan dokuz ay sonra, 30 Haziran 2027'de yürürlüğe girecek. Bu tarihe kadar mevcut hüküm uygulanmaya devam eder; daha önce hükmedilmiş nafakalar karar nedeniyle kendiliğinden sona ermez. Yasama organının bu süre içinde yeni bir düzenleme yapması bekleniyor.</p>
         <p class="src">Kaynak: <a href="https://www.resmigazete.gov.tr/eskiler/2026/09/20260930.htm">Resmî Gazete, 30 Eylül 2026</a></p>
+        <div class="gl-pay"><button type="button" class="py-p" data-a="paylas">Paylaş</button><button type="button" data-a="wa">WhatsApp</button><button type="button" data-a="story">Durum / hikâye görseli</button><button type="button" data-a="kopya">Bağlantıyı kopyala</button></div><!--/pay-->
       </article>
       <article class="gl" id="g-belirsiz-alacak-davasi-kaldirildi-kismi-davada-yeni-donem" data-c="is">
         <div class="gl-meta"><time datetime="2026-07-31">31 Temmuz 2026</time><span class="tag">İş ve Ticaret Hukuku</span></div>
         <h2>Belirsiz alacak davası kaldırıldı, kısmi davada yeni dönem</h2>
         <p>7589 sayılı Kanun ile Hukuk Muhakemeleri Kanunu'nun belirsiz alacak davasını düzenleyen 107. maddesi yürürlükten kaldırıldı. Bu tarihten önce açılmış belirsiz alacak davalarına eski hüküm uygulanmaya devam ediyor.</p><p>HMK m. 109'a eklenen fıkra ile kısmi davada talep, aynı davada bir defaya mahsus olmak üzere tahkikatın sonuna kadar artırılabilecek ve artırılan kısım için de zamanaşımı dava tarihinde kesilmiş sayılacak. İşçilik alacakları gibi miktarı baştan bilinemeyen taleplerde dava stratejisi bu değişikliğe göre kurulmalıdır.</p><p>Aynı Kanun ile duruşmalar arasındaki sürenin kural olarak üç ayı geçemeyeceği de hükme bağlandı (HMK m. 147/3).</p>
         <p class="src">Kaynak: <a href="https://www.resmigazete.gov.tr/eskiler/2026/07/20260731-1.htm">Resmî Gazete, 31 Temmuz 2026, sayı 33326 (7589 s. Kanun)</a></p>
+        <div class="gl-pay"><button type="button" class="py-p" data-a="paylas">Paylaş</button><button type="button" data-a="wa">WhatsApp</button><button type="button" data-a="story">Durum / hikâye görseli</button><button type="button" data-a="kopya">Bağlantıyı kopyala</button></div><!--/pay-->
       </article>
       <article class="gl" id="g-kanuni-faiz-orani-ve-tazminatlarda-faiz-baslangici-degisti" data-c="trafik">
         <div class="gl-meta"><time datetime="2026-07-31">31 Temmuz 2026</time><span class="tag">Trafik Kazası ve Tazminat</span></div>
         <h2>Kanuni faiz oranı ve tazminatlarda faiz başlangıcı değişti</h2>
         <p>Kanuni Faiz ve Temerrüt Faizine İlişkin Kanun'da yapılan değişiklikle, sözleşmede oranı belirlenmemiş kanuni faiz artık Merkez Bankası reeskont oranının yüzde sekseni üzerinden uygulanıyor.</p><p>Türk Borçlar Kanunu'nun 55. maddesine eklenen hükümlerle, çalışma gücü kaybı ve destekten yoksun kalma tazminatlarında, kazancın bilindiği döneme ilişkin tazminata olay tarihinden, bilinemeyen döneme ilişkin tazminata ise karar tarihinden itibaren faiz işletilecek. Tahkikattan önce yapılan ödemeler oransal olarak mahsup edilecek.</p><p>TBK m. 55'teki değişiklik, 31 Temmuz 2026'dan sonra meydana gelen kazalar ve zarar doğuran olaylar hakkında uygulanır.</p>
         <p class="src">Kaynak: <a href="https://www.resmigazete.gov.tr/eskiler/2026/07/20260731-1.htm">Resmî Gazete, 31 Temmuz 2026, sayı 33326 (7589 s. Kanun)</a></p>
+        <div class="gl-pay"><button type="button" class="py-p" data-a="paylas">Paylaş</button><button type="button" data-a="wa">WhatsApp</button><button type="button" data-a="story">Durum / hikâye görseli</button><button type="button" data-a="kopya">Bağlantıyı kopyala</button></div><!--/pay-->
       </article>
       <article class="gl" id="g-hukmun-aciklanmasinin-geri-birakilmasi-yeniden-duzenlendi" data-c="ceza">
         <div class="gl-meta"><time datetime="2026-07-31">31 Temmuz 2026</time><span class="tag">Ceza Hukuku</span></div>
         <h2>Hükmün açıklanmasının geri bırakılması yeniden düzenlendi</h2>
         <p>7589 sayılı Kanun ile CMK m. 231 değiştirildi. Hükmün açıklanmasının geri bırakılması için sanığın daha önce kasıtlı bir suçtan mahkûm olmamış olması, yeniden suç işlemeyeceği kanaati ve suçtan doğan zararın tamamen giderilmesi şartları aranıyor; zarar denetim süresi içinde aylık taksitlerle de giderilebiliyor.</p><p>Denetim süresi beş yıldır. HAGB kararlarına karşı artık itiraz yerine istinaf yoluna başvurulabiliyor; istinaf incelemesi usul ve esas yönünden yapılıyor.</p>
         <p class="src">Kaynak: <a href="https://www.resmigazete.gov.tr/eskiler/2026/07/20260731-1.htm">Resmî Gazete, 31 Temmuz 2026, sayı 33326 (7589 s. Kanun)</a></p>
+        <div class="gl-pay"><button type="button" class="py-p" data-a="paylas">Paylaş</button><button type="button" data-a="wa">WhatsApp</button><button type="button" data-a="story">Durum / hikâye görseli</button><button type="button" data-a="kopya">Bağlantıyı kopyala</button></div><!--/pay-->
       </article>
       <article class="gl" id="g-miras-kalan-tasinmazlarda-ortakligin-giderilmesinde-ilk-arti" data-c="gayrimenkul">
         <div class="gl-meta"><time datetime="2026-07-31">31 Temmuz 2026</time><span class="tag">Gayrimenkul ve İcra</span></div>
         <h2>Miras kalan taşınmazlarda ortaklığın giderilmesinde ilk artırma mirasçılar arasında</h2>
         <p>İcra ve İflas Kanunu'nun 114. maddesine eklenen hükümle, tüm maliklerin miras yoluyla edindiği ve üçüncü kişilerin payı bulunmayan taşınmazlarda ortaklığın satış suretiyle giderilmesinde birinci artırma yalnızca malik mirasçılar arasında yapılacak.</p><p>Bu artırmada teklifin muhammen kıymetin tamamını geçmesi gerekiyor; sonuç alınamazsa ikinci artırma genel kurallara göre herkese açık yapılıyor. Değişiklik, 31 Temmuz 2026'dan önce ilanı yapılmış artırmalara uygulanmaz.</p>
         <p class="src">Kaynak: <a href="https://www.resmigazete.gov.tr/eskiler/2026/07/20260731-1.htm">Resmî Gazete, 31 Temmuz 2026, sayı 33326 (7589 s. Kanun)</a></p>
+        <div class="gl-pay"><button type="button" class="py-p" data-a="paylas">Paylaş</button><button type="button" data-a="wa">WhatsApp</button><button type="button" data-a="story">Durum / hikâye görseli</button><button type="button" data-a="kopya">Bağlantıyı kopyala</button></div><!--/pay-->
       </article>
       <article class="gl" id="g-yargitay-dava-dilekcesinde-olmayan-talep-kismen-islahla-ekle" data-c="is">
         <div class="gl-meta"><time datetime="2026-06-30">30 Haziran 2026</time><span class="tag">İş ve Ticaret Hukuku</span></div>
         <h2>Yargıtay: dava dilekçesinde olmayan talep kısmen ıslahla eklenemez</h2>
         <p>Yargıtay İçtihadı Birleştirme Büyük Genel Kurulu, 8 Mayıs 2026 tarihli ve 2021/8 E., 2026/1 K. sayılı kararıyla, dava dilekçesinde yer almayan bir talebin kısmen ıslah yoluyla davaya eklenemeyeceğine karar verdi.</p><p>İçtihadı birleştirme kararları mahkemeler bakımından bağlayıcıdır. Özellikle birden fazla kalem içeren işçilik alacağı davalarında, talep edilecek tüm kalemlerin dava dilekçesinde baştan gösterilmesi önem kazandı.</p>
         <p class="src">Kaynak: <a href="https://www.resmigazete.gov.tr/eskiler/2026/06/20260630.htm">Resmî Gazete, 30 Haziran 2026, sayı 33296</a></p>
+        <div class="gl-pay"><button type="button" class="py-p" data-a="paylas">Paylaş</button><button type="button" data-a="wa">WhatsApp</button><button type="button" data-a="story">Durum / hikâye görseli</button><button type="button" data-a="kopya">Bağlantıyı kopyala</button></div><!--/pay-->
       </article>
     <p class="note">Notlar genel bilgilendirme amaçlıdır; yürürlük ve geçiş hükümleri için kaynak metne bakılmalıdır.</p>
   </div>
@@ -500,6 +472,45 @@ document.querySelectorAll('.fchip').forEach(function(b){b.addEventListener('clic
 })();
 </script>
 
+
+
+
+
 <!--KS--><aside class="ks ks-sol" aria-label="Yeni makaleler"><div class="ks-b"><span>Yeni makaleler</span><a href="/makaleler">Tümü</a></div><div class="ks-v"><ul class="ks-l"><li><a href="/makale/hgs-ihlalli-gecis-cezasi-ve-icra-takibine-itiraz">HGS ihlalli geçiş: 15 ve 45 gün kuralı, dört kat ceza ve icra takibine itiraz</a></li><li><a href="/makale/fahri-trafik-mufettisinin-yazdigi-cezaya-itiraz">Fahri trafik müfettişinin yazdığı cezaya itiraz</a></li><li><a href="/makale/alkolmetre-ile-kan-tahlili-celisirse">Alkolmetre sonucu ile hastane kan tahlili çelişirse ne olur?</a></li><li><a href="/makale/kovusturmaya-yer-olmadigi-kararina-itiraz">Kovuşturmaya yer olmadığına dair karara (takipsizlik) itiraz</a></li><li><a href="/makale/cayma-hakki-ve-haksiz-icra-takibi">İnternet alışverişinde cayma hakkı ve haksız icra takibine karşı menfi tespit</a></li><li><a href="/makale/kaza-sonrasi-arac-mahrumiyeti-bedeli">Kaza sonrası araç mahrumiyeti (ikame araç) bedeli</a></li><li><a href="/makale/on-yillik-uzama-sonunda-kiracinin-tahliyesi">On yıllık uzama süresi dolan kiracının tahliyesi (TBK 347)</a></li><li><a href="/makale/hgs-ihlalli-gecis-cezasi-ve-icra-takibine-itiraz">HGS ihlalli geçiş: 15 ve 45 gün kuralı, dört kat ceza ve icra takibine itiraz</a></li><li><a href="/makale/fahri-trafik-mufettisinin-yazdigi-cezaya-itiraz">Fahri trafik müfettişinin yazdığı cezaya itiraz</a></li><li><a href="/makale/alkolmetre-ile-kan-tahlili-celisirse">Alkolmetre sonucu ile hastane kan tahlili çelişirse ne olur?</a></li><li><a href="/makale/kovusturmaya-yer-olmadigi-kararina-itiraz">Kovuşturmaya yer olmadığına dair karara (takipsizlik) itiraz</a></li><li><a href="/makale/cayma-hakki-ve-haksiz-icra-takibi">İnternet alışverişinde cayma hakkı ve haksız icra takibine karşı menfi tespit</a></li><li><a href="/makale/kaza-sonrasi-arac-mahrumiyeti-bedeli">Kaza sonrası araç mahrumiyeti (ikame araç) bedeli</a></li><li><a href="/makale/on-yillik-uzama-sonunda-kiracinin-tahliyesi">On yıllık uzama süresi dolan kiracının tahliyesi (TBK 347)</a></li></ul><ul class="ks-l" aria-hidden="true"><li><a tabindex="-1" href="/makale/hgs-ihlalli-gecis-cezasi-ve-icra-takibine-itiraz">HGS ihlalli geçiş: 15 ve 45 gün kuralı, dört kat ceza ve icra takibine itiraz</a></li><li><a tabindex="-1" href="/makale/fahri-trafik-mufettisinin-yazdigi-cezaya-itiraz">Fahri trafik müfettişinin yazdığı cezaya itiraz</a></li><li><a tabindex="-1" href="/makale/alkolmetre-ile-kan-tahlili-celisirse">Alkolmetre sonucu ile hastane kan tahlili çelişirse ne olur?</a></li><li><a tabindex="-1" href="/makale/kovusturmaya-yer-olmadigi-kararina-itiraz">Kovuşturmaya yer olmadığına dair karara (takipsizlik) itiraz</a></li><li><a tabindex="-1" href="/makale/cayma-hakki-ve-haksiz-icra-takibi">İnternet alışverişinde cayma hakkı ve haksız icra takibine karşı menfi tespit</a></li><li><a tabindex="-1" href="/makale/kaza-sonrasi-arac-mahrumiyeti-bedeli">Kaza sonrası araç mahrumiyeti (ikame araç) bedeli</a></li><li><a tabindex="-1" href="/makale/on-yillik-uzama-sonunda-kiracinin-tahliyesi">On yıllık uzama süresi dolan kiracının tahliyesi (TBK 347)</a></li><li><a tabindex="-1" href="/makale/hgs-ihlalli-gecis-cezasi-ve-icra-takibine-itiraz">HGS ihlalli geçiş: 15 ve 45 gün kuralı, dört kat ceza ve icra takibine itiraz</a></li><li><a tabindex="-1" href="/makale/fahri-trafik-mufettisinin-yazdigi-cezaya-itiraz">Fahri trafik müfettişinin yazdığı cezaya itiraz</a></li><li><a tabindex="-1" href="/makale/alkolmetre-ile-kan-tahlili-celisirse">Alkolmetre sonucu ile hastane kan tahlili çelişirse ne olur?</a></li><li><a tabindex="-1" href="/makale/kovusturmaya-yer-olmadigi-kararina-itiraz">Kovuşturmaya yer olmadığına dair karara (takipsizlik) itiraz</a></li><li><a tabindex="-1" href="/makale/cayma-hakki-ve-haksiz-icra-takibi">İnternet alışverişinde cayma hakkı ve haksız icra takibine karşı menfi tespit</a></li><li><a tabindex="-1" href="/makale/kaza-sonrasi-arac-mahrumiyeti-bedeli">Kaza sonrası araç mahrumiyeti (ikame araç) bedeli</a></li><li><a tabindex="-1" href="/makale/on-yillik-uzama-sonunda-kiracinin-tahliyesi">On yıllık uzama süresi dolan kiracının tahliyesi (TBK 347)</a></li></ul></div></aside><aside class="ks ks-sag" aria-label="Yeni dilekçeler"><div class="ks-b"><span>Yeni dilekçeler</span><a href="/dilekceler">Tümü</a></div><div class="ks-v"><ul class="ks-l"><li><a href="/dilekce/kayip-cek-odeme-yasagi">Kaybolan çek için ödeme yasağı (ihtiyati tedbir) talep dilekçesi</a></li><li><a href="/dilekce/karsiliksiz-cek-sikayet">Karşılıksız çek keşide etme suçu nedeniyle icra ceza mahkemesine şikâyet dilekçesi</a></li><li><a href="/dilekce/ihtiyati-haciz-kararina-itiraz">İhtiyati haciz kararına itiraz dilekçesi</a></li><li><a href="/dilekce/konkordato-alacak-bildirimi">Konkordato komiserliğine alacak bildirimi dilekçesi</a></li><li><a href="/dilekce/nafaka-tazyik-hapsi">Nafaka ödemeyen borçlu hakkında tazyik hapsi şikâyet dilekçesi</a></li><li><a href="/dilekce/kadastro-22a-itiraz-davasi">Kadastro Kanunu 22-a düzeltmesinin iptali için dava dilekçesi</a></li><li><a href="/dilekce/tapu-kaydinda-isim-duzeltme">Tapu kütüğündeki hatalı malik adının idari yoldan düzeltilmesi talep dilekçesi</a></li><li><a href="/dilekce/mirascilik-belgesi-talebi">Mirasçılık belgesi (veraset ilamı) verilmesi talep dilekçesi</a></li><li><a href="/dilekce/is-kazasi-tazminat-davasi">İş kazası nedeniyle maddi ve manevi tazminat dava dilekçesi</a></li><li><a href="/dilekce/beraat-vekalet-ucreti-istinaf">Beraat kararında vekâlet ücretine hükmedilmemesi nedeniyle istinaf dilekçesi</a></li><li><a href="/dilekce/trafik-cezasi-fahri-mufettis-itiraz">Fahri trafik müfettişinin yalnızca tutanağa dayanarak yazdığı trafik cezasına itiraz dilekçesi</a></li><li><a href="/dilekce/alkollu-arac-trafik-cezasi-itiraz">Alkolmetre sonucu ile hastane kan tahlilinin çeliştiği durumda alkollü araç kullanma cezasına itiraz dilekçesi</a></li></ul><ul class="ks-l" aria-hidden="true"><li><a tabindex="-1" href="/dilekce/kayip-cek-odeme-yasagi">Kaybolan çek için ödeme yasağı (ihtiyati tedbir) talep dilekçesi</a></li><li><a tabindex="-1" href="/dilekce/karsiliksiz-cek-sikayet">Karşılıksız çek keşide etme suçu nedeniyle icra ceza mahkemesine şikâyet dilekçesi</a></li><li><a tabindex="-1" href="/dilekce/ihtiyati-haciz-kararina-itiraz">İhtiyati haciz kararına itiraz dilekçesi</a></li><li><a tabindex="-1" href="/dilekce/konkordato-alacak-bildirimi">Konkordato komiserliğine alacak bildirimi dilekçesi</a></li><li><a tabindex="-1" href="/dilekce/nafaka-tazyik-hapsi">Nafaka ödemeyen borçlu hakkında tazyik hapsi şikâyet dilekçesi</a></li><li><a tabindex="-1" href="/dilekce/kadastro-22a-itiraz-davasi">Kadastro Kanunu 22-a düzeltmesinin iptali için dava dilekçesi</a></li><li><a tabindex="-1" href="/dilekce/tapu-kaydinda-isim-duzeltme">Tapu kütüğündeki hatalı malik adının idari yoldan düzeltilmesi talep dilekçesi</a></li><li><a tabindex="-1" href="/dilekce/mirascilik-belgesi-talebi">Mirasçılık belgesi (veraset ilamı) verilmesi talep dilekçesi</a></li><li><a tabindex="-1" href="/dilekce/is-kazasi-tazminat-davasi">İş kazası nedeniyle maddi ve manevi tazminat dava dilekçesi</a></li><li><a tabindex="-1" href="/dilekce/beraat-vekalet-ucreti-istinaf">Beraat kararında vekâlet ücretine hükmedilmemesi nedeniyle istinaf dilekçesi</a></li><li><a tabindex="-1" href="/dilekce/trafik-cezasi-fahri-mufettis-itiraz">Fahri trafik müfettişinin yalnızca tutanağa dayanarak yazdığı trafik cezasına itiraz dilekçesi</a></li><li><a tabindex="-1" href="/dilekce/alkollu-arac-trafik-cezasi-itiraz">Alkolmetre sonucu ile hastane kan tahlilinin çeliştiği durumda alkollü araç kullanma cezasına itiraz dilekçesi</a></li></ul></div></aside><!--/KS-->
+<!--PY--><div class="py-t" role="status" aria-live="polite"></div><script>(function(){
+var SITE='https://avmugurkilic.com/guncel',HK='8cf4ae8070ee972cfcc3536d5fc95a4caaf7fe0ad8dcecd0ebc698fc081dae6a';
+function hx(t){return crypto.subtle.digest('SHA-256',new TextEncoder().encode(t)).then(function(b){return Array.from(new Uint8Array(b)).map(function(x){return ('0'+x.toString(16)).slice(-2)}).join('')})}
+function ac(k){if(!k||!window.crypto||!crypto.subtle)return;hx(k).then(function(h){if(h===HK){document.documentElement.classList.add('yon');try{localStorage.setItem('pyk',k)}catch(e){}}})}
+try{var q=new URLSearchParams(location.search).get('yonetici');
+if(q!==null){history.replaceState(null,'',location.pathname+location.hash);if(q==='cikis'){localStorage.removeItem('pyk')}else ac(q)}
+ac(localStorage.getItem('pyk'))}catch(e){}
+function bil(m){var t=document.querySelector('.py-t');t.textContent=m;t.classList.add('on');clearTimeout(t._z);t._z=setTimeout(function(){t.classList.remove('on')},2400)}
+function veri(a){return{id:a.id,url:SITE+'#'+a.id,bas:a.querySelector('h2').textContent.trim(),tarih:(a.querySelector('time')||{}).textContent||'',etiket:(a.querySelector('.tag')||{}).textContent||'',ozet:(a.querySelector('p:not(.src)')||{}).textContent||''}}
+function kopya(x){var m=x.bas+'\n'+x.url;if(navigator.clipboard){navigator.clipboard.writeText(m).then(function(){bil('Bağlantı kopyalandı')},function(){prompt('Kopyalayın:',m)})}else{prompt('Kopyalayın:',m)}}
+function sar(c,t,gen,maks){var k=t.split(/\s+/),s=[],l='';k.forEach(function(w){var d=l?l+' '+w:w;if(c.measureText(d).width>gen&&l){s.push(l);l=w}else l=d});if(l)s.push(l);if(s.length>maks){s=s.slice(0,maks);s[maks-1]=s[maks-1].replace(/\s*\S*$/,'')+'…'}return s}
+function gorsel(x,cb){var W=1080,H=1920,c=document.createElement('canvas');c.width=W;c.height=H;var g=c.getContext('2d');
+var gr=g.createLinearGradient(0,0,0,H);gr.addColorStop(0,'#0b1745');gr.addColorStop(1,'#1c2b63');g.fillStyle=gr;g.fillRect(0,0,W,H);
+g.fillStyle='#fff';g.fillRect(80,560,W-160,860);
+g.fillStyle='#0b1745';g.fillRect(80,560,W-160,10);
+g.fillStyle='#c9cee2';g.font='600 34px "IBM Plex Sans",sans-serif';g.textAlign='left';
+g.fillText('HUKUKİ GELİŞME',96,470);
+g.fillStyle='#5b6385';g.font='600 30px "IBM Plex Sans",sans-serif';g.fillText((x.tarih+'  ·  '+x.etiket).toLocaleUpperCase('tr-TR'),130,660);
+g.fillStyle='#0b1745';g.font='700 76px "Cormorant Garamond",Georgia,serif';
+var sat=sar(g,x.bas,W-260,5),y=780;sat.forEach(function(l){g.fillText(l,130,y);y+=88});
+g.fillStyle='#4a5275';g.font='400 36px "IBM Plex Sans",sans-serif';y+=20;var oz=sar(g,x.ozet.replace(/\s+/g,' ').trim(),W-260,Math.max(2,Math.floor((1250-y)/52)));oz.forEach(function(l){g.fillText(l,130,y);y+=52});
+g.fillStyle='#22306a';g.font='500 34px "IBM Plex Sans",sans-serif';g.fillText('Ayrıntısı sitede:',130,1330);
+g.font='600 36px "IBM Plex Sans",sans-serif';g.fillText('avmugurkilic.com/guncel',130,1380);
+g.fillStyle='#fff';g.textAlign='center';g.font='700 64px "Cormorant Garamond",Georgia,serif';g.fillText('Av. Mustafa Uğur KILIÇ',W/2,1640);
+g.fillStyle='#c9cee2';g.font='500 30px "IBM Plex Sans",sans-serif';g.fillText('Gaziantep',W/2,1700);
+var im=new Image();im.onload=function(){g.fillStyle='#fff';g.beginPath();g.arc(W/2,265,165,0,Math.PI*2);g.fill();var h=230,w=im.width*h/im.height;g.drawImage(im,(W-w)/2,150,w,h);bitir()};im.onerror=bitir;im.src='/logo.png';
+function bitir(){c.toBlob(function(b){cb(b)},'image/png')}}
+function indir(b,ad){var u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download=ad;document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(u)},4000)}
+document.addEventListener('click',function(e){var b=e.target.closest('.gl-pay button');if(!b)return;var x=veri(b.closest('article.gl')),a=b.dataset.a;
+if(a==='paylas'){if(navigator.share){navigator.share({title:x.bas,text:x.bas,url:x.url}).catch(function(){})}else kopya(x)}
+else if(a==='wa'){window.open('https://wa.me/?text='+encodeURIComponent(x.bas+'\n'+x.url),'_blank','noopener')}
+else if(a==='kopya'){kopya(x)}
+else if(a==='story'){bil('Görsel hazırlanıyor…');(document.fonts?document.fonts.ready:Promise.resolve()).then(function(){gorsel(x,function(bl){var f=new File([bl],'guncel-'+x.id.slice(2,40)+'.png',{type:'image/png'});
+if(navigator.canShare&&navigator.canShare({files:[f]})){navigator.share({files:[f],title:x.bas}).catch(function(){})}else{indir(bl,f.name);bil('Görsel indirildi. WhatsApp durumuna veya Instagram hikâyesine ekleyebilirsiniz.')}})})}});
+})();</script><!--/PY-->
 </body>
 </html>
