@@ -343,6 +343,15 @@ header.nav nav.links{margin-inline-start:auto}
 }
 </style>
 <script>document.addEventListener('click',function(e){document.querySelectorAll('details.dil[open]').forEach(function(d){if(!d.contains(e.target))d.removeAttribute('open');});});document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('details.dil[open]').forEach(function(d){d.removeAttribute('open');});});</script>
+<style id="alan-css">
+.area .daha{margin-top:4px;font-size:.92rem}
+.area .daha summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;font-weight:600;color:var(--ink);padding:4px 0;user-select:none;-webkit-user-select:none}
+.area .daha summary::-webkit-details-marker{display:none}
+.area .daha summary::after{content:"";width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);margin-top:-4px}
+.area .daha[open] summary::after{transform:rotate(-135deg);margin-top:2px}
+.area .daha[open] summary .ac{display:none}.area .daha:not([open]) summary .kapa{display:none}
+.area .daha ul{margin-top:6px}
+</style>
 <style id="gz-css">
 .hero{padding:clamp(36px,5vw,64px) 0 clamp(40px,5vw,64px)}
 .hero h1{font-size:clamp(2.3rem,4.4vw,3.5rem);margin-top:14px}
@@ -485,56 +494,64 @@ if(!az){var dur=false,g=document.getElementById('guncel-ozet');['mouseenter','fo
         <div class="no">01</div>
         <h3>Ticaret ve Şirketler Hukuku</h3>
         <p>Şirketlerin günlük hukuki ihtiyaçları, ulusal ve uluslararası ticari ilişkiler.</p>
-        <ul><li>Şirket danışmanlığı</li><li>Ticari ve uluslararası satış sözleşmeleri</li><li>Taşıma ve ticari alacak uyuşmazlıkları</li></ul>
+        <ul><li>Şirket kuruluşu, genel kurul ve ana sözleşme işlemleri</li><li>Ortaklar arası uyuşmazlıklar ve pay devri</li><li>Ticari ve uluslararası satış sözleşmeleri</li><li>Ticari alacak davaları ve cari hesap uyuşmazlıkları</li><li>İhtiyati haciz ve ihtiyati tedbir talepleri</li></ul>
+        <details class="daha"><summary><span class="ac">+5 konu daha</span><span class="kapa">Daha az göster</span></summary><ul><li>Çek ve senet uyuşmazlıkları, kayıp çekin iptali</li><li>Karayolu taşımacılığı (CMR) ve taşıyıcı sorumluluğu</li><li>Konkordato ve iflasta alacaklı vekilliği</li><li>Haksız rekabet davaları</li><li>Şirket danışmanlığı</li></ul></details>
         <div class="law">6102 s. Türk Ticaret Kanunu · 6098 s. TBK</div>
       </article>
       <article class="area" id="alan-is">
         <div class="no">02</div>
         <h3>İş ve Sosyal Güvenlik Hukuku</h3>
         <p>İşçi ve işveren uyuşmazlıkları, dava şartı arabuluculuk ve SGK ile ilgili davalar.</p>
-        <ul><li>İşçilik alacakları ve işe iade</li><li>SGK işlemlerine karşı davalar</li><li>İşveren danışmanlığı</li></ul>
+        <ul><li>İşe iade davası</li><li>Kıdem, ihbar ve fazla mesai alacakları</li><li>Hizmet tespiti (sigortalılık tespiti) davası</li><li>İş kazası ve meslek hastalığı tazminatı</li><li>Dava şartı arabuluculuk süreçleri</li></ul>
+        <details class="daha"><summary><span class="ac">+3 konu daha</span><span class="kapa">Daha az göster</span></summary><ul><li>SGK işlemlerine, prim borcu ve idari para cezalarına itiraz</li><li>SGK rücu davaları</li><li>İş sözleşmeleri ve fesih süreçlerinde işveren danışmanlığı</li></ul></details>
         <div class="law">4857 s. İş Kanunu · 5510 s. SSGSS Kanunu · 7036 s. İş Mah. K.</div>
       </article>
       <article class="area" id="alan-trafik">
         <div class="no">03</div>
         <h3>Trafik Kazası ve Tazminat</h3>
         <p>Trafik kazalarından doğan maddi ve manevi zararlar ile sigorta uyuşmazlıkları.</p>
-        <ul><li>Değer kaybı ve araç hasarı</li><li>Destekten yoksun kalma tazminatı</li><li>Kusur raporlarına itiraz</li></ul>
+        <ul><li>Değer kaybı ve araç hasarı</li><li>Araç mahrumiyeti (ikame araç) bedeli</li><li>Sigorta şirketine başvuru ve Sigorta Tahkim Komisyonu</li><li>Destekten yoksun kalma tazminatı</li><li>Yaralanmalı kazalarda maluliyet tazminatı</li></ul>
+        <details class="daha"><summary><span class="ac">+4 konu daha</span><span class="kapa">Daha az göster</span></summary><ul><li>Kusur ve maluliyet raporlarına itiraz</li><li>Trafik cezalarına ve ehliyet geri alma işlemlerine itiraz</li><li>HGS ihlalli geçiş takiplerine itiraz</li><li>Sigorta şirketinin rücu taleplerine karşı savunma</li></ul></details>
         <div class="law">2918 s. Karayolları Trafik Kanunu · 6098 s. TBK</div>
       </article>
       <article class="area" id="alan-icra">
         <div class="no">04</div>
         <h3>İcra ve İflas Hukuku</h3>
         <p>Alacağın tahsiline yönelik takipler ve bu takiplerden doğan davalar.</p>
-        <ul><li>İlamlı ve ilamsız takipler</li><li>İtirazın iptali ve kaldırılması</li><li>Haciz ve satış işlemleri</li></ul>
+        <ul><li>İlamlı ve ilamsız takipler</li><li>Kambiyo senetlerine (çek, senet) dayalı takipler</li><li>İhtiyati haciz talebi ve ihtiyati haciz kararına itiraz</li><li>İtirazın iptali ve itirazın kaldırılması</li><li>Menfi tespit ve istirdat davaları</li></ul>
+        <details class="daha"><summary><span class="ac">+4 konu daha</span><span class="kapa">Daha az göster</span></summary><ul><li>Haciz, satış ve paraya çevirme işlemleri</li><li>İcra mahkemesinde şikâyet ve itirazlar</li><li>Karşılıksız çek ve nafaka (tazyik hapsi) şikâyetleri</li><li>Konkordato ve iflasta alacak bildirimi</li></ul></details>
         <div class="law">2004 s. İcra ve İflas Kanunu</div>
       </article>
       <article class="area" id="alan-ceza">
         <div class="no">05</div>
         <h3>Ceza Hukuku</h3>
         <p>Soruşturma ve kovuşturma aşamalarında şüpheli, sanık, mağdur ve katılan vekilliği.</p>
-        <ul><li>Müdafilik ve katılan vekilliği</li><li>Tutuklama ve adli kontrole itiraz</li><li>İstinaf ve temyiz süreçleri</li></ul>
+        <ul><li>Soruşturma aşamasında ifade ve sorguda müdafilik</li><li>Müdafilik ve katılan vekilliği</li><li>Tutuklama ve adli kontrole itiraz</li><li>Kovuşturmaya yer olmadığına dair karara itiraz</li><li>Bilişim ve sosyal medya kaynaklı suçlar</li></ul>
+        <details class="daha"><summary><span class="ac">+4 konu daha</span><span class="kapa">Daha az göster</span></summary><ul><li>Trafik güvenliğini tehlikeye sokma suçu</li><li>Karşılıksız çek ve icra ceza davaları</li><li>Uzlaşma ve etkin pişmanlık süreçleri</li><li>İstinaf ve temyiz süreçleri</li></ul></details>
         <div class="law">5237 s. Türk Ceza Kanunu · 5271 s. CMK</div>
       </article>
       <article class="area" id="alan-aile">
         <div class="no">06</div>
         <h3>Aile Hukuku</h3>
         <p>Boşanma ve sonuçlarına ilişkin davalar ile aile ilişkilerinden doğan uyuşmazlıklar.</p>
-        <ul><li>Boşanma, velayet ve kişisel ilişki</li><li>Nafaka ve nafaka artırımı</li><li>Mal rejiminin tasfiyesi</li></ul>
+        <ul><li>Anlaşmalı ve çekişmeli boşanma</li><li>Velayet ve kişisel ilişki</li><li>Nafaka, nafaka artırımı ve indirimi</li><li>Mal rejiminin tasfiyesi</li><li>Soybağının reddi ve babalık davaları</li></ul>
+        <details class="daha"><summary><span class="ac">+2 konu daha</span><span class="kapa">Daha az göster</span></summary><ul><li>6284 sayılı Kanun kapsamında koruma tedbirleri</li><li>Yabancı mahkeme boşanma kararlarının tanınması ve tenfizi</li></ul></details>
         <div class="law">4721 s. Türk Medeni Kanunu · 4787 s. Aile Mahkemeleri K.</div>
       </article>
       <article class="area" id="alan-gayrimenkul">
         <div class="no">07</div>
         <h3>Gayrimenkul Hukuku</h3>
         <p>Taşınmaz mülkiyeti, kira ilişkileri ve tapu işlemlerinden doğan uyuşmazlıklar.</p>
-        <ul><li>Kira tespiti ve tahliye</li><li>Tapu iptal ve tescil</li><li>Ortaklığın giderilmesi</li></ul>
+        <ul><li>Kiracı ile kiraya veren arasındaki davalar</li><li>Kira tahliye davaları (ihtiyaç, temerrüt, tahliye taahhüdü, 10 yıllık uzama)</li><li>Kira tespiti ve kira artışı uyuşmazlıkları</li><li>Tapu iptal ve tescil davaları</li><li>Ortaklığın giderilmesi (izale-i şuyu)</li></ul>
+        <details class="daha"><summary><span class="ac">+8 konu daha</span><span class="kapa">Daha az göster</span></summary><ul><li>Tahliye ihtarnamesi ve kira uyuşmazlıklarında arabuluculuk</li><li>Kiracının depozito, masraf ve tazminat talepleri</li><li>Önalım (şufa) davaları</li><li>Muris muvazaası davaları</li><li>Kadastro ve 22-a düzeltmelerine itiraz</li><li>Elatmanın önlenmesi, ecrimisil ve taşkın yapı</li><li>Kat mülkiyeti ve aidat uyuşmazlıkları</li><li>Mirasçılık belgesi ve tapuda kayıt düzeltme</li></ul></details>
         <div class="law">4721 s. Türk Medeni Kanunu · 6098 s. TBK</div>
       </article>
       <article class="area" id="alan-saglik">
         <div class="no">08</div>
         <h3>Sağlık Hukuku ve Malpraktis</h3>
         <p>Tıbbi müdahaleden doğan zararlar nedeniyle hekim, özel sağlık kuruluşu veya idare aleyhine açılan davalar.</p>
-        <ul><li>Hatalı tıbbi uygulama tazminatı</li><li>Aydınlatılmış onam eksikliği</li><li>Kamu hastaneleri için tam yargı davası</li></ul>
+        <ul><li>Hatalı tıbbi uygulama tazminatı</li><li>Aydınlatılmış onam eksikliği</li><li>Kamu hastaneleri için tam yargı davası</li><li>Özel hastane ve hekime karşı tazminat davaları</li><li>Estetik operasyonlardan doğan uyuşmazlıklar</li></ul>
+        <details class="daha"><summary><span class="ac">+1 konu daha</span><span class="kapa">Daha az göster</span></summary><ul><li>Bilirkişi ve Adli Tıp raporlarına itiraz</li></ul></details>
         <div class="law">6098 s. TBK · 2577 s. İYUK · Hasta Hakları Yönetmeliği</div>
       </article>
     </div>  </div></section>
