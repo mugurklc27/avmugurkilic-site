@@ -457,20 +457,8 @@ body .dlk.sayfa .kilit-kutu{display:block}
 .sarac .uy{font-size:.82rem;color:#a3262a;margin:8px 0 0}
 .sarac .gn{font-size:.8rem;color:var(--muted);margin:8px 0 0}
 @media (max-width:720px){.sarac .sg{grid-template-columns:1fr}}
-/* mobil-duzeltme */
-@media (max-width:720px){
-  html,body{overflow-x:clip}
-  header.nav .wrap{min-height:0;padding-top:10px}
-  nav.links{width:100%;overflow-x:auto;flex-wrap:nowrap;justify-content:flex-start;gap:22px;padding-bottom:10px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-  nav.links::-webkit-scrollbar{display:none}
-  nav.links a{white-space:nowrap;flex:none}
-  .mk-layout{grid-template-columns:minmax(0,1fr)!important}
-  .mk-layout>*{min-width:0}
-  .tbl{overflow-x:auto;max-width:100%}
-  .dlk.odak,.art.odak{left:0!important;right:0;top:0!important;transform:none!important;width:100vw!important;max-height:100vh;animation:none!important}
-}
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Anlaşmalı boşanma dava dilekçesi", "description": "Anlaşmalı boşanma dava dilekçesi. Nereye verilir: Aile mahkemesine. Aile mahkemesi bulunmayan yerlerde aile mahkemesi sıfatıyla asliye hukuk mahkemesine.…", "url": "https://avmugurkilic.com/dilekce/anlasmali-bosanma", "inLanguage": "tr", "author": {"@type": "Person", "name": "Mustafa Uğur Kılıç", "jobTitle": "Avukat", "url": "https://avmugurkilic.com/"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Ana sayfa", "item": "https://avmugurkilic.com/"}, {"@type": "ListItem", "position": 2, "name": "Dilekçeler", "item": "https://avmugurkilic.com/dilekceler"}, {"@type": "ListItem", "position": 3, "name": "Aile Hukuku", "item": "https://avmugurkilic.com/dilekceler#aile"}, {"@type": "ListItem", "position": 4, "name": "Anlaşmalı boşanma dava dilekçesi", "item": "https://avmugurkilic.com/dilekce/anlasmali-bosanma"}]}</script><style id="dil-css">
+<style id="dil-css">
 header.nav nav.links{margin-inline-start:auto}
 .dil{position:relative;margin-inline-start:22px;font:500 .86rem/1 var(--body)}
 .dil summary{list-style:none;display:flex;align-items:center;gap:8px;cursor:pointer;padding:8px 10px;border:1px solid var(--rule);background:rgba(255,255,255,.55);color:var(--ink);user-select:none;-webkit-user-select:none}
@@ -492,9 +480,107 @@ header.nav nav.links{margin-inline-start:auto}
   .dil summary{padding:8px}
   .dil-k{display:none}
 }
+
+.uyari{background:#fff6f6;border:1px solid rgba(163,38,42,.25);border-left:3px solid #a3262a;padding:22px 26px;margin-bottom:30px}
+.uyari h2{font-size:1.2rem;margin-bottom:8px;color:#a3262a}
+.uyari p{margin:0 0 .6em;font-size:.92rem}
+.uyari p:last-child{margin-bottom:0}
+.dlk{background:var(--glass);border:1px solid rgba(255,255,255,.8);border-left:3px solid var(--ink);padding:26px 28px;scroll-margin-top:92px}
+.dlk + .dlk{margin-top:14px}
+.dlk h3.dbas{font-size:1.45rem;margin-bottom:16px}
+.dlk dl{margin:0 0 18px;display:grid;gap:12px}
+.dlk dt{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+.dlk dd{margin:0;font-size:.95rem}
+.dlk dd.sure{font-weight:500;color:#a3262a}
+.dlk h4{font:600 .74rem/1 var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:20px 0 10px}
+.dlk ul{margin:0;padding-left:20px;display:grid;gap:7px;font-size:.93rem}
+.dlk-metin{background:#fff;border:1px solid rgba(11,23,69,.15);padding:24px 26px;margin-top:4px;overflow-x:auto}
+.dlk-metin pre{margin:0;font:400 .86rem/1.65 ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;white-space:pre-wrap;color:var(--ink)}
+.dlk-metin img{display:block;width:100%;height:auto;pointer-events:none}
+.antet-ust{margin:-6px 0 24px}
+.antet-alt{margin:28px 0 -6px}
+.nocopy{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-touch-callout:none}
+.korumali{margin:10px 0 0;font-size:.8rem;color:var(--muted)}
+.kilit{position:relative;margin-top:2px}
+.kilit pre.bulanik{filter:blur(2.2px);opacity:.8;user-select:none;-webkit-user-select:none;pointer-events:none;max-height:none;min-height:230px;overflow:hidden}
+.kilit::before{content:"";position:absolute;left:0;right:0;top:-40px;height:40px;background:linear-gradient(to bottom,rgba(255,255,255,0),#fff);pointer-events:none}
+.kilit-kutu{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(440px,92%);background:var(--ink);color:#fff;padding:24px 26px;text-align:center;box-shadow:0 24px 50px -24px rgba(11,23,69,.6)}
+.kilit-kutu .ik{width:30px;height:30px;margin:0 auto 10px;display:block;opacity:.9}
+.kilit-kutu h5{font:600 1.3rem/1.25 var(--display);margin:0 0 8px}
+.kilit-kutu p{margin:0 0 16px;font-size:.88rem;color:#c9cee2}
+.kilit-kutu .kb{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.kilit-kutu a{display:inline-block;padding:10px 16px;font:500 .86rem var(--body);text-decoration:none;border:1px solid #fff;color:#fff}
+.kilit-kutu a.dolu{background:#fff;color:var(--ink)}
+.kilit-kutu a:hover{background:#fff;color:var(--ink)}
+@media (max-width:560px){.kilit pre.bulanik{max-height:380px}}
+@media print{.dlk-metin{border:0;padding:0}}
+.dlk{cursor:zoom-in;transition:box-shadow .2s}
+.dlk:hover{box-shadow:0 18px 40px -30px rgba(11,23,69,.55)}
+.dlk .oku{float:right;font:500 .74rem var(--body);letter-spacing:.06em;color:var(--muted);border:1px solid var(--rule);padding:4px 10px;margin:4px 0 0 12px;background:#fff}
+.dlk.odak{position:fixed;z-index:101;top:3vh;left:50%;transform:translateX(-50%);width:min(900px,94vw);max-height:94vh;overflow:auto;margin:0!important;background:#fbfbfd;cursor:auto;box-shadow:0 40px 90px -30px rgba(0,0,0,.6);animation:odakgir .18s ease-out}
+.dlk.odak .oku{display:none}
+.dlk .kapat{display:none}
+.dlk.odak .kapat{display:block;position:sticky;top:0;float:right;margin:-10px -12px 0 12px;width:38px;height:38px;border:1px solid var(--rule);background:#fff;color:var(--ink);font:400 1.5rem/1 var(--body);cursor:pointer;z-index:2}
+.perde{position:fixed;inset:0;z-index:100;background:rgba(6,12,36,.78);backdrop-filter:blur(2px);animation:perdegir .18s ease-out}
+body.odakta{overflow:hidden}
+@keyframes odakgir{from{opacity:0;transform:translate(-50%,12px)}to{opacity:1;transform:translate(-50%,0)}}
+@keyframes perdegir{from{opacity:0}to{opacity:1}}
+.dlk:not(.odak) .dlk-detay{display:none}
+.dlk:not(.odak) .dlk-metin{max-height:250px;overflow:hidden;position:relative}
+.dlk:not(.odak) .dlk-metin::after{content:"";position:absolute;left:0;right:0;bottom:0;height:150px;background:linear-gradient(to bottom,rgba(255,255,255,0),#fff 85%);pointer-events:none}
+.dlk:not(.odak) .kilit-kutu{display:none}
+.ac-dugme{display:block;margin:-34px auto 0;position:relative;z-index:1;padding:11px 22px;font:500 .9rem var(--body);background:var(--ink);color:#fff;border:0;cursor:pointer}
+.ac-dugme:hover{background:var(--ink-2)}
+.dlk.odak .ac-dugme{display:none}
+.dlk .oku{display:none}
+@media (max-width:560px){.dlk.odak{top:0;width:100vw;max-height:100vh;padding:22px 16px}}
+
+.dlk .dbas a{color:inherit;text-decoration:none}
+.dlk .incele{display:inline-block;margin-top:4px;font:500 .88rem var(--body);color:var(--ink);border-bottom:1px solid currentColor;text-decoration:none}
+body .dlk.sayfa{cursor:auto}
+body .dlk.sayfa .dlk-detay{display:block}
+body .dlk.sayfa .dlk-metin{max-height:none;overflow:visible}
+body .dlk.sayfa .dlk-metin::after{display:none}
+body .dlk.sayfa .kilit-kutu{display:block}
+.dlk.sayfa h1.dbas{font-size:clamp(1.5rem,3.2vw,2.1rem);line-height:1.2;margin:.2em 0 .6em}
+.yazi{max-width:900px;margin:0 auto;padding:40px 22px 70px}
+.kirinti{font:400 .82rem var(--body);color:var(--muted);margin-bottom:22px}
+.kirinti a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--rule)}
+.ilgili{max-width:900px;margin:0 auto;padding:0 22px 70px}
+.ilgili h2{font-size:1.3rem;margin:0 0 14px;color:var(--ink)}
+.ilgili ul{list-style:none;padding:0;margin:0;border-top:1px solid var(--rule)}
+.ilgili li{border-bottom:1px solid var(--rule)}
+.ilgili li a{display:block;padding:13px 2px;color:var(--ink);text-decoration:none}
+.ilgili .tum{display:inline-block;margin-top:16px;font-weight:600;color:var(--ink)}
+.sarac{background:#fff;border:1px solid rgba(11,23,69,.15);border-left:3px solid var(--ink);padding:24px 26px;margin-bottom:30px}
+.sarac h2{font-size:1.5rem;margin:0 0 4px}
+.sarac>p{margin:0 0 14px;font-size:.92rem;color:var(--muted)}
+.sarac .sg{display:grid;grid-template-columns:1.6fr 1fr auto;gap:12px;align-items:end}
+.sarac label{display:block;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.sarac select,.sarac input{width:100%;font:inherit;font-size:1rem;padding:11px 12px;border:1px solid rgba(11,23,69,.2);background:#fff;color:var(--ink)}
+.sarac button{padding:12px 20px;font:500 .92rem var(--body);background:var(--ink);color:#fff;border:0;cursor:pointer}
+.sarac .ss{display:none;margin-top:16px;padding-top:14px;border-top:1px solid var(--rule)}
+.sarac .ss.on{display:block}
+.sarac .tarih{font:600 1.9rem/1.1 var(--display);margin:4px 0 6px}
+.sarac .dayanak{font-size:.88rem}
+.sarac .uy{font-size:.82rem;color:#a3262a;margin:8px 0 0}
+.sarac .gn{font-size:.8rem;color:var(--muted);margin:8px 0 0}
+@media (max-width:720px){.sarac .sg{grid-template-columns:1fr}}
+/* mobil-duzeltme */
+@media (max-width:720px){
+  html,body{overflow-x:clip}
+  header.nav .wrap{min-height:0;padding-top:10px}
+  nav.links{width:100%;overflow-x:auto;flex-wrap:nowrap;justify-content:flex-start;gap:22px;padding-bottom:10px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  nav.links::-webkit-scrollbar{display:none}
+  nav.links a{white-space:nowrap;flex:none}
+  .mk-layout{grid-template-columns:minmax(0,1fr)!important}
+  .mk-layout>*{min-width:0}
+  .tbl{overflow-x:auto;max-width:100%}
+  .dlk.odak,.art.odak{left:0!important;right:0;top:0!important;transform:none!important;width:100vw!important;max-height:100vh;animation:none!important}
+}
 </style>
 <script>document.addEventListener('click',function(e){document.querySelectorAll('details.dil[open]').forEach(function(d){if(!d.contains(e.target))d.removeAttribute('open');});});document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('details.dil[open]').forEach(function(d){d.removeAttribute('open');});});</script>
-</head>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Anlaşmalı boşanma dava dilekçesi", "description": "Anlaşmalı boşanma dava dilekçesi. Nereye verilir: Aile mahkemesine. Aile mahkemesi bulunmayan yerlerde aile mahkemesi sıfatıyla asliye hukuk mahkemesine.…", "url": "https://avmugurkilic.com/dilekce/anlasmali-bosanma", "inLanguage": "tr", "author": {"@type": "Person", "name": "Mustafa Uğur Kılıç", "jobTitle": "Avukat", "url": "https://avmugurkilic.com/"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Ana sayfa", "item": "https://avmugurkilic.com/"}, {"@type": "ListItem", "position": 2, "name": "Dilekçeler", "item": "https://avmugurkilic.com/dilekceler"}, {"@type": "ListItem", "position": 3, "name": "Aile Hukuku", "item": "https://avmugurkilic.com/dilekceler#aile"}, {"@type": "ListItem", "position": 4, "name": "Anlaşmalı boşanma dava dilekçesi", "item": "https://avmugurkilic.com/dilekce/anlasmali-bosanma"}]}</script></head>
 <body>
 <a class="skip" href="#icerik">İçeriğe geç</a>
 

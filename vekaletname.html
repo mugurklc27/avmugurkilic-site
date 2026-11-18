@@ -285,18 +285,6 @@ nav.links .dd-m a:hover{color:var(--ink);background:rgba(11,23,69,.05);border:0}
   nav.links .dd-m a{padding:12px clamp(18px,4vw,44px);white-space:normal;font-size:.95rem}
   nav.links .dd.acik>a{color:var(--ink);border-color:var(--ink)}
 }
-/* mobil-duzeltme */
-@media (max-width:720px){
-  html,body{overflow-x:clip}
-  header.nav .wrap{min-height:0;padding-top:10px}
-  nav.links{width:100%;overflow-x:auto;flex-wrap:nowrap;justify-content:flex-start;gap:22px;padding-bottom:10px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-  nav.links::-webkit-scrollbar{display:none}
-  nav.links a{white-space:nowrap;flex:none}
-  .mk-layout{grid-template-columns:minmax(0,1fr)!important}
-  .mk-layout>*{min-width:0}
-  .tbl{overflow-x:auto;max-width:100%}
-  .dlk.odak,.art.odak{left:0!important;right:0;top:0!important;transform:none!important;width:100vw!important;max-height:100vh;animation:none!important}
-}
 </style>
 <style id="dil-css">
 header.nav nav.links{margin-inline-start:auto}
@@ -319,6 +307,18 @@ header.nav nav.links{margin-inline-start:auto}
   header.nav nav.links{order:3;margin-inline-start:0}
   .dil summary{padding:8px}
   .dil-k{display:none}
+}
+/* mobil-duzeltme */
+@media (max-width:720px){
+  html,body{overflow-x:clip}
+  header.nav .wrap{min-height:0;padding-top:10px}
+  nav.links{width:100%;overflow-x:auto;flex-wrap:nowrap;justify-content:flex-start;gap:22px;padding-bottom:10px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  nav.links::-webkit-scrollbar{display:none}
+  nav.links a{white-space:nowrap;flex:none}
+  .mk-layout{grid-template-columns:minmax(0,1fr)!important}
+  .mk-layout>*{min-width:0}
+  .tbl{overflow-x:auto;max-width:100%}
+  .dlk.odak,.art.odak{left:0!important;right:0;top:0!important;transform:none!important;width:100vw!important;max-height:100vh;animation:none!important}
 }
 </style>
 <script>document.addEventListener('click',function(e){document.querySelectorAll('details.dil[open]').forEach(function(d){if(!d.contains(e.target))d.removeAttribute('open');});});document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('details.dil[open]').forEach(function(d){d.removeAttribute('open');});});</script>

@@ -307,6 +307,42 @@ try{if(!sessionStorage.getItem('giris')&&!matchMedia('(prefers-reduced-motion: r
 
 
 
+<style id="mobil-duzeltme">
+@media (max-width:720px){
+  html,body{overflow-x:clip}
+  header.nav .wrap{min-height:0;padding-top:10px;gap:8px}
+  .mark img{height:40px}
+  .mark b{font-size:1.3rem}
+  nav.links{width:100%;overflow-x:auto;flex-wrap:nowrap;justify-content:flex-start;gap:22px;padding-bottom:10px;scrollbar-width:none;-webkit-overflow-scrolling:touch;}
+  nav.links::-webkit-scrollbar{display:none}
+  nav.links a{white-space:nowrap;flex:none}
+  .dd{flex:none}
+}
+</style>
+<style id="dil-css">
+header.nav nav.links{margin-inline-start:auto}
+.dil{position:relative;margin-inline-start:22px;font:500 .86rem/1 var(--body)}
+.dil summary{list-style:none;display:flex;align-items:center;gap:8px;cursor:pointer;padding:8px 10px;border:1px solid var(--rule);background:rgba(255,255,255,.55);color:var(--ink);user-select:none;-webkit-user-select:none}
+.dil summary::-webkit-details-marker{display:none}
+.dil summary::after{content:"";width:5px;height:5px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);margin:-3px 2px 0;opacity:.6}
+.dil[open] summary{border-color:var(--ink)}
+.dil-k{letter-spacing:.06em}
+.dil-m{position:absolute;top:calc(100% + 8px);inset-inline-end:0;min-width:180px;padding:6px 0;background:#fbfbfd;border:1px solid var(--rule);border-top:3px solid var(--ink);box-shadow:0 24px 48px -28px rgba(11,23,69,.55);display:grid;z-index:25}
+.dil-m a{display:flex;align-items:center;gap:12px;padding:11px 16px;text-decoration:none;color:var(--muted);font-size:.92rem;border:0}
+.dil-m a:hover{background:rgba(11,23,69,.05);color:var(--ink)}
+.dil-m a[aria-current]{color:var(--ink);font-weight:600}
+.dil-m a[lang=ar] span{font-family:"IBM Plex Sans Arabic",Tahoma,sans-serif}
+.flag{display:block;flex:none;width:21px;height:14px;box-shadow:0 0 0 1px rgba(11,23,69,.18)}
+.flag-ar{display:grid;place-items:center;background:var(--ink);color:#fff;font:600 .72rem/1 "IBM Plex Sans Arabic",Tahoma,sans-serif}
+@media (max-width:720px){
+  header.nav .mark{order:1}
+  .dil{order:2;margin-inline-start:auto}
+  header.nav nav.links{order:3;margin-inline-start:0}
+  .dil summary{padding:8px}
+  .dil-k{display:none}
+}
+</style>
+<script>document.addEventListener('click',function(e){document.querySelectorAll('details.dil[open]').forEach(function(d){if(!d.contains(e.target))d.removeAttribute('open');});});document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('details.dil[open]').forEach(function(d){d.removeAttribute('open');});});</script>
 <style id="gz-css">
 .hero{padding:clamp(36px,5vw,64px) 0 clamp(40px,5vw,64px)}
 .hero h1{font-size:clamp(2.3rem,4.4vw,3.5rem);margin-top:14px}
@@ -329,6 +365,10 @@ try{if(!sessionStorage.getItem('giris')&&!matchMedia('(prefers-reduced-motion: r
 .gz-d{margin-top:auto;font-size:.86rem;font-weight:600;text-decoration:underline}
 .gz-f{display:flex;justify-content:space-between;align-items:center;margin-top:14px;padding-top:12px;border-top:1px solid var(--rule);font-size:.84rem}
 .gz-dots{display:flex;gap:6px}.gz-dots i{width:7px;height:7px;border-radius:50%;background:var(--rule)}.gz-dots i.on{background:var(--ink)}
+@media (max-width:720px){.hero{padding:22px 0 30px}.hero .kicker{display:none}.hero h1{font-size:2rem;margin-top:0}.hero hr{display:none}.hero p{font-size:.95rem;line-height:1.55;margin:10px 0 16px}
+.hero .cta{display:flex;gap:10px}.hero .cta .btn{padding:11px 14px;font-size:.88rem}
+.gz{margin-top:20px;padding:16px 16px 12px}.gz-h{margin-bottom:10px}.gz-h h2{font-size:1.2rem}.gz-nav button{width:32px;height:32px}
+.gz-k{min-height:0;gap:6px}.gz-k b{font-size:1rem}.gz-p{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:.88rem}.gz-f{margin-top:10px;padding-top:8px}}
 @media (prefers-reduced-motion:reduce){.gz-t{scroll-behavior:auto}}
 </style>
 <style id="ks-css">
@@ -376,8 +416,8 @@ try{if(!sessionStorage.getItem('giris')&&!matchMedia('(prefers-reduced-motion: r
 <a href="dilekceler.html#trafik">Trafik Kazası ve Tazminat</a><a href="dilekceler.html#icra">İcra ve İflas Hukuku</a><a href="dilekceler.html#tuketici">Tüketici Hukuku</a><a href="dilekceler.html#ceza">Ceza Hukuku</a><a href="dilekceler.html#aile">Aile Hukuku</a><a href="dilekceler.html#tasinmaz">Gayrimenkul Hukuku</a><a href="dilekceler.html#usul">Yargılama Usulü</a></div></div>
     <a href="guncel.html">Güncel</a>
     <a href="#iletisim">İletişim</a>
-    <a href="en.html" lang="en" title="English">EN</a>
   </nav>
+  <details class="dil"><summary aria-label="Dil seçimi"><svg class="flag" viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#E30A17"/><circle cx="10.6" cy="10" r="5" fill="#fff"/><circle cx="11.9" cy="10" r="4" fill="#E30A17"/><polygon fill="#fff" points="12.08,10.00 13.81,9.44 13.81,7.62 14.88,9.09 16.60,8.53 15.54,10.00 16.60,11.47 14.88,10.91 13.81,12.38 13.81,10.56"/></svg><span class="dil-k">TR</span></summary><div class="dil-m"><a href="/" lang="tr" hreflang="tr" aria-current="page"><svg class="flag" viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#E30A17"/><circle cx="10.6" cy="10" r="5" fill="#fff"/><circle cx="11.9" cy="10" r="4" fill="#E30A17"/><polygon fill="#fff" points="12.08,10.00 13.81,9.44 13.81,7.62 14.88,9.09 16.60,8.53 15.54,10.00 16.60,11.47 14.88,10.91 13.81,12.38 13.81,10.56"/></svg><span>Türkçe</span></a><a href="/en" lang="en" hreflang="en"><svg class="flag" viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><clipPath id="gbenm"><path d="M30,15h30v15zv15h-30zh-30v-15zv-15h30z"/></clipPath><path d="M0,0v30h60v-30z" fill="#012169"/><path d="M0,0L60,30M60,0L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0L60,30M60,0L0,30" clip-path="url(#gbenm)" stroke="#C8102E" stroke-width="4"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></svg><span>English</span></a><a href="/ar" lang="ar" hreflang="ar"><span class="flag flag-ar" aria-hidden="true">ع</span><span dir="rtl">العربية</span></a></div></details>
 </div></header>
 
 <main id="icerik">
@@ -391,7 +431,22 @@ try{if(!sessionStorage.getItem('giris')&&!matchMedia('(prefers-reduced-motion: r
         <a class="btn solid" href="#iletisim">İletişim bilgileri</a>
         <a class="btn line" href="#calisma-alanlari">Çalışma alanları</a>
       </div>
-    </div>  </div></section>
+    </div>
+    <!--GZ--><aside class="gz" id="guncel-ozet" aria-label="Güncel hukuki gelişmeler">
+      <div class="gz-h"><div><div class="kicker">Güncel</div><h2>Son hukuki gelişmeler</h2></div>
+        <div class="gz-nav"><button type="button" data-y="-1" aria-label="Önceki">&#8592;</button><button type="button" data-y="1" aria-label="Sonraki">&#8594;</button></div></div>
+      <div class="gz-t" tabindex="0"><a class="gz-k" href="guncel.html#g-tapuda-guvenli-odeme-sistemi-1-aralik-2026da-zorunlu"><span class="gz-m"><time datetime="2026-11-18">18 Kasım 2026</time> · Gayrimenkul ve İcra</span><b>Tapuda Güvenli Ödeme Sistemi 1 Aralık 2026’da zorunlu hâle geliyor</b><span class="gz-p">Taşınmaz satışlarında bedelin tamamı veya bir kısmı nakit, havale ya da EFT ile ödendiğinde, ödemenin Güvenli Ödeme Sistemi üzerinden yapılması 1 Aralık 2026’dan…</span><span class="gz-d">Devamı</span></a><a class="gz-k" href="guncel.html#g-aidat-borcu-listeleri-ortak-alanlara-asilamaz-kvkk"><span class="gz-m"><time datetime="2026-11-18">18 Kasım 2026</time> · Genel</span><b>Aidat borcu listeleri ortak alanlara asılamaz: KVKK hatırlattı</b><span class="gz-p">Kişisel Verileri Koruma Kurumu, Kurul’un 18 Şubat 2026 tarihli ve 2026/348 sayılı ilke kararını apartman ve site yönetimlerine yeniden hatırlattı. 31 Mart 2026’da Resmî…</span><span class="gz-d">Devamı</span></a><a class="gz-k" href="guncel.html#g-hgs-ihlalli-gecis-cezalari-gundemde-mevcut-kurallar-neler"><span class="gz-m"><time datetime="2026-11-18">18 Kasım 2026</time> · Trafik Kazası ve Tazminat</span><b>HGS ihlalli geçiş cezaları gündemde: mevcut kurallar neler?</b><span class="gz-p">Ulaştırma ve Altyapı Bakanlığı, ihlalli geçişlere ilişkin artan şikâyetler üzerine 18 Kasım 2026'da Karayolları Genel Müdürlüğü ve otoyol işletmecileriyle bir…</span><span class="gz-d">Devamı</span></a><a class="gz-k" href="guncel.html#g-anayasa-mahkemesi-onalim-davalarinda-rayic-bedel-kuralini-ip"><span class="gz-m"><time datetime="2026-11-06">6 Kasım 2026</time> · Gayrimenkul ve İcra</span><b>Anayasa Mahkemesi önalım davalarında rayiç bedel kuralını iptal etti</b><span class="gz-p">Anayasa Mahkemesi, 16 Temmuz 2026 tarihli ve E. 2026/23, K. 2026/162 sayılı kararıyla, Türk Medeni Kanunu'nun 7571 sayılı Kanunla değiştirilen 734. maddesinin ikinci…</span><span class="gz-d">Devamı</span></a><a class="gz-k" href="guncel.html#g-anayasa-mahkemesi-kesinlik-sinirini-asan-trafik-cezasinda-it"><span class="gz-m"><time datetime="2026-11-04">4 Kasım 2026</time> · Trafik Kazası ve Tazminat</span><b>Anayasa Mahkemesi: kesinlik sınırını aşan trafik cezasında itiraz yolu kapatılamaz</b><span class="gz-p">Anayasa Mahkemesi, 17 Haziran 2026 tarihli ve 2023/4554 başvuru numaralı kararında, yaklaşık 20 bin liralık bir trafik idari para cezasına yapılan başvurunun sulh ceza…</span><span class="gz-d">Devamı</span></a></div>
+      <div class="gz-f"><span class="gz-dots"><i class="on"></i><i></i><i></i><i></i><i></i></span><a href="guncel.html">Tüm gelişmeler</a></div>
+    </aside>
+<script>(function(){var t=document.querySelector('.gz-t');if(!t)return;var d=document.querySelectorAll('.gz-dots i');
+function i(){return Math.round(t.scrollLeft/Math.max(1,t.clientWidth))}
+function nok(){var k=i();d.forEach(function(x,n){x.classList.toggle('on',n===k)})}
+t.addEventListener('scroll',function(){clearTimeout(t._z);t._z=setTimeout(nok,80)},{passive:true});
+function adim(y){var n=t.children.length,k=(i()+y+n)%n;t.scrollTo({left:k*t.clientWidth})}
+document.querySelectorAll('.gz-nav button').forEach(function(b){b.addEventListener('click',function(){adim(+b.dataset.y)})});
+var az=false;try{az=matchMedia('(prefers-reduced-motion: reduce)').matches}catch(e){}
+if(!az){var dur=false,g=document.getElementById('guncel-ozet');['mouseenter','focusin','touchstart'].forEach(function(e){g.addEventListener(e,function(){dur=true},{passive:true})});g.addEventListener('mouseleave',function(){dur=false});setInterval(function(){if(!dur&&!document.hidden&&!document.documentElement.classList.contains('girisli'))adim(1)},7000)}})();</script><!--/GZ-->
+  </div></section>
 
 
   <section class="part" id="hakkimda"><div class="wrap">
@@ -556,22 +611,7 @@ try{if(!sessionStorage.getItem('giris')&&!matchMedia('(prefers-reduced-motion: r
         <iframe title="Büro konumu" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Pancarl%C4%B1+Mah.+58127+Nolu+Sk.+%C5%9Eehitkamil+Gaziantep&amp;output=embed"></iframe>
         <div class="mapfallback">Harita bu önizlemede yüklenmez. <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x1531e1820edb57ab:0xc2f4ef0bf06164f0">Konumu Google Haritalar'da açın</a>.</div>
       </div>
-    </div>
-    <!--GZ--><aside class="gz" id="guncel-ozet" aria-label="Güncel hukuki gelişmeler">
-      <div class="gz-h"><div><div class="kicker">Güncel</div><h2>Son hukuki gelişmeler</h2></div>
-        <div class="gz-nav"><button type="button" data-y="-1" aria-label="Önceki">&#8592;</button><button type="button" data-y="1" aria-label="Sonraki">&#8594;</button></div></div>
-      <div class="gz-t" tabindex="0"><a class="gz-k" href="guncel.html#g-hgs-ihlalli-gecis-cezalari-gundemde-mevcut-kurallar-neler"><span class="gz-m"><time datetime="2026-11-18">18 Kasım 2026</time> · Trafik Kazası ve Tazminat</span><b>HGS ihlalli geçiş cezaları gündemde: mevcut kurallar neler?</b><span class="gz-p">Ulaştırma ve Altyapı Bakanlığı, ihlalli geçişlere ilişkin artan şikâyetler üzerine 18 Kasım 2026'da Karayolları Genel Müdürlüğü ve otoyol işletmecileriyle bir…</span><span class="gz-d">Devamı</span></a><a class="gz-k" href="guncel.html#g-anayasa-mahkemesi-onalim-davalarinda-rayic-bedel-kuralini-ip"><span class="gz-m"><time datetime="2026-11-06">6 Kasım 2026</time> · Gayrimenkul ve İcra</span><b>Anayasa Mahkemesi önalım davalarında rayiç bedel kuralını iptal etti</b><span class="gz-p">Anayasa Mahkemesi, 16 Temmuz 2026 tarihli ve E. 2026/23, K. 2026/162 sayılı kararıyla, Türk Medeni Kanunu'nun 7571 sayılı Kanunla değiştirilen 734. maddesinin ikinci…</span><span class="gz-d">Devamı</span></a><a class="gz-k" href="guncel.html#g-anayasa-mahkemesi-kesinlik-sinirini-asan-trafik-cezasinda-it"><span class="gz-m"><time datetime="2026-11-04">4 Kasım 2026</time> · Trafik Kazası ve Tazminat</span><b>Anayasa Mahkemesi: kesinlik sınırını aşan trafik cezasında itiraz yolu kapatılamaz</b><span class="gz-p">Anayasa Mahkemesi, 17 Haziran 2026 tarihli ve 2023/4554 başvuru numaralı kararında, yaklaşık 20 bin liralık bir trafik idari para cezasına yapılan başvurunun sulh ceza…</span><span class="gz-d">Devamı</span></a><a class="gz-k" href="guncel.html#g-yeni-avukatlik-asgari-ucret-tarifesi-yururluge-girdi"><span class="gz-m"><time datetime="2026-11-03">3 Kasım 2026</time> · Genel</span><b>Yeni Avukatlık Asgari Ücret Tarifesi yürürlüğe girdi</b><span class="gz-p">Türkiye Barolar Birliği'nin hazırladığı yeni Avukatlık Asgari Ücret Tarifesi, 3 Kasım 2026 tarihli Resmî Gazete'de yayımlanarak aynı gün yürürlüğe girdi.</span><span class="gz-d">Devamı</span></a><a class="gz-k" href="guncel.html#g-anayasa-mahkemesi-suresiz-yoksulluk-nafakasini-iptal-etti"><span class="gz-m"><time datetime="2026-09-30">30 Eylül 2026</time> · Aile Hukuku</span><b>Anayasa Mahkemesi süresiz yoksulluk nafakasını iptal etti</b><span class="gz-p">Anayasa Mahkemesi, Türk Medeni Kanunu'nun 175. maddesinde yer alan "süresiz olarak" ibaresini Anayasa'ya aykırı bularak iptal etti. Gerekçeli karar 30 Eylül 2026 tarihli…</span><span class="gz-d">Devamı</span></a></div>
-      <div class="gz-f"><span class="gz-dots"><i class="on"></i><i></i><i></i><i></i><i></i></span><a href="guncel.html">Tüm gelişmeler</a></div>
-    </aside>
-<script>(function(){var t=document.querySelector('.gz-t');if(!t)return;var d=document.querySelectorAll('.gz-dots i');
-function i(){return Math.round(t.scrollLeft/Math.max(1,t.clientWidth))}
-function nok(){var k=i();d.forEach(function(x,n){x.classList.toggle('on',n===k)})}
-t.addEventListener('scroll',function(){clearTimeout(t._z);t._z=setTimeout(nok,80)},{passive:true});
-function adim(y){var n=t.children.length,k=(i()+y+n)%n;t.scrollTo({left:k*t.clientWidth})}
-document.querySelectorAll('.gz-nav button').forEach(function(b){b.addEventListener('click',function(){adim(+b.dataset.y)})});
-var az=false;try{az=matchMedia('(prefers-reduced-motion: reduce)').matches}catch(e){}
-if(!az){var dur=false,g=document.getElementById('guncel-ozet');['mouseenter','focusin','touchstart'].forEach(function(e){g.addEventListener(e,function(){dur=true},{passive:true})});g.addEventListener('mouseleave',function(){dur=false});setInterval(function(){if(!dur&&!document.hidden&&!document.documentElement.classList.contains('girisli'))adim(1)},7000)}})();</script><!--/GZ-->
-  </div></section>
+    </div>  </div></section>
 </main>
 
 <section class="part legalsec" id="yasal-uyari"><div class="wrap">
