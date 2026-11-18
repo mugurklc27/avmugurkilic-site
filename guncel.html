@@ -509,8 +509,8 @@ document.addEventListener('click',function(e){var b=e.target.closest('.gl-pay bu
 if(a==='paylas'){if(navigator.share){navigator.share({title:x.bas,text:x.bas,url:x.url}).catch(function(){})}else kopya(x)}
 else if(a==='wa'){window.open('https://wa.me/?text='+encodeURIComponent(x.bas+'\n'+x.url),'_blank','noopener')}
 else if(a==='kopya'){kopya(x)}
-else if(a==='story'){bil('Görsel hazırlanıyor…');(document.fonts?document.fonts.ready:Promise.resolve()).then(function(){gorsel(x,function(bl){var f=new File([bl],'guncel-'+x.id.slice(2,40)+'.png',{type:'image/png'});
-if(navigator.canShare&&navigator.canShare({files:[f]})){navigator.share({files:[f],title:x.bas}).catch(function(){})}else{indir(bl,f.name);bil('Görsel indirildi. WhatsApp durumuna veya Instagram hikâyesine ekleyebilirsiniz.')}})})}});
+else if(a==='story'){var yazi=x.bas+'\n'+x.url;try{navigator.clipboard&&navigator.clipboard.writeText(yazi)}catch(e){}bil('Görsel hazırlanıyor… Bağlantı da kopyalandı.');(document.fonts?document.fonts.ready:Promise.resolve()).then(function(){gorsel(x,function(bl){var f=new File([bl],'guncel-'+x.id.slice(2,40)+'.png',{type:'image/png'});
+if(navigator.canShare&&navigator.canShare({files:[f]})){navigator.share({files:[f],title:x.bas,text:yazi}).catch(function(){})}else{indir(bl,f.name);bil('Görsel indirildi, bağlantı kopyalandı. Durumda açıklama kısmına yapıştırın.')}})})}});
 })();</script><!--/PY-->
 </body>
 </html>
