@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script id="tema-erken">(function(){try{var t=localStorage.getItem("tema");if(t==="koyu"||(!t&&window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches))document.documentElement.setAttribute("data-tema","koyu");}catch(e){}})();</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Attorney Mustafa Uğur KILIÇ · Gaziantep</title>
@@ -297,20 +298,73 @@ header.nav nav.links{margin-inline-start:auto}
   .dil summary{padding:8px}
   .dil-k{display:none}
 }
-/* mobil-duzeltme */
+</style>
+<script>document.addEventListener('click',function(e){document.querySelectorAll('details.dil[open]').forEach(function(d){if(!d.contains(e.target))d.removeAttribute('open');});});document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('details.dil[open]').forEach(function(d){d.removeAttribute('open');});});</script>
+<style id="tema-css">
+.tema-d{display:inline-flex;align-items:center;gap:7px;margin-inline-start:18px;padding:3px 10px;border:1px solid rgba(255,255,255,.22);background:transparent;color:#fff;font:500 .78rem/1.2 var(--body);cursor:pointer;vertical-align:middle}
+.tema-d:hover{background:rgba(255,255,255,.1)}
+.tema-d:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.tema-d svg{width:14px;height:14px;flex:none}
+.tema-d .ay{fill:currentColor}.tema-d .gunes{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round}
+.tema-d .gunes circle{fill:currentColor;stroke:none}
+.tema-d .gunes{display:none}
+html[data-tema="koyu"] .tema-d .ay{display:none}html[data-tema="koyu"] .tema-d .gunes{display:block}
+@media (max-width:420px){.tema-d{margin-inline-start:8px;padding:4px 7px}.tema-d .tema-y{display:none}}
 @media (max-width:720px){
-  html,body{overflow-x:clip}
-  header.nav .wrap{min-height:0;padding-top:10px}
+  header.nav .wrap{min-height:0;padding-top:10px;gap:8px}
+  .mark img{height:40px}
   nav.links{width:100%;overflow-x:auto;flex-wrap:nowrap;justify-content:flex-start;gap:22px;padding-bottom:10px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
   nav.links::-webkit-scrollbar{display:none}
   nav.links a{white-space:nowrap;flex:none}
-  .mk-layout{grid-template-columns:minmax(0,1fr)!important}
-  .mk-layout>*{min-width:0}
-  .tbl{overflow-x:auto;max-width:100%}
-  .dlk.odak,.art.odak{left:0!important;right:0;top:0!important;transform:none!important;width:100vw!important;max-height:100vh;animation:none!important}
+  .dd{flex:none}
 }
+html[data-tema="koyu"]{--ink:#e8ebf6;--ink-2:#c5cbe4;--muted:#a1a8c0;--rule:rgba(232,235,246,.14);--glass:rgba(22,30,64,.72);
+ --silver:linear-gradient(118deg,#070b22 0%,#0e1636 30%,#131c45 50%,#0d1533 72%,#060a1f 100%);--koyu-zemin:#050920;--koyu-kart:#111a3c;color-scheme:dark}
+html[data-tema="koyu"] body{background:var(--silver) fixed,#0a0f2a}
+html[data-tema="koyu"] header.nav{background:rgba(8,12,34,.84)}
+html[data-tema="koyu"] .mark img,html[data-tema="koyu"] #giris img{filter:brightness(0) invert(1);opacity:.92}
+html[data-tema="koyu"] body::before{filter:brightness(0) invert(1);opacity:.035}
+html[data-tema="koyu"] .dil summary{background:rgba(255,255,255,.06)}
+html[data-tema="koyu"] .dlk dd.sure,html[data-tema="koyu"] .sarac .uy,html[data-tema="koyu"] .uyari h2{color:#f08a90}
+html[data-tema="koyu"] body::before{opacity:.025}
+/* lacivert zeminli alanlar */
+html[data-tema="koyu"] .topbar,html[data-tema="koyu"] footer,html[data-tema="koyu"] .mbar,html[data-tema="koyu"] .cbox.dark,html[data-tema="koyu"] .skip,html[data-tema="koyu"] .toast,html[data-tema="koyu"] .py-t,html[data-tema="koyu"] .kilit-kutu,html[data-tema="koyu"] .flag-ar{background:var(--koyu-zemin)}
+html[data-tema="koyu"] .cbox.dark{border-color:rgba(255,255,255,.1)}
+html[data-tema="koyu"] .cbox.dark .btn:hover{background:#fff;color:var(--koyu-zemin)}
+html[data-tema="koyu"] footer{border-top:1px solid var(--rule)}
+/* acik renkli dugmeler: zemin acik, yazi koyu */
+html[data-tema="koyu"] .btn.solid,html[data-tema="koyu"] .btn.line:hover,html[data-tema="koyu"] .copy:hover,html[data-tema="koyu"] .gz-nav button:hover,html[data-tema="koyu"] .ac-dugme,html[data-tema="koyu"] .sarac button,html[data-tema="koyu"] .fchip.on,html[data-tema="koyu"] .fchip:hover,html[data-tema="koyu"] .gl-pay .py-p{background:var(--ink);color:#0b1745;border-color:var(--ink)}
+html[data-tema="koyu"] .btn.solid:hover,html[data-tema="koyu"] .ac-dugme:hover{background:var(--ink-2);color:#0b1745}
+/* kartlar ve kutular */
+html[data-tema="koyu"] .card,html[data-tema="koyu"] .area,html[data-tema="koyu"] .art,html[data-tema="koyu"] .cbox,html[data-tema="koyu"] .cform,html[data-tema="koyu"] .tz,html[data-tema="koyu"] .legalgrid details,html[data-tema="koyu"] .dlk,html[data-tema="koyu"] .guide section{border-color:rgba(255,255,255,.08);box-shadow:0 22px 48px -34px rgba(0,0,0,.8)}
+html[data-tema="koyu"] .faq,html[data-tema="koyu"] .legalgrid details.lgl,html[data-tema="koyu"] .gl,html[data-tema="koyu"] .gz,html[data-tema="koyu"] .ks{background:rgba(22,30,64,.86);border-color:var(--rule)}
+html[data-tema="koyu"] .faq[open]{background:var(--koyu-kart)}
+html[data-tema="koyu"] .faq,html[data-tema="koyu"] .gz,html[data-tema="koyu"] .gl{box-shadow:0 14px 34px -26px rgba(0,0,0,.8)}
+html[data-tema="koyu"] .lbody p,html[data-tema="koyu"] .lbody ul{color:#c9cee2}
+html[data-tema="koyu"] .dd-m,html[data-tema="koyu"] .dil-m{background:var(--koyu-kart);box-shadow:0 24px 48px -28px rgba(0,0,0,.9)}
+html[data-tema="koyu"] nav.links .dd-m a:hover{background:rgba(255,255,255,.06)}
+html[data-tema="koyu"] .mapbox{background:var(--koyu-kart);border-color:rgba(255,255,255,.08)}
+html[data-tema="koyu"] .mapbox iframe{filter:invert(.9) hue-rotate(180deg) brightness(.9) contrast(.9)}
+/* form alanlari */
+html[data-tema="koyu"] .cform input,html[data-tema="koyu"] .cform select,html[data-tema="koyu"] .cform textarea,html[data-tema="koyu"] .search input,html[data-tema="koyu"] .sarac select,html[data-tema="koyu"] .sarac input,html[data-tema="koyu"] input,html[data-tema="koyu"] select,html[data-tema="koyu"] textarea{background:#0c1430;color:var(--ink);border-color:rgba(232,235,246,.2)}
+html[data-tema="koyu"] ::placeholder{color:#7f87a3}
+/* dilekce ve makale sayfalari */
+html[data-tema="koyu"] .dlk-metin,html[data-tema="koyu"] .sarac,html[data-tema="koyu"] .art.odak,html[data-tema="koyu"] .dlk.odak,html[data-tema="koyu"] .share .copy,html[data-tema="koyu"] .gl-pay button,html[data-tema="koyu"] .dlk .oku,html[data-tema="koyu"] .kilit-kutu a.dolu,html[data-tema="koyu"] .kilit-kutu a:hover{background:var(--koyu-kart);color:var(--ink)}
+html[data-tema="koyu"] .art.odak .kapat,html[data-tema="koyu"] .dlk.odak .kapat{background:var(--koyu-kart);color:var(--ink)}
+html[data-tema="koyu"] .gl-pay .py-p{background:var(--ink);color:#0b1745}
+html[data-tema="koyu"] .dlk:not(.odak) .dlk-metin::after{background:linear-gradient(to bottom,rgba(17,26,60,0),var(--koyu-kart) 85%)}
+html[data-tema="koyu"] .kilit::before{background:linear-gradient(to bottom,rgba(17,26,60,0),var(--koyu-kart))}
+html[data-tema="koyu"] .tek .not,html[data-tema="koyu"] .ilgili li a:hover{background:var(--koyu-kart)}
+html[data-tema="koyu"] .uyari{background:#2a1220;border-color:rgba(232,120,130,.3);border-left-color:#e07a82}
+html[data-tema="koyu"] .fstatus.err{color:#f08a90}html[data-tema="koyu"] .fstatus.ok{color:#7fd3a0}
+html[data-tema="koyu"] .wa-ic{color:#4cc27f}
+html[data-tema="koyu"] .cbox a{text-decoration-color:rgba(232,235,246,.35)}
+html[data-tema="koyu"] .timeline li:first-child::before{box-shadow:0 0 0 4px rgba(232,235,246,.15)}
+html[data-tema="koyu"] .ata img{opacity:.85}
+/* giris animasyonu */
+html[data-tema="koyu"] #giris{background:radial-gradient(ellipse 60% 55% at 50% 42%,rgba(40,52,105,.9) 0%,rgba(40,52,105,0) 70%),linear-gradient(118deg,#070b22 0%,#0e1636 28%,#141e47 50%,#0d1533 72%,#060a1f 100%)}
+@media print{html[data-tema="koyu"]{--ink:#0b1745;--muted:#5b6072}html[data-tema="koyu"] body{background:#fff}}
 </style>
-<script>document.addEventListener('click',function(e){document.querySelectorAll('details.dil[open]').forEach(function(d){if(!d.contains(e.target))d.removeAttribute('open');});});document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('details.dil[open]').forEach(function(d){d.removeAttribute('open');});});</script>
 </head>
 <body>
 
@@ -402,5 +456,8 @@ header.nav nav.links{margin-inline-start:auto}
   document.addEventListener('contextmenu',function(e){ if(!formIci(e.target)) e.preventDefault(); });
 })();
 </script>
+<script id="tema-js">(function(){var b=document.getElementById("tema-d"),h=document.documentElement;if(!b)return;
+function e(){var k=h.getAttribute("data-tema")==="koyu";var y=b.querySelector(".tema-y");if(y)y.textContent=k?"Açık tema":"Koyu tema";b.setAttribute("aria-label",k?"Açık temaya geç":"Koyu temaya geç");b.setAttribute("aria-pressed",k?"true":"false");}
+e();b.addEventListener("click",function(){var k=h.getAttribute("data-tema")!=="koyu";if(k)h.setAttribute("data-tema","koyu");else h.removeAttribute("data-tema");try{localStorage.setItem("tema",k?"koyu":"acik");}catch(x){}e();});})();</script>
 </body>
 </html>
