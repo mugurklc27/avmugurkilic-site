@@ -686,22 +686,21 @@ function maddeler(x){var m=(x.story||'').split('|').map(function(t){return t.tri
 var t=x.ozet.replace(/\s+/g,' ').trim(),c=t.split(/(?<=\.)\s+/).filter(function(z){return z.length>20});return c.slice(0,3)}
 function gorsel(x,cb){var W=1080,H=1920,L=90,c=document.createElement('canvas');c.width=W;c.height=H;var g=c.getContext('2d'),P='"IBM Plex Sans",sans-serif',S='"Cormorant Garamond",Georgia,serif';
 var gr=g.createLinearGradient(0,0,W,H);gr.addColorStop(0,'#0b1745');gr.addColorStop(1,'#22306a');g.fillStyle=gr;g.fillRect(0,0,W,H);
-g.globalAlpha=.06;g.fillStyle='#fff';g.beginPath();g.arc(W-60,420,330,0,Math.PI*2);g.fill();g.globalAlpha=1;
+g.globalAlpha=.06;g.fillStyle='#fff';g.beginPath();g.arc(W-60,300,300,0,Math.PI*2);g.fill();g.globalAlpha=1;
 function devam(){
-g.textAlign='left';g.fillStyle='#fff';g.font='700 50px '+S;g.fillText('Av. Mustafa Uğur KILIÇ',L+130,322);
-g.fillStyle='#aeb6d6';g.font='500 27px '+P;g.fillText('AVUKAT  ·  GAZİANTEP',L+132,362);
+g.textAlign='left';g.fillStyle='#fff';g.font='700 50px '+S;g.fillText('Av. Mustafa Uğur KILIÇ',L+130,172);
+g.fillStyle='#aeb6d6';g.font='500 27px '+P;g.fillText('AVUKAT  ·  GAZİANTEP',L+132,212);
 var et=('HUKUKİ GELİŞME  ·  '+x.tarih).toLocaleUpperCase('tr-TR');g.font='600 28px '+P;var ew=g.measureText(et).width+56;
-g.fillStyle='#e8c46a';rr(g,L,440,ew,58,29);g.fill();g.fillStyle='#0b1745';g.fillText(et,L+28,479);
-g.fillStyle='#aeb6d6';g.font='600 28px '+P;g.fillText(x.etiket.toLocaleUpperCase('tr-TR'),L,572);
-g.fillStyle='#fff';g.font='700 84px '+S;var y=670;sar(g,x.bas,W-2*L,4).forEach(function(l){g.fillText(l,L,y);y+=92});
-y+=24;var m=maddeler(x),kh=0;g.font='500 38px '+P;var bl=m.map(function(t){var s=sar(g,t,W-2*L-130,4);kh+=s.length*50+34;return s});kh+=36;
-g.fillStyle='#fff';rr(g,L,y,W-2*L,kh,22);g.fill();var yy=y+62;
-bl.forEach(function(s){g.fillStyle='#e8c46a';g.beginPath();g.arc(L+52,yy-13,11,0,Math.PI*2);g.fill();g.fillStyle='#0b1745';g.font='500 38px '+P;s.forEach(function(l){g.fillText(l,L+88,yy);yy+=50});yy+=34});
-y+=kh+70;g.fillStyle='#fff';g.font='600 40px '+P;g.fillText('Ayrıntısı web sitemizde',L,y);
-g.fillStyle='#e8c46a';g.font='600 36px '+P;g.fillText('avmugurkilic.com/guncel',L,y+54);
-g.fillStyle='#aeb6d6';g.font='500 30px '+P;g.fillText('Bağlantı aşağıdaki açıklamada ↓',L,y+110);
+g.fillStyle='#e8c46a';rr(g,L,270,ew,58,29);g.fill();g.fillStyle='#0b1745';g.fillText(et,L+28,309);
+g.fillStyle='#aeb6d6';g.font='600 28px '+P;g.fillText(x.etiket.toLocaleUpperCase('tr-TR'),L,392);
+g.fillStyle='#fff';g.font='700 72px '+S;var y=480;sar(g,x.bas,W-2*L,4).forEach(function(l){g.fillText(l,L,y);y+=80});
+y+=10;var m=maddeler(x),kh=0;g.font='500 35px '+P;var bl=m.map(function(t){var s=sar(g,t,W-2*L-130,4);kh+=s.length*46+26;return s});kh+=34;
+g.fillStyle='#fff';rr(g,L,y,W-2*L,kh,22);g.fill();var yy=y+58;
+bl.forEach(function(s){g.fillStyle='#e8c46a';g.beginPath();g.arc(L+52,yy-12,10,0,Math.PI*2);g.fill();g.fillStyle='#0b1745';g.font='500 35px '+P;s.forEach(function(l){g.fillText(l,L+88,yy);yy+=46});yy+=26});
+y+=kh+64;g.fillStyle='#fff';g.font='600 36px '+P;g.fillText('Ayrıntısı web sitemizde',L,y);
+g.fillStyle='#e8c46a';g.font='600 34px '+P;g.fillText('avmugurkilic.com/guncel',L,y+50);
 c.toBlob(function(b){cb(b)},'image/png')}
-var im=new Image();im.onload=function(){g.fillStyle='#fff';g.beginPath();g.arc(L+52,300,56,0,Math.PI*2);g.fill();var h=84,w=im.width*h/im.height;g.drawImage(im,L+52-w/2,258,w,h);devam()};im.onerror=devam;im.src='/logo.png'}
+var im=new Image();im.onload=function(){g.fillStyle='#fff';g.beginPath();g.arc(L+52,150,56,0,Math.PI*2);g.fill();var h=84,w=im.width*h/im.height;g.drawImage(im,L+52-w/2,108,w,h);devam()};im.onerror=devam;im.src='/logo.png'}
 function indir(b,ad){var u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download=ad;document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(u)},4000)}
 document.addEventListener('click',function(e){var b=e.target.closest('.gl-pay button');if(!b)return;var x=veri(b.closest('article.gl')),a=b.dataset.a;
 if(a==='paylas'){if(navigator.share){navigator.share({title:x.bas,text:x.bas,url:x.url}).catch(function(){})}else kopya(x)}
